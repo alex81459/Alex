@@ -4,12 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Alex Salinas Ponce</title>
-	<link rel="shortcut icon" href="favicon.png">
-    <meta name="description" content="Servicios de Ingeniería Informática en Chimbarongo">
-	<meta name="robots" content="index"/>
-	<meta name=viewport content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#0D161F">
+    <title>Alex Salinas Ponce - Ingeniero Informático | Desarrollador Full Stack</title>
+    <meta name="description" content="Ingeniero Informático especializado en desarrollo full stack, administración de infraestructura TI, gestión de proyectos tecnológicos y soluciones empresariales. Servicios profesionales en Python, Angular, Flask, bases de datos y más.">
+    <meta name="keywords" content="Alex Salinas Ponce, Ingeniero Informático, Desarrollador Full Stack, Python, Angular, Flask, SQLAlchemy, Administración TI, Gestión Proyectos, SLEP Colchagua, Johnson Fruit, Chimbarongo">
+    <meta name="author" content="Alex Salinas Ponce">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0D161F">
+    
+    <meta property="og:title" content="Alex Salinas Ponce - Ingeniero Informático">
+    <meta property="og:description" content="Desarrollador Full Stack especializado en soluciones tecnológicas empresariales">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexsalinasponce.dev">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" as="style">
+    <link rel="preload" href="assets/css/custom-styles.css" as="style">
+
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
@@ -20,173 +34,600 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-	<style type="text/css">
-  body::-webkit-scrollbar {
-  width: 20px;               /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar-track {
-  background: #FED136;        /* color of the tracking area */
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #00A0FF;    /* color of the scroll thumb */
-  border-radius: 10px;       /* roundness of the scroll thumb */
-  border: 3px solid #FFFFFF;  /* creates padding around scroll thumb */
-}
-</style>
+    <link rel="stylesheet" href="assets/css/custom-styles.css">
 </head>
 
-<body id="page-top">
-    <style type="text/css">* {cursor: url(https://ani.cursors-4u.net/cursors/cur-13/cur1162.ani), url(https://ani.cursors-4u.net/cursors/cur-13/cur1162.png), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2018/06/08/hell-yeah-pointer-5.html" target="_blank" title="Hell Yeah Pointer 5"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Hell Yeah Pointer 5" style="position:absolute; top: 0px; right: 0px;" /></a>
+<body id="page-top"> 
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <p class="loading-text">Cargando Portfolio...</p>
+        </div>
+    </div>
+
+    <nav id="breadcrumbs" class="breadcrumbs-nav" aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#page-top">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+            </ol>
+        </div>
+    </nav>
     
-	<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="height: 64px;background-color: #0e1721;color: #0e1721;filter: brightness(101%) contrast(153%);">
-        <div class="container"><a class="navbar-brand flash animated" href="#page-top" style="color: rgb(32,148,255);font-size: 34px;">Alex Salinas Ponce</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler wobble animated navbar-toggler-right"
-                type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(32,148,255);"><i class="fa fa-bars"></i></button>
+    <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Volver arriba">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+	<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand flash animated" href="#page-top">Alex Salinas Ponce</a>
+            <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler wobble animated navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
             <div class="collapse navbar-collapse border rounded-0 border-dark flash animated"
-                id="navbarResponsive" style="height: 0px;color: 0f1821;">
-                <ul class="nav navbar-nav border rounded ml-auto text-uppercase" style="margin-top: 0px;margin-right: 0px;padding-right: 0px;padding-left: 15px;background-color: #0f3b41;color: #0e1721;filter: brightness(99%);">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#services" style="padding-left: 10px;filter: blur(0px) brightness(104%) contrast(153%) hue-rotate(0deg);color: 0f1821;font-size: 15px;">SERVICIOS<br></a></li>
-                    <li
-                        class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#portfolio" style="padding-left: 10px;color: 0f1821;font-size: 15px;">PORTAFOLIO<br></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#about" style="padding-left: 10px;color: 0f1821;font-size: 15px;">ACERCA DE<br></a></li>
-                        <li class="nav-item" role="presentation"></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#contact" style="padding-left: 10px;filter: contrast(200%);color: 0f1821;font-size: 15px;">ContactO</a></li>
+                id="navbarResponsive">
+                <ul class="nav navbar-nav border rounded ml-auto text-uppercase">
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#services">SERVICIOS</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#tech-stack">STACK TÉCNICO</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#portfolio">PORTAFOLIO</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#about">ACERCA DE</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#contact">CONTACTO</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header class="masthead" style="background-image: url(&quot;assets/img/datacenter-4266405.jpg&quot;);">
+    <header class="masthead parallax-header">
+        <div class="parallax-bg"></div>
         <div class="container">
-            <div class="intro-text" style="padding-top: 100px;padding-bottom: 200px;">
-                <div class="intro-lead-in"><span data-aos="zoom-in" data-aos-duration="2050" data-aos-delay="1050">Bienvenido a mi<br>Portafolio Web, mi nombre es Alex Salinas Ponce<br></span></div>
-                <div class="intro-heading text-uppercase" style="padding-bottom: 100px;"><span data-aos="zoom-in" data-aos-duration="2050" data-aos-delay="1000" style="width: 0px;font-size: 43px;">ingeniero informático&nbsp;</span></div><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" data-aos="zoom-in"
-                    data-aos-duration="2000" href="#services" style="background-color: rgb(32,148,255);padding-top: 20px;">Servicios que brindo<br></a></div>
+            <div class="intro-text">
+                <div class="intro-lead-in">
+                    <span id="typing-text" data-aos="zoom-in" data-aos-duration="2050" data-aos-delay="1050"></span>
+                </div>
+                <div class="intro-heading text-uppercase">
+                    <span id="typing-subtitle" data-aos="zoom-in" data-aos-duration="2050" data-aos-delay="1000"></span>
+                </div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger btn-services" role="button" data-aos="zoom-in" data-aos-duration="2000" href="#services">Servicios que brindo</a>
+            </div>
         </div>
     </header>
-    <section id="services" style="background-color: rgb(34,38,42);color: rgb(255,255,255);padding-top: 90px;padding-bottom: 50px;">
+    <section id="services" class="services-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center" style="height: 124px;margin-bottom: 49px;">
+                <div class="col-lg-12 text-center section-title">
                     <h2 class="text-uppercase section-heading" data-aos="fade-down" data-aos-duration="1500">Servicios Informáticos<br></h2>
                     <h3 class="text-muted section-subheading" data-aos="fade-down" data-aos-duration="1500"><em>Servicios de calidad que ofrezco a personas y empresas</em></h3>
                 </div>
             </div>
-            <div class="row text-center" style="margin-right: -11px;margin-left: -17px;">
-                <div class="col-md-4" style="margin-top: 0px;"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-server fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500" style="color: rgb(0,0,0);"></i></span>
-                    <h4 data-aos="zoom-in"
-                        data-aos-duration="1500" class="section-heading"><strong>Desarrollo de Programas</strong><br></h4>
-                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Desarrollo de Programas para Windows o Linux, Aplicaciones para medianas o pequeñas empresa, desde programas simples para llevar el registro de artículos hasta sistemas para gestionar los procesos internos, Programas realizados con
-                        lenguaje C#, Vb.net o Java, con Base de datos SQLite, MySQl, MariaBD o SqlServer, diseñado según las preferencias del usuario<br></p>
+            <div class="row text-center services-row">
+                <div class="col-md-4 service-card"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-server fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500"></i></span>
+                    <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Desarrollo Full Stack</strong></h4>
+                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Desarrollo de aplicaciones web y de escritorio con tecnologías modernas. Backend con Python, Flask, SQLAlchemy y APIs REST. Frontend con Angular, PrimeNG y frameworks responsivos. Sistemas empresariales desde aplicaciones simples hasta plataformas complejas con bases de datos MySQL, PostgreSQL, SQL Server y SQLite.</p>
+                    <div class="mt-3">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Flask</span>
+                        <span class="skill-pill">SQLAlchemy</span>
+                        <span class="skill-pill">Angular</span>
+                        <span class="skill-pill">APIs REST</span>
+                    </div>
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-globe fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500" style="color: rgb(0,0,0);"></i></span>
-                    <h4 data-aos="zoom-in"
-                        data-aos-duration="1500" class="section-heading"><strong>Construcción Páginas</strong>&nbsp;Web<br></h4>
-                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Desarrollo de Páginas Web Responsivas para uso personal, pymes o empresas, diseñadas según el los gustos del cliente, desde páginas para mostrar información util y de contacto, hasta páginas para de ventas de productos de un negocio,
-                        cuentas de correo personalizadas, certificado SSL, CMS Wordpress - Joomla - Prestashop, Hospedajes de Calidad y Rapidez para el mejor posicionamiento</p>
+                <div class="col-md-4 service-card"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-globe fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500"></i></span>
+                    <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Desarrollo Web Moderno</strong></h4>
+                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Desarrollo de sistemas institucionales y aplicaciones web responsivas con tecnologías de última generación. Frontend con Angular + PrimeNG para interfaces profesionales. Backend con Python Flask y APIs RESTful. Integración de sistemas educativos y administrativos como Libro de Clases Digital y SIMPLE.</p>
+                    <div class="mt-3">
+                        <span class="skill-pill">Angular</span>
+                        <span class="skill-pill">PrimeNG</span>
+                        <span class="skill-pill">Python Flask</span>
+                        <span class="skill-pill">APIs REST</span>
+                        <span class="skill-pill">Sistemas Institucionales</span>
+                    </div>
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-lock fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500" style="color: rgb(0,0,0);"></i></span>
-                    <h4 data-aos="zoom-in" data-aos-duration="1500"
-                        class="section-heading"><strong>Seguridad Informática</strong><br></h4>
-                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Análisis e Implementación de herramientas de Seguridad Informática, Destrucción Segura de Datos Privados mediante estándares internacionales, Auditoria de Sistemas Informáticos y Redes, Detección de Vulnerabilidades, Puesta en Marcha
-                        de Sistemas Activos y Pasivos de Seguridad, Encriptación de Datos Sensibles con Seguridad Militar, Mejoras de Seguridad<br></p>
+                <div class="col-md-4 service-card"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-lock fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500"></i></span>
+                    <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Seguridad Informática</strong></h4>
+                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Análisis e Implementación de herramientas de Seguridad Informática, Destrucción Segura de Datos Privados mediante estándares internacionales, Auditoría de Sistemas Informáticos y Redes, Detección de Vulnerabilidades, Puesta en Marcha de Sistemas Activos y Pasivos de Seguridad, Encriptación de Datos Sensibles con Seguridad Militar.</p>
+                    <div class="mt-3">
+                        <span class="skill-pill">Auditorías</span>
+                        <span class="skill-pill">Vulnerabilidades</span>
+                        <span class="skill-pill">Encriptación</span>
+                        <span class="skill-pill">Seguridad Militar</span>
+                    </div>
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-wrench fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500" style="color: rgb(0,0,0);"></i></span>
-                    <h4 data-aos="zoom-in"
-                        data-aos-duration="1500" class="section-heading"><strong>Soporte Computacional</strong><br></h4>
-                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Instalación de Sistemas Operativos Windows y Distribuciones Linux, Controladores (Drivers), Programas y Juegos, Mantención y Optimización de Equipos Computacionales, Limpieza de Hardware y Optimización de Sistemas Operativos, Desinfección
-                        de Equipos Infectados, Recuperación de Datos Borrados, Solución a Errores Computacionales<br></p>
+                <div class="col-md-4 service-card"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-wrench fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500"></i></span>
+                    <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Soporte Computacional</strong></h4>
+                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Instalación de Sistemas Operativos Windows y Distribuciones Linux, Controladores (Drivers), Programas y Juegos, Mantención y Optimización de Equipos Computacionales, Limpieza de Hardware y Optimización de Sistemas Operativos, Desinfección de Equipos Infectados, Recuperación de Datos Borrados, Solución a Errores Computacionales.</p>
+                    <div class="mt-3">
+                        <span class="skill-pill">Windows</span>
+                        <span class="skill-pill">Linux</span>
+                        <span class="skill-pill">Hardware</span>
+                        <span class="skill-pill">Recuperación Datos</span>
+                    </div>
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-wifi fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500" style="color: rgb(0,0,0);"></i></span>
-                    <h4 data-aos="zoom-in" data-aos-duration="1500"
-                        class="section-heading"><strong>Implementación de Redes</strong></h4>
-                    <p class="text-center text-muted" data-aos="zoom-in" data-aos-duration="1500">Diseño y Armado de red inalámbrica y/o cableada, Instalación y Configuración de Router, Access Point, Extensores de Red WiFi, Switches, Tarjetas de Red internas o USB, Instalación de Cámaras de Seguridad IP, Instalación y configuración
-                        de Servidores NAS e Multifuncionales en Red Interna, Diseño y Modelado de Red<br></p>
+                <div class="col-md-4 service-card"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-cogs fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500"></i></span>
+                    <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Administración de Infraestructura TI</strong></h4>
+                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Gestión integral de infraestructura tecnológica empresarial. Administración de servidores, redes corporativas, sistemas UPS y equipos multifuncionales. Soporte para entornos productivos y preproductivos. Monitoreo, mantenimiento preventivo y continuidad operativa.</p>
+                    <div class="mt-3">
+                        <span class="skill-pill">Servidores</span>
+                        <span class="skill-pill">Redes</span>
+                        <span class="skill-pill">Monitoreo</span>
+                        <span class="skill-pill">Backup</span>
+                    </div>
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-question-circle fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500" style="color: rgb(0,0,0);"></i></span>
-                    <h4 data-aos="zoom-in"
-                        data-aos-duration="1500" class="section-heading"><strong>Consultoría y Accesoria</strong><br></h4>
-                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Accesoria para la compra de Equipos de Escritorio, Notebook, Tabletas, Teléfonos, cambio de componentes y mejoras a sistemas, adquisición de programas. Servicio de armado de computadores por componentes según el uso o necesidades del
-                        Cliente y su Presupuesto, para que pueda tener el mejor dispositivo para satisfacer sus necesidades<br></p>
+                <div class="col-md-4 service-card"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-clipboard fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500"></i></span>
+                    <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Gestión de Proyectos TI</strong></h4>
+                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Liderando proyectos tecnológicos desde la concepción hasta la implementación. Elaboración de licitaciones, bases técnicas y evaluación de software. Gestión de presupuestos, coordinación con equipos multidisciplinarios y documentación técnica especializada para fiscalizaciones y auditorías.</p>
+                    <div class="mt-3">
+                        <span class="skill-pill">Project Management</span>
+                        <span class="skill-pill">Licitaciones</span>
+                        <span class="skill-pill">Documentación</span>
+                        <span class="skill-pill">Auditorías</span>
+                    </div>
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-android fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500" style="color: rgb(0,0,0);"></i></span>
-                  <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading">Soporte Dispositivos Android</h4>
-                  <p class="text-center text-muted" data-aos="zoom-in" data-aos-duration="1500">Soporte a dispositivos Android, lo cual incluye restablecimiento de dispositivo a su estado original, Instalación de la ROM original de dispositivo o una alternativa (flasheo), Instalación y configuración de aplicaciones avanzadas,
-                  Rooteo del sistema, Limpieza del sistema y desinfección de virus para una mayor Velocidad y Estabilidad del sistema<br></p>
+                <div class="col-md-4 service-card"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-android fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500"></i></span>
+                    <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Soporte Dispositivos Android</strong></h4>
+                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Soporte a dispositivos Android, lo cual incluye restablecimiento de dispositivo a su estado original, Instalación de la ROM original de dispositivo o una alternativa (flasheo), Instalación y configuración de aplicaciones avanzadas, Rooteo del sistema, Limpieza del sistema y desinfección de virus para una mayor Velocidad y Estabilidad del sistema.</p>
+                    <div class="mt-3">
+                        <span class="skill-pill">Android ROM</span>
+                        <span class="skill-pill">Flasheo</span>
+                        <span class="skill-pill">Root</span>
+                        <span class="skill-pill">Optimización</span>
+                    </div>
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-gears fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500" style="color: rgb(0,0,0);"></i></span>
-                  <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Optimización de Sistemas</strong><br>
-                  </h4>
-                  <p class="text-center text-muted" data-aos="zoom-in" data-aos-duration="1500">Borrado de Aplicaciones molestas y archivos innecesarios, Optimización del encendido del sistema, Reorganización de los sectores de almacenamiento, Mantenimiento físico del dispositivo, Desactivación de procesos automáticos innecesarios,
-                        Limpieza del registro del sistema, para acelerar la velocidad de carga y respuesta de su PC al máximo</p>
+                <div class="col-md-4 service-card"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-gears fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500"></i></span>
+                    <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Optimización de Sistemas</strong></h4>
+                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Borrado de Aplicaciones molestas y archivos innecesarios, Optimización del encendido del sistema, Reorganización de los sectores de almacenamiento, Mantenimiento físico del dispositivo, Desactivación de procesos automáticos innecesarios, Limpieza del registro del sistema, para acelerar la velocidad de carga y respuesta de su PC al máximo.</p>
+                    <div class="mt-3">
+                        <span class="skill-pill">Limpieza Sistema</span>
+                        <span class="skill-pill">Registro</span>
+                        <span class="skill-pill">Procesos</span>
+                        <span class="skill-pill">Rendimiento</span>
+                    </div>
                 </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-briefcase fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500" style="color: rgb(0,0,0);"></i></span>
-                    <h4 data-aos="zoom-in"
-                        data-aos-duration="1500" class="section-heading"><strong>Otros Servicios</strong><br></h4>
-                    <p class="text-center text-muted" data-aos="zoom-in" data-aos-duration="1500">• &nbsp;Gestión de Base de Datos MySQL, SQLserver, Oracle y SQLite <br>•&nbsp;&nbsp;Instalación y Configuración de Aplicaciones<br>•&nbsp;&nbsp;Desinfección de Malware y Virus<br>•&nbsp;&nbsp;Mantenimiento Preventivo de PC<br>•&nbsp;&nbsp;Diagnóstico
-                        de Problemas Computacionales<br>•&nbsp;&nbsp;Copias de Seguridad de Datos</p>
+                <div class="col-md-4 service-card"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-briefcase fa-stack-1x fa-inverse" data-aos="flip-left" data-aos-duration="1500"></i></span>
+                    <h4 data-aos="zoom-in" data-aos-duration="1500" class="section-heading"><strong>Servicios Especializados</strong></h4>
+                    <p class="text-muted" data-aos="zoom-in" data-aos-duration="1500">Gestión de Base de Datos (MySQL, SQLServer, PostgreSQL, SQLite) • Integración de Sistemas Educativos • Documentación Técnica y Manuales • Soporte a Fiscalizaciones • Continuidad Operativa • Estandarización de Procesos TI • Coordinación con Equipos Multidisciplinarios</p>
+                    <div class="mt-3">
+                        <span class="skill-pill">Bases de Datos</span>
+                        <span class="skill-pill">Documentación</span>
+                        <span class="skill-pill">Fiscalizaciones</span>
+                        <span class="skill-pill">Procesos TI</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="portfolio" class="bg-light" style="padding-top: 90px;padding-bottom: 90px;">
+    
+    <section id="tech-stack" class="tech-stack-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center section-title">
+                    <h2 class="text-uppercase section-heading text-gradient" data-aos="fade-down" data-aos-duration="1500">Stack Tecnológico</h2>
+                    <h3 class="text-muted section-subheading" data-aos="fade-down" data-aos-duration="1500"><em>Dominios técnicos especializados y nivel de expertise</em></h3>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-5">
+                    <div class="tech-card" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="tech-card-header">
+                            <i class="fa fa-server tech-icon"></i>
+                            <h4 class="tech-title">Backend & APIs</h4>
+                        </div>
+                        <div class="tech-skills">
+                            <div class="skill-item">
+                                <span class="skill-name">Python (Flask, SQLAlchemy, Waitress)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Desarrollo de APIs REST (Flask / Express)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Autenticación JWT, CORS, OAuth 2.0</span>
+                                <span class="skill-level medium-high">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Swagger / OpenAPI (Flasgger)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js (Express, TypeScript)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">WebSockets (Socket.IO)</span>
+                                <span class="skill-level medium-high">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">ORM SQLAlchemy con múltiples engines</span>
+                                <span class="skill-level medium-high">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Monitoreo con Sentry</span>
+                                <span class="skill-level medium-high">Medio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-12 mb-5">
+                    <div class="tech-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                        <div class="tech-card-header">
+                            <i class="fa fa-code tech-icon"></i>
+                            <h4 class="tech-title">Frontend</h4>
+                        </div>
+                        <div class="tech-skills">
+                            <div class="skill-item">
+                                <span class="skill-name">Angular 19+ (Standalone Components)</span>
+                                <span class="skill-level medium-high">Medio/Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">TypeScript</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Angular Router, Guards, SSR</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">HTML5, CSS3, SCSS/Sass</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">PrimeNG</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Angular Material</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Tailwind CSS</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Bootstrap</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-12 mb-5">
+                    <div class="tech-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                        <div class="tech-card-header">
+                            <i class="fa fa-chart-bar tech-icon"></i>
+                            <h4 class="tech-title">Visualización & Reportes</h4>
+                        </div>
+                        <div class="tech-skills">
+                            <div class="skill-item">
+                                <span class="skill-name">Chart.js</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Exportación de gráficos (PNG / PDF)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Generación de PDFs (PDFMake, jsPDF)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Excel / XLSX (Python y JavaScript)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-12 mb-5">
+                    <div class="tech-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+                        <div class="tech-card-header">
+                            <i class="fa fa-cube tech-icon"></i>
+                            <h4 class="tech-title">DevOps & Contenedores</h4>
+                        </div>
+                        <div class="tech-skills">
+                            <div class="skill-item">
+                                <span class="skill-name">Docker / Docker Compose</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Múltiples entornos (dev / prod / cloud)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Kubernetes</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Nginx (reverse proxy, SSL)</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">GitHub Actions (CI/CD)</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-12 mb-5">
+                    <div class="tech-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
+                        <div class="tech-card-header">
+                            <i class="fa fa-desktop tech-icon"></i>
+                            <h4 class="tech-title">Sistemas & Plataformas</h4>
+                        </div>
+                        <div class="tech-skills">
+                            <div class="skill-item">
+                                <span class="skill-name">Windows (Cliente y Server)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Linux (bash, shell, Docker)</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Redes y conectividad</span>
+                                <span class="skill-level medium-high">Medio/Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Soporte técnico avanzado</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-12 mb-5">
+                    <div class="tech-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+                        <div class="tech-card-header">
+                            <i class="fa fa-code-branch tech-icon"></i>
+                            <h4 class="tech-title">Lenguajes de Programación</h4>
+                        </div>
+                        <div class="tech-skills">
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">TypeScript</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">C# .NET</span>
+                                <span class="skill-level high">Alto</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Java SE</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">VB.NET / ASP.NET</span>
+                                <span class="skill-level medium">Medio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-12 col-md-12 mb-5">
+                    <div class="tech-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
+                        <div class="tech-card-header">
+                            <i class="fa fa-plug tech-icon"></i>
+                            <h4 class="tech-title">Integraciones & Servicios</h4>
+                        </div>
+                        <div class="tech-skills">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="skill-item">
+                                        <span class="skill-name">Google Calendar API</span>
+                                        <span class="skill-level high">Alto</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">Google Sheets API</span>
+                                        <span class="skill-level medium">Medio</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">Mapbox (mapas y geolocalización)</span>
+                                        <span class="skill-level medium">Medio</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="skill-item">
+                                        <span class="skill-name">SendGrid / Nodemailer</span>
+                                        <span class="skill-level medium">Medio</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">Documentación técnica</span>
+                                        <span class="skill-level high">Alto</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills-progress" class="skills-progress-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center section-title">
+                    <h2 class="text-uppercase section-heading" data-aos="fade-down" data-aos-duration="1500">Nivel de Expertise</h2>
+                    <h3 class="text-muted section-subheading" data-aos="fade-down" data-aos-duration="1500"><em>Competencias técnicas con años de experiencia</em></h3>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="skills-column" data-aos="fade-right" data-aos-duration="1500">
+                        <div class="skill-progress-item">
+                            <div class="skill-info">
+                                <span class="skill-title">Python & Flask</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="95"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-progress-item">
+                            <div class="skill-info">
+                                <span class="skill-title">JavaScript & Angular</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="90"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-progress-item">
+                            <div class="skill-info">
+                                <span class="skill-title">Bases de Datos</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="88"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-progress-item">
+                            <div class="skill-info">
+                                <span class="skill-title">APIs REST</span>
+                                <span class="skill-percentage">92%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="92"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="skills-column" data-aos="fade-left" data-aos-duration="1500">
+                        <div class="skill-progress-item">
+                            <div class="skill-info">
+                                <span class="skill-title">Administración TI</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="85"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-progress-item">
+                            <div class="skill-info">
+                                <span class="skill-title">Gestión de Proyectos</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="80"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-progress-item">
+                            <div class="skill-info">
+                                <span class="skill-title">Seguridad Informática</span>
+                                <span class="skill-percentage">78%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="78"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-progress-item">
+                            <div class="skill-info">
+                                <span class="skill-title">DevOps & Docker</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="portfolio" class="portfolio-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase section-heading" data-aos="fade-down" data-aos-duration="1500">Portafolio</h2>
                     <h3 data-aos="fade-down" data-aos-duration="1500" class="section-subheading text-muted"><em>Algunos hitos que he realizado en el Área de Informática durante mi tiempo de Estudio y Trabajo, (Click sobre la Imagen del Proyecto para ver mas detalles)</em></h3>
+                    
+                    <div class="portfolio-filters" data-aos="fade-up" data-aos-duration="1500">
+                        <button class="filter-btn active" data-filter="*">Todos</button>
+                        <button class="filter-btn" data-filter=".web-dev">Desarrollo Web</button>
+                        <button class="filter-btn" data-filter=".mobile-app">Apps Móviles</button>
+                        <button class="filter-btn" data-filter=".system">Sistemas</button>
+                        <button class="filter-btn" data-filter=".infrastructure">Infraestructura</button>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-4 portfolio-item">
+            <div class="row portfolio-container">
+                <div class="col-sm-6 col-md-4 portfolio-item system">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                         <div class="portfolio-hover" style="background-color: rgb(32,148,255);">
                             <div class="portfolio-hover-content"><i class="fa fa-info-circle fa-3x"></i></div>
-                        </div><img class="img-fluid" data-aos="fade" data-aos-duration="1500" src="assets/img/concepto-diseno-personas-bombero_1284-11623.jpg"></a>
+                        </div><img class="img-fluid" data-aos="fade" data-aos-duration="1500" src="assets/img/concepto-diseno-personas-bombero_1284-11623.jpg" alt="Sistema de Administración de Emergencias para Bomberos - Proyecto de gestión de emergencias y recursos"></a>
                     <div class="portfolio-caption">
                         <h4 data-aos="fade-right" data-aos-duration="1500">Emergencias Bomberos</h4>
                         <p data-aos="fade-right" class="text-muted">Administración Emergencias</p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 portfolio-item">
+                <div class="col-sm-6 col-md-4 portfolio-item web-dev">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
                         <div class="portfolio-hover" style="background-color: rgb(32,148,255);">
                             <div class="portfolio-hover-content"><i class="fa fa-info-circle fa-3x"></i></div>
-                        </div><img class="img-fluid" data-aos="fade" data-aos-duration="1500" src="assets/img/granero-granja-cosecha-paja-heno_107791-2857.jpg"></a>
+                        </div><img class="img-fluid" data-aos="fade" data-aos-duration="1500" src="assets/img/granero-granja-cosecha-paja-heno_107791-2857.jpg" alt="Sistema de Gestión para Club de Huasos - Plataforma web para administración de actividades y miembros"></a>
                     <div class="portfolio-caption">
                         <h4 data-aos="fade-up">Club de Huasos</h4>
                         <p data-aos="fade-up" class="text-muted"><em>Sistema de Gestión</em></p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 portfolio-item">
+                <div class="col-sm-6 col-md-4 portfolio-item web-dev">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
                         <div class="portfolio-hover" style="background-color: rgb(32,148,255);">
                             <div class="portfolio-hover-content"><i class="fa fa-info-circle fa-3x"></i></div>
-                        </div><img class="img-fluid img-fluid" data-aos="fade" data-aos-duration="1500" src="assets/img/ecomerce.jpg"></a>
+                        </div><img class="img-fluid" data-aos="fade" data-aos-duration="1500" src="assets/img/ecomerce.jpg" alt="Herramienta de Búsqueda de Productos - Sistema de comercio electrónico con filtros avanzados y búsqueda inteligente"></a>
                     <div class="portfolio-caption">
-                        <h4 data-aos="fade-left">Búsqueda de Productos<br></h4>
+                        <h4 data-aos="fade-left">Búsqueda de Productos</h4>
                         <p data-aos="fade-left" class="text-muted">Herramienta Comercio Electrónico</p>
                     </div>
                 </div>
               <div class="col-sm-6 col-md-4 col-xl-8 offset-xl-2">
-                <center><a href="https://github.com/alex81459" target="_blank"><img src="assets/img/github.png" width="200" height="200" class="img-thumbnail img-fluid">
-				<p class="text-center text-muted" data-aos="zoom-in" data-aos-duration="1500">Visita mi Github Para ver los proyectos que he publicado (click en la imagen)</p></center>
+                <div class="text-center mb-5">
+					<a href="https://github.com/alex81459" target="_blank" class="github-profile-link">
+						<img src="assets/img/github.png" width="200" height="200" class="img-thumbnail img-fluid github-icon" alt="Perfil de GitHub de Alex Salinas Ponce - Repositorio de proyectos de código abierto e Ingeniero Informático">
+					</a>
+					<h4 class="mt-4 mb-3">Proyectos en GitHub</h4>
+					<p class="text-center text-muted" data-aos="zoom-in" data-aos-duration="1500">Explora mi repositorio con proyectos de código abierto y demos interactivas</p>
+					<a href="https://github.com/alex81459" target="_blank" class="btn btn-outline-primary btn-sm">Ver Repositorios</a>
 				</div>
-              </p>
+			</div>
           </div>
         </div>
     </section>
-<div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="background-color: #0D161F">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-		  <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
-		  <li data-target="#carouselExampleIndicators1" data-slide-to="4"></li>
-		  <li data-target="#carouselExampleIndicators1" data-slide-to="5"></li>
-		  <li data-target="#carouselExampleIndicators1" data-slide-to="6"></li>
-      </ol>
-  <div class="carousel-inner" role="listbox">
+    
+    <section class="carousel-section">
+        <div class="container">
+            <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="4"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="5"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="6"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
         <div class="carousel-item active"> <img src="assets/img/albun/BD.jpg" alt="First slide" width="800" class="d-block mx-auto img-thumbnail">
           <div class="carousel-caption">
             <h5>&nbsp;</h5>
@@ -227,10 +668,17 @@ body::-webkit-scrollbar-thumb {
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span><br>
-      </a> <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span><br>
-      </a></div>
-<section id="about" style="background-color: rgb(34,38,42);color: rgb(255,255,255);padding-bottom: 90px;padding-top: 90px;">
+      <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> 
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a> 
+      <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> 
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about-section">
     <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -241,73 +689,138 @@ body::-webkit-scrollbar-thumb {
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-group timeline">
-                        <li class="list-group-item" style="margin-bottom: 10px;">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/microsoft-it-academy-logo.jpg"></div>
+                        <li class="list-group-item timeline-item">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/microsoft-it-academy-logo.jpg" alt="Microsoft IT Academy"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4 data-aos="zoom-in-right" data-aos-duration="1500">2016</h4>
                                     <h4 data-aos="zoom-in-right" data-aos-duration="1500" class="subheading"><strong>Administrativo Computacional Microsoft</strong></h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted" data-aos="zoom-in-right" data-aos-duration="1500">Terminado Curso de Microsoft de Administrativo Computacional para dominar Windows, Suit Ofimática Microsoft Office, potenciado con la mención Armado y Mantención de Computadoras, brindando un excelente soporte técnico</p>
+                                    <p class="text-muted" data-aos="zoom-in-right" data-aos-duration="1500">Terminado Curso de Microsoft de Administrativo Computacional para dominar Windows, Suite Ofimática Microsoft Office, potenciado con la mención Armado y Mantención de Computadoras, brindando un excelente soporte técnico</p>
                                 </div>
                             </div>
                         </li>
-                        <li class="list-group-item timeline-inverted" style="margin-bottom: 10px;">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/ilustracion-colorida-programador-trabajando_23-2148281410.jpg"></div>
+                        <li class="list-group-item timeline-item timeline-inverted">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/ilustracion-colorida-programador-trabajando_23-2148281410.jpg" alt="Programación"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4 data-aos="zoom-in-left" data-aos-duration="1500">2017</h4>
                                     <h4 data-aos="zoom-in-left" data-aos-duration="1500" class="subheading">Técnico Superior en Programación</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted" data-aos="zoom-in-left" data-aos-duration="1500">Técnico capaz de realizar el ciclo de desarrollo de software, incorporando en ello el análisis de requerimientos, diseño, construcción, pruebas e implementación de soluciones. Su formación lo habilita para diseñar y
-                                        construir sistemas conforme a estándares de calidad técnica y a los requerimientos del cliente</p>
+                                    <p class="text-muted" data-aos="zoom-in-left" data-aos-duration="1500">Técnico capaz de realizar el ciclo de desarrollo de software, incorporando en ello el análisis de requerimientos, diseño, construcción, pruebas e implementación de soluciones. Su formación lo habilita para diseñar y construir sistemas conforme a estándares de calidad técnica y a los requerimientos del cliente</p>
                                 </div>
                             </div>
                         </li>
-                        <li class="list-group-item" style="margin-bottom: 10px;">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/2555355.jpg"></div>
+                        <li class="list-group-item timeline-item">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/2555355.jpg" alt="Análisis de Sistemas"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4 data-aos="zoom-in-right" data-aos-duration="1500">2019</h4>
                                     <h4 data-aos="zoom-in-right" data-aos-duration="1500" class="subheading">Técnico en Análisis de Sistemas</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p data-aos="zoom-in-right" data-aos-duration="1500" class="text-muted">Técnico capaz de analizar sistemas funcionales, supervisarlos, brindar mejoras, desarrollar soluciones informáticas seguras, modelar y graficar procesos de negocios, controlar la calidad del software, administrar proyectos
-                                        informáticos, diseño de sistemas</p>
+                                    <p data-aos="zoom-in-right" data-aos-duration="1500" class="text-muted">Técnico capaz de analizar sistemas funcionales, supervisarlos, brindar mejoras, desarrollar soluciones informáticas seguras, modelar y graficar procesos de negocios, controlar la calidad del software, administrar proyectos informáticos, diseño de sistemas</p>
                                 </div>
                             </div>
                         </li>
-                        <li class="list-group-item timeline-inverted" style="margin-bottom: 10px;">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/3964906.jpg"></div>
+                        <li class="list-group-item timeline-item timeline-inverted">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/3964906.jpg" alt="Ingeniería en Informática"></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4 data-aos="zoom-in-left" data-aos-duration="1500">2021</h4>
                                     <h4 data-aos="zoom-in-left" data-aos-duration="1500" class="subheading">Ingeniero de Ejecución en Informática</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted" data-aos="zoom-in-left" data-aos-duration="1500">Profesional capacitado para realizar y soluciones integrales en desarrollo de sistemas, incorporando el análisis, metodologías, pruebas e implementación de soluciones seguras, su formación lo habilita para evaluar y
-                                        gestionar proyectos informáticos, habilidades de seguridad informática y soluciones basadas en el internet de las cosas<br></p>
+                                    <p class="text-muted" data-aos="zoom-in-left" data-aos-duration="1500">Profesional capacitado para realizar soluciones integrales en desarrollo de sistemas, incorporando el análisis, metodologías, pruebas e implementación de soluciones seguras. Formación que habilita para evaluar y gestionar proyectos informáticos, seguridad informática y soluciones IoT</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item timeline-item">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/MunicipalidadCH.jpg" alt="Municipalidad Chimbarongo"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 data-aos="zoom-in-right" data-aos-duration="1500">2019-2021</h4>
+                                    <h4 data-aos="zoom-in-right" data-aos-duration="1500" class="subheading"><strong>Practicante - Municipalidad Chimbarongo</strong></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted" data-aos="zoom-in-right" data-aos-duration="1500">Práctica profesional de Ingeniería Informática realizando análisis y programación. Soporte, mantención e instalación de sistemas y redes. Desarrollo de programas y mejoras en los sistemas informáticos municipales. Múltiples períodos: ENE 2019 - MAR 2020, ENE 2020 - MAR 2020, FEB 2021 - JUL 2021</p>
+                                    <div class="mt-3">
+                                        <span class="skill-pill">Análisis de Sistemas</span>
+                                        <span class="skill-pill">Programación</span>
+                                        <span class="skill-pill">Redes</span>
+                                        <span class="skill-pill">Soporte Técnico</span>
+                                        <span class="skill-pill">Sistemas Municipales</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item timeline-item timeline-inverted">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/JohnsonFruit.png" alt="Johnson Fruit"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 data-aos="zoom-in-left" data-aos-duration="1500">OCT 2021 - AGO 2024</h4>
+                                    <h4 data-aos="zoom-in-left" data-aos-duration="1500" class="subheading"><strong>Encargado del Área TI - Johnson Fruit</strong></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted" data-aos="zoom-in-left" data-aos-duration="1500">Responsable del área TI en empresa agrícola de producción de fruta. Gestión integral de trazabilidad de productos, desarrollo y programación de sistemas, administración de bases de datos, comunicaciones y redes. Servidores Windows, reparación de equipos, soporte técnico y capacitación informática. Auditor Interno BRC v8.</p>
+                                    <div class="mt-3">
+                                        <span class="skill-pill">Trazabilidad</span>
+                                        <span class="skill-pill">Base de Datos</span>
+                                        <span class="skill-pill">Servidores Windows</span>
+                                        <span class="skill-pill">Redes</span>
+                                        <span class="skill-pill">Auditor BRC v8</span>
+                                        <span class="skill-pill">Soporte Técnico</span>
+                                        <span class="skill-pill">Capacitación</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item timeline-item">
+                            <div class="timeline-image"><img class="rounded-circle img-fluid" data-aos="zoom-in" data-aos-duration="1000" src="assets/img/slep.png" alt="SLEP Colchagua"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 data-aos="zoom-in-right" data-aos-duration="1500">SEPT 2024 - Actualidad</h4>
+                                    <h4 data-aos="zoom-in-right" data-aos-duration="1500" class="subheading"><strong>Desarrollador Full Stack - SLEP Colchagua</strong></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted" data-aos="zoom-in-right" data-aos-duration="1500">Desarrollo y mantención de sistemas institucionales como Libro de Clases Digital, SIMPLE y APIs REST con Python, Flask y SQLAlchemy. Frontend con Angular + PrimeNG. Administración de infraestructura TI para más de 70 establecimientos educacionales. Gestión de proyectos tecnológicos, soporte técnico avanzado y documentación técnica especializada.</p>
+                                    <div class="mt-3">
+                                        <span class="skill-pill">Python</span>
+                                        <span class="skill-pill">Flask</span>
+                                        <span class="skill-pill">SQLAlchemy</span>
+                                        <span class="skill-pill">Angular</span>
+                                        <span class="skill-pill">PrimeNG</span>
+                                        <span class="skill-pill">APIs REST</span>
+                                        <span class="skill-pill">Infraestructura TI</span>
+                                        <span class="skill-pill">Gestión de Proyectos</span>
+                                    </div>
                                 </div>
                             </div>
                         </li>
                         <li class="list-group-item timeline-inverted">
-                            <div data-aos="zoom-in" data-aos-duration="1000" class="timeline-image" style="background-color: rgb(32,148,255);opacity: 1;">
+                            <div data-aos="zoom-in" data-aos-duration="1000" class="timeline-image timeline-end">
                                 <h4>Aún Queda<br>&nbsp;Más Por<br>&nbsp;Aprender<br>&nbsp;</h4>
                             </div>
                         </li>	
                     </ul>
-					<center><br><br><br><h4 align-items-center>Descargar Curriculum Vitae</h4><a href="assets\Curriculum.pdf" target="_blank"><img src="assets\img\descargar-pdf.png" width="80" height="80"><a/><center/>
+					<div class="cv-download">
+						<h4 class="text-center mb-4">Descargar Currículum Vitae</h4>
+						<a href="assets/Curriculum.pdf" target="_blank">
+							<img src="assets/img/descargar-pdf.png" width="80" height="80" alt="Descargar CV" class="cv-icon">
+						</a>
+						<p class="text-muted mt-3">Haz clic en el icono para descargar mi CV completo</p>
+					</div>
 					
                 </div>
             </div>
         </div>
     </section>
-    <section id="contact" style="background-image: url('assets/img/map-image.png');background-color: rgb(0,0,0);padding-top: 100px;padding-bottom: 100px;">
+    <section id="contact" class="contact-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center" style="height: 118px;">
+                <div class="col-lg-12 text-center contact-title">
                     <h2 class="text-uppercase section-heading" data-aos="fade-down" data-aos-duration="1000"><strong>contacto</strong></h2>
                     <h3 data-aos="fade-down" data-aos-duration="1000" class="section-subheading text-muted">Medios Digitales para Contactarme<br></h3>
                 </div>
@@ -317,16 +830,14 @@ body::-webkit-scrollbar-thumb {
                     <form id="contactForm" name="contactForm" novalidate="novalidate">
                         <div class="form-row">
                             <div class="col col-md-6">
-                                <div class="form-group"><small class="form-text text-danger flex-grow-1 help-block lead"></small></div><a href="mailto:alex81459@gmail.com" target="_blank"><i class="fas fa-mail-bulk d-lg-flex justify-content-lg-center" data-bs-hover-animate="rubberBand" style="color: rgb(32,148,255);font-size: 45px;"></i></a>
-                                <p
-                                    class="text-center" data-aos="flip-down" data-aos-duration="1500" style="color: rgb(255,255,255);font-size: 20px;">Correo:&nbsp;<a href="mailto:alex81459@gmail.com" target="_blank">alex81459@gmail.com<br></a></p>
+                                <div class="form-group"><small class="form-text text-danger flex-grow-1 help-block lead"></small></div><a href="mailto:alex81459@gmail.com" target="_blank"><i class="fas fa-mail-bulk d-lg-flex justify-content-lg-center contact-icon" data-bs-hover-animate="rubberBand"></i></a>
+                                <p class="text-center contact-text" data-aos="flip-down" data-aos-duration="1500">Correo:&nbsp;<a href="mailto:alex81459@gmail.com" target="_blank">alex81459@gmail.com<br></a></p>
                                     <div class="form-group"><small class="form-text text-danger help-block lead"></small></div>
                                     <div class="form-group"><small class="form-text text-danger help-block lead"></small></div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group"><small class="form-text text-danger help-block lead"></small></div><a href="https://t.me/alex81459" target="_blank"><i class="fab fa-telegram d-lg-flex justify-content-lg-center" data-bs-hover-animate="rubberBand" style="color: rgb(32,148,255);font-size: 45px;"></i></a>
-                                <p
-                                    class="text-center" data-aos="flip-down" data-aos-duration="1500" style="color: rgb(255,255,255);font-size: 20px;">Telegram:&nbsp;<a href="https://t.me/alex81459" target="_blank">alex81459</a></p>
+                                <div class="form-group"><small class="form-text text-danger help-block lead"></small></div><a href="https://t.me/alex81459" target="_blank"><i class="fab fa-telegram d-lg-flex justify-content-lg-center contact-icon" data-bs-hover-animate="rubberBand"></i></a>
+                                <p class="text-center contact-text" data-aos="flip-down" data-aos-duration="1500">Telegram:&nbsp;<a href="https://t.me/alex81459" target="_blank">alex81459</a></p>
                             </div>
                             <div class="col">
                                 <div class="clearfix"></div>
@@ -352,20 +863,20 @@ body::-webkit-scrollbar-thumb {
             </div>
         </div>
     </section>	
-    <footer style="background-color: rgb(34,38,42);">
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-4"><span class="copyright" style="color: rgb(255,255,255);padding-top: 8px;">Copyright&nbsp;© Alex Salinas Ponce 2022</span></div>
+                <div class="col-md-4"><span class="copyright">Copyright© Alex Salinas Ponce 2026</span></div>
                 <div class="col-md-4">
-                    <ul class="list-inline social-buttons" style="padding-top: 8px;">
+                    <ul class="list-inline social-buttons">
                         <li class="list-inline-item"></li>
-                        <li class="list-inline-item"><a data-bs-hover-animate="rubberBand" href="https://www.facebook.com/AlexSP81/" style="background-color: rgb(32,148,255);" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a data-bs-hover-animate="rubberBand" href="https://www.linkedin.com/in/alex-salinas-ponce-5276691a3" style="background-color: rgb(32,148,255);" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a data-bs-hover-animate="rubberBand" href="https://www.facebook.com/AlexSP81/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a data-bs-hover-animate="rubberBand" href="https://www.linkedin.com/in/alex-salinas-ponce-5276691a3" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks"></ul>
-                    <p style="color: rgb(255,255,255);font-size: 9px;font-family: Montserrat, sans-serif;margin-top: 0px;height: auto;padding-top: 8px;">Política&nbsp;de Privacidad: Esta página respeta la privacidad y anonimato de sus visitantes, no registra ningún tipo de dato que permita la vinculación de alguna persona (visitante), tampoco realiza rastreo mediante cookies , AQUI NO&nbsp; HACEMOS ESO (meme t'challa)</p>
+                    <p class="privacy-policy">Política de Privacidad: Esta página respeta la privacidad y anonimato de sus visitantes, no registra ningún tipo de dato que permita la vinculación de alguna persona, tampoco realiza rastreo mediante cookies.</p>
                 </div>
             </div>
         </div>
@@ -461,69 +972,156 @@ body::-webkit-scrollbar-thumb {
                         </div>
                     </div>
                 </div>
-                <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal1">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-8 mx-auto">
-                                            <div class="modal-body">
-                                                <h2 class="text-uppercase" style="font-size: 33px;">Proyecto Emergencia bomberos</h2>
-                                                <p class="item-intro text-muted"><em>Sistema Informático para la Admnistracion de Emergencias de Bomberos</em></p><img class="img-fluid d-block mx-auto" src="assets/img/bomberos.png">
-                                                <p>Sistema Computacional de Aplicación de Escritorio más Base de Datos local, encargado de Registrar y Organizar los registros de las emergencias de bomberos, sus sistemas de claves, sus diferentes compañías
-                                                    de bomberos, las Coordenadas por GPS de la emergencia, Publicar las emergencias en las redes sociales de Twitter y Facebook para notificar a la comunidad, y despachar automáticamente las señales radiales
-                                                    a las antenas para notificar a las unidades, almacenar la situación de emergencia, el lugar, la descripción de la misma, el oficial a cargo de la emergencia. Y un sistema de gestión de los voluntarios
-                                                    de bomberos, la guía telefónica de los números de contacto de apoyo en emergencias, la ubicación de los Grifos (GPS), la guía de materiales peligrosos y las claves radiales, y un sistema sencillo para
-                                                    hacer copias de seguridad de todos los datos registrados y su restauración en caso de emergencia, la capacidad de llevar los datos a PDF para ser impresos</p>
-                                                <ul class="list-unstyled">
-                                                    <li>Fecha: Febrero 2019</li>
-                                                    <li>Cliente: Bomberos Chimbarongo</li>
-                                                    <li>Categoria: Gestion Emergencias</li>
-                                                </ul><button class="btn btn-primary" data-dismiss="modal" type="button" style="background-color: rgb(32,148,255);"><i class="fa fa-times"></i><span>&nbsp;Cerrar Proyecto</span></button></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal1">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-8 mx-auto">
-                                            <div class="modal-body">
-                                                <h2 class="text-uppercase" style="font-size: 33px;">Proyecto Emergencia bomberos</h2>
-                                                <p class="item-intro text-muted"><em>Sistema Informático para la Admnistracion de Emergencias de Bomberos</em></p><img class="img-fluid d-block mx-auto" src="assets/img/bomberos.png">
-                                                <p>Sistema Computacional de Aplicación de Escritorio más Base de Datos local, encargado de Registrar y Organizar los registros de las emergencias de bomberos, sus sistemas de claves, sus diferentes compañías
-                                                    de bomberos, las Coordenadas por GPS de la emergencia, Publicar las emergencias en las redes sociales de Twitter y Facebook para notificar a la comunidad, y despachar automáticamente las señales radiales
-                                                    a las antenas para notificar a las unidades, almacenar la situación de emergencia, el lugar, la descripción de la misma, el oficial a cargo de la emergencia. Y un sistema de gestión de los voluntarios
-                                                    de bomberos, la guía telefónica de los números de contacto de apoyo en emergencias, la ubicación de los Grifos (GPS), la guía de materiales peligrosos y las claves radiales, y un sistema sencillo para
-                                                    hacer copias de seguridad de todos los datos registrados y su restauración en caso de emergencia, la capacidad de llevar los datos a PDF para ser impresos</p>
-                                                <ul class="list-unstyled">
-                                                    <li>Fecha: Febrero 2019</li>
-                                                    <li>Cliente: Bomberos Chimbarongo</li>
-                                                    <li>Categoria: Gestion Emergencias</li>
-                                                </ul><button class="btn btn-primary" data-dismiss="modal" type="button" style="background-color: rgb(32,148,255);"><i class="fa fa-times"></i><span>&nbsp;Cerrar Proyecto</span></button></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <!-- <script src="assets/js/jquery.min.js"></script> -->
 <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="assets/js/script.min.js"></script>
+    
+    <script>
+        $(window).on('load', function() {
+            setTimeout(function() {
+                $('#loading-overlay').addClass('hidden');
+                setTimeout(function() {
+                    $('#loading-overlay').hide();
+                    startTypingAnimation();
+                }, 500);
+            }, 1500);
+        });
+
+        $(window).scroll(function() {
+            var scrolled = $(this).scrollTop();
+            var rate = scrolled * -0.5;
+            $('.parallax-bg').css('transform', 'translateY(' + rate + 'px)');
+        });
+
+        function startTypingAnimation() {
+            const texts = [
+                "Bienvenido a mi portafolio profesional.",
+                "Soy Alex Salinas Ponce, Ingeniero Informático",
+                "especializado en desarrollo de software y sistemas."
+            ];
+            const subtitle = "Desarrollador de soluciones tecnológicas";
+            
+            let textIndex = 0;
+            let charIndex = 0;
+            let currentText = '';
+            let isDeleting = false;
+            
+            function typeText() {
+                if (textIndex < texts.length) {
+                    if (!isDeleting && charIndex <= texts[textIndex].length) {
+                        currentText = texts[textIndex].substring(0, charIndex);
+                        $('#typing-text').html(currentText + '<span class="typing-cursor"></span>');
+                        charIndex++;
+                        setTimeout(typeText, 100);
+                    } else if (isDeleting && charIndex >= 0) {
+                        currentText = texts[textIndex].substring(0, charIndex);
+                        $('#typing-text').html(currentText + '<span class="typing-cursor"></span>');
+                        charIndex--;
+                        setTimeout(typeText, 50);
+                    } else if (!isDeleting && charIndex > texts[textIndex].length) {
+                        setTimeout(function() {
+                            textIndex++;
+                            charIndex = 0;
+                            if (textIndex < texts.length) {
+                                $('#typing-text').append('<br>');
+                                setTimeout(typeText, 500);
+                            } else {
+                                $('#typing-text').html(texts.join('<br>') + '<span class="typing-cursor"></span>');
+                                setTimeout(typeSubtitle, 1000);
+                            }
+                        }, 2000);
+                    }
+                }
+            }
+            
+            function typeSubtitle() {
+                let subIndex = 0;
+                function typeSubChar() {
+                    if (subIndex <= subtitle.length) {
+                        $('#typing-subtitle').text(subtitle.substring(0, subIndex));
+                        subIndex++;
+                        setTimeout(typeSubChar, 150);
+                    }
+                }
+                typeSubChar();
+            }
+            
+            typeText();
+        }
+
+        function animateProgressBars() {
+            $('.progress-bar').each(function() {
+                const percentage = $(this).data('percentage');
+                $(this).css('width', percentage + '%');
+                $(this).addClass('animate');
+            });
+        }
+
+        $(window).scroll(function() {
+            var scrollTop = $(this).scrollTop();
+            
+            if (scrollTop > 100) {
+                $('#scroll-to-top').addClass('show');
+                $('#breadcrumbs').addClass('show');
+            } else {
+                $('#scroll-to-top').removeClass('show');
+                $('#breadcrumbs').removeClass('show');
+            }
+            
+            if ($('#skills-progress').length && scrollTop >= $('#skills-progress').offset().top - 300) {
+                if (!$('.progress-bar').first().hasClass('animate')) {
+                    animateProgressBars();
+                }
+            }
+        });
+
+        $('#scroll-to-top').click(function() {
+            $('html, body').animate({scrollTop : 0}, 800);
+            return false;
+        });
+
+        $('.filter-btn').click(function() {
+            var filter = $(this).data('filter');
+            
+            $('.filter-btn').removeClass('active');
+            $(this).addClass('active');
+            
+            if (filter === '*') {
+                $('.portfolio-item').removeClass('filtered-out');
+            } else {
+                $('.portfolio-item').addClass('filtered-out');
+                $('.portfolio-item' + filter).removeClass('filtered-out');
+            }
+        });
+
+        $(window).scroll(function() {
+            var scrollPos = $(document).scrollTop();
+            var currentSection = 'Portfolio';
+            
+            if (scrollPos < $('#services').offset().top - 100) {
+                currentSection = 'Inicio';
+            } else if (scrollPos >= $('#services').offset().top - 100 && scrollPos < $('#tech-stack').offset().top - 100) {
+                currentSection = 'Servicios';
+            } else if (scrollPos >= $('#tech-stack').offset().top - 100 && scrollPos < $('#skills-progress').offset().top - 100) {
+                currentSection = 'Stack Técnico';
+            } else if (scrollPos >= $('#skills-progress').offset().top - 100 && scrollPos < $('#portfolio').offset().top - 100) {
+                currentSection = 'Nivel Expertise';
+            } else if (scrollPos >= $('#portfolio').offset().top - 100 && scrollPos < $('#about').offset().top - 100) {
+                currentSection = 'Portafolio';
+            } else if (scrollPos >= $('#about').offset().top - 100 && scrollPos < $('#contact').offset().top - 100) {
+                currentSection = 'Acerca De';
+            } else if (scrollPos >= $('#contact').offset().top - 100) {
+                currentSection = 'Contacto';
+            }
+            
+            $('.breadcrumb-item.active').text(currentSection);
+        });
+    </script>
 </body>
 </html>
