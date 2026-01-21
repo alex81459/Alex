@@ -43,6 +43,7 @@ body::-webkit-scrollbar-thumb:hover {
     border-bottom: 1px solid rgba(32, 148, 255, 0.2);
     box-shadow: var(--shadow-light);
     transition: var(--transition);
+    z-index: 1050;
 }
 
 #mainNav .container {
@@ -61,7 +62,8 @@ body::-webkit-scrollbar-thumb:hover {
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: 0 2px 10px rgba(32, 148, 255, 0.3);
-    padding-right: 20px;
+    padding-right: 0;
+    margin-right: 40px;
 }
 
 @media (min-width: 992px) {
@@ -105,6 +107,7 @@ body::-webkit-scrollbar-thumb:hover {
     border-radius: var(--border-radius);
     padding: 10px 8px;
     margin-top: 10px;
+    margin-left: 20px;
     box-shadow: var(--shadow-heavy);
 }
 
@@ -480,6 +483,32 @@ body::-webkit-scrollbar-thumb:hover {
 .carousel-section .carousel-control-prev:hover,
 .carousel-section .carousel-control-next:hover {
     color: var(--secondary-color);
+}
+
+.carousel-section .carousel-item {
+    position: relative;
+}
+
+.carousel-section .carousel-caption {
+    position: static !important;
+    background: rgba(14, 23, 33, 0.95);
+    padding: 20px !important;
+    margin-top: 0;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.carousel-section .carousel-caption h5 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.carousel-section .carousel-caption p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .about-section {
@@ -1358,13 +1387,23 @@ footer {
 .breadcrumbs-nav {
     background: rgba(14, 23, 33, 0.95);
     backdrop-filter: blur(10px);
-    padding: 10px 0;
+    padding: 8px 0;
     position: fixed;
     top: 80px;
     width: 100%;
     z-index: 1000;
     display: none;
     transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+    .breadcrumbs-nav {
+        padding: 4px 0;
+    }
+    
+    .breadcrumb {
+        font-size: 0.875rem;
+    }
 }
 
 .breadcrumbs-nav.show {
