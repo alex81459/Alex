@@ -394,7 +394,8 @@ body::-webkit-scrollbar-thumb:hover {
     margin-bottom: 10px;
 }
 .portfolio-caption p {
-    color: var(--text-muted);
+    color: #e1e8ed;
+    font-weight: 400;
 }
 .carousel-section .section-title {
     margin-bottom: 20px;
