@@ -12,7 +12,25 @@
     --border-radius: 15px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-* {
+a,
+button,
+.btn,
+.nav-link,
+.navbar-brand,
+.navbar-toggler,
+.service-card,
+.tech-card,
+.portfolio-item,
+.portfolio-item img,
+.contact-icon,
+.social-buttons a,
+.cv-download,
+.cv-download img,
+.fa-stack,
+.skill-item,
+.btn-services,
+.github-profile-link,
+.github-icon {
     transition: var(--transition);
 }
 body::-webkit-scrollbar {
@@ -403,12 +421,6 @@ body::-webkit-scrollbar-thumb:hover {
 .carousel-section .section-subheading {
     margin-bottom: 15px;
 }
-.carousel-section .section-title {
-    margin-bottom: 20px;
-}
-.carousel-section .section-subheading {
-    margin-bottom: 15px;
-}
 .carousel-section {
     background: var(--dark-bg);
     color: var(--text-light);
@@ -515,6 +527,12 @@ body::-webkit-scrollbar-thumb:hover {
     background-attachment: fixed;
     padding: 120px 0;
     position: relative;
+}
+@media (max-width: 991px) {
+    .masthead,
+    .contact-section {
+        background-attachment: scroll;
+    }
 }
 .contact-title {
     margin-bottom: 80px;
@@ -1958,4 +1976,44 @@ footer {
 
 .video-responsive:hover::before {
     opacity: 1;
+}
+
+.portfolio-hover {
+    background-color: rgb(32, 148, 255);
+}
+
+.modal-title-33 {
+    font-size: 33px;
+}
+
+.modal-title-41 {
+    font-size: 41px;
+}
+
+.modal-title-40 {
+    font-size: 40px;
+}
+
+.modal-title-35 {
+    font-size: 35px;
+}
+
+.modal-title-32 {
+    font-size: 32px;
+}
+
+.text-primary-light {
+    color: #009EFF;
+}
+
+.btn-primary-blue {
+    background-color: rgb(32, 148, 255) !important;
+}
+
+.btn-primary-blue:hover {
+    background-color: rgb(28, 130, 220) !important;
+}
+
+.modal-body-no-padding {
+    padding-top: 0px;
 }
