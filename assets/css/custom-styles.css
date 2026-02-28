@@ -457,6 +457,11 @@ body::-webkit-scrollbar-thumb:hover {
     position: relative;
     z-index: 2;
 }
+.service-card .fa-stack {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .fa-stack {
     margin-bottom: 30px;
     transform: scale(1);
