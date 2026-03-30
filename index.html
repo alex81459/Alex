@@ -33,8 +33,7 @@
     <link rel="stylesheet" href="assets/css/custom-styles.css">
 </head>
 
-<body id="page-top"> 
-    <div id="loading-overlay" class="loading-overlay">
+<body id="page-top">     <div id="loading-overlay" class="loading-overlay">
         <div class="loading-spinner">
             <div class="spinner-ring"></div>
             <div class="spinner-ring"></div>
@@ -63,13 +62,14 @@
                 <i class="fa fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav text-uppercase flex-column flex-lg-row ms-auto">
+                <ul class="nav navbar-nav text-uppercase flex-lg-row ms-auto">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#services">SERVICIOS</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#tech-stack">STACK TÉCNICO</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#certifications">CERTIFICACIONES</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#tech-stack">STACK</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#certifications">CERTIFICADOS</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#portfolio">PORTAFOLIO</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#gallery">GALERÍA</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" data-bs-hover-animate="pulse" href="#about">ACERCA DE</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger text-warning fw-bold" data-bs-hover-animate="pulse" href="#contact">CONTACTO</a></li>
                 </ul>
             </div>
         </div>
@@ -87,7 +87,8 @@
                 <div class="intro-heading text-uppercase">
                     <span id="typing-subtitle" data-aos="zoom-in" data-aos-duration="2050" data-aos-delay="1000"></span>
                 </div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger btn-services" role="button" data-aos="zoom-in" data-aos-duration="2000" href="#services">Servicios que brindo</a>
+                <a class="btn btn-hero-gradient text-uppercase js-scroll-trigger btn-services me-2" role="button" data-aos="zoom-in" data-aos-duration="2000" href="#services">Servicios que brindo</a>
+                <a class="btn btn-hero-gradient text-uppercase js-scroll-trigger btn-contact-hero" role="button" data-aos="zoom-in" data-aos-duration="2000" href="#contact">Contáctame</a>
             </div>
         </div>
     </header>
@@ -1727,10 +1728,11 @@
         function startTypingAnimation() {
             const texts = [
                 "Bienvenido a mi portafolio profesional.",
-                "Soy Alex Salinas Ponce, Ingeniero Informático",
-                "especializado en desarrollo de software y sistemas."
+                "Soy Alex Salinas Ponce, Desarrollo sistemas web escalables", 
+                "y gestiono infraestructura tecnológica para organizaciones", 
+                "optimizando procesos, datos y operación digital."
             ];
-            const subtitle = "Desarrollador de soluciones tecnológicas";
+            const subtitle = "Ingeniero Informático | Full Stack + Infraestructura TI";
             
             let textIndex = 0;
             let charIndex = 0;
