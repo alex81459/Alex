@@ -2015,17 +2015,30 @@
             });
         }
 
-        if ('IntersectionObserver' in window) {
-            var impactoObs = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
+        var impactoEl = document.getElementById('impacto');
+        if (impactoEl) {
+            if ('IntersectionObserver' in window) {
+                var impactoObs = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            animateImpactoCounters();
+                            impactoObs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                impactoObs.observe(impactoEl);
+            } else {
+                // Fallback para navegadores sin IntersectionObserver
+                function checkImpactoVisible() {
+                    var rect = impactoEl.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
                         animateImpactoCounters();
-                        impactoObs.unobserve(entry.target);
+                        window.removeEventListener('scroll', checkImpactoVisible);
                     }
-                });
-            }, { threshold: 0.25 });
-            var impactoEl = document.getElementById('impacto');
-            if (impactoEl) impactoObs.observe(impactoEl);
+                }
+                window.addEventListener('scroll', checkImpactoVisible, { passive: true });
+                checkImpactoVisible();
+            }
         }
 
     </script>
