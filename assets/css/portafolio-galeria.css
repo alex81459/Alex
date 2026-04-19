@@ -1,0 +1,175 @@
+.portfolio-section {
+    padding: 120px 0;
+    background: var(--dark-bg-alt);
+    color: var(--text-light);
+    position: relative;
+}
+.portfolio-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(32, 148, 255, 0.3), rgba(0, 212, 255, 0.3), transparent);
+    z-index: 2;
+}
+.portfolio-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%232094ff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+.portfolio-section .container {
+    position: relative;
+    z-index: 2;
+}
+.portfolio-item {
+    margin-bottom: 40px;
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+.portfolio-hover {
+    background: linear-gradient(135deg, rgba(32, 148, 255, 0.9) 0%, rgba(0, 212, 255, 0.9) 100%);
+    border-radius: var(--border-radius);
+}
+.portfolio-item img {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    transition: var(--transition);
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+.portfolio-caption {
+    padding: 25px;
+    background: rgba(14, 23, 33, 0.95) !important;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(32, 148, 255, 0.2);
+    border-top: 1px solid rgba(32, 148, 255, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.portfolio-caption h4 {
+    font-weight: 600;
+    color: #ffffff !important;
+    margin-bottom: 10px;
+}
+.portfolio-caption p,
+.portfolio-caption p.text-muted {
+    color: #b8c5d1 !important;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+/*portafolio de dos niveles */
+.portfolio-group-label {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--secondary-color);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 14px;
+    margin: 10px 0 24px;
+}
+.portfolio-group-label--secondary {
+    color: #8fafc8;
+    border-left-color: rgba(32, 148, 255, 0.4);
+}
+.portfolio-group-label .fa {
+    color: inherit;
+}
+.portfolio-featured {
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: var(--border-radius);
+}
+.portfolio-featured img {
+    height: 300px;
+}
+.portfolio-featured .portfolio-caption {
+    border-top: 2px solid rgba(0, 212, 255, 0.3);
+}
+.carousel-section .section-title {
+    margin-bottom: 20px;
+}
+.carousel-section .section-subheading {
+    margin-bottom: 15px;
+}
+.carousel-section {
+    background: var(--dark-bg);
+    color: var(--text-light);
+    padding: 80px 0;
+    position: relative;
+}
+.carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%232094ff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+.carousel-section .container {
+    position: relative;
+    z-index: 2;
+}
+.carousel-section .carousel-indicators li {
+    background-color: rgba(32, 148, 255, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.carousel-section .carousel-indicators li.active {
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+}
+.carousel-section .carousel-control-prev,
+.carousel-section .carousel-control-next {
+    color: var(--primary-color);
+}
+.carousel-section .carousel-control-prev:hover,
+.carousel-section .carousel-control-next:hover {
+    color: var(--secondary-color);
+}
+.carousel-section .carousel-item {
+    position: relative;
+}
+.carousel-section .carousel-caption {
+    position: static !important;
+    background: rgba(14, 23, 33, 0.95);
+    padding: 20px !important;
+    margin-top: 0;
+    color: var(--text-light);
+    text-align: center;
+}
+.carousel-section .carousel-caption h5 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.carousel-section .carousel-caption p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}

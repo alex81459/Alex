@@ -1,0 +1,446 @@
+@media (max-width: 576px) {
+    .intro-text {
+        padding: 20px 15px 40px;
+    }
+    .intro-lead-in {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        padding: 15px 15px;
+    }
+    .intro-lead-in.normal-mode {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    .intro-heading {
+        font-size: 1.1rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
+        padding: 0 10px;
+        word-break: break-word;
+    }
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    .btn-services,
+    .btn-contact-hero {
+        display: block !important;
+        width: fit-content !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .btn-services {
+        font-size: 14px;
+        padding: 15px 25px;
+        margin-bottom: 15px !important;
+    }
+    .btn-contact-hero {
+        margin-bottom: 0 !important;
+    }
+    .section-heading {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        padding: 0 15px;
+        word-break: break-word;
+    }
+    .section-subheading {
+        font-size: 16px;
+        line-height: 1.4;
+        padding: 0 20px;
+    }
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .certification-card h4,
+    .service-card h4 {
+        font-size: 18px;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    .certification-card p,
+    .service-card p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    .col-md-4,
+    .col-lg-4,
+    .col-sm-6 {
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 480px) {
+    .intro-heading {
+        font-size: 1.1rem;
+        word-break: break-word;
+    }
+    .intro-lead-in {
+        font-size: 16px;
+    }
+    .section-heading {
+        font-size: 1.5rem;
+        word-break: break-word;
+    }
+    .btn-services {
+        font-size: 13px;
+        padding: 12px 20px;
+    }
+}
+@media (max-width: 576px) {
+    .text-uppercase {
+        text-transform: none;
+    }
+    .intro-heading.text-uppercase {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        word-break: break-word;
+    }
+    .certifications-section .section-heading {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        word-break: break-word;
+    }
+    .cert-title {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+    .cert-item {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+    .btn {
+        font-size: 14px;
+        padding: 12px 20px;
+        word-break: break-word;
+    }
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+    #typing-text,
+    #typing-subtitle {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
+@media (max-width: 320px) {
+    .intro-heading {
+        font-size: 1.6rem;
+    }
+    .section-heading {
+        font-size: 1.6rem;
+    }
+    .btn-services {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media (max-width: 414px) {
+    .intro-heading {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        margin-bottom: 15px;
+        word-spacing: -0.5px;
+        letter-spacing: -0.3px;
+        white-space: normal;
+        word-wrap: break-word;
+        text-align: center;
+        padding: 0 18px;
+    }
+    .section-heading {
+        font-size: 1.4rem;
+        line-height: 1.1;
+        margin-bottom: 15px;
+        word-spacing: -1px;
+    }
+    .intro-lead-in {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+    .section-subheading {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+}
+@media (max-width: 375px) {
+    .intro-heading {
+        font-size: 1.3rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
+        word-spacing: -0.5px;
+        letter-spacing: -0.3px;
+        white-space: normal;
+        word-wrap: break-word;
+        text-align: center;
+        padding: 0 20px;
+    }
+    .section-heading {
+        font-size: 1.3rem;
+        line-height: 1.1;
+        margin-bottom: 12px;
+    }
+    .intro-lead-in {
+        font-size: 14px;
+    }
+    .section-subheading {
+        font-size: 13px;
+    }
+}
+@media (max-width: 360px) {
+    .intro-heading {
+        font-size: 1.2rem;
+        line-height: 1.3;
+        word-spacing: -0.5px;
+        letter-spacing: -0.4px;
+        margin-bottom: 8px;
+        white-space: normal;
+        word-wrap: break-word;
+        text-align: center;
+        padding: 0 22px;
+    }
+    .section-heading {
+        font-size: 1.2rem;
+        line-height: 1.0;
+        word-spacing: -2px;
+        letter-spacing: -0.5px;
+    }
+}
+
+@media (max-width: 280px) {
+    .intro-heading {
+        font-size: 0.8rem !important;
+        line-height: 0.85 !important;
+        word-spacing: -4px !important;
+        letter-spacing: -1.5px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-heading {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        line-height: 1.3 !important;
+        font-size: 1rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .intro-text {
+        padding: 15px 15px 30px !important;
+    }
+    
+    .container {
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+    #typing-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+        word-spacing: -0.5px !important;
+        letter-spacing: -0.2px !important;
+        display: block !important;
+        text-align: center !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+    }
+}
+
+@media (max-width: 414px) {
+    #typing-subtitle {
+        font-size: 1.4rem !important;
+        letter-spacing: -0.3px !important;
+        word-spacing: -0.5px !important;
+        line-height: 1.3 !important;
+        padding: 0 18px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    #typing-subtitle {
+        font-size: 1.3rem !important;
+        letter-spacing: -0.3px !important;
+        word-spacing: -0.5px !important;
+        padding: 0 20px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+@media (max-width: 360px) {
+    #typing-subtitle {
+        font-size: 1.2rem !important;
+        letter-spacing: -0.4px !important;
+        word-spacing: -0.5px !important;
+        padding: 0 22px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+@media (max-width: 320px) {
+    #typing-subtitle {
+        font-size: 1.1rem !important;
+        letter-spacing: -0.5px !important;
+        word-spacing: -0.5px !important;
+        transform: none !important;
+        padding: 0 25px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-text {
+        padding: 20px 10px 30px !important;
+    }
+    
+    .intro-heading, #typing-subtitle {
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+        max-width: 100% !important;
+    }
+    
+    .intro .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+    }
+    
+    .portfolio-modal .modal-dialog {
+        max-width: 95% !important;
+        margin: 10px !important;
+    }
+    
+    .portfolio-modal .modal-content {
+        border-radius: 10px !important;
+        overflow: hidden !important;
+    }
+    
+    .portfolio-modal .modal-body {
+        padding: 15px !important;
+    }
+    
+    .portfolio-modal .container {
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    .portfolio-modal iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 200px !important;
+        aspect-ratio: 16/9 !important;
+        border-radius: 8px !important;
+        margin: 15px 0 !important;
+    }
+    
+    .portfolio-modal img {
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 8px !important;
+        margin: 10px 0 !important;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .portfolio-modal p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 15px !important;
+        padding: 0 5px !important;
+        text-align: justify !important;
+    }
+    
+    .portfolio-modal h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+        padding: 0 5px !important;
+        text-align: center !important;
+    }
+    
+    .portfolio-modal a img {
+        width: 80px !important;
+        height: 80px !important;
+        margin: 10px auto !important;
+    }
+    
+    .portfolio-modal .btn {
+        font-size: 14px !important;
+        padding: 10px 20px !important;
+        margin: 15px 5px 5px 5px !important;
+        width: auto !important;
+        display: inline-block !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-modal .modal-dialog {
+        max-width: 98% !important;
+        margin: 5px !important;
+    }
+    
+    .portfolio-modal iframe {
+        min-height: 180px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .portfolio-modal h2 {
+        font-size: 1.3rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .portfolio-modal p {
+        font-size: 13px !important;
+        padding: 0 3px !important;
+    }
+    
+    .portfolio-modal .modal-body {
+        padding: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-modal iframe {
+        min-height: 160px !important;
+    }
+    
+    .portfolio-modal h2 {
+        font-size: 1.2rem !important;
+    }
+    
+    .portfolio-modal p {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .portfolio-modal a img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
+
+

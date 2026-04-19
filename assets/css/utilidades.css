@@ -1,0 +1,326 @@
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 0.5s ease;
+}
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.spinner-ring {
+    width: 80px;
+    height: 80px;
+    border: 4px solid rgba(32, 148, 255, 0.1);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+}
+.spinner-ring:nth-child(1) { animation-delay: 0s; transform: scale(1); }
+.spinner-ring:nth-child(2) { animation-delay: 0.1s; transform: scale(0.8); }
+.spinner-ring:nth-child(3) { animation-delay: 0.2s; transform: scale(0.6); }
+.spinner-ring:nth-child(4) { animation-delay: 0.3s; transform: scale(0.4); }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loading-text {
+    color: var(--text-light);
+    margin-top: 120px;
+    font-size: 1.2rem;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+.breadcrumbs-nav {
+    background: rgba(14, 23, 33, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 8px 0;
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    z-index: 1000;
+    display: none;
+    transition: var(--transition);
+}
+@media (max-width: 768px) {
+    .breadcrumbs-nav {
+        padding: 4px 0;
+    }
+    .breadcrumb {
+        font-size: 0.875rem;
+    }
+}
+.breadcrumbs-nav.show {
+    display: block;
+}
+.breadcrumb {
+    margin: 0;
+    background: transparent;
+}
+.breadcrumb-item {
+    color: var(--text-muted);
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    color: var(--primary-color);
+}
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.breadcrumb-item a:hover {
+    color: var(--secondary-color);
+}
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: var(--transition);
+    z-index: 1000;
+    box-shadow: var(--shadow-heavy);
+}
+.scroll-to-top-btn.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.scroll-to-top-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 15px 35px rgba(32, 148, 255, 0.4);
+}
+.portfolio-filters {
+    margin: 40px 0;
+    text-align: center;
+}
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+.filter-btn:hover,
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+.portfolio-item {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 1;
+    animation: filterIn 0.4s ease forwards;
+}
+.portfolio-item.filtered-out {
+    display: none !important;
+}
+@keyframes filterIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+.parallax-header {
+    position: relative;
+    overflow: hidden;
+}
+.parallax-bg {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="stars" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="0.7" fill="%232094ff" opacity="0.35"/><circle cx="10" cy="10" r="0.4" fill="%2300d4ff" opacity="0.25"/></pattern></defs><rect width="200" height="200" fill="url(%23stars)"/></svg>');
+    transform: translateZ(0);
+    will-change: transform;
+}
+.typing-cursor::after {
+    content: 'â–ˆ';
+    color: #4fc3f7;
+    animation: blink 0.8s step-end infinite;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-left: 2px;
+}
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+.typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+.skills-progress-section {
+    background: var(--dark-bg-alt);
+    color: var(--text-light);
+    padding: 120px 0;
+    position: relative;
+}
+.skills-progress-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%232094ff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+.skills-progress-section .container {
+    position: relative;
+    z-index: 2;
+}
+.skills-column {
+    padding: 20px;
+}
+.skill-progress-item {
+    margin-bottom: 30px;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(32, 148, 255, 0.2);
+    transition: var(--transition);
+}
+.skill-progress-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--primary-color);
+}
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+.skill-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+.skill-percentage {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background: rgba(32, 148, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 5px;
+    width: 0;
+    transition: width 2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+.progress-bar.animate {
+    animation: progressFill 2s ease-in-out;
+}
+@keyframes progressFill {
+    0% { width: 0; }
+}
+@media (max-width: 991px) {
+    #mainNav .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .navbar-toggler {
+        position: relative;
+        z-index: 1051;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        box-shadow: 0 4px 15px rgba(32, 148, 255, 0.3) !important;
+    }
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.25rem rgba(32, 148, 255, 0.5), 0 4px 15px rgba(32, 148, 255, 0.3) !important;
+        outline: none !important;
+    }
+    .navbar-brand {
+        color: var(--primary-color) !important;
+        font-size: 1.3rem !important;
+        font-weight: 700;
+        margin-right: auto;
+    }
+    .navbar-collapse.show .navbar-nav {
+        animation: slideDown 0.3s ease-out;
+    }
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+.carousel-section .carousel {
+    margin-top: 10px;
+}
+.carousel-section .row:first-child {
+    margin-bottom: 20px;
+}
+.carousel-section h2.section-heading {
+    margin-bottom: 15px;
+}
+.carousel-section h3.section-subheading {
+    margin-bottom: 10px;
+}

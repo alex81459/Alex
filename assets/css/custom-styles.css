@@ -43,7 +43,6 @@ html, body {
 }
 .btn-hero-gradient:last-child {
     margin-right: 0;
-}
     font-size: 1.15rem;
     box-shadow: 0 4px 24px rgba(32,148,255,0.10);
     letter-spacing: 1px;
@@ -288,6 +287,9 @@ body::-webkit-scrollbar-thumb:hover {
     position: relative;
     z-index: 2;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 .profile-photo-wrapper {
     margin: 10px auto 15px;
@@ -396,9 +398,9 @@ body::-webkit-scrollbar-thumb:hover {
     max-width: none;
 }
 .intro-heading {
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 2.5vw, 2rem) !important;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.3 !important;
     margin-bottom: 20px;
     text-transform: none;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -407,6 +409,10 @@ body::-webkit-scrollbar-thumb:hover {
     background-clip: text;
     text-shadow: none;
     animation: glow 2s ease-in-out infinite alternate;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    padding: 0 15px;
 }
 @keyframes glow {
     from { filter: drop-shadow(0 0 5px rgba(32, 148, 255, 0.3)); }
@@ -603,6 +609,8 @@ body::-webkit-scrollbar-thumb:hover {
     box-shadow: var(--shadow-light);
     transition: var(--transition);
     z-index: 2;
+    display: flex;
+    flex-direction: column;
 }
 .portfolio-item:hover {
     transform: translateY(-10px);
@@ -613,8 +621,12 @@ body::-webkit-scrollbar-thumb:hover {
     border-radius: var(--border-radius);
 }
 .portfolio-item img {
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     transition: var(--transition);
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
 }
 .portfolio-item:hover img {
     transform: scale(1.05);
@@ -626,6 +638,10 @@ body::-webkit-scrollbar-thumb:hover {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(32, 148, 255, 0.2);
     border-top: 1px solid rgba(32, 148, 255, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .portfolio-caption h4 {
     font-weight: 600;
@@ -637,6 +653,34 @@ body::-webkit-scrollbar-thumb:hover {
     color: #b8c5d1 !important;
     font-weight: 400;
     margin-bottom: 0;
+}
+/*portafolio de dos niveles */
+.portfolio-group-label {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--secondary-color);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 14px;
+    margin: 10px 0 24px;
+}
+.portfolio-group-label--secondary {
+    color: #8fafc8;
+    border-left-color: rgba(32, 148, 255, 0.4);
+}
+.portfolio-group-label .fa {
+    color: inherit;
+}
+.portfolio-featured {
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: var(--border-radius);
+}
+.portfolio-featured img {
+    height: 300px;
+}
+.portfolio-featured .portfolio-caption {
+    border-top: 2px solid rgba(0, 212, 255, 0.3);
 }
 .carousel-section .section-title {
     margin-bottom: 20px;
@@ -925,6 +969,69 @@ footer {
     color: var(--primary-color);
     margin-bottom: 20px;
 }
+/* Modales de proyectos destacados */
+.project-modal-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 6px;
+    text-align: left;
+}
+.project-modal-subtitle {
+    color: #8fafc8;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+    text-align: left;
+}
+.project-detail-block {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    text-align: left;
+}
+.project-detail-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+}
+.project-detail-label .fa {
+    color: inherit;
+}
+.project-detail-block p {
+    margin: 0;
+    color: #c8d8e4;
+    font-size: 0.95rem;
+}
+.project-detail-block ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #c8d8e4;
+    font-size: 0.95rem;
+}
+.project-detail-block ul li {
+    margin-bottom: 5px;
+}
+.project-impact-block {
+    border-left-color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
+}
+.project-impact-block .project-detail-label {
+    color: #10b981;
+}
+.project-modal-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+    justify-content: flex-start;
+}
+
 .btn-modal-close {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border: none;
@@ -1128,6 +1235,71 @@ footer {
         align-self: flex-end;
     }
 }
+/*tags de tecnologias*/
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.tech-tag {
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    border-radius: 25px;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: var(--transition);
+}
+.tech-tag:hover {
+    background: rgba(0, 212, 255, 0.18);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.25);
+}
+.tech-tag.tech-tag-sm {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+}
+/* Capacidades clave list */
+.tech-capabilities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.tech-capabilities li {
+    padding: 12px 15px 12px 42px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+}
+.tech-capabilities li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+}
+.tech-capabilities li:hover {
+    background: rgba(0, 212, 255, 0.08);
+    border-left-color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
 .github-profile-link {
     display: inline-block;
     transition: var(--transition);
@@ -1263,6 +1435,54 @@ footer {
 .certifications-section .container {
     position: relative;
     z-index: 2;
+}
+/* insignias de certifiaciones */
+.cert-featured-row {
+    margin-bottom: 10px;
+}
+.cert-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: var(--border-radius);
+    padding: 20px 12px 16px;
+    transition: var(--transition);
+    height: 100%;
+    gap: 8px;
+}
+.cert-badge:hover {
+    border-color: var(--secondary-color);
+    background: rgba(0, 212, 255, 0.05);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.15);
+}
+.cert-badge-icon {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    filter: drop-shadow(0 2px 8px rgba(0, 212, 255, 0.35));
+}
+.cert-badge span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-light);
+    line-height: 1.2;
+}
+.cert-badge small {
+    font-size: 0.72rem;
+    color: #8fafc8;
+    line-height: 1.2;
+}
+.cert-toggle-btn {
+    border-radius: 25px;
+    padding: 8px 22px;
+    transition: var(--transition);
+}
+.cert-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(32, 148, 255, 0.25);
 }
 .cert-card {
     background: var(--card-bg);
@@ -1418,8 +1638,8 @@ footer {
         padding: 80px 20px;
     }
     .intro-heading {
-        font-size: 2.2rem;
-        line-height: 1.3;
+        font-size: 1.4rem !important;
+        line-height: 1.3 !important;
         padding: 0 10px;
     }
     .intro-lead-in {
@@ -1899,14 +2119,14 @@ footer {
 }
 @media (max-width: 480px) {
     .intro-heading {
-        font-size: 1.8rem;
+        font-size: 1.1rem;
         word-break: break-word;
     }
     .intro-lead-in {
         font-size: 16px;
     }
     .section-heading {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         word-break: break-word;
     }
     .btn-services {

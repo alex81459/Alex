@@ -1,0 +1,124 @@
+.video-responsive {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; 
+    margin: 15px 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+}
+
+.youtube-facade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.youtube-facade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.yt-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px;
+    height: 48px;
+    background: rgba(255, 0, 0, 0.8);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.yt-play-btn::after {
+    content: '';
+    border-style: solid;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 4px;
+}
+
+.youtube-facade:hover .yt-play-btn {
+    background: rgba(255, 0, 0, 1);
+}
+
+.video-responsive::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: var(--text-muted);
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-responsive:hover::before {
+    opacity: 1;
+}
+
+.portfolio-hover {
+    background-color: rgb(32, 148, 255);
+}
+
+.modal-title-33 {
+    font-size: 33px;
+}
+
+.modal-title-41 {
+    font-size: 41px;
+}
+
+.modal-title-40 {
+    font-size: 40px;
+}
+
+.modal-title-35 {
+    font-size: 35px;
+}
+
+.modal-title-32 {
+    font-size: 32px;
+}
+
+.text-primary-light {
+    color: #009EFF;
+}
+
+.btn-primary-blue {
+    background-color: rgb(32, 148, 255) !important;
+}
+
+.btn-primary-blue:hover {
+    background-color: rgb(28, 130, 220) !important;
+}
+
+.modal-body-no-padding {
+    padding-top: 0px;
+}
+

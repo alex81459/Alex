@@ -1,0 +1,13 @@
+/*estilos-modificados.css - hoja principal de estilos para la carga*/
+@import 'variables-base.css';
+@import 'inicio.css';
+@import 'servicios.css';
+@import 'impacto.css';
+@import 'tech-stack.css';
+@import 'certificaciones.css';
+@import 'portafolio-galeria.css';
+@import 'acerca-contacto.css';
+@import 'modales.css';
+@import 'video-y-mas.css';
+@import 'utilidades.css';
+@import 'responsivo.css';
