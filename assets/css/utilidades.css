@@ -60,11 +60,9 @@
     transition: var(--transition);
 }
 @media (max-width: 768px) {
-    .breadcrumbs-nav {
-        padding: 4px 0;
-    }
-    .breadcrumb {
-        font-size: 0.875rem;
+    .breadcrumbs-nav,
+    .breadcrumbs-nav.show {
+        display: none !important;
     }
 }
 .breadcrumbs-nav.show {
