@@ -242,3 +242,43 @@
     color: #7a9bb5;
     font-size: 0.72rem;
 }
+
+//responsivo tarjetas modulos del Libro de Clases Digital
+@media (max-width: 991px) {
+    .impacto-wide-modules {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575px) {
+    .impacto-card-wide {
+        padding: 20px 16px 24px;
+    }
+    .impacto-card-wide-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+    .impacto-label-wide {
+        text-align: center;
+    }
+    .impacto-desc-wide {
+        text-align: center;
+    }
+    .impacto-wide-modules {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .impacto-module {
+        padding: 10px 10px 8px;
+        gap: 8px;
+    }
+    .impacto-module-text {
+        font-size: 0.73rem;
+    }
+    .impacto-module-text small {
+        font-size: 0.66rem;
+    }
+}
