@@ -320,6 +320,7 @@
                 if ($el.hasClass('counted')) return;
                 $el.addClass('counted');
                 var target    = parseInt($el.data('target'), 10);
+                if (isNaN(target)) return;
                 var duration  = 1600;
                 var frameRate = 16;
                 var steps     = duration / frameRate;
