@@ -733,46 +733,60 @@ const formEndpoint = import.meta.env.VITE_FORM_ENDPOINT;
 
 ## Checklist de Migración
 
+**Estado actual:** migración inicial a Astro realizada. El sitio ya renderiza las secciones desde Astro, carga Bootstrap 5 en el layout y conserva jQuery temporalmente solo para la lógica propia pendiente de limpieza.
+
 ### Pre-Migración
 - [ ] Hacer backup del proyecto actual
-- [ ] Documentar todos los scripts y lógica JavaScript
-- [ ] Listar dependencias externas (librerías, APIs, etc.)
+- [x] Documentar todos los scripts y lógica JavaScript
+- [x] Listar dependencias externas (librerías, APIs, etc.)
 - [ ] Verificar que el CSS está bien documentado
 
 ### Fase 1: Preparación
-- [ ] Crear proyecto Astro
-- [ ] Instalar dependencias
-- [ ] Copiar archivos estáticos (img, fonts)
-- [ ] Copiar favicon
+- [x] Crear proyecto Astro
+- [x] Instalar dependencias base en `package.json`
+- [x] Copiar archivos estáticos (img, fonts)
+- [x] Copiar favicon
 
 ### Fase 2: Infraestructura
-- [ ] Crear `MainLayout.astro`
-- [ ] Crear `Navbar.astro`
-- [ ] Crear `Breadcrumbs.astro`
-- [ ] Crear `ScrollToTop.astro`
+- [x] Crear `MainLayout.astro`
+- [x] Crear navbar principal
+- [x] Crear breadcrumbs
+- [x] Crear botón `ScrollToTop`
+- [x] Crear `src/pages/index.astro`
+- [x] Configurar `astro.config.mjs` para GitHub Pages (`site` + `base`)
+- [x] Crear workflow de GitHub Actions para publicar `dist/`
+- [x] Crear iniciadores locales `iniciador.bat` e `iniciador.sh` en puerto 1212
 
 ### Fase 3: Componentes
-- [ ] Convertir `sections/hero.html` → `Hero.astro`
-- [ ] Convertir `sections/impacto.html` → `Impacto.astro`
-- [ ] Convertir `sections/servicios.html` → `Servicios.astro`
-- [ ] Convertir `sections/tech-stack.html` → `TechStack.astro`
-- [ ] Convertir `sections/certificaciones.html` → `Certificaciones.astro`
-- [ ] Convertir `sections/portafolio.html` → `Portafolio.astro`
-- [ ] Convertir `sections/galeria.html` → `Galeria.astro`
-- [ ] Convertir `sections/acerca.html` → `Acerca.astro`
-- [ ] Convertir `sections/contacto.html` → `Contacto.astro`
-- [ ] Convertir `sections/modales.html` → `Modales.astro`
+- [x] Convertir `sections/hero.html` → `Hero.astro`
+- [x] Convertir `sections/impacto.html` → `Impacto.astro`
+- [x] Convertir `sections/servicios.html` → `Servicios.astro`
+- [x] Convertir `sections/tech-stack.html` → `TechStack.astro`
+- [x] Convertir `sections/certificaciones.html` → `Certificaciones.astro`
+- [x] Convertir `sections/portafolio.html` → `Portafolio.astro`
+- [x] Convertir `sections/galeria.html` → `Galeria.astro`
+- [x] Convertir `sections/acerca.html` → `Acerca.astro`
+- [x] Convertir `sections/contacto.html` → `Contacto.astro`
+- [x] Convertir `sections/modales.html` → `Modales.astro`
 
 ### Fase 4: Estilos y Funcionalidad
 - [ ] Migrar todos los CSS a `src/styles/`
+- [x] Copiar CSS y assets actuales a `public/`
+- [x] Migrar lógica de inicialización a `public/assets/js/portfolio-init.js`
+- [x] Migrar de Bootstrap 4 a Bootstrap 5 en la versión Astro
+- [x] Reemplazar atributos `data-toggle`, `data-dismiss`, `data-slide` y `data-ride` por equivalentes `data-bs-*`
+- [x] Reemplazar JS dependiente de plugins jQuery de Bootstrap 4 por `bootstrap5-init.js`
+- [x] Mantener jQuery temporalmente para lógica propia del portafolio
+- [x] Corregir separación visual blanca entre secciones
+- [x] Corregir ícono de Seguridad Informática (`fa-shield-alt`)
 - [ ] Validar animaciones AOS
-- [ ] Validar Bootstrap components
-- [ ] Testear modales
-- [ ] Testear formulario de contacto
+- [ ] Validar Bootstrap components después de la migración a Bootstrap 5
+- [ ] Testear modales después de la migración a Bootstrap 5
+- [x] Verificar sección de contacto
 - [ ] Validar responsive design
 
 ### Fase 5: Testing
-- [ ] `npm run dev` - Verificar en local
+- [x] `npm run dev` - Verificar en local
 - [ ] Validar en móvil
 - [ ] Validar links internos
 - [ ] Validar externa (GitHub, LinkedIn, etc.)
@@ -784,7 +798,8 @@ const formEndpoint = import.meta.env.VITE_FORM_ENDPOINT;
 - [ ] Build: `npm run build`
 - [ ] Preview: `npm run preview`
 - [ ] Subir a GitHub
-- [ ] Conectar en Netlify/Vercel
+- [x] Configurar GitHub Pages vía GitHub Actions
+- [ ] Activar Pages con source **GitHub Actions** en GitHub
 - [ ] Configurar dominio personalizado
 - [ ] Validar certificado SSL
 - [ ] Configurar redirecciones de 301 si es necesario

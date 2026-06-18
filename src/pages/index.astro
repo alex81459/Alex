@@ -1,0 +1,29 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import Impacto from '../components/Impacto.astro';
+import Servicios from '../components/Servicios.astro';
+import TechStack from '../components/TechStack.astro';
+import Certificaciones from '../components/Certificaciones.astro';
+import Portafolio from '../components/Portafolio.astro';
+import Galeria from '../components/Galeria.astro';
+import Acerca from '../components/Acerca.astro';
+import Contacto from '../components/Contacto.astro';
+import Modales from '../components/Modales.astro';
+
+const pageTitle = 'Alex Salinas Ponce - Ingeniero Informático | Desarrollador Full Stack';
+const pageDescription = 'Ingeniero Informático especializado en desarrollo full stack, administración de infraestructura TI, gestión de proyectos tecnológicos y soluciones empresariales. Servicios profesionales en Python, Angular, Flask, bases de datos y más.';
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+  <Hero />
+  <Impacto />
+  <Servicios />
+  <TechStack />
+  <Certificaciones />
+  <Portafolio />
+  <Galeria />
+  <Acerca />
+  <Contacto />
+  <Modales />
+</MainLayout>
