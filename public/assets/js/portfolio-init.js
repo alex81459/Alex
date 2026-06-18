@@ -129,19 +129,20 @@ function startTypingAnimation() {
     if (textIndex < texts.length) {
       if (charIndex <= texts[textIndex].length) {
         currentText = texts[textIndex].substring(0, charIndex);
-        $('#typing-text').html(currentText + '<span class="typing-cursor"></span>');
+        var previousText = texts.slice(0, textIndex).join('<br>');
+        var terminalText = previousText ? previousText + '<br>' + currentText : currentText;
+        $('#typing-text').html(terminalText + '<span class="typing-cursor"></span>');
         charIndex++;
         setTimeout(typeText, 28);
       } else {
         setTimeout(function () {
           textIndex++;
           charIndex = 0;
-          if (textIndex < texts.length) {
-            $('#typing-text').append('<br>');
-            setTimeout(typeText, 200);
-          } else {
+          if (textIndex >= texts.length) {
             $('#typing-text').html(texts.join('<br>') + '<span class="typing-cursor"></span>');
             setTimeout(typeSubtitle, 500);
+          } else {
+            setTimeout(typeText, 200);
           }
         }, 700);
       }
