@@ -115,9 +115,9 @@ function toggleAllCerts() {
 
 function startTypingAnimation() {
   const texts = [
-    'Soy Alex Salinas Ponce.',
-    'Desarrollo sistemas informáticos, APIs e infraestructura TI',
-    'para digitalizar procesos y mejorar la operación de organizaciones.'
+    'Soy Alex Salinas Ponce, desarrollador de software y profesional TI.',
+    'Diseño e implemento sistemas, APIs e infraestructura tecnológica para digitalizar procesos y mejorar la operación.',
+    'Combino desarrollo web, bases de datos, servidores, automatización e integración de sistemas.'
   ];
   const subtitle = 'Ingeniero TI y Desarrollador Full Stack<br>';
 

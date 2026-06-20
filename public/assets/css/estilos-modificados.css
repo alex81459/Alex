@@ -48,8 +48,8 @@ body {
 
 .masthead .intro-lead-in,
 .masthead .intro-lead-in.normal-mode {
-    width: min(760px, calc(100vw - 32px)) !important;
-    min-height: 132px;
+    width: min(840px, calc(100vw - 32px)) !important;
+    min-height: 168px;
     margin: 0 auto 34px !important;
     padding: 52px 30px 26px !important;
     color: #dff8ff !important;
