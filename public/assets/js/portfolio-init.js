@@ -1,250 +1,291 @@
-let latestScrollTop = 0;
-let isTicking = false;
-let sectionOffsets = {};
+(function () {
+  'use strict';
 
-$(document).ready(function () {
-  AOS.init({ once: true, offset: 100 });
-  cacheSectionOffsets();
-  latestScrollTop = $(window).scrollTop();
-  handleScroll();
+  var latestScrollTop = 0;
+  var isTicking = false;
+  var sectionOffsets = {};
 
-  $('.portfolio-modal img').attr('loading', 'lazy');
+  function qs(selector, root) {
+    return (root || document).querySelector(selector);
+  }
 
-  var impactoEl = document.getElementById('impacto');
-  if (impactoEl) {
+  function qsa(selector, root) {
+    return Array.prototype.slice.call((root || document).querySelectorAll(selector));
+  }
+
+  function cacheSectionOffsets() {
+    sectionOffsets = {
+      impacto: getOffsetTop('#impacto'),
+      services: getOffsetTop('#services'),
+      techStack: getOffsetTop('#tech-stack'),
+      portfolio: getOffsetTop('#portfolio'),
+      gallery: getOffsetTop('#gallery'),
+      about: getOffsetTop('#about'),
+      contact: getOffsetTop('#contact'),
+    };
+  }
+
+  function getOffsetTop(selector) {
+    var el = qs(selector);
+    return el ? el.getBoundingClientRect().top + window.scrollY : null;
+  }
+
+  function handleScroll() {
+    var scrollTop = latestScrollTop;
+    var parallaxBg = qs('.parallax-bg');
+    if (parallaxBg) {
+      parallaxBg.style.transform = 'translate3d(0,' + scrollTop * -0.15 + 'px,0)';
+    }
+
+    var showControls = scrollTop > 100;
+    var scrollToTop = qs('#scroll-to-top');
+    var breadcrumbs = qs('#breadcrumbs');
+    if (scrollToTop) scrollToTop.classList.toggle('show', showControls);
+    if (breadcrumbs) breadcrumbs.classList.toggle('show', showControls);
+
+    updateBreadcrumb(scrollTop);
+    isTicking = false;
+  }
+
+  function updateBreadcrumb(scrollTop) {
+    var currentSection = 'Portfolio';
+    if (sectionOffsets.impacto !== null && scrollTop < sectionOffsets.impacto - 100) {
+      currentSection = 'Inicio';
+    } else if (between(scrollTop, sectionOffsets.impacto, sectionOffsets.services)) {
+      currentSection = 'Impacto';
+    } else if (between(scrollTop, sectionOffsets.services, sectionOffsets.techStack)) {
+      currentSection = 'Servicios';
+    } else if (between(scrollTop, sectionOffsets.techStack, sectionOffsets.portfolio)) {
+      currentSection = 'Stack Técnico';
+    } else if (between(scrollTop, sectionOffsets.portfolio, sectionOffsets.gallery)) {
+      currentSection = 'Portafolio';
+    } else if (between(scrollTop, sectionOffsets.gallery, sectionOffsets.about)) {
+      currentSection = 'Galería';
+    } else if (between(scrollTop, sectionOffsets.about, sectionOffsets.contact)) {
+      currentSection = 'Acerca De';
+    } else if (sectionOffsets.contact !== null && scrollTop >= sectionOffsets.contact - 100) {
+      currentSection = 'Contacto';
+    }
+
+    var active = qs('.breadcrumb-item.active');
+    if (active) active.textContent = currentSection;
+  }
+
+  function between(scrollTop, from, to) {
+    return from !== null && to !== null && scrollTop >= from - 100 && scrollTop < to - 100;
+  }
+
+  function toggleAllCerts() {
+    var block = qs('#allCertsBlock');
+    var btn = qs('#certToggleBtn');
+    if (!block || !btn) return;
+
+    if (block.style.display === 'none') {
+      block.style.display = 'block';
+      btn.innerHTML = '<i class="fa fa-minus-circle me-1"></i> Ocultar certificaciones';
+    } else {
+      block.style.display = 'none';
+      btn.innerHTML = '<i class="fa fa-plus-circle me-1"></i> Ver todas las certificaciones';
+    }
+  }
+
+  function startTypingAnimation() {
+    var typingText = qs('#typing-text');
+    var typingSubtitle = qs('#typing-subtitle');
+    if (!typingText || !typingSubtitle) return;
+
+    var texts = [
+      'Soy Alex Salinas Ponce, desarrollador de software y profesional TI.',
+      'Diseño e implemento sistemas, APIs e infraestructura tecnológica para digitalizar procesos y mejorar la operación.',
+      'Combino desarrollo web, bases de datos, servidores, automatización e integración de sistemas.'
+    ];
+    var subtitle = 'Ingeniero TI y Desarrollador Full Stack<br>';
+    var textIndex = 0;
+    var charIndex = 0;
+
+    function typeText() {
+      if (textIndex >= texts.length) return;
+
+      if (charIndex <= texts[textIndex].length) {
+        var currentText = texts[textIndex].substring(0, charIndex);
+        var previousText = texts.slice(0, textIndex).join('<br>');
+        var terminalText = previousText ? previousText + '<br>' + currentText : currentText;
+        typingText.innerHTML = terminalText + '<span class="typing-cursor"></span>';
+        charIndex += 1;
+        window.setTimeout(typeText, 28);
+        return;
+      }
+
+      window.setTimeout(function () {
+        textIndex += 1;
+        charIndex = 0;
+        if (textIndex >= texts.length) {
+          typingText.innerHTML = texts.join('<br>') + '<span class="typing-cursor"></span>';
+          window.setTimeout(typeSubtitle, 500);
+        } else {
+          window.setTimeout(typeText, 200);
+        }
+      }, 700);
+    }
+
+    function typeSubtitle() {
+      qsa('.typing-cursor').forEach(function (cursor) {
+        cursor.remove();
+      });
+
+      var leadIn = qs('.intro-lead-in');
+      var profile = qs('#profile-photo-reveal');
+      if (leadIn) leadIn.classList.add('normal-mode');
+      typingText.innerHTML = texts.join('<br>');
+
+      window.setTimeout(function () {
+        if (profile) profile.classList.add('visible');
+        typingSubtitle.innerHTML = subtitle;
+        typingSubtitle.style.opacity = '1';
+        typingSubtitle.style.transform = 'translateY(0)';
+        typingSubtitle.style.transition = 'all 0.6s ease';
+      }, 900);
+    }
+
+    typeText();
+  }
+
+  function animateImpactoCounters() {
+    qsa('.impacto-number').forEach(function (el) {
+      if (el.classList.contains('counted')) return;
+      el.classList.add('counted');
+
+      var target = parseInt(el.dataset.target, 10);
+      if (Number.isNaN(target)) return;
+
+      var duration = 1600;
+      var frameRate = 16;
+      var steps = duration / frameRate;
+      var increment = target / steps;
+      var current = 0;
+      var isBig = target >= 1000;
+      var timer = window.setInterval(function () {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          window.clearInterval(timer);
+        }
+        el.textContent = isBig ? Math.floor(current).toLocaleString('es-CL') : Math.floor(current);
+      }, frameRate);
+    });
+  }
+
+  function observeImpactoCounters() {
+    var impactoEl = qs('#impacto');
+    if (!impactoEl) return;
+
     if ('IntersectionObserver' in window) {
-      var impactoObs = new IntersectionObserver(function (entries) {
+      var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             animateImpactoCounters();
-            impactoObs.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-      impactoObs.observe(impactoEl);
-    } else {
-      function checkImpactoVisible() {
-        var rect = impactoEl.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          animateImpactoCounters();
-          window.removeEventListener('scroll', checkImpactoVisible);
-        }
+      observer.observe(impactoEl);
+      return;
+    }
+
+    function checkImpactoVisible() {
+      var rect = impactoEl.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        animateImpactoCounters();
+        window.removeEventListener('scroll', checkImpactoVisible);
       }
-      window.addEventListener('scroll', checkImpactoVisible, { passive: true });
-      checkImpactoVisible();
     }
+    window.addEventListener('scroll', checkImpactoVisible, { passive: true });
+    checkImpactoVisible();
   }
 
-  setTimeout(function () {
-    $('#loading-overlay').addClass('hidden');
-    setTimeout(function () {
-      $('#loading-overlay').hide();
-      startTypingAnimation();
-    }, 500);
-  }, 700);
-});
+  function setupPortfolioFilters() {
+    document.addEventListener('click', function (event) {
+      var button = event.target.closest('.filter-btn');
+      if (!button) return;
 
-function cacheSectionOffsets() {
-  sectionOffsets = {
-    impacto: $('#impacto').length ? $('#impacto').offset().top : null,
-    services: $('#services').length ? $('#services').offset().top : null,
-    techStack: $('#tech-stack').length ? $('#tech-stack').offset().top : null,
-    skillsProgress: $('#skills-progress').length ? $('#skills-progress').offset().top : null,
-    portfolio: $('#portfolio').length ? $('#portfolio').offset().top : null,
-    gallery: $('#gallery').length ? $('#gallery').offset().top : null,
-    about: $('#about').length ? $('#about').offset().top : null,
-    contact: $('#contact').length ? $('#contact').offset().top : null
-  };
-}
+      var filter = button.dataset.filter;
+      qsa('.filter-btn').forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+      button.classList.add('active');
 
-function handleScroll() {
-  const scrollTop = latestScrollTop;
-  const rate = scrollTop * -0.15;
-  $('.parallax-bg').css('transform', 'translate3d(0,' + rate + 'px,0)');
-
-  if (scrollTop > 100) {
-    $('#scroll-to-top').addClass('show');
-    $('#breadcrumbs').addClass('show');
-  } else {
-    $('#scroll-to-top').removeClass('show');
-    $('#breadcrumbs').removeClass('show');
+      qsa('.portfolio-item').forEach(function (item) {
+        var shouldShow = filter === '*' || item.matches(filter);
+        item.classList.toggle('filtered-out', !shouldShow);
+      });
+    });
   }
 
-  if (sectionOffsets.skillsProgress !== null && scrollTop >= sectionOffsets.skillsProgress - 300) {
-    if (!$('.progress-bar').first().hasClass('animate')) {
-      animateProgressBars();
+  function setupYoutubeFacades() {
+    document.addEventListener('click', function (event) {
+      var facade = event.target.closest('.youtube-facade');
+      if (!facade) return;
+
+      var id = facade.dataset.yt;
+      if (!id) return;
+
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+    });
+  }
+
+  function setupScrollHandlers() {
+    window.addEventListener('scroll', function () {
+      latestScrollTop = window.scrollY;
+      if (!isTicking) {
+        window.requestAnimationFrame(handleScroll);
+        isTicking = true;
+      }
+    }, { passive: true });
+
+    var scrollToTop = qs('#scroll-to-top');
+    if (scrollToTop) {
+      scrollToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     }
+
+    window.addEventListener('resize', function () {
+      cacheSectionOffsets();
+      latestScrollTop = window.scrollY;
+      handleScroll();
+    }, { passive: true });
   }
 
-  let currentSection = 'Portfolio';
-  if (sectionOffsets.impacto !== null && scrollTop < sectionOffsets.impacto - 100) {
-    currentSection = 'Inicio';
-  } else if (sectionOffsets.impacto !== null && sectionOffsets.services !== null && scrollTop >= sectionOffsets.impacto - 100 && scrollTop < sectionOffsets.services - 100) {
-    currentSection = 'Impacto';
-  } else if (sectionOffsets.services !== null && sectionOffsets.techStack !== null && scrollTop >= sectionOffsets.services - 100 && scrollTop < sectionOffsets.techStack - 100) {
-    currentSection = 'Servicios';
-  } else if (sectionOffsets.techStack !== null && sectionOffsets.skillsProgress !== null && scrollTop >= sectionOffsets.techStack - 100 && scrollTop < sectionOffsets.skillsProgress - 100) {
-    currentSection = 'Stack Técnico';
-  } else if (sectionOffsets.skillsProgress !== null && sectionOffsets.portfolio !== null && scrollTop >= sectionOffsets.skillsProgress - 100 && scrollTop < sectionOffsets.portfolio - 100) {
-    currentSection = 'Nivel Expertise';
-  } else if (sectionOffsets.portfolio !== null && sectionOffsets.gallery !== null && scrollTop >= sectionOffsets.portfolio - 100 && scrollTop < sectionOffsets.gallery - 100) {
-    currentSection = 'Portafolio';
-  } else if (sectionOffsets.gallery !== null && sectionOffsets.about !== null && scrollTop >= sectionOffsets.gallery - 100 && scrollTop < sectionOffsets.about - 100) {
-    currentSection = 'Galería';
-  } else if (sectionOffsets.about !== null && sectionOffsets.contact !== null && scrollTop >= sectionOffsets.about - 100 && scrollTop < sectionOffsets.contact - 100) {
-    currentSection = 'Acerca De';
-  } else if (sectionOffsets.contact !== null && scrollTop >= sectionOffsets.contact - 100) {
-    currentSection = 'Contacto';
-  }
+  document.addEventListener('DOMContentLoaded', function () {
+    qsa('.portfolio-modal img').forEach(function (img) {
+      img.loading = 'lazy';
+    });
 
-  $('.breadcrumb-item.active').text(currentSection);
-  isTicking = false;
-}
+    window.toggleAllCerts = toggleAllCerts;
+    cacheSectionOffsets();
+    latestScrollTop = window.scrollY;
+    handleScroll();
+    observeImpactoCounters();
+    setupPortfolioFilters();
+    setupYoutubeFacades();
+    setupScrollHandlers();
 
-function toggleAllCerts() {
-  var block = document.getElementById('allCertsBlock');
-  var btn = document.getElementById('certToggleBtn');
-  if (block.style.display === 'none') {
-    block.style.display = 'block';
-    btn.innerHTML = '<i class="fa fa-minus-circle me-1"></i> Ocultar certificaciones';
-  } else {
-    block.style.display = 'none';
-    btn.innerHTML = '<i class="fa fa-plus-circle me-1"></i> Ver todas las certificaciones';
-  }
-}
-
-function startTypingAnimation() {
-  const texts = [
-    'Soy Alex Salinas Ponce, desarrollador de software y profesional TI.',
-    'Diseño e implemento sistemas, APIs e infraestructura tecnológica para digitalizar procesos y mejorar la operación.',
-    'Combino desarrollo web, bases de datos, servidores, automatización e integración de sistemas.'
-  ];
-  const subtitle = 'Ingeniero TI y Desarrollador Full Stack<br>';
-
-  let textIndex = 0;
-  let charIndex = 0;
-  let currentText = '';
-
-  function typeText() {
-    if (textIndex < texts.length) {
-      if (charIndex <= texts[textIndex].length) {
-        currentText = texts[textIndex].substring(0, charIndex);
-        var previousText = texts.slice(0, textIndex).join('<br>');
-        var terminalText = previousText ? previousText + '<br>' + currentText : currentText;
-        $('#typing-text').html(terminalText + '<span class="typing-cursor"></span>');
-        charIndex++;
-        setTimeout(typeText, 28);
+    window.setTimeout(function () {
+      var overlay = qs('#loading-overlay');
+      if (overlay) {
+        overlay.classList.add('hidden');
+        window.setTimeout(function () {
+          overlay.style.display = 'none';
+          startTypingAnimation();
+        }, 500);
       } else {
-        setTimeout(function () {
-          textIndex++;
-          charIndex = 0;
-          if (textIndex >= texts.length) {
-            $('#typing-text').html(texts.join('<br>') + '<span class="typing-cursor"></span>');
-            setTimeout(typeSubtitle, 500);
-          } else {
-            setTimeout(typeText, 200);
-          }
-        }, 700);
+        startTypingAnimation();
       }
-    }
-  }
-
-  function typeSubtitle() {
-    $('.typing-cursor').remove();
-    var $leadIn = $('.intro-lead-in');
-    $leadIn.addClass('normal-mode');
-    $('#typing-text').html(texts.join('<br>'));
-
-    setTimeout(function () {
-      $('#profile-photo-reveal').addClass('visible');
-      $('#typing-subtitle').html(subtitle);
-      $('#typing-subtitle').css({ opacity: '0', transform: 'translateY(15px)' });
-      $('#typing-subtitle').animate({ opacity: 1 }, { duration: 600, step: function () {} });
-      setTimeout(function () {
-        $('#typing-subtitle').css({ opacity: '1', transform: 'translateY(0)', transition: 'all 0.6s ease' });
-      }, 50);
-    }, 900);
-  }
-
-  typeText();
-}
-
-function animateProgressBars() {
-  $('.progress-bar').each(function () {
-    const percentage = $(this).data('percentage');
-    $(this).css('width', percentage + '%');
-    $(this).addClass('animate');
+    }, 700);
   });
-}
-
-function animateImpactoCounters() {
-  $('.impacto-number').each(function () {
-    var $el = $(this);
-    if ($el.hasClass('counted')) return;
-    $el.addClass('counted');
-    var target = parseInt($el.data('target'), 10);
-    if (isNaN(target)) return;
-    var duration = 1600;
-    var frameRate = 16;
-    var steps = duration / frameRate;
-    var increment = target / steps;
-    var current = 0;
-    var isBig = target >= 1000;
-    var timer = setInterval(function () {
-      current += increment;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      var display = isBig ? Math.floor(current).toLocaleString('es-CL') : Math.floor(current);
-      $el.text(display);
-    }, frameRate);
-  });
-}
-
-$(window).on('scroll', function () {
-  latestScrollTop = $(this).scrollTop();
-  if (!isTicking) {
-    window.requestAnimationFrame(handleScroll);
-    isTicking = true;
-  }
-});
-
-$('#scroll-to-top').click(function () {
-  $('html, body').animate({ scrollTop: 0 }, 800);
-  return false;
-});
-
-$(document).on('click', '.filter-btn', function () {
-  var filter = $(this).data('filter');
-  $('.filter-btn').removeClass('active');
-  $(this).addClass('active');
-  var $items;
-  if (filter === '*') {
-    $items = $('.portfolio-item');
-  } else {
-    $('.portfolio-item').addClass('filtered-out');
-    $items = $('.portfolio-item' + filter);
-  }
-  $items.removeClass('filtered-out').css('animation', 'none');
-  $items.find('[data-aos]').removeClass('aos-animate').addClass('aos-animate');
-  setTimeout(function () {
-    $items.css('animation', '');
-    AOS.refresh();
-  }, 10);
-});
-
-$(window).on('resize', function () {
-  cacheSectionOffsets();
-  latestScrollTop = $(this).scrollTop();
-  handleScroll();
-});
-
-$(document).on('click', '.youtube-facade', function () {
-  var id = $(this).data('yt');
-  $(this).replaceWith(
-    '<iframe src="https://www.youtube.com/embed/' + id +
-    '?autoplay=1&rel=0&modestbranding=1" frameborder="0" ' +
-    'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
-  );
-});
+})();

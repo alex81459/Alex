@@ -3,7 +3,11 @@
 
   function getTargetFromHash(link) {
     if (!link.hash || link.hash === '#') return null;
-    return document.querySelector(link.hash);
+    try {
+      return document.querySelector(link.hash);
+    } catch (_) {
+      return null;
+    }
   }
 
   function scrollToTarget(event) {
@@ -18,11 +22,8 @@
     }
 
     event.preventDefault();
-    $('html, body').animate(
-      { scrollTop: $(target).offset().top - 54 },
-      1000,
-      'easeInOutExpo'
-    );
+    var targetTop = target.getBoundingClientRect().top + window.scrollY - 54;
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
   }
 
   function hideNavbarCollapse() {
@@ -37,11 +38,7 @@
     var nav = document.getElementById('mainNav');
     if (!nav) return;
 
-    if (window.scrollY > 100) {
-      nav.classList.add('navbar-shrink');
-    } else {
-      nav.classList.remove('navbar-shrink');
-    }
+    nav.classList.toggle('navbar-shrink', window.scrollY > 100);
   }
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -76,12 +73,14 @@
       });
     });
 
-    $('[data-bs-hover-animate]').mouseenter(function () {
-      var $el = $(this);
-      $el.addClass('animated ' + $el.attr('data-bs-hover-animate'));
-    }).mouseleave(function () {
-      var $el = $(this);
-      $el.removeClass('animated ' + $el.attr('data-bs-hover-animate'));
+    document.querySelectorAll('[data-bs-hover-animate]').forEach(function (el) {
+      var animation = el.getAttribute('data-bs-hover-animate');
+      el.addEventListener('mouseenter', function () {
+        el.classList.add('animated', animation);
+      });
+      el.addEventListener('mouseleave', function () {
+        el.classList.remove('animated', animation);
+      });
     });
   });
 })();

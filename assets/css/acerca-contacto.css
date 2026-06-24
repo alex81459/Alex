@@ -117,6 +117,13 @@
     font-weight: 500;
     margin-bottom: 30px;
 }
+.contact-intro {
+    max-width: 820px;
+    margin: 0 auto 34px;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
 .contact-text a {
     color: var(--primary-color);
     text-decoration: none;

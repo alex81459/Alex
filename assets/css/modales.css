@@ -6,7 +6,7 @@
     position: relative;
 }
 .portfolio-modal .modal-dialog {
-    max-width: 800px;
+    max-width: 900px;
     margin: 30px auto;
 }
 .portfolio-modal .modal-close-btn {
@@ -148,4 +148,33 @@
 .cv-download img:hover {
     transform: scale(1.1) rotate(5deg);
     box-shadow: 0 10px 30px rgba(32, 148, 255, 0.4);
+}
+
+/* Estilos para los botones del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(32, 148, 255, 0.6);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 25px;
+    height: 25px;
+    background-size: 25px;
+    filter: brightness(1.2);
 }
