@@ -6,22 +6,6 @@ Portafolio profesional interactivo de **Alex Salinas Ponce**, Ingeniero Informá
 
 ---
 
-## Tabla de Contenidos
-
-- [Descripción](#descripción)
-- [Características](#características)
-- [Tecnologías](#tecnologías)
-- [Requisitos Previos](#requisitos-previos)
-- [Instalación](#instalación)
-- [Arranque del Proyecto](#arranque-del-proyecto)
-- [Scripts Disponibles](#scripts-disponibles)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Construcción para Producción](#construcción-para-producción)
-- [Despliegue](#despliegue)
-- [Contenido del Portafolio](#contenido-del-portafolio)
-
----
-
 ## Descripción
 
 Este es un portafolio web moderno que presenta:
