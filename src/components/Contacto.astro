@@ -5,32 +5,89 @@
                     <h2 class="text-uppercase section-heading"><strong>Contacto</strong></h2>
                     <h3 class="section-subheading text-muted">Medios Digitales para Contactarme<br></h3>
                     <p class="contact-intro">¿Necesitas digitalizar procesos, desarrollar un sistema interno o mejorar tu infraestructura TI? Escríbeme y conversemos una solución.</p>
+                    <p class="contact-intro">Trabajo con instituciones, equipos y empresas que necesitan digitalizar procesos o mejorar su operación tecnológica.</p>
+                    <p class="contact-intro contact-intro-support">Respuesta por correo o LinkedIn.</p>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-12">
                     <div class="row justify-content-center">
-                        <div class="col-lg-3 col-md-6 col-12 mb-4">
-                            <a href="mailto:alex81459@gmail.com" target="_blank" rel="noopener"><i class="fas fa-mail-bulk d-flex justify-content-center contact-icon"></i></a>
-                            <p class="text-center contact-text">Correo:&nbsp;<a href="mailto:alex81459@gmail.com" target="_blank" rel="noopener">alex81459@gmail.com</a></p>
+                        <div class="col-lg-4 col-md-8 col-12 mb-4">
+                            <div class="contact-card contact-card-primary">
+                                <div class="contact-badge">Canal principal</div>
+                                <a href="mailto:alex81459@gmail.com" target="_blank" rel="noopener"><i class="fas fa-mail-bulk d-flex justify-content-center contact-icon"></i></a>
+                                <p class="text-center contact-text">Correo:&nbsp;<a href="mailto:alex81459@gmail.com" target="_blank" rel="noopener">alex81459@gmail.com</a></p>
+                            </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-12 mb-4">
-                            <a href="https://t.me/alex81459" target="_blank" rel="noopener"><i class="fab fa-telegram d-flex justify-content-center contact-icon"></i></a>
-                            <p class="text-center contact-text">Telegram:&nbsp;<a href="https://t.me/alex81459" target="_blank" rel="noopener">alex81459</a></p>
+                            <div class="contact-card">
+                                <a href="https://t.me/alex81459" target="_blank" rel="noopener"><i class="fab fa-telegram d-flex justify-content-center contact-icon"></i></a>
+                                <p class="text-center contact-text">Telegram:&nbsp;<a href="https://t.me/alex81459" target="_blank" rel="noopener">alex81459</a></p>
+                            </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-12 mb-4">
-                            <a href="https://www.linkedin.com/in/alex-salinas-ponce-5276691a3" target="_blank" rel="noopener"><i class="fab fa-linkedin d-flex justify-content-center contact-icon"></i></a>
-                            <p class="text-center contact-text">LinkedIn:&nbsp;<a href="https://www.linkedin.com/in/alex-salinas-ponce-5276691a3" target="_blank" rel="noopener">Alex Salinas Ponce</a></p>
+                            <div class="contact-card">
+                                <a href="https://www.linkedin.com/in/alex-salinas-ponce-5276691a3" target="_blank" rel="noopener"><i class="fab fa-linkedin d-flex justify-content-center contact-icon"></i></a>
+                                <p class="text-center contact-text">LinkedIn:&nbsp;<a href="https://www.linkedin.com/in/alex-salinas-ponce-5276691a3" target="_blank" rel="noopener">Alex Salinas Ponce</a></p>
+                            </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-12 mb-4">
-                            <a href="https://github.com/alex81459" target="_blank" rel="noopener"><i class="fab fa-github d-flex justify-content-center contact-icon"></i></a>
-                            <p class="text-center contact-text">GitHub:&nbsp;<a href="https://github.com/alex81459" target="_blank" rel="noopener">alex81459</a></p>
+                            <div class="contact-card">
+                                <a href="https://github.com/alex81459" target="_blank" rel="noopener"><i class="fab fa-github d-flex justify-content-center contact-icon"></i></a>
+                                <p class="text-center contact-text">GitHub:&nbsp;<a href="https://github.com/alex81459" target="_blank" rel="noopener">alex81459</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>	
+    <style>
+        .contact-intro-support {
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .contact-card {
+            position: relative;
+            height: 100%;
+            padding: 28px 20px 18px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(12px);
+        }
+
+        .contact-card-primary {
+            background: linear-gradient(145deg, rgba(32, 148, 255, 0.18), rgba(0, 212, 255, 0.08));
+            border-color: rgba(32, 148, 255, 0.45);
+            box-shadow: 0 22px 45px rgba(32, 148, 255, 0.22);
+        }
+
+        .contact-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #2094ff 0%, #00d4ff 100%);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            box-shadow: 0 10px 24px rgba(32, 148, 255, 0.28);
+        }
+
+        @media (max-width: 991px) {
+            .contact-card {
+                max-width: 420px;
+                margin: 0 auto;
+            }
+        }
+    </style>
     <footer>
         <div class="container">
             <div class="row">
