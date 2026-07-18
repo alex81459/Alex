@@ -3,7 +3,17 @@
 
   var latestScrollTop = 0;
   var isTicking = false;
-  var sectionOffsets = {};
+  var sectionOffsets = [];
+  var sections = [
+    { selector: '#impacto', label: 'Impacto' },
+    { selector: '#portfolio', label: 'Portafolio' },
+    { selector: '#services', label: 'Servicios' },
+    { selector: '#tech-stack', label: 'Stack' },
+    { selector: '#certifications', label: 'Certificados' },
+    { selector: '#about', label: 'Acerca de' },
+    { selector: '#gallery', label: 'Galeria' },
+    { selector: '#contact', label: 'Contacto' }
+  ];
 
   function qs(selector, root) {
     return (root || document).querySelector(selector);
@@ -14,15 +24,15 @@
   }
 
   function cacheSectionOffsets() {
-    sectionOffsets = {
-      impacto: getOffsetTop('#impacto'),
-      services: getOffsetTop('#services'),
-      techStack: getOffsetTop('#tech-stack'),
-      portfolio: getOffsetTop('#portfolio'),
-      gallery: getOffsetTop('#gallery'),
-      about: getOffsetTop('#about'),
-      contact: getOffsetTop('#contact'),
-    };
+    sectionOffsets = sections.map(function (section) {
+      return {
+        selector: section.selector,
+        label: section.label,
+        top: getOffsetTop(section.selector)
+      };
+    }).filter(function (section) {
+      return section.top !== null;
+    });
   }
 
   function getOffsetTop(selector) {
@@ -39,40 +49,46 @@
 
     var showControls = scrollTop > 100;
     var scrollToTop = qs('#scroll-to-top');
-    var breadcrumbs = qs('#breadcrumbs');
+    var sectionIndicator = qs('#section-indicator');
+    var scrollHud = qs('#scroll-hud');
     if (scrollToTop) scrollToTop.classList.toggle('show', showControls);
-    if (breadcrumbs) breadcrumbs.classList.toggle('show', showControls);
+    if (sectionIndicator) sectionIndicator.classList.toggle('show', showControls);
+    if (scrollHud) scrollHud.classList.toggle('show', showControls);
 
-    updateBreadcrumb(scrollTop);
+    updateScrollProgress(scrollTop);
     isTicking = false;
   }
 
-  function updateBreadcrumb(scrollTop) {
-    var currentSection = 'Portfolio';
-    if (sectionOffsets.impacto !== null && scrollTop < sectionOffsets.impacto - 100) {
-      currentSection = 'Inicio';
-    } else if (between(scrollTop, sectionOffsets.impacto, sectionOffsets.services)) {
-      currentSection = 'Impacto';
-    } else if (between(scrollTop, sectionOffsets.services, sectionOffsets.techStack)) {
-      currentSection = 'Servicios';
-    } else if (between(scrollTop, sectionOffsets.techStack, sectionOffsets.portfolio)) {
-      currentSection = 'Stack Técnico';
-    } else if (between(scrollTop, sectionOffsets.portfolio, sectionOffsets.gallery)) {
-      currentSection = 'Portafolio';
-    } else if (between(scrollTop, sectionOffsets.gallery, sectionOffsets.about)) {
-      currentSection = 'Galería';
-    } else if (between(scrollTop, sectionOffsets.about, sectionOffsets.contact)) {
-      currentSection = 'Acerca De';
-    } else if (sectionOffsets.contact !== null && scrollTop >= sectionOffsets.contact - 100) {
-      currentSection = 'Contacto';
+  function updateScrollProgress(scrollTop) {
+    var sectionIndicator = qs('#section-indicator');
+    var sectionValue = qs('#section-indicator-value');
+    var sectionLabel = qs('.section-indicator-label');
+    var doc = document.documentElement;
+    var maxScroll = Math.max(doc.scrollHeight - window.innerHeight, 1);
+    var progress = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+    var currentSection = getCurrentSection(scrollTop);
+
+    if (sectionLabel) {
+      sectionLabel.textContent = currentSection;
     }
 
-    var active = qs('.breadcrumb-item.active');
-    if (active) active.textContent = currentSection;
+    if (sectionValue) {
+      sectionValue.textContent = Math.round(progress * 100) + '%';
+    }
   }
 
-  function between(scrollTop, from, to) {
-    return from !== null && to !== null && scrollTop >= from - 100 && scrollTop < to - 100;
+  function getCurrentSection(scrollTop) {
+    if (!sectionOffsets.length || scrollTop < sectionOffsets[0].top - 120) {
+      return 'Inicio';
+    }
+
+    for (var i = sectionOffsets.length - 1; i >= 0; i -= 1) {
+      if (scrollTop >= sectionOffsets[i].top - 120) {
+        return sectionOffsets[i].label;
+      }
+    }
+
+    return 'Inicio';
   }
 
   function toggleAllCerts() {
@@ -95,9 +111,9 @@
     if (!typingText || !typingSubtitle) return;
 
     var texts = [
-      'Soy Alex Salinas Ponce, desarrollador de software y profesional TI.',
-      'Diseño e implemento sistemas, APIs e infraestructura tecnológica para digitalizar procesos y mejorar la operación.',
-      'Combino desarrollo web, bases de datos, servidores, automatización e integración de sistemas.'
+      'Soy Alex Salinas Ponce, ingeniero TI y desarrollador de software.',
+      'Desarrollo sistemas, APIs e infraestructura tecnológica para instituciones y empresas que necesitan digitalizar procesos y operar mejor.',
+      'Combino desarrollo web, bases de datos, servidores, automatización e integración de sistemas para resolver necesidades reales.'
     ];
     var subtitle = 'Ingeniero TI y Desarrollador Full Stack<br>';
     var textIndex = 0;

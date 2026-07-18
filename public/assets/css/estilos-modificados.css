@@ -113,10 +113,10 @@ body {
     display: block;
     position: relative;
     z-index: 2;
-    color: #42e7ff;
+    color: #63ddff;
     text-shadow:
-        0 0 14px rgba(0, 212, 255, 0.38),
-        0 2px 12px rgba(0, 0, 0, 0.75);
+        0 0 10px rgba(0, 212, 255, 0.22),
+        0 2px 10px rgba(0, 0, 0, 0.72);
 }
 
 .typing-cursor,

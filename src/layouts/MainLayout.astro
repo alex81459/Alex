@@ -64,18 +64,16 @@ const previewImage = 'https://alex81459.github.io/Alex/assets/img/preview.webp';
       </div>
     </div>
 
-    <nav id="breadcrumbs" class="breadcrumbs-nav" aria-label="breadcrumb">
-      <div class="container">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#page-top">Inicio</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Inicio</li>
-        </ol>
+    <div id="scroll-hud" class="scroll-hud" aria-live="polite">
+      <div id="section-indicator" class="section-indicator">
+        <span class="section-indicator-label">Inicio</span>
+        <span id="section-indicator-value" class="section-indicator-value">0%</span>
       </div>
-    </nav>
 
-    <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Volver arriba">
-      <i class="fa fa-chevron-up"></i>
-    </button>
+      <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Volver arriba">
+        <i class="fa fa-chevron-up"></i>
+      </button>
+    </div>
 
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
       <div class="container">
@@ -105,5 +103,219 @@ const previewImage = 'https://alex81459.github.io/Alex/assets/img/preview.webp';
     <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script is:inline src={`${base}assets/js/bootstrap5-init.js`}></script>
     <script is:inline src={`${base}assets/js/portfolio-init.js`}></script>
+    <style>
+      .scroll-hud {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        z-index: 1100;
+        pointer-events: none;
+      }
+
+      .scroll-hud .scroll-to-top-btn {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        pointer-events: auto;
+        z-index: 1;
+      }
+
+      .section-indicator {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        width: max-content;
+        max-width: max-content;
+        border-radius: 999px;
+        background: rgba(13, 22, 31, 0.88);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(14px);
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+        z-index: 1100;
+        pointer-events: none;
+        white-space: nowrap;
+        filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.24));
+      }
+
+      .section-indicator.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section-indicator-label {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .section-indicator-value {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 52px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, rgba(32, 148, 255, 0.26), rgba(0, 212, 255, 0.18));
+        color: #fff;
+        font-size: 0.82rem;
+      }
+
+      @media (max-width: 1314.98px) {
+        #mainNav .container {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: flex-start;
+          max-width: 100%;
+          gap: 0;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        #mainNav .navbar-brand {
+          order: 1;
+          margin-right: auto;
+          gap: 8px;
+          max-width: calc(100% - 76px);
+          color: var(--primary-color) !important;
+          font-size: 1.3rem !important;
+          font-weight: 700;
+        }
+
+        #mainNav .navbar-brand-mark {
+          width: 34px;
+          height: 34px;
+          flex-basis: 34px;
+          border-radius: 9px;
+          font-size: 0.92rem;
+        }
+
+        #mainNav .navbar-brand-name {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        #mainNav .navbar-toggler {
+          display: block !important;
+          order: 2;
+          position: relative;
+          z-index: 1051;
+          margin-left: auto;
+        }
+
+        #mainNav .navbar-collapse {
+          display: none !important;
+          position: fixed !important;
+          top: 80px !important;
+          left: 0 !important;
+          right: 0 !important;
+          order: 3;
+          width: 100%;
+          max-width: 100%;
+          max-height: calc(100vh - 80px);
+          overflow-y: auto;
+          margin-top: 0;
+          padding: 0;
+          background: rgba(14, 23, 33, 0.95);
+          backdrop-filter: blur(10px);
+          border-radius: 0 0 15px 15px;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        #mainNav .navbar-collapse.show {
+          display: block !important;
+          width: 100%;
+        }
+
+        #mainNav .navbar-collapse.collapsing {
+          display: block !important;
+          width: 100%;
+        }
+
+        #mainNav .navbar-nav {
+          position: static !important;
+          width: 100%;
+          margin-left: 0 !important;
+          background: rgba(14, 23, 33, 0.95);
+          backdrop-filter: blur(10px);
+          border-radius: 0 0 15px 15px;
+          padding: 15px 0;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+          flex-direction: column !important;
+          align-items: flex-start;
+          text-align: left;
+        }
+
+        #mainNav .navbar-collapse.show .navbar-nav {
+          animation: navSlideDown1315 0.3s ease-out;
+        }
+
+        #mainNav .nav-link {
+          display: block;
+          width: 100%;
+          padding: 12px 25px !important;
+          margin: 0;
+          border-radius: 0;
+          white-space: normal;
+          background: transparent;
+          border-color: transparent;
+          box-shadow: none;
+          transform: none;
+        }
+
+        #mainNav .nav-link:hover {
+          background: rgba(32, 148, 255, 0.1);
+          border-color: transparent;
+          transform: none;
+          box-shadow: none;
+        }
+      }
+
+      @keyframes navSlideDown1315 {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-hud {
+          right: 16px;
+          bottom: 16px;
+          gap: 8px;
+        }
+
+        .scroll-hud .scroll-to-top-btn {
+          right: auto;
+          bottom: auto;
+        }
+
+        .section-indicator {
+          padding: 10px 14px;
+          font-size: 0.84rem;
+        }
+
+        .section-indicator-value {
+          min-width: 46px;
+          font-size: 0.76rem;
+        }
+      }
+    </style>
   </body>
 </html>
