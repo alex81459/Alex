@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /node_modules/
+
+Sitemap: https://alex81459.github.io/Alex/sitemap.xml
+
+# Delay for aggressive crawlers
+User-agent: AhrefsBot
+User-agent: SemrushBot
+Crawl-delay: 10

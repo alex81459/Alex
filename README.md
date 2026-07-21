@@ -1,22 +1,40 @@
 # Portafolio Web - Alex Salinas Ponce
 
-Portafolio profesional interactivo de **Alex Salinas Ponce**, Ingeniero Informático especializado en desarrollo full stack, administración de infraestructura TI y gestión de proyectos tecnológicos.
+Portafolio profesional interactivo de **Alex Salinas Ponce**, Desarrollador Full Stack especializado en desarrollo full stack, administración de infraestructura TI y gestión de proyectos tecnológicos.
 
 **Sitio en vivo:** [alex81459.github.io/Alex](https://alex81459.github.io/Alex/)
+
+**Website:** [https://alex81459.github.io/Alex/](https://alex81459.github.io/Alex/)
+
+**Topics:** `web-development`, `full-stack`, `portfolio`, `astro`, `bootstrap5`, `typescript`, `frontend`, `backend`, `github-pages`, `responsive-design`
 
 ---
 
 ## Descripción
 
-Este es un portafolio web moderno que presenta:
+Portafolio web moderno, optimizado para rendimiento y SEO, que presenta la experiencia y proyectos de un Desarrollador Full Stack con experiencia en:
 
-- **Proyectos destacados**: Libro de Clases Digital, Trámites Online Institucional, Sistema de Tareas y Proyectos
-- **Automatización Industrial**: Trazabilidad Documental, Sistema de Etiquetado Industrial
-- **Galería de proyectos**: Con carrusel de proyectos y casos de éxito
-- **Certificaciones**: Listado completo de certificaciones profesionales
-- **Información de impacto**: Métricas de proyectos implementados
-- **Sección de servicios**: Servicios profesionales disponibles
-- **Stack tecnológico**: Tecnologías y herramientas dominadas
+### Expertise
+- **Desarrollo Full Stack**: Aplicaciones web con Python, JavaScript, Angular, Flask y Node.js
+- **Infraestructura TI**: Administración de sistemas Linux, gestión de servidores y servicios
+- **APIs REST**: Diseño e implementación de APIs robustas y escalables
+- **Bases de Datos**: SQL, modelado y optimización de consultas
+- **DevOps**: Automatización, CI/CD y deployment en GitHub Pages
+
+### Proyectos Destacados
+- **Libro de Clases Digital**: Sistema web completo para gestión académica
+- **Trámites Online Institucional**: Plataforma gubernamental con ClaveÚnica
+- **Sistema de Tareas y Proyectos**: Herramienta de gestión colaborativa
+- **Trazabilidad Documental**: Sistema de automatización industrial
+- **Evaluaciones Online**: Plataforma centralizada de evaluaciones
+
+### Secciones Incluidas
+- Galería interactiva con carrusel de proyectos
+- Modales informativos con detalles de cada proyecto
+- Certificaciones profesionales verificadas
+- Métricas de impacto de proyectos implementados
+- Stack tecnológico con herramientas dominadas
+- Información de contacto y redes sociales
 
 ---
 

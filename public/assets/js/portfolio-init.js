@@ -110,12 +110,29 @@
     var typingSubtitle = qs('#typing-subtitle');
     if (!typingText || !typingSubtitle) return;
 
+    // Respetar prefers-reduced-motion
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     var texts = [
-      'Soy Alex Salinas Ponce, ingeniero TI y desarrollador de software.',
+      'Soy Alex Salinas Ponce, Desarrollador Full Stack.',
       'Desarrollo sistemas, APIs e infraestructura tecnológica para instituciones y empresas que necesitan digitalizar procesos y operar mejor.',
       'Combino desarrollo web, bases de datos, servidores, automatización e integración de sistemas para resolver necesidades reales.'
     ];
-    var subtitle = 'Ingeniero TI y Desarrollador Full Stack<br>';
+    var subtitle = 'Desarrollador Full Stack<br>';
+    
+    // Si el usuario prefiere menos movimiento, mostrar todo inmediatamente
+    if (prefersReducedMotion) {
+      typingText.innerHTML = texts.join('<br>');
+      var leadIn = qs('.intro-lead-in');
+      var profile = qs('#profile-photo-reveal');
+      if (leadIn) leadIn.classList.add('normal-mode');
+      if (profile) profile.classList.add('visible');
+      typingSubtitle.innerHTML = subtitle;
+      typingSubtitle.style.opacity = '1';
+      typingSubtitle.style.transform = 'translateY(0)';
+      return;
+    }
+
     var textIndex = 0;
     var charIndex = 0;
 
@@ -128,7 +145,7 @@
         var terminalText = previousText ? previousText + '<br>' + currentText : currentText;
         typingText.innerHTML = terminalText + '<span class="typing-cursor"></span>';
         charIndex += 1;
-        window.setTimeout(typeText, 28);
+        window.setTimeout(typeText, 16);
         return;
       }
 
@@ -137,11 +154,11 @@
         charIndex = 0;
         if (textIndex >= texts.length) {
           typingText.innerHTML = texts.join('<br>') + '<span class="typing-cursor"></span>';
-          window.setTimeout(typeSubtitle, 500);
+          window.setTimeout(typeSubtitle, 250);
         } else {
-          window.setTimeout(typeText, 200);
+          window.setTimeout(typeText, 100);
         }
-      }, 700);
+      }, 300);
     }
 
     function typeSubtitle() {
@@ -160,7 +177,7 @@
         typingSubtitle.style.opacity = '1';
         typingSubtitle.style.transform = 'translateY(0)';
         typingSubtitle.style.transition = 'all 0.6s ease';
-      }, 900);
+      }, 400);
     }
 
     typeText();

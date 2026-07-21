@@ -101,6 +101,13 @@
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -1px;
 }
+.impacto-label-prefix {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #00d4ff;
+    margin-right: 5px;
+    display: inline-block;
+}
 .impacto-suffix {
     font-size: 1.8rem;
     font-weight: 900;

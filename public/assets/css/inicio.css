@@ -225,3 +225,29 @@
     box-shadow: 0 15px 40px rgba(32, 148, 255, 0.4);
     background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
 }
+
+/* Respeta prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .masthead::before {
+        animation: none;
+    }
+
+    .profile-photo-wrapper {
+        animation: none;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .profile-photo-wrapper.visible {
+        animation: none;
+    }
+
+    .intro-heading {
+        animation: none;
+    }
+
+    .btn-services::before,
+    .btn-contact-hero::before {
+        transition: none;
+    }
+}
