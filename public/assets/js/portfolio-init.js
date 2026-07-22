@@ -295,9 +295,10 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    qsa('.portfolio-modal img').forEach(function (img) {
-      img.loading = 'lazy';
-    });
+    // Nota: loading="lazy" ahora está configurado directamente en HTML para las imágenes de modales
+    // qsa('.portfolio-modal img').forEach(function (img) {
+    //   img.loading = 'lazy';
+    // });
 
     window.toggleAllCerts = toggleAllCerts;
     cacheSectionOffsets();
