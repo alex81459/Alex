@@ -6,7 +6,7 @@ interface Props {
 
 const {
   title = 'Alex Salinas Ponce - Desarrollador Full Stack',
-  description = 'Desarrollador Full Stack especializado en desarrollo full stack, administración de infraestructura TI, gestión de proyectos tecnológicos y soluciones empresariales. Servicios profesionales en Python, Angular, Flask, bases de datos y más.',
+  description = 'Ingeniero Informático especializado en desarrollo full stack, automatización industrial e infraestructura TI. Python, Angular, Flask y soluciones empresariales.',
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL;
@@ -42,36 +42,39 @@ const previewImage = 'https://alex81459.github.io/Alex/assets/img/preview.webp';
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Alex Salinas Ponce",
-      "jobTitle": "Desarrollador Full Stack",
-      "image": previewImage,
-      "url": siteUrl,
-      "sameAs": [
-        "https://github.com/alex81459",
-        "https://www.linkedin.com/in/alex-salinas-ponce-5276691a3"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "SLEP Colchagua"
-      },
-      "knowsAbout": [
-        "Python",
-        "JavaScript",
-        "Angular",
-        "Flask",
-        "Node.js",
-        "SQL",
-        "APIs REST",
-        "Web Development",
-        "Full Stack Development",
-        "IT Infrastructure"
-      ],
-      "email": "alex81459@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "CL",
-        "addressRegion": "O'Higgins"
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Alex Salinas Ponce",
+        "jobTitle": "Ingeniero Informático",
+        "image": previewImage,
+        "url": siteUrl,
+        "sameAs": [
+          "https://github.com/alex81459",
+          "https://www.linkedin.com/in/alex-salinas-ponce-5276691a3"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "SLEP Colchagua"
+        },
+        "knowsAbout": [
+          "Python",
+          "JavaScript",
+          "Angular",
+          "Flask",
+          "Node.js",
+          "SQL",
+          "APIs REST",
+          "Web Development",
+          "Full Stack Development",
+          "IT Infrastructure",
+          "Industrial Automation"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CL",
+          "addressRegion": "O'Higgins"
+        }
       }
     })} />
     </script>
