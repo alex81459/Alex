@@ -814,7 +814,7 @@ body::-webkit-scrollbar-thumb:hover {
     100% { transform: scale(1); }
 }
 .contact-section {
-    background: linear-gradient(135deg, rgba(14, 23, 33, 0.95) 0%, rgba(26, 35, 50, 0.95) 100%), url('../img/map-image.png');
+    background: linear-gradient(135deg, rgba(14, 23, 33, 0.95) 0%, rgba(26, 35, 50, 0.95) 100%), url('../img/map-image.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
