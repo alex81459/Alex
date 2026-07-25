@@ -1,217 +1,172 @@
-    <section id="impacto" class="impacto-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center section-title">
-                    <h2 class="text-uppercase section-heading text-gradient">Impacto Profesional</h2>
-                    <div class="impacto-autoria">
-                        <i class="fa fa-code"></i>Desarrollador Full Stack responsable de sistemas institucionales en operación para más de 70 establecimientos educacionales.
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 justify-content-center impacto-cards-row">
+---
+const metricas = [
+  {
+    icon: 'fa-cubes',
+    target: '15',
+    value: '15',
+    suffix: '+',
+    label: 'Trámites Implementados',
+    desc: 'Procesos institucionales digitalizados, operativos en producción y con trazabilidad completa',
+  },
+  {
+    icon: 'fa-file-text-o',
+    target: '10000',
+    value: '10.000',
+    suffix: '+',
+    label: 'Ingresos a Trámites / año',
+    desc: 'Solicitudes y flujos administrativos procesados anualmente en la plataforma institucional',
+  },
+  {
+    icon: 'fa-check-circle',
+    target: '100',
+    value: '100',
+    suffix: '%',
+    label: 'Cobertura de Evaluaciones Digitales',
+    desc: 'Sistema de evaluación implantado en Programa 01 de acuerdo con la Circular N°30 del Ministerio de Educación',
+  },
+  {
+    icon: 'fa-shield',
+    target: '140',
+    value: '140',
+    suffix: '+',
+    label: 'Casos en Canal de Denuncias Online',
+    desc: 'Denuncias gestionadas en el canal institucional digital conforme a Ley Karin (Ley N°21.643), desarrollado por mí',
+  },
+  {
+    icon: 'fa-exchange',
+    target: '18000',
+    value: '18.000',
+    suffix: '+',
+    label: 'Interacciones con APIs Institucionales Desarrolladas',
+    desc: 'Consultas e integraciones procesadas entre 8 APIs institucionales conectadas',
+  },
+  {
+    icon: 'fa-gavel',
+    target: '24',
+    value: '24',
+    suffix: '',
+    label: 'Procesos de Licitaciones TIC',
+    desc: 'Bases técnicas, evaluaciones y adjudicaciones en compras públicas TIC',
+  },
+  {
+    icon: 'fa-lightbulb-o',
+    target: '20',
+    value: '20',
+    suffix: '',
+    label: 'Proyectos TIC Formulados',
+    desc: 'Iniciativas tecnológicas diseñadas y ejecutadas íntegramente para la institución',
+  },
+  {
+    icon: 'fa-headphones',
+    target: '1200',
+    value: '1.200',
+    suffix: '+',
+    label: 'Atenciones Operativas y Soporte',
+    desc: 'Incidencias, mantenciones y soporte técnico resueltos para usuarios y establecimientos',
+  },
+  {
+    icon: 'fa-clock-o',
+    target: '15',
+    value: '15',
+    suffix: ' min',
+    label: 'Búsqueda Documental (antes: 3 horas)',
+    desc: 'Trazabilidad documental de más de 150 documentos para exportación redujo el tiempo de búsqueda y consolidación de 3 horas a 15 minutos',
+  },
+  {
+    icon: 'fa-trophy',
+    target: '',
+    value: 'A+',
+    suffix: '',
+    label: 'Certificación BRC Internacional',
+    desc: 'Calificación BRC (British Retail Consortium) mediante implementación de sistema de trazabilidad documental automatizado',
+  },
+  {
+    icon: 'fa-dollar',
+    target: '35',
+    value: '35',
+    suffix: 'M',
+    prefix: '≈ CLP',
+    label: 'Ahorro en Etiquetado Industrial',
+    desc: 'Reducción de pérdidas por errores de etiquetado mediante automatización con Raspberry Pi, PLCs, impresoras térmicas, base de datos y sistemas de control en Python y C#',
+  },
+];
 
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-cubes impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number" data-target="13">13</span><span class="impacto-suffix">+</span>
-                        </div>
-                        <div class="impacto-label">Trámites Implementados</div>
-                        <p class="impacto-desc">Plataforma web institucional con módulos funcionales desplegados en producción</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-file-text-o impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number" data-target="5000">5.000</span><span class="impacto-suffix">+</span>
-                        </div>
-                        <div class="impacto-label">Ingresos a Trámites / año</div>
-                        <p class="impacto-desc">Trámites digitalizados procesados anualmente en la plataforma institucional</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-check-circle impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number" data-target="100">100</span><span class="impacto-suffix">%</span>
-                        </div>
-                        <div class="impacto-label">Cobertura de Evaluaciones Digitales</div>
-                        <p class="impacto-desc">Sistema de evaluación implantado en Programa 01 de acuerdo con la Circular N°30 del Ministerio de Educación</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-shield impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number" data-target="70">70</span><span class="impacto-suffix">+</span>
-                        </div>
-                        <div class="impacto-label">Casos en Canal de Denuncias Online</div>
-                        <p class="impacto-desc">Denuncias gestionadas a través del canal institucional digital acorde a Ley Karin (Ley N°21.643)</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-exchange impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number" data-target="12000">12.000</span><span class="impacto-suffix">+</span>
-                        </div>
-                        <div class="impacto-label">Interacciones con APIs Institucionales Desarrolladas</div>
-                        <p class="impacto-desc">Consultas e integraciones procesadas entre 5 APIs institucionales conectadas</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-gavel impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number" data-target="24">24</span>
-                        </div>
-                        <div class="impacto-label">Procesos de Licitaciones TIC</div>
-                        <p class="impacto-desc">Bases técnicas, evaluaciones y adjudicaciones en compras públicas TIC</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-lightbulb-o impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number" data-target="20">20</span>
-                        </div>
-                        <div class="impacto-label">Proyectos TIC Formulados</div>
-                        <p class="impacto-desc">Iniciativas tecnológicas diseñadas y ejecutadas íntegramente para la institución</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-headphones impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number" data-target="1000">1.000</span><span class="impacto-suffix">+</span>
-                        </div>
-                        <div class="impacto-label">Atenciones Operativas y Soporte</div>
-                        <p class="impacto-desc">Tickets, mantenciones y soporte técnico resueltos a usuarios y establecimientos</p>
-                    </div>
-                </div>
+const modulosLibro = [
+  { icon: 'fa-bell', title: 'Sistema de Notificaciones', detail: 'En app y correo electrónico' },
+  { icon: 'fa-users', title: 'Configuración y Administración', detail: 'Gestión centralizada de usuarios y roles' },
+  { icon: 'fa-warning', title: 'Registro de Anotaciones', detail: 'Incidentes y Disciplina' },
+  { icon: 'fa-download', title: 'Visualización y Exportación', detail: 'Anotaciones con reportes descargables' },
+  { icon: 'fa-bar-chart', title: 'Paneles de Estadísticas', detail: 'Gráficos interactivos de datos' },
+  { icon: 'fa-puzzle-piece', title: 'Utilidades Compartidas', detail: 'Componentes y servicios del sistema' },
+  { icon: 'fa-pencil-square-o', title: 'Portal Home Docentes', detail: 'Acceso y panel del Profesor' },
+  { icon: 'fa-institution', title: 'Portal Home Director', detail: 'Panel de gestión directiva' },
+  { icon: 'fa-university', title: 'Portal Home UTP', detail: 'Estadísticas, seguimiento, operaciones y actividades' },
+  { icon: 'fa-id-card-o', title: 'Gestión de Matrículas', detail: 'Registro y control de matrículas' },
+  { icon: 'fa-calendar-check-o', title: 'Control de Asistencia', detail: 'Seguimiento y registro diario' },
+  { icon: 'fa-line-chart', title: 'Análisis y Exportación', detail: 'Reportes e informes descargables' },
+  { icon: 'fa-check-square-o', title: 'Cumplimiento Estándar CEDS', detail: 'Estándar de datos educacionales' },
+  { icon: 'fa-book', title: 'Gestión del Marco de Enseñanza', detail: 'Objetivos de aprendizaje y enseñanza' },
+  { icon: 'fa-graduation-cap', title: 'Control Centralizado de Notas', detail: 'Por curso, período, mes y alumno para análisis y exportación' },
+  { icon: 'fa-upload', title: 'Carga Masiva de Usuarios', detail: 'Docentes y apoderados desde CSV con validación y monitor de errores' },
+  { icon: 'fa-image', title: 'Gestión de Imágenes', detail: 'Módulo para subida y cambios de fotos de estudiantes' },
+  { icon: 'fa-search', title: 'Búsquedas Inteligentes', detail: 'Sistema contextual de módulos, opciones y funciones según rol' },
+  { icon: 'fa-list-alt', title: 'Leccionario y Objetivos Curriculares', detail: 'Borrador, versionado, aprobación UTP, firma OTP, notificaciones y auditoría' },
+];
+---
 
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-clock-o impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number" data-target="15">15</span><span class="impacto-suffix"> min</span>
-                        </div>
-                        <div class="impacto-label">Búsqueda Documental (antes: 3 horas)</div>
-                        <p class="impacto-desc">Trazabilidad documental de más de 150 documentos para exportación redujo el tiempo de búsqueda y consolidación de 3 horas a 15 minutos</p>
-                    </div>
+<section id="impacto" class="impacto-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center section-title">
+                <h2 class="text-uppercase section-heading text-gradient">Impacto Profesional</h2>
+                <div class="impacto-autoria">
+                    <i class="fa fa-code"></i>Desarrollador Full Stack responsable de sistemas institucionales en operación para más de 70 establecimientos educacionales.
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-trophy impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-number">A+</span>
-                        </div>
-                        <div class="impacto-label">Certificación BRC Internacional</div>
-                        <p class="impacto-desc">Calificación BRC (British Retail Consortium) mediante implementación de sistema de trazabilidad documental automatizado</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class="fa fa-dollar impacto-icon"></i></div>
-                        <div class="impacto-stat">
-                            <span class="impacto-label-prefix">≈ CLP</span> <span class="impacto-number" data-target="30">30</span><span class="impacto-suffix">M</span>
-                        </div>
-                        <div class="impacto-label">Ahorro en Etiquetado Industrial</div>
-                        <p class="impacto-desc">Reducción de pérdidas por errores de etiquetado mediante automatización con Raspberry Pi, PLCs e impresoras térmicas</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta amplia: Libro de Clases Digital -->
-                <div class="col-12">
-                    <div class="impacto-card impacto-card-wide">
-                        <div class="impacto-card-wide-header">
-                            <div class="impacto-icon-wrap impacto-icon-wrap-wide">
-                                <i class="fa fa-book impacto-icon"></i>
-                            </div>
-                            <div>
-                                <div class="impacto-label impacto-label-wide">Libro de Clases Digital</div>
-                                <p class="impacto-desc impacto-desc-wide">Plataforma integral de gestión educativa desarrollada de forma modular, cubriendo los principales ejes del proceso docente y directivo en establecimientos educacionales. Mejora el <strong>control de registros</strong>, potencia la <strong>toma de decisiones</strong> basada en datos, garantiza el <strong>respaldo</strong> de la información y facilita la <strong>planificación</strong> institucional.</p>
-                            </div>
-                        </div>
-                        <div class="impacto-wide-modules">
-                            <div class="impacto-module">
-                                <i class="fa fa-bell impacto-module-icon"></i>
-                                <span class="impacto-module-text">Sistema de Notificaciones<br><small>En app y correo electrónico</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-users impacto-module-icon"></i>
-                                <span class="impacto-module-text">Configuración y Administración<br><small>Gestión centralizada de usuarios y roles</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-warning impacto-module-icon"></i>
-                                <span class="impacto-module-text">Registro de Anotaciones<br><small>Incidentes y Disciplina</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-download impacto-module-icon"></i>
-                                <span class="impacto-module-text">Visualización y Exportación<br><small>Anotaciones con reportes descargables</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-bar-chart impacto-module-icon"></i>
-                                <span class="impacto-module-text">Paneles de Estadísticas<br><small>Gráficos interactivos de datos</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-puzzle-piece impacto-module-icon"></i>
-                                <span class="impacto-module-text">Utilidades Compartidas<br><small>Componentes y servicios del sistema</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-pencil-square-o impacto-module-icon"></i>
-                                <i class="fa fa-user impacto-module-icon" style="display:none;"></i>
-                                <span class="impacto-module-text">Portal Home Docentes<br><small>Acceso y panel del Profesor</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-institution impacto-module-icon"></i>
-                                <span class="impacto-module-text">Portal Home Director<br><small>Panel de gestión directiva</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-university impacto-module-icon"></i>
-                                <span class="impacto-module-text">Portal Home UTP<br><small>Estadísticas, seguimiento, operaciones y actividades</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-id-card-o impacto-module-icon"></i>
-                                <span class="impacto-module-text">Gestión de Matrículas<br><small>Registro y control de matrículas</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-calendar-check-o impacto-module-icon"></i>
-                                <span class="impacto-module-text">Control de Asistencia<br><small>Seguimiento y registro diario</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-line-chart impacto-module-icon"></i>
-                                <span class="impacto-module-text">Análisis y Exportación<br><small>Reportes e informes descargables</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-check-square-o impacto-module-icon"></i>
-                                <span class="impacto-module-text">Cumplimiento Estándar CEDS<br><small>Estándar de datos educacionales</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-book impacto-module-icon"></i>
-                                <span class="impacto-module-text">Gestión del Marco de Enseñanza<br><small>Objetivos de aprendizaje y enseñanza</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-graduation-cap impacto-module-icon"></i>
-                                <span class="impacto-module-text">Control Centralizado de Notas<br><small>Por curso, período, mes y alumno para análisis y exportación</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-upload impacto-module-icon"></i>
-                                <span class="impacto-module-text">Carga Masiva de Usuarios<br><small>Docentes y apoderados desde CSV con validación y monitor de errores</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-image impacto-module-icon"></i>
-                                <span class="impacto-module-text">Gestión de Imágenes<br><small>Módulo para subida y cambios de fotos de estudiantes</small></span>
-                            </div>
-                            <div class="impacto-module">
-                                <i class="fa fa-search impacto-module-icon"></i>
-                                <span class="impacto-module-text">Búsquedas Inteligentes<br><small>Sistema contextual de módulos, opciones y funciones según rol</small></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
+
+        <div class="row g-4 justify-content-center impacto-cards-row">
+            {metricas.map((metrica) => (
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="impacto-card">
+                        <div class="impacto-icon-wrap"><i class={`fa ${metrica.icon} impacto-icon`}></i></div>
+                        <div class="impacto-stat">
+                            {metrica.prefix && <span class="impacto-label-prefix">{metrica.prefix}</span>}
+                            {metrica.target ? (
+                                <span class="impacto-number" data-target={metrica.target}>{metrica.value}</span>
+                            ) : (
+                                <span class="impacto-number">{metrica.value}</span>
+                            )}
+                            {metrica.suffix && <span class="impacto-suffix">{metrica.suffix}</span>}
+                        </div>
+                        <div class="impacto-label">{metrica.label}</div>
+                        <p class="impacto-desc">{metrica.desc}</p>
+                    </div>
+                </div>
+            ))}
+
+            <div class="col-12">
+                <div class="impacto-card impacto-card-wide">
+                    <div class="impacto-card-wide-header">
+                        <div class="impacto-icon-wrap impacto-icon-wrap-wide">
+                            <i class="fa fa-book impacto-icon"></i>
+                        </div>
+                        <div>
+                            <div class="impacto-label impacto-label-wide">Libro de Clases Digital</div>
+                            <p class="impacto-desc impacto-desc-wide">Plataforma integral de gestión educativa desarrollada de forma modular, cubriendo los principales ejes del proceso docente y directivo en establecimientos educacionales. Mejora el <strong>control de registros</strong>, potencia la <strong>toma de decisiones</strong> basada en datos, garantiza el <strong>respaldo</strong> de la información y facilita la <strong>planificación</strong> institucional.</p>
+                        </div>
+                    </div>
+
+                    <div class="impacto-wide-modules">
+                        {modulosLibro.map((modulo) => (
+                            <div class="impacto-module">
+                                <i class={`fa ${modulo.icon} impacto-module-icon`}></i>
+                                <span class="impacto-module-text">{modulo.title}<br /><small>{modulo.detail}</small></span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
