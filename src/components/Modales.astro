@@ -145,36 +145,112 @@
                             <div class="col-lg-10 mx-auto">
                                 <div class="modal-body text-start">
                                     <h2 class="project-modal-title">Monitoreo de Salud de Sistemas</h2>
-                                    <p class="project-modal-subtitle">Sistema profesional de monitorización de servicios e infraestructura TI</p>
-                                    <img class="img-fluid rounded mb-4" width="600" height="350" loading="lazy" src="assets/img/alertas-ti.webp" alt="Monitoreo de Salud de Sistemas">
+                                    <p class="project-modal-subtitle">Herramienta profesional en Python para supervisar servicios críticos de infraestructura TI en tiempo real, con alertas automáticas, dashboard web y verificaciones paralelas.</p>
+                                    <img class="img-fluid rounded mb-4" width="600" height="350" loading="lazy" src="assets/img/alertas-ti.webp" alt="Monitoreo de Salud de Sistemas - Dashboard de supervisión TI">
                                     <div class="project-detail-block">
-                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
-                                        <p>Falta de visibilidad en tiempo real sobre la disponibilidad de servicios críticos de infraestructura TI, con detección tardía de incidentes y sin alertas proactivas.</p>
+                                        <div class="project-detail-label"><i class="fa fa-bullseye"></i> Propósito</div>
+                                        <p>En infraestructura tecnológica, uno de los mayores problemas no siempre es que un servicio falle, sino <strong>enterarse tarde de que falló</strong>. Cada minuto cuenta cuando una base de datos deja de responder, un sitio web cae o un DNS no resuelve. Esta herramienta nace para monitorear servicios de manera <strong>continua, centralizada y proactiva</strong>.</p>
                                     </div>
                                     <div class="project-detail-block">
-                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte</div>
-                                        <ul>
-                                            <li>Sistema en Python para monitorear <strong>bases de datos</strong> (PostgreSQL, MySQL, SQL Server), HTTP/HTTPS, TCP, DNS, SSH y Ping</li>
-                                            <li><strong>Dashboard web interactivo</strong> en Flask con resultados en tiempo real</li>
-                                            <li>Alertas automáticas vía <strong>email (SMTP) y Telegram Bot</strong></li>
-                                            <li>Reportes en múltiples formatos con <strong>verificaciones paralelas</strong> para máxima eficiencia</li>
-                                            <li>Modo de <strong>vigilancia continua 24/7</strong> con interfaz de consola coloreada</li>
+                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
+                                        <p>En muchas organizaciones, la revisión de servicios se realiza de forma manual o reactiva: el equipo TI detecta un problema cuando un usuario lo reporta o cuando el impacto ya es evidente. Esto genera:</p>
+                                        <ul class="project-problem-list">
+                                            <li>Detección tardía de incidentes</li>
+                                            <li>Falta de visibilidad sobre el estado real de los servicios</li>
+                                            <li>Ausencia de alertas automáticas</li>
+                                            <li>Dificultad para revisar disponibilidad histórica</li>
+                                            <li>Mayor tiempo de respuesta ante fallas</li>
+                                            <li>Dependencia de revisiones manuales</li>
+                                            <li>Poca trazabilidad sobre eventos técnicos</li>
                                         </ul>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-search"></i> Qué permite monitorear</div>
+                                        <div class="project-module-grid">
+                                            <div class="project-module-item"><i class="fa fa-globe"></i><span>Servicios HTTP y HTTPS — validación de códigos de respuesta</span></div>
+                                            <div class="project-module-item"><i class="fa fa-plug"></i><span>Puertos TCP — verificación de disponibilidad</span></div>
+                                            <div class="project-module-item"><i class="fa fa-sitemap"></i><span>Resolución DNS — validación de dominios</span></div>
+                                            <div class="project-module-item"><i class="fa fa-wifi"></i><span>Conectividad mediante Ping</span></div>
+                                            <div class="project-module-item"><i class="fa fa-terminal"></i><span>Acceso SSH a servidores</span></div>
+                                            <div class="project-module-item"><i class="fa fa-database"></i><span>Bases de datos: PostgreSQL, MySQL y SQL Server</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-desktop"></i> Dashboard web en tiempo real</div>
+                                        <p>Desarrollé un <strong>dashboard web interactivo con Flask</strong> que permite visualizar el estado de los servicios monitoreados: resultados, estados, latencias, mensajes de verificación y disponibilidad. Cuenta con <strong>modo de vigilancia continua</strong> para mantener el sistema ejecutándose de forma permanente y detectar cambios de estado y fallas en tiempo real.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-bell"></i> Alertas automáticas</div>
+                                        <p>Una de las funcionalidades más importantes del sistema es la <strong>generación de alertas automáticas</strong> mediante:</p>
+                                        <ul class="project-problem-list">
+                                            <li><strong>Email</strong> utilizando SMTP</li>
+                                            <li><strong>Telegram Bot API</strong> para notificaciones instantáneas</li>
+                                        </ul>
+                                        <p class="mt-2">Esto permite que el equipo TI reciba avisos cuando se detectan fallas, reduciendo el tiempo entre la ocurrencia del incidente y la reacción técnica. En vez de esperar a que un usuario reporte el problema, el sistema avisa de forma proactiva.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-file-text"></i> Reportes, logs y trazabilidad</div>
+                                        <p>El sistema incluye <strong>generación de reportes y exportación</strong> de resultados en formatos <strong>JSON y CSV</strong>. Además, incorpora <strong>logging con archivos de registro</strong> para mantener historial de eventos, revisar errores, analizar disponibilidad y contar con evidencia técnica para seguimiento de incidentes.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-bolt"></i> Eficiencia con verificaciones paralelas</div>
+                                        <p>Para mejorar el rendimiento, el sistema utiliza <strong>ejecución paralela mediante ThreadPool</strong>, permitiendo realizar múltiples verificaciones al mismo tiempo. Esto es clave cuando se monitorean varios servicios, servidores o endpoints, evitando que las revisiones se ejecuten de manera lenta o secuencial.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte técnico</div>
+                                        <p class="project-contribution-summary">Desarrollé la arquitectura general del sistema, el motor de monitoreo, los distintos tipos de verificaciones, la gestión de configuración, el sistema de alertas, la generación de reportes, la interfaz de consola y el dashboard web.</p>
+                                        <div class="project-contribution-grid">
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-cogs"></i> Motor de monitoreo</h5>
+                                                <ul>
+                                                    <li>Verificaciones HTTP/HTTPS, TCP, DNS, Ping, SSH y bases de datos</li>
+                                                    <li>Ejecución paralela con ThreadPool para máxima eficiencia</li>
+                                                    <li>Modo de vigilancia continua 24/7 con detección de cambios de estado</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-desktop"></i> Dashboard y alertas</h5>
+                                                <ul>
+                                                    <li>Dashboard web interactivo con Flask en tiempo real</li>
+                                                    <li>Notificaciones automáticas vía email (SMTP) y Telegram Bot</li>
+                                                    <li>Interfaz de consola coloreada para administración directa</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-file-text"></i> Reportes y trazabilidad</h5>
+                                                <ul>
+                                                    <li>Exportación de resultados en JSON y CSV</li>
+                                                    <li>Logging con archivos de registro para auditoría</li>
+                                                    <li>Historial de disponibilidad y evidencia técnica de incidentes</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-puzzle-piece"></i> Arquitectura modular</h5>
+                                                <ul>
+                                                    <li>Estructura modular con separación de responsabilidades</li>
+                                                    <li>Configuración flexible mediante JSON/YAML</li>
+                                                    <li>Preparado para mantenerse, ampliarse y adaptarse fácilmente</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="project-detail-block">
                                         <div class="project-detail-label"><i class="fa fa-cubes"></i> Stack</div>
                                         <div class="tech-tags mt-2">
                                             <span class="tech-tag tech-tag-sm">Python</span>
                                             <span class="tech-tag tech-tag-sm">Flask</span>
-                                            <span class="tech-tag tech-tag-sm">Threading</span>
-                                            <span class="tech-tag tech-tag-sm">JSON / YAML</span>
+                                            <span class="tech-tag tech-tag-sm">ThreadPool</span>
+                                            <span class="tech-tag tech-tag-sm">JSON</span>
+                                            <span class="tech-tag tech-tag-sm">YAML</span>
                                             <span class="tech-tag tech-tag-sm">SMTP</span>
                                             <span class="tech-tag tech-tag-sm">Telegram Bot API</span>
+                                            <span class="tech-tag tech-tag-sm">CSV</span>
+                                            <span class="tech-tag tech-tag-sm">Logging</span>
                                         </div>
                                     </div>
                                     <div class="project-detail-block project-impact-block">
                                         <div class="project-detail-label"><i class="fa fa-chart-line"></i> Impacto</div>
-                                        <p>Detección proactiva de incidentes que reduce el tiempo de respuesta ante fallas. Publicado como herramienta open source en GitHub, ideal para administradores de sistemas y equipos DevOps.</p>
+                                        <p>Detección <strong>proactiva de incidentes</strong> que reduce significativamente el tiempo de respuesta ante fallas. Permite a un equipo TI monitorear servicios críticos, recibir alertas automáticas, revisar reportes y mantener trazabilidad sobre la disponibilidad de su infraestructura. Publicado como <strong>herramienta open source en GitHub</strong>.</p>
                                     </div>
                                     <div class="project-modal-actions">
                                         <a href="https://github.com/alex81459/Monitorio-Salud-Sistemas" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm"><i class="fa fa-github"></i>&nbsp;Ver GitHub</a>
@@ -194,25 +270,142 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase modal-title-32">Conjunto de Herramientas Web</h2>
-                                    <p class="item-intro text-muted"><em>Colección de Utilidades Web Desarrolladas en JavaScript Local</em></p><img class="img-fluid d-block mx-auto" width="600" height="400" loading="lazy" src="assets/img/herramientaweb1.webp" alt="Herramientas web en JavaScript">
-                                    <p>Conjunto integral de herramientas web desarrolladas con JavaScript que funcionan completamente de forma local, sin necesidad de conexión a internet. Este proyecto incluye una variedad de utilidades prácticas como calculadoras avanzadas, generadores de contraseñas seguras, convertidores de unidades, herramientas de formato de texto, validadores de datos, y muchas más funcionalidades útiles para el día a día. Todas las herramientas están optimizadas para ser rápidas, eficientes y fáciles de usar, con interfaces intuitivas y diseño responsivo que se adapta a cualquier dispositivo.</p>
-                                    <img class="img-fluid d-block mx-auto rounded shadow-sm mb-3" width="600" height="350" loading="lazy" src="assets/img/herramientaweb2.webp" alt="Interfaz de herramientas web">
-                                    <img class="img-fluid d-block mx-auto rounded shadow-sm mb-3" width="600" height="350" loading="lazy" src="assets/img/herramientaweb3.webp" alt="Ejemplo de funcionalidades">
-                                    <br>
-                                    <a href="https://github.com/alex81459/Herramietas-Web-JS-Local" target="_blank" rel="noopener"><img src="assets/img/github.webp" width="104" height="104" alt="Repositorio en GitHub de herramientas web">
-                                    <p class="text-center text-lowercase text-primary-light"><strong><u>Click aquí o en la imagen para acceder al proyecto en GitHub</u></strong></p>
-                                    </a>
-                                    <ul class="list-unstyled">
-                                        <li>Fecha: 2026</li>
-                                        <li>Cliente: Proyecto Personal</li>
-                                        <li>Tecnologías: JavaScript, HTML5, CSS3</li>
-                                        <li>Características: Funciona sin conexión y Interfaz responsiva</li>
-                                        <li>Herramientas: Calculadoras, Generadores, Convertidores, Validadores</li>
-                                        <li>Categoría: Desarrollo Web y Utilidades</li>
-                                    </ul><button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Cerrar Proyecto</span></button></div>
+                            <div class="col-lg-10 mx-auto">
+                                <div class="modal-body text-start">
+                                    <h2 class="project-modal-title">Conjunto de Herramientas Web</h2>
+                                    <p class="project-modal-subtitle">Colección de 23+ utilidades locales desarrolladas con JavaScript, HTML5 y CSS3. Funciona sin conexión, sin registro y sin servidores externos. Pensada para desarrolladores, soporte TI y tareas administrativas.</p>
+                                    <img class="img-fluid rounded mb-4" width="600" height="400" loading="lazy" src="assets/img/herramientaweb1.webp" alt="Conjunto de Herramientas Web - Panel principal">
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-bullseye"></i> Propósito</div>
+                                        <p>En el trabajo diario de desarrollo, soporte técnico y administración de sistemas, muchas veces se necesitan herramientas simples: formatear JSON, generar contraseñas, convertir archivos o analizar texto. El problema es que estas tareas terminan dependiendo de sitios externos sin claridad sobre el tratamiento de datos. Esta plataforma centraliza <strong>23+ utilidades locales, rápidas y privadas</strong> que procesan todo en el navegador.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
+                                        <p>Usar herramientas online externas para tareas cotidianas genera múltiples inconvenientes:</p>
+                                        <ul class="project-problem-list">
+                                            <li>Dependencia de conexión a internet</li>
+                                            <li>Uso de servicios externos para procesar información sensible</li>
+                                            <li>Falta de control sobre los datos ingresados</li>
+                                            <li>Herramientas dispersas en distintos sitios</li>
+                                            <li>Interfaces con publicidad o poco prácticas</li>
+                                            <li>Dificultad para trabajar en entornos con restricciones de red</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-th-large"></i> Herramientas de seguridad y encriptación</div>
+                                        <div class="project-module-grid">
+                                            <div class="project-module-item"><i class="fa fa-key"></i><span>Conversor Base64 — codificar y decodificar texto</span></div>
+                                            <div class="project-module-item"><i class="fa fa-lock"></i><span>Decodificador JWT — analizar tokens</span></div>
+                                            <div class="project-module-item"><i class="fa fa-hashtag"></i><span>Generador de hashes MD5, SHA-1, SHA-256 y SHA-512</span></div>
+                                            <div class="project-module-item"><i class="fa fa-shield"></i><span>Generador de contraseñas seguras personalizables</span></div>
+                                            <div class="project-module-item"><i class="fa fa-certificate"></i><span>Verificador de certificados TLS/SSL</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-file-pdf"></i> Herramientas para documentos, archivos y PDF</div>
+                                        <div class="project-module-grid">
+                                            <div class="project-module-item"><i class="fa fa-code"></i><span>Formateador JSON — validar, ordenar y minificar</span></div>
+                                            <div class="project-module-item"><i class="fa fa-database"></i><span>Formateador SQL — mejorar lectura de consultas</span></div>
+                                            <div class="project-module-item"><i class="fa fa-exchange"></i><span>Conversor JSON ↔ CSV bidireccional</span></div>
+                                            <div class="project-module-item"><i class="fa fa-compress"></i><span>Compresor de PDF</span></div>
+                                            <div class="project-module-item"><i class="fa fa-copy"></i><span>Divisor y unificador de PDF</span></div>
+                                            <div class="project-module-item"><i class="fa fa-pencil"></i><span>Firmador visual de PDF</span></div>
+                                            <div class="project-module-item"><i class="fa fa-image"></i><span>Conversor de imágenes a PDF</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-picture-o"></i> Herramientas de imágenes y multimedia</div>
+                                        <div class="project-module-grid">
+                                            <div class="project-module-item"><i class="fa fa-compress"></i><span>Compresor de imágenes</span></div>
+                                            <div class="project-module-item"><i class="fa fa-refresh"></i><span>Conversor de formatos JPG, PNG, WebP y AVIF</span></div>
+                                            <div class="project-module-item"><i class="fa fa-eyedropper"></i><span>Extractor de colores desde imágenes</span></div>
+                                            <div class="project-module-item"><i class="fa fa-paint-brush"></i><span>Redactor de imágenes para ocultar áreas sensibles</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-calculator"></i> Calculadoras especializadas y generadores</div>
+                                        <div class="project-module-grid">
+                                            <div class="project-module-item"><i class="fa fa-print"></i><span>Calculadora de impresión — costos por tinta/tóner y desgaste</span></div>
+                                            <div class="project-module-item"><i class="fa fa-bolt"></i><span>Calculadora de UPS — autonomía, baterías y respaldo</span></div>
+                                            <div class="project-module-item"><i class="fa fa-font"></i><span>Contador de texto — caracteres, palabras, párrafos y líneas</span></div>
+                                            <div class="project-module-item"><i class="fa fa-random"></i><span>Generador UUID v4</span></div>
+                                            <div class="project-module-item"><i class="fa fa-id-card"></i><span>Generador de RUT chileno válido con dígito verificador</span></div>
+                                            <div class="project-module-item"><i class="fa fa-users"></i><span>Generador de datos fake — nombres, RUT, correos, teléfonos chilenos</span></div>
+                                            <div class="project-module-item"><i class="fa fa-chrome"></i><span>Inspector de navegador — diagnóstico y compatibilidad</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-paint-brush"></i> Interfaz y experiencia de usuario</div>
+                                        <ul class="project-problem-list">
+                                            <li>Modo claro y oscuro con preferencias guardadas localmente</li>
+                                            <li>Sistema de favoritos para acceso rápido</li>
+                                            <li>Menú lateral organizado por categorías con iconos descriptivos</li>
+                                            <li>Diseño responsivo adaptable a escritorio, tablet y móvil</li>
+                                            <li>Navegación simple y directa sin configuraciones complejas</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte técnico</div>
+                                        <p class="project-contribution-summary">Diseñé y desarrollé la colección completa de herramientas desde cero: interfaz, organización por categorías, lógica de cada utilidad, procesamiento local de información, integración de librerías para PDF, manejo de archivos, diseño responsivo y persistencia de preferencias mediante almacenamiento local.</p>
+                                        <div class="project-contribution-grid">
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-th"></i> Arquitectura y organización</h5>
+                                                <ul>
+                                                    <li>SPA modular con JavaScript ES6+ y carga dinámica de componentes</li>
+                                                    <li>Organización por categorías con menú lateral y sistema de favoritos</li>
+                                                    <li>Persistencia de preferencias con localStorage</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-wrench"></i> Utilidades desarrolladas</h5>
+                                                <ul>
+                                                    <li>23+ herramientas: seguridad, PDF, imágenes, texto, generadores y calculadoras</li>
+                                                    <li>Procesamiento 100% local sin dependencia de servicios externos</li>
+                                                    <li>Scripts de arranque para Windows, Linux y Mac</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-desktop"></i> Interfaz y UX</h5>
+                                                <ul>
+                                                    <li>Modo claro/oscuro con detección de preferencia del sistema</li>
+                                                    <li>Diseño responsivo con Bootstrap 5 y Bootstrap Icons</li>
+                                                    <li>SPA con navegación fluida entre categorías</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-file"></i> PDF y documentos</h5>
+                                                <ul>
+                                                    <li>Integración de PDF.js y jsPDF para manipulación de documentos</li>
+                                                    <li>Compresión, división, unificación y firma visual de PDF</li>
+                                                    <li>Conversión bidireccional JSON ↔ CSV y formateo SQL</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-cubes"></i> Stack</div>
+                                        <div class="tech-tags mt-2">
+                                            <span class="tech-tag tech-tag-sm">JavaScript ES6+</span>
+                                            <span class="tech-tag tech-tag-sm">HTML5</span>
+                                            <span class="tech-tag tech-tag-sm">CSS3</span>
+                                            <span class="tech-tag tech-tag-sm">Bootstrap 5</span>
+                                            <span class="tech-tag tech-tag-sm">Bootstrap Icons</span>
+                                            <span class="tech-tag tech-tag-sm">PDF.js</span>
+                                            <span class="tech-tag tech-tag-sm">jsPDF</span>
+                                            <span class="tech-tag tech-tag-sm">localStorage</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block project-impact-block">
+                                        <div class="project-detail-label"><i class="fa fa-chart-line"></i> Impacto</div>
+                                        <p>Plataforma de utilidades <strong>local, rápida y privada</strong> que elimina la dependencia de herramientas online externas. Reduce tiempo en tareas repetitivas, mejora la productividad y funciona incluso sin conexión. Publicada como <strong>proyecto open source en GitHub</strong> con scripts de arranque multiplataforma.</p>
+                                    </div>
+                                    <img class="img-fluid rounded shadow-sm mb-3" width="600" height="350" loading="lazy" src="assets/img/herramientaweb2.webp" alt="Interfaz de herramientas web - modo oscuro">
+                                    <img class="img-fluid rounded shadow-sm mb-3" width="600" height="350" loading="lazy" src="assets/img/herramientaweb3.webp" alt="Ejemplo de funcionalidades - herramientas web">
+                                    <div class="project-modal-actions">
+                                        <a href="https://github.com/alex81459/Herramietas-Web-JS-Local" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm"><i class="fa fa-github"></i>&nbsp;Ver GitHub</a>
+                                        <button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i>&nbsp;Cerrar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -230,36 +423,102 @@
                             <div class="col-lg-10 mx-auto">
                                 <div class="modal-body text-start">
                                     <h2 class="project-modal-title">Sistema de Tareas y Proyectos</h2>
-                                    <p class="project-modal-subtitle">Gestión integral de tareas, proyectos y equipos de trabajo</p>
-                                    <img class="img-fluid rounded mb-4" width="600" height="350" loading="lazy" src="assets/img/Sistema-de-Tareas-Proyectos.webp" alt="Sistema de Tareas y Proyectos">
+                                    <p class="project-modal-subtitle">Plataforma web —TaskFlowAS— para la gestión integral de proyectos, tareas y equipos de trabajo, con arquitectura multi-tenant, control de permisos y trazabilidad completa.</p>
+                                    <img class="img-fluid rounded mb-4" width="600" height="350" loading="lazy" src="assets/img/Sistema-de-Tareas-Proyectos.webp" alt="Sistema de Tareas y Proyectos - TaskFlowAS">
                                     <div class="project-detail-block">
-                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
-                                        <p>Equipos sin herramienta centralizada para gestionar tareas, asignar responsables, controlar avances y colaborar en proyectos de forma estructurada.</p>
+                                        <div class="project-detail-label"><i class="fa fa-bullseye"></i> Propósito</div>
+                                        <p>En el desarrollo de software, muchos de los problemas más importantes no están en la programación sino en la <strong>gestión diaria</strong>: tareas dispersas, responsables poco claros, avances difíciles de controlar y equipos que trabajan sin una herramienta centralizada. TaskFlowAS nace para resolver eso: una solución funcional, segura y escalable para organizar proyectos, asignar tareas, definir prioridades, controlar estados y mantener trazabilidad.</p>
                                     </div>
                                     <div class="project-detail-block">
-                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte</div>
-                                        <ul>
-                                            <li>Sistema completo con proyectos, tareas, <strong>estados y prioridades personalizados</strong></li>
-                                            <li><strong>Vista Kanban</strong> con drag & drop, checklists, comentarios colaborativos e historial de auditoría</li>
-                                            <li>Autenticación <strong>JWT con control de permisos y multi-tenant</strong> (cada usuario ve solo sus datos)</li>
-                                            <li>Exportación a <strong>Excel</strong>, dashboards con estadísticas y gráficas en tiempo real</li>
-                                            <li>Desplegable con <strong>Docker</strong>, publicado como repositorio open source</li>
+                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
+                                        <p>En muchos equipos de trabajo —especialmente en áreas administrativas, operativas o tecnológicas— la gestión de tareas depende de planillas, correos, mensajes informales o acuerdos verbales. Esto provoca:</p>
+                                        <ul class="project-problem-list">
+                                            <li>Falta de visibilidad sobre el estado real de los proyectos</li>
+                                            <li>Dificultad para saber quién es responsable de cada tarea</li>
+                                            <li>Pérdida de historial sobre cambios y avances</li>
+                                            <li>Falta de priorización clara</li>
+                                            <li>Tareas vencidas o pendientes críticas sin detectar</li>
+                                            <li>Escasa colaboración estructurada entre usuarios</li>
                                         </ul>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-th-large"></i> Principales funcionalidades</div>
+                                        <div class="project-module-grid">
+                                            <div class="project-module-item"><i class="fa fa-folder"></i><span>Gestión completa de proyectos: creación, edición, eliminación, archivado y restauración</span></div>
+                                            <div class="project-module-item"><i class="fa fa-tasks"></i><span>Gestión de tareas con estados, prioridades, fechas de vencimiento y etiquetas</span></div>
+                                            <div class="project-module-item"><i class="fa fa-columns"></i><span>Vista Kanban con drag & drop para mover tareas entre columnas</span></div>
+                                            <div class="project-module-item"><i class="fa fa-check-square"></i><span>Checklists y comentarios colaborativos por tarea</span></div>
+                                            <div class="project-module-item"><i class="fa fa-filter"></i><span>Filtros avanzados y detección automática de tareas vencidas</span></div>
+                                            <div class="project-module-item"><i class="fa fa-file-excel"></i><span>Exportación a Excel de proyectos y tareas</span></div>
+                                            <div class="project-module-item"><i class="fa fa-bell"></i><span>Panel de recordatorios y notificaciones</span></div>
+                                            <div class="project-module-item"><i class="fa fa-bar-chart"></i><span>Dashboards con estadísticas y gráficos en tiempo real</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-shield"></i> Seguridad, permisos y trazabilidad</div>
+                                        <p>Uno de los aspectos más importantes del desarrollo fue la <strong>seguridad y el control de acceso</strong>:</p>
+                                        <ul class="project-problem-list">
+                                            <li>Autenticación mediante <strong>JWT</strong>, manejo de sesiones y refresh tokens</li>
+                                            <li>Control de permisos por rol: <strong>Administrador, Jefe, Usuario y Visualizador</strong></li>
+                                            <li>Arquitectura <strong>multi-tenant</strong>: cada usuario visualiza únicamente la información de su contexto</li>
+                                            <li><strong>Auditoría completa</strong>: registro de accesos, cambios sensibles, modificaciones en usuarios, proyectos, tareas, etiquetas y acciones relevantes</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte técnico</div>
+                                        <p class="project-contribution-summary">Desarrollé el sistema completo desde cero: frontend, backend, modelado de base de datos, reglas de negocio, autenticación, control de permisos, auditoría, dashboards y componentes visuales. Más que una simple app de tareas, construí una plataforma con lógica real de negocio.</p>
+                                        <div class="project-contribution-grid">
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-desktop"></i> Frontend</h5>
+                                                <ul>
+                                                    <li>SPA con Angular, TypeScript, PrimeNG y TailwindCSS</li>
+                                                    <li>Vista Kanban interactiva con drag & drop</li>
+                                                    <li>Dashboards con gráficos en tiempo real y filtros avanzados</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-server"></i> Backend</h5>
+                                                <ul>
+                                                    <li>API REST con Flask, Python y SQLAlchemy</li>
+                                                    <li>Autenticación JWT con refresh tokens y control granular de permisos</li>
+                                                    <li>Lógica de cierre automático de tareas, jerarquía de roles y validaciones</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-database"></i> Base de datos</h5>
+                                                <ul>
+                                                    <li>Modelado relacional con MySQL: usuarios, proyectos, tareas, etiquetas, checklists, comentarios y auditoría</li>
+                                                    <li>Arquitectura multi-tenant con aislamiento de datos por usuario</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-cogs"></i> DevOps</h5>
+                                                <ul>
+                                                    <li>Proyecto dockerizado para levantar el entorno completo de forma rápida</li>
+                                                    <li>Separación clara entre frontend, backend y base de datos</li>
+                                                    <li>Generación de datos iniciales para pruebas y demostración</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="project-detail-block">
                                         <div class="project-detail-label"><i class="fa fa-cubes"></i> Stack</div>
                                         <div class="tech-tags mt-2">
                                             <span class="tech-tag tech-tag-sm">Angular</span>
                                             <span class="tech-tag tech-tag-sm">TypeScript</span>
+                                            <span class="tech-tag tech-tag-sm">PrimeNG</span>
+                                            <span class="tech-tag tech-tag-sm">TailwindCSS</span>
                                             <span class="tech-tag tech-tag-sm">Flask</span>
+                                            <span class="tech-tag tech-tag-sm">Python</span>
+                                            <span class="tech-tag tech-tag-sm">SQLAlchemy</span>
                                             <span class="tech-tag tech-tag-sm">MySQL</span>
-                                            <span class="tech-tag tech-tag-sm">Docker</span>
                                             <span class="tech-tag tech-tag-sm">JWT</span>
+                                            <span class="tech-tag tech-tag-sm">Docker</span>
                                         </div>
                                     </div>
                                     <div class="project-detail-block project-impact-block">
                                         <div class="project-detail-label"><i class="fa fa-chart-line"></i> Impacto</div>
-                                        <p>Sistema funcional publicado en GitHub con arquitectura multi-tenant, listo para uso en equipos reales. Permite visibilidad completa del avance de proyectos y colaboración estructurada.</p>
+                                        <p>Plataforma funcional publicada como <strong>proyecto open source en GitHub</strong>, con arquitectura multi-tenant y preparada para Docker. Sirve como base para equipos de desarrollo, áreas administrativas, soporte o cualquier organización que necesite mejorar la visibilidad y control de su trabajo.</p>
                                     </div>
                                     <div class="project-modal-actions">
                                         <a href="https://github.com/alex81459/Sistema-de-Tareas-Proyectos" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm"><i class="fa fa-github"></i>&nbsp;Ver GitHub</a>
@@ -328,17 +587,17 @@
                             <div class="col-lg-10 mx-auto">
                                 <div class="modal-body text-start">
                                     <h2 class="project-modal-title">Libro de Clases Digital</h2>
-                                    <p class="project-modal-subtitle">Plataforma para modernizar la gestión escolar en establecimientos públicos del SLEP Colchagua, reemplazando procesos físicos por trazabilidad digital, reportabilidad y operación en línea.</p>
+                                    <p class="project-modal-subtitle">Plataforma integral de gestión educativa desarrollada de forma modular, cubriendo los principales ejes del proceso docente y directivo en establecimientos educacionales del SLEP Colchagua.</p>
                                     <div id="carousel9" class="carousel slide mb-4" data-bs-ride="carousel">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <img class="img-fluid rounded shadow-sm w-100" width="600" height="400" loading="lazy" src="assets/img/libroclases1_resultadov2.webp" alt="Libro de Clases Digital - Inicio y acceso institucional">
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="img-fluid rounded shadow-sm w-100" src="assets/img/libroclases2_resultadov2.webp" alt="Libro de Clases Digital - Administración de configuración">
+                                                <img class="img-fluid rounded shadow-sm w-100" width="600" height="400" loading="lazy" src="assets/img/libroclases2_resultadov2.webp" alt="Libro de Clases Digital - Administración de configuración">
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="img-fluid rounded shadow-sm w-100" src="assets/img/libroclases3_resultadov2.webp" alt="Libro de Clases Digital - Panel directivo con seguimiento operacional">
+                                                <img class="img-fluid rounded shadow-sm w-100" width="600" height="400" loading="lazy" src="assets/img/libroclases3_resultadov2.webp" alt="Libro de Clases Digital - Panel directivo con seguimiento operacional">
                                             </div>
                                         </div>
                                         <button class="carousel-control-prev" type="button" data-bs-target="#carousel9" data-bs-slide="prev">
@@ -349,12 +608,39 @@
                                         </button>
                                     </div>
                                     <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-bullseye"></i> Propósito</div>
+                                        <p>Plataforma que mejora el <strong>control de registros</strong>, potencia la <strong>toma de decisiones</strong> basada en datos, garantiza el <strong>respaldo</strong> de la información y facilita la <strong>planificación</strong> institucional. Reemplaza procesos físicos por trazabilidad digital, reportabilidad y operación en línea.</p>
+                                    </div>
+                                    <div class="project-detail-block">
                                         <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
-                                        <p>SLEP Colchagua gestionaba los libros de clases de forma manual y física, sin trazabilidad, respaldo digital ni visibilidad en línea para docentes y equipos directivos.</p>
+                                        <p>SLEP Colchagua gestionaba los libros de clases de forma manual y física en más de 70 establecimientos, sin trazabilidad, respaldo digital ni visibilidad en línea para docentes y equipos directivos. Esto generaba pérdida de información, lentitud en reportes pedagógicos y nula capacidad de auditoría.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-th-large"></i> Módulos del sistema</div>
+                                        <div class="project-module-grid">
+                                            <div class="project-module-item"><i class="fa fa-bell"></i><span>Sistema de Notificaciones — en app y correo electrónico</span></div>
+                                            <div class="project-module-item"><i class="fa fa-cogs"></i><span>Configuración y Administración — gestión centralizada de usuarios y roles</span></div>
+                                            <div class="project-module-item"><i class="fa fa-exclamation-triangle"></i><span>Registro de Anotaciones — incidentes y disciplina con historial</span></div>
+                                            <div class="project-module-item"><i class="fa fa-download"></i><span>Visualización y Exportación — anotaciones con reportes descargables</span></div>
+                                            <div class="project-module-item"><i class="fa fa-bar-chart"></i><span>Paneles de Estadísticas — gráficos interactivos de datos</span></div>
+                                            <div class="project-module-item"><i class="fa fa-puzzle-piece"></i><span>Utilidades Compartidas — componentes y servicios del sistema</span></div>
+                                            <div class="project-module-item"><i class="fa fa-user"></i><span>Portal Home Docentes — acceso y panel del profesor</span></div>
+                                            <div class="project-module-item"><i class="fa fa-briefcase"></i><span>Portal Home Director — panel de gestión directiva</span></div>
+                                            <div class="project-module-item"><i class="fa fa-line-chart"></i><span>Portal Home UTP — estadísticas, seguimiento, operaciones y actividades</span></div>
+                                            <div class="project-module-item"><i class="fa fa-id-card"></i><span>Gestión de Matrículas — registro y control de matrículas</span></div>
+                                            <div class="project-module-item"><i class="fa fa-check-square"></i><span>Control de Asistencia — seguimiento y registro diario</span></div>
+                                            <div class="project-module-item"><i class="fa fa-certificate"></i><span>Cumplimiento Estándar CEDS — estándar de datos educacionales</span></div>
+                                            <div class="project-module-item"><i class="fa fa-graduation-cap"></i><span>Marco de Enseñanza — objetivos de aprendizaje y planificación</span></div>
+                                            <div class="project-module-item"><i class="fa fa-calculator"></i><span>Control Centralizado de Notas — por curso, período, mes y alumno</span></div>
+                                            <div class="project-module-item"><i class="fa fa-upload"></i><span>Carga Masiva de Usuarios — docentes y apoderados desde CSV con validación</span></div>
+                                            <div class="project-module-item"><i class="fa fa-camera"></i><span>Gestión de Imágenes — subida y cambios de fotos de estudiantes</span></div>
+                                            <div class="project-module-item"><i class="fa fa-search"></i><span>Búsquedas Inteligentes — sistema contextual según rol</span></div>
+                                            <div class="project-module-item"><i class="fa fa-book"></i><span>Leccionario y Objetivos Curriculares — borrador, versionado, aprobación UTP, firma OTP, notificaciones y auditoría</span></div>
+                                        </div>
                                     </div>
                                     <div class="project-detail-block">
                                         <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte</div>
-                                        <p class="project-contribution-summary">Participé en el desarrollo full stack y la mantención evolutiva del sistema, agregando módulos operativos, reportabilidad, seguridad y herramientas de trazabilidad para establecimientos educacionales.</p>
+                                        <p class="project-contribution-summary">Desarrollé e implementé de forma integral la plataforma, liderando el frontend con Angular 21, el backend con Flask y la infraestructura de despliegue. Diseñé la arquitectura modular, integré Clave Única, sistemas de notificaciones multicanal y reporting avanzado en PDF/Excel.</p>
                                         <div class="project-contribution-grid">
                                             <div class="project-contribution-card">
                                                 <h5><i class="fa fa-dashboard"></i> Operación escolar</h5>
@@ -376,16 +662,16 @@
                                                 <h5><i class="fa fa-shield"></i> Seguridad y trazabilidad</h5>
                                                 <ul>
                                                     <li>Gestión de usuarios con roles para docentes, directores y administradores.</li>
-                                                    <li>Validaciones, guards, interceptores, sesiones seguras y control de acceso.</li>
-                                                    <li>Logs de auditoría para trazabilidad de acciones relevantes del sistema.</li>
+                                                    <li>Validaciones, guards, interceptores, sesiones seguras y control de acceso granular.</li>
+                                                    <li>Logs de auditoría para trazabilidad completa de acciones relevantes del sistema.</li>
                                                 </ul>
                                             </div>
                                             <div class="project-contribution-card">
                                                 <h5><i class="fa fa-code-fork"></i> Evolución técnica</h5>
                                                 <ul>
-                                                    <li>Migración Angular 18 a 21, actualización de componentes, dependencias y resolución de compatibilidades.</li>
+                                                    <li>Migración Angular 18 a 21, actualización de componentes standalone, dependencias y resolución de compatibilidades.</li>
                                                     <li>Notificaciones multicanal mediante app interna, correo electrónico y WhatsApp.</li>
-                                                    <li>Automatización de despliegues y soporte de operación en entorno productivo.</li>
+                                                    <li>Automatización de despliegues con GitHub Actions y soporte de operación en entorno productivo con Kubernetes.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -404,11 +690,12 @@
                                             <span class="tech-tag tech-tag-sm">PDF/Excel</span>
                                             <span class="tech-tag tech-tag-sm">QR</span>
                                             <span class="tech-tag tech-tag-sm">Clave Única</span>
+                                            <span class="tech-tag tech-tag-sm">OTP</span>
                                         </div>
                                     </div>
                                     <div class="project-detail-block project-impact-block">
                                         <div class="project-detail-label"><i class="fa fa-chart-line"></i> Impacto</div>
-                                        <p>Sistema activo en <strong>más de 10 establecimientos educacionales</strong> del SLEP Colchagua. Reemplazó el libro físico por una solución digital con respaldo automático, respaldada por la Circular N°30 del Ministerio de Educación y el Estándar REX N°3335/2020.</p>
+                                        <p>Sistema activo en <strong>más de 10 establecimientos educacionales</strong> del SLEP Colchagua, con <strong>3 portales diferenciados</strong> (Docente, Director, UTP). Reemplazó el libro físico por una solución digital con respaldo automático y firma OTP, respaldada por la Circular N°30 del Ministerio de Educación y el Estándar REX N°3335/2020. Cumple con el <strong>estándar CEDS</strong> de interoperabilidad de datos educacionales.</p>
                                     </div>
                                     <div class="project-modal-actions">
                                         <a href="https://libro.slepcolchagua.cl/faqs" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm"><i class="fa fa-external-link"></i>&nbsp;Ver sitio web</a>
@@ -433,17 +720,17 @@
                             <div class="col-lg-10 mx-auto">
                                 <div class="modal-body text-start">
                                     <h2 class="project-modal-title">Trámites Online Institucional</h2>
-                                    <p class="project-modal-subtitle">Digitalización de más de 15 procesos administrativos gubernamentales para el SLEP Colchagua</p>
+                                    <p class="project-modal-subtitle">Plataforma de digitalización de procesos administrativos gubernamentales para el SLEP Colchagua, con autenticación Clave Única, flujos de aprobación jerárquica y trazabilidad documental completa.</p>
                                     <div id="carousel10" class="carousel slide mb-4" data-bs-ride="carousel">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <img class="img-fluid rounded shadow-sm w-100" src="assets/img/tramitesimple1_resultado.webp" alt="Trámites Online Institucional - Reportería y estadísticas por proceso">
+                                                <img class="img-fluid rounded shadow-sm w-100" width="600" height="400" loading="lazy" src="assets/img/tramitesimple1_resultado.webp" alt="Trámites Online Institucional - Reportería y estadísticas por proceso">
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="img-fluid rounded shadow-sm w-100" src="assets/img/tramitesimple2_resultado.webp" alt="Trámites Online Institucional - Validación de acceso y permisos">
+                                                <img class="img-fluid rounded shadow-sm w-100" width="600" height="400" loading="lazy" src="assets/img/tramitesimple2_resultado.webp" alt="Trámites Online Institucional - Validación de acceso y permisos">
                                             </div>
                                             <div class="carousel-item">
-                                                <img class="img-fluid rounded shadow-sm w-100" src="assets/img/tramitesimple3_resultado.webp" alt="Trámites Online Institucional - Trámites disponibles para usuarios">
+                                                <img class="img-fluid rounded shadow-sm w-100" width="600" height="400" loading="lazy" src="assets/img/tramitesimple3_resultado.webp" alt="Trámites Online Institucional - Trámites disponibles para usuarios">
                                             </div>
                                         </div>
                                         <button class="carousel-control-prev" type="button" data-bs-target="#carousel10" data-bs-slide="prev">
@@ -454,17 +741,107 @@
                                         </button>
                                     </div>
                                     <div class="project-detail-block">
-                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
-                                        <p>Más de 15 procesos administrativos del SLEP Colchagua se gestionaban de forma manual, por correo o presencialmente, sin trazabilidad, respaldo estructurado ni control de tiempos de respuesta.</p>
+                                        <div class="project-detail-label"><i class="fa fa-bullseye"></i> Propósito</div>
+                                        <p>La transformación digital en el sector público no consiste solo en crear formularios online. Implica <strong>rediseñar procesos</strong>, ordenar flujos de aprobación, asegurar trazabilidad, respaldar documentación, reducir tiempos de respuesta y entregar herramientas que permitan una gestión institucional más eficiente.</p>
                                     </div>
                                     <div class="project-detail-block">
-                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte</div>
-                                        <ul>
-                                            <li>Diseñé la arquitectura e implementé <strong>15+ trámites digitales</strong>: renuncias, permisos, anotaciones de mérito/demérito, certificados, denuncias Ley Karin, traslados, entre otros</li>
-                                            <li>Desarrollé el sistema completo de <strong>evaluación funcionaria</strong> (1° y 2° evaluación, precalificación, junta calificadora) con validación por Clave Única</li>
-                                            <li>Automaticé <strong>flujos de aprobación jerárquica</strong> con notificaciones y trazabilidad documental</li>
-                                            <li>Generación de <strong>reportes consolidados</strong> y respaldo automático por cada trámite</li>
+                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
+                                        <p>Antes de la digitalización, muchos procesos administrativos del SLEP Colchagua se gestionaban de forma manual, por correo electrónico, planillas, documentos físicos o solicitudes presenciales. Esto generaba:</p>
+                                        <ul class="project-problem-list">
+                                            <li>Falta de trazabilidad sobre el estado de cada solicitud</li>
+                                            <li>Dificultad para conocer responsables y tiempos de respuesta</li>
+                                            <li>Documentación dispersa en correos o carpetas locales</li>
+                                            <li>Mayor carga administrativa para funcionarios y equipos internos</li>
+                                            <li>Riesgo de pérdida de respaldo documental</li>
+                                            <li>Procesos lentos, poco estandarizados y difíciles de auditar</li>
+                                            <li>Dependencia de gestiones manuales para validar, aprobar o derivar solicitudes</li>
                                         </ul>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-th-large"></i> Trámites online desarrollados</div>
+                                        <div class="project-module-grid">
+                                            <div class="project-module-item"><i class="fa fa-car"></i><span>Mejoras solicitadas en trámite de cometidos</span></div>
+                                            <div class="project-module-item"><i class="fa fa-file-text"></i><span>Toma de Conocimiento y Entrega de RIOHS</span></div>
+                                            <div class="project-module-item"><i class="fa fa-fire"></i><span>Solicitud de Vale de Convenio Gas para Bienestar</span></div>
+                                            <div class="project-module-item"><i class="fa fa-truck"></i><span>Solicitud de vehículos y choferes institucionales</span></div>
+                                            <div class="project-module-item"><i class="fa fa-ticket"></i><span>Solicitud de Entradas de Cine para Bienestar</span></div>
+                                            <div class="project-module-item"><i class="fa fa-calendar-check"></i><span>Envío de Informes de Ausentismo de Funcionarios</span></div>
+                                            <div class="project-module-item"><i class="fa fa-certificate"></i><span>Solicitud de Certificado de Antigüedad Laboral</span></div>
+                                            <div class="project-module-item"><i class="fa fa-shield"></i><span>Denuncias vinculadas a Ley Karin (Ley N°21.643)</span></div>
+                                            <div class="project-module-item"><i class="fa fa-star"></i><span>Proceso online de Evaluación y Calificaciones</span></div>
+                                            <div class="project-module-item"><i class="fa fa-calendar"></i><span>Solicitud de Permiso Sin Goce de Remuneraciones</span></div>
+                                            <div class="project-module-item"><i class="fa fa-exchange"></i><span>Solicitud de Traslado de Funcionario</span></div>
+                                            <div class="project-module-item"><i class="fa fa-building"></i><span>Gestión de Labores Esenciales de Establecimientos</span></div>
+                                            <div class="project-module-item"><i class="fa fa-sign-out"></i><span>Renuncia Laboral Online</span></div>
+                                            <div class="project-module-item"><i class="fa fa-plus-circle"></i><span>Anotación de Mérito o Demérito de Funcionarios</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-star"></i> Evaluación funcionaria online</div>
+                                        <p>Uno de los desarrollos más relevantes fue el sistema de <strong>Evaluación Funcionaria Online</strong>, incorporando etapas como:</p>
+                                        <ul class="project-problem-list">
+                                            <li>Primera y segunda evaluación del año</li>
+                                            <li>Precalificación y gestión de Junta Calificadora</li>
+                                            <li>Validación mediante Clave Única</li>
+                                            <li>Registro y respaldo de antecedentes</li>
+                                            <li>Consolidación de información para revisión institucional</li>
+                                        </ul>
+                                        <p class="mt-2">Este proceso transformó una gestión tradicionalmente compleja y extensa en un flujo digital ordenado, trazable y respaldado. Fue <strong>destacado por la Dirección de Educación Pública (DEP)</strong> como un aporte relevante en materia de modernización administrativa.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-sitemap"></i> Flujos, trazabilidad y respaldo documental</div>
+                                        <p>Un punto clave fue la <strong>automatización de flujos de aprobación jerárquica</strong>. Los trámites no se limitaron a capturar datos, sino que incorporaron etapas de revisión, derivación, aprobación, rechazo, notificación y cierre. Esto permite contar con:</p>
+                                        <ul class="project-problem-list">
+                                            <li>Historial completo de cada solicitud</li>
+                                            <li>Identificación de responsables por etapa</li>
+                                            <li>Registro de fechas y acciones realizadas</li>
+                                            <li>Respaldo automático de antecedentes</li>
+                                            <li>Mayor control sobre los tiempos de respuesta</li>
+                                            <li>Información consolidada para reportes y seguimiento</li>
+                                            <li>Mejor capacidad de auditoría interna</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-key"></i> Integración con Clave Única</div>
+                                        <p>Todos los procesos fueron implementados con <strong>validación mediante Clave Única</strong>, fortaleciendo la autenticación de los funcionarios y entregando mayor validez al proceso digital. Esto permite avanzar hacia trámites más seguros, confiables y alineados con estándares de digitalización del Estado.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte técnico</div>
+                                        <p class="project-contribution-summary">Participé directamente en el <strong>diseño, desarrollo, implementación y mejora continua</strong> de estos trámites digitales, incluyendo análisis de requerimientos, levantamiento de reglas de negocio, diseño de flujos, configuración de etapas, desarrollo de validaciones, integración de datos, generación de reportes y ajustes funcionales según las necesidades de las áreas usuarias.</p>
+                                        <div class="project-contribution-grid">
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-sitemap"></i> Diseño de flujos</h5>
+                                                <ul>
+                                                    <li>Análisis de procesos administrativos y levantamiento de reglas de negocio</li>
+                                                    <li>Configuración de etapas de revisión, derivación, aprobación, rechazo y cierre</li>
+                                                    <li>Automatización de tareas que antes requerían alta carga manual</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-code"></i> Desarrollo</h5>
+                                                <ul>
+                                                    <li>Implementación full stack de 14 trámites digitales en la plataforma SIMPLE</li>
+                                                    <li>Integración con Clave Única, bases de datos y sistemas existentes</li>
+                                                    <li>Validaciones, notificaciones y generación de reportes consolidados</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-shield"></i> Trazabilidad</h5>
+                                                <ul>
+                                                    <li>Registro de historial completo por cada solicitud</li>
+                                                    <li>Identificación de responsables y tiempos por etapa</li>
+                                                    <li>Respaldo automático de documentación y antecedentes</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-refresh"></i> Mejora continua</h5>
+                                                <ul>
+                                                    <li>Ajustes funcionales según retroalimentación de áreas usuarias</li>
+                                                    <li>Optimización de flujos para reducir tiempos de respuesta</li>
+                                                    <li>Estandarización de procesos administrativos institucionales</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="project-detail-block">
                                         <div class="project-detail-label"><i class="fa fa-cubes"></i> Stack</div>
@@ -472,13 +849,17 @@
                                             <span class="tech-tag tech-tag-sm">Python</span>
                                             <span class="tech-tag tech-tag-sm">Flask</span>
                                             <span class="tech-tag tech-tag-sm">SQLAlchemy</span>
+                                            <span class="tech-tag tech-tag-sm">MySQL</span>
                                             <span class="tech-tag tech-tag-sm">SIMPLE</span>
                                             <span class="tech-tag tech-tag-sm">PHP</span>
+                                            <span class="tech-tag tech-tag-sm">Clave Única</span>
+                                            <span class="tech-tag tech-tag-sm">APIs REST</span>
+                                            <span class="tech-tag tech-tag-sm">PDF/Excel</span>
                                         </div>
                                     </div>
                                     <div class="project-detail-block project-impact-block">
                                         <div class="project-detail-label"><i class="fa fa-chart-line"></i> Impacto</div>
-                                        <p>Reducción significativa de horas-hombre en trámites manuales. El sistema de evaluación funcionaria fue <strong>destacado por la Dirección de Educación Pública (DEP)</strong> como aporte relevante en modernización, reduciendo procesos de semanas a días por etapa con respaldo automático y datos unificados.</p>
+                                        <p><strong>14 trámites digitales</strong> implementados y en producción, con <strong>+10.000 solicitudes procesadas al año</strong>. El sistema de evaluación funcionaria fue <strong>destacado por la Dirección de Educación Pública (DEP)</strong>. Reducción significativa de horas-hombre: procesos que antes tomaban semanas ahora se resuelven en días, con trazabilidad completa, respaldo automático y datos unificados.</p>
                                     </div>
                                     <div class="project-modal-actions">
                                         <button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i>&nbsp;Cerrar</button>

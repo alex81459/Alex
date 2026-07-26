@@ -387,6 +387,63 @@ body {
     }
 }
 
+/* -- Módulos del sistema -- */
+.project-module-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.project-module-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    background: rgba(0, 212, 255, 0.045);
+    border: 1px solid rgba(0, 212, 255, 0.14);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: #d3e2ee;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.project-module-item:hover {
+    background: rgba(0, 212, 255, 0.09);
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+.project-module-item .fa {
+    color: #5fdcff;
+    font-size: 0.95rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+    width: 18px;
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    .project-module-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -- Lista de problemas/features en modales -- */
+.project-problem-list {
+    padding-left: 20px;
+    margin: 8px 0 0;
+    color: #d3e2ee;
+    line-height: 1.65;
+}
+
+.project-problem-list li {
+    margin-bottom: 5px;
+}
+
+.project-problem-list li:last-child {
+    margin-bottom: 0;
+}
+
 .about-section h2 {
     color: #ffffff;
     font-weight: 800;
