@@ -10,8 +10,8 @@ const {
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL;
-const siteUrl = 'https://alex81459.github.io/Alex/';
-const previewImage = 'https://alex81459.github.io/Alex/assets/img/preview.webp';
+const siteUrl = `${Astro.site}${base}`;
+const previewImage = `${siteUrl}assets/img/preview.webp`;
 ---
 
 <!DOCTYPE html>

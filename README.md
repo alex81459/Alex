@@ -183,37 +183,19 @@ Alex/
 │   │   └── MainLayout.astro
 │   └── pages/               # Páginas estáticas
 │       └── index.astro
-├── sections/                # Secciones HTML (referencia)
-│   ├── acerca.html
-│   ├── certificaciones.html
-│   ├── contacto.html
-│   ├── galeria.html
-│   ├── hero.html
-│   ├── impacto.html
-│   ├── modales.html
-│   ├── portafolio.html
-│   ├── servicios.html
-│   └── tech-stack.html
 ├── public/                  # Archivos estáticos públicos
 │   ├── assets/
-│   │   ├── bootstrap/       # Bootstrap CSS/JS
 │   │   ├── css/             # Estilos CSS
-│   │   ├── fonts/           # Fuentes
-│   │   ├── img/             # Imágenes
+│   │   ├── fonts/           # Fuentes Font Awesome
+│   │   ├── img/             # Imágenes y PDFs
 │   │   └── js/              # Scripts
-│   └── js/
-├── assets/                  # Archivos de recursos
-│   ├── bootstrap/
-│   ├── css/
-│   ├── fonts/
-│   ├── img/
-│   └── js/
+│   ├── robots.txt
+│   └── sitemap.xml
 ├── dist/                    # Build de producción (generado)
 ├── node_modules/            # Dependencias npm (generado)
 ├── astro.config.mjs         # Configuración de Astro
 ├── tsconfig.json            # Configuración de TypeScript
 ├── package.json             # Dependencias y scripts
-├── index.html               # HTML compilado (generado)
 ├── iniciador.sh             # Script de arranque (Linux/Mac)
 ├── iniciador.bat            # Script de arranque (Windows)
 └── README.md                # Este archivo
