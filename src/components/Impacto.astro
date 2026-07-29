@@ -2,10 +2,10 @@
 const metricas = [
   {
     icon: 'fa-cubes',
-    target: '15',
-    value: '15',
-    suffix: '+',
-    label: 'Trámites Implementados',
+    target: '13',
+    value: '13',
+    suffix: '',
+    label: 'Trámites Digitalizados',
     desc: 'Procesos institucionales digitalizados, operativos en producción y con trazabilidad completa',
   },
   {
@@ -34,11 +34,11 @@ const metricas = [
   },
   {
     icon: 'fa-exchange',
-    target: '18000',
-    value: '18.000',
+    target: '8000',
+    value: '8.000',
     suffix: '+',
     label: 'Interacciones con APIs Institucionales Desarrolladas',
-    desc: 'Consultas e integraciones procesadas entre 8 APIs institucionales conectadas',
+    desc: 'Consultas e integraciones procesadas entre 7 APIs institucionales conectadas',
   },
   {
     icon: 'fa-gavel',
@@ -114,21 +114,29 @@ const modulosLibro = [
 ];
 
 const resultadosClave = [
-  { icon: 'fa-cubes', value: '15+', label: 'Procesos digitalizados' },
-  { icon: 'fa-exchange', value: '18.000+', label: 'Interacciones mediante APIs' },
-  { icon: 'fa-clock-o', value: '3 h a 15 min', label: 'Búsqueda documental' },
-  { icon: 'fa-line-chart', value: '≈ CLP 35 M', label: 'Ahorro operacional' },
+  { icon: 'fa-cubes', value: '13', label: 'Trámites digitales implementados' },
+  { icon: 'fa-file-text-o', value: '10.000+', label: 'Trámites gestionados 2025–2026' },
+  { icon: 'fa-exchange', value: '8.000+', label: 'Interacciones mediante APIs' },
+  { icon: 'fa-book', value: '≈500 páginas', label: 'Documentación técnica' },
 ];
 
 const categoriasImpacto = [
+  {
+    icon: 'fa-book',
+    title: 'Documentación técnica y funcional',
+    description: 'Arquitectura, seguridad, autenticación, módulos, portales, roles y operación del Libro de Clases Digital.',
+    metrics: [
+      { value: '≈500 páginas', label: 'documentación técnica y funcional' },
+    ],
+  },
   {
     icon: 'fa-university',
     title: 'Transformación institucional',
     description: 'Digitalización de servicios y procesos críticos para una gestión pública más ágil y trazable.',
     metrics: [
-      { value: '10.000+', label: 'ingresos anuales a trámites' },
-      { value: '100%', label: 'cobertura en evaluaciones digitales' },
-      { value: '140+', label: 'casos gestionados en canal de denuncias' },
+      { value: '13', label: 'trámites digitales' },
+      { value: '10.000+', label: 'trámites gestionados' },
+      { value: '6+', label: 'áreas institucionales impactadas' },
     ],
   },
   {
@@ -136,19 +144,21 @@ const categoriasImpacto = [
     title: 'Gestión tecnológica',
     description: 'Planificación, ejecución y continuidad operativa de iniciativas tecnológicas institucionales.',
     metrics: [
-      { value: '24', label: 'procesos de licitación TIC' },
-      { value: '20', label: 'proyectos TIC formulados' },
-      { value: '1.200+', label: 'casos de soporte resueltos' },
+      { value: '69', label: 'establecimientos atendidos' },
+      { value: '1.000', label: 'casos de soporte' },
+      { value: '20', label: 'compras y licitaciones TIC' },
+      { value: '24', label: 'proyectos EvalTIC' },
     ],
   },
   {
-    icon: 'fa-industry',
-    title: 'Automatización productiva',
-    description: 'Control industrial y trazabilidad aplicados a calidad, eficiencia y reducción de pérdidas.',
+    icon: 'fa-random',
+    title: 'Ingeniería e interoperabilidad',
+    description: 'Desarrollo de siete servicios principales para integrar personas, roles, establecimientos, evaluaciones, RIOHS, bienestar, vehículos y otras plataformas institucionales.',
     metrics: [
-      { value: 'BRC A+', label: 'certificación internacional' },
-      { value: '3 h → 15 min', label: 'reducción en búsqueda documental' },
-      { value: '≈ CLP 35 M', label: 'de ahorro operacional' },
+      { value: '7', label: 'APIs principales' },
+      { value: '8.000+', label: 'interacciones documentadas' },
+      { value: 'Múltiples', label: 'bases de datos integradas' },
+      { value: 'Swagger y Postman', label: 'contratos y pruebas' },
     ],
   },
 ];
@@ -160,7 +170,7 @@ const categoriasImpacto = [
             <div class="col-lg-12 text-center section-title">
                 <h2 class="text-uppercase section-heading text-gradient">Impacto Profesional</h2>
                 <div class="impacto-autoria">
-                    <i class="fa fa-code"></i>Desarrollador Full Stack responsable de sistemas institucionales en operación para más de 70 establecimientos educacionales.
+                    <i class="fa fa-code"></i>Desarrollador Full Stack responsable de sistemas institucionales en operación para 69 establecimientos educacionales.
                 </div>
             </div>
         </div>
@@ -208,7 +218,7 @@ const categoriasImpacto = [
                         </div>
                         <div>
                             <div class="impacto-label impacto-label-wide">Libro de Clases Digital</div>
-                            <p class="impacto-desc impacto-desc-wide">Plataforma integral de gestión educativa desarrollada de forma modular, cubriendo los principales ejes del proceso docente y directivo en establecimientos educacionales. Mejora el <strong>control de registros</strong>, potencia la <strong>toma de decisiones</strong> basada en datos, garantiza el <strong>respaldo</strong> de la información y facilita la <strong>planificación</strong> institucional.</p>
+                            <p class="impacto-desc impacto-desc-wide"><strong>7 establecimientos</strong><br />Implementación para uso efectivo y expansión progresiva.</p>
                         </div>
                     </div>
 
