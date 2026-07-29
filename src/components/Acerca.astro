@@ -1,140 +1,144 @@
-    <section id="about" class="about-section">
-    <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase">Acerca De</h2>
-                    <h3 class="text-muted section-subheading">Información Acerca de mí<br></h3>
-                </div>
+---
+const trayectoria = [
+  {
+    period: '2024 — Actualidad',
+    organization: 'SLEP Colchagua',
+    role: 'Desarrollador Full Stack',
+    image: 'assets/img/slep.webp',
+    alt: 'SLEP Colchagua',
+    summary: 'Desarrollo de sistemas e infraestructura tecnológica para más de 70 establecimientos educacionales.',
+    details: [
+      'Desarrollo e implemento soluciones tecnológicas institucionales para SLEP Colchagua, entre ellas el Libro de Clases Digital, SIMPLE y APIs REST orientadas a la digitalización de procesos administrativos y educativos, utilizando Python, Flask, SQLAlchemy, Angular y PrimeNG.',
+      'Además, administro infraestructura TI para más de 70 establecimientos educacionales, gestiono proyectos tecnológicos, brindo soporte técnico avanzado, integro sistemas y elaboro documentación técnica especializada para la operación y mejora continua de la organización.',
+    ],
+    tags: ['Python', 'Flask', 'SQLAlchemy', 'Angular', 'PrimeNG', 'APIs REST', 'Infraestructura TI', 'Gestión de Proyectos'],
+  },
+  {
+    period: '2021 — 2024',
+    organization: 'Johnson Fruit',
+    role: 'Encargado del Área TI',
+    image: 'assets/img/JohnsonFruit.webp',
+    alt: 'Johnson Fruit',
+    summary: 'Automatización, trazabilidad e infraestructura industrial para una operación productiva y exportadora.',
+    details: [
+      'Responsable del área TI en empresa agrícola de producción y exportación frutícola, liderando la gestión tecnológica de sistemas de trazabilidad, bases de datos, redes, comunicaciones e infraestructura interna.',
+      'Desarrollé soluciones informáticas para la optimización de procesos productivos y administrativos, administré servidores Windows, ejecuté soporte técnico avanzado, mantenimiento de equipos y capacitación al personal. Complementariamente, participé como Auditor Interno BRC v8, contribuyendo al cumplimiento normativo, control de procesos y mejora continua operacional.',
+    ],
+    tags: ['Trazabilidad', 'Bases de Datos', 'Servidores Windows', 'Redes', 'Auditor BRC v8', 'Soporte Técnico', 'Capacitación'],
+  },
+  {
+    period: '2019 — 2021',
+    organization: 'Municipalidad de Chimbarongo',
+    role: 'Prácticas Profesionales',
+    image: 'assets/img/MunicipalidadCH.webp',
+    alt: 'Municipalidad de Chimbarongo',
+    summary: 'Desarrollo de sistemas, redes y soporte tecnológico para la gestión institucional municipal.',
+    details: [
+      'Experiencia en Ingeniería Informática desarrollada en la Municipalidad de Chimbarongo durante mi formación profesional. Participé en análisis y programación de sistemas, soporte técnico a usuarios, instalación y mantención de redes, equipos y plataformas informáticas.',
+      'Desarrollé soluciones internas y mejoras funcionales en sistemas municipales, contribuyendo a la digitalización de procesos y la gestión tecnológica institucional.',
+    ],
+    tags: ['Análisis de Sistemas', 'Programación', 'Redes', 'Soporte Técnico', 'Sistemas Municipales'],
+  },
+  {
+    period: '2016 — 2021',
+    organization: 'Formación técnica y profesional',
+    role: 'Informática, programación y análisis de sistemas',
+    image: 'assets/img/3964906.webp',
+    alt: 'Formación en Ingeniería Informática',
+    summary: 'Formación progresiva en soporte computacional, programación, análisis de sistemas e Ingeniería Informática.',
+    milestones: [
+      {
+        year: '2016',
+        title: 'Administrativo Computacional Microsoft',
+        text: 'Formación en herramientas computacionales y ofimáticas, con dominio en entorno Windows y Microsoft Office. Además, obtuve mención en Armado y Mantención de Computadoras, fortaleciendo competencias en soporte técnico, diagnóstico, mantenimiento preventivo y correctivo, y resolución de problemas de hardware.',
+      },
+      {
+        year: '2017',
+        title: 'Técnico Superior en Programación',
+        text: 'Formación técnica orientada al ciclo completo de desarrollo de software, incluyendo análisis de requerimientos, diseño, construcción, pruebas e implementación de soluciones informáticas. Esta formación me permitió adquirir competencias para desarrollar sistemas conforme a estándares de calidad técnica y enfocados en las necesidades reales de usuarios y organizaciones.',
+      },
+      {
+        year: '2019',
+        title: 'Técnico en Análisis de Sistemas',
+        text: 'Especialización en análisis, modelamiento, supervisión y mejora continua de sistemas informáticos. Desarrollé competencias en levantamiento de requerimientos, modelado de procesos de negocio, control de calidad de software, administración de proyectos informáticos y diseño de soluciones tecnológicas seguras, funcionales y adaptadas al contexto organizacional.',
+      },
+      {
+        year: '2021',
+        title: 'Ingeniero de Ejecución en Informática',
+        text: 'Formación profesional en desarrollo, evaluación e implementación de soluciones informáticas integrales, aplicando metodologías de análisis, diseño, pruebas, seguridad informática y gestión de proyectos tecnológicos. Esta formación me permitió fortalecer capacidades para diseñar sistemas seguros, administrar proyectos TI, evaluar soluciones tecnológicas y aplicar conocimientos en áreas como infraestructura, software e IoT.',
+      },
+    ],
+    tags: ['Soporte Computacional', 'Programación', 'Análisis de Sistemas', 'Ingeniería Informática', 'Seguridad', 'IoT'],
+  },
+];
+---
+
+<section id="about" class="about-section">
+  <div class="container career-container">
+    <header class="career-heading section-intro text-center">
+      <span class="career-eyebrow section-kicker">TRAYECTORIA PROFESIONAL</span>
+      <h2 class="text-uppercase section-heading">Acerca de mí</h2>
+      <p class="section-subheading section-lead">Experiencia y formación construidas desde la operación técnica hasta el desarrollo de soluciones institucionales.</p>
+    </header>
+
+    <div class="career-timeline">
+      {trayectoria.map((item, index) => (
+        <article class="career-entry">
+          <div class="career-marker" aria-hidden="true">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+          </div>
+
+          <div class="career-card">
+            <div class="career-card-main">
+              <img src={item.image} width="76" height="76" loading={index === 0 ? 'eager' : 'lazy'} alt={item.alt}>
+              <div class="career-card-copy">
+                <span class="career-period">{item.period}</span>
+                <h3>{item.organization}</h3>
+                <span class="career-role">{item.role}</span>
+                <p class="career-summary">{item.summary}</p>
+              </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-group timeline">
-                        <li class="list-group-item timeline-item">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" width="120" height="120" src="assets/img/microsoft-it-academy-logo.webp" alt="Microsoft IT Academy"></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2016</h4>
-                                    <h4 class="subheading"><strong>Administrativo Computacional Microsoft</strong></h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Formación en herramientas computacionales y ofimáticas, con dominio en entorno Windows y Microsoft Office. Además, obtuve mención en Armado y Mantención de Computadoras, fortaleciendo competencias en soporte técnico, diagnóstico, mantenimiento preventivo/correctivo y resolución de problemas de hardware.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item timeline-item timeline-inverted">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" width="120" height="120" src="assets/img/ilustracion-colorida-programador-trabajando_23-2148281410.webp" alt="Programación"></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2017</h4>
-                                    <h4 class="subheading">Técnico Superior en Programación</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Formación técnica orientada al ciclo completo de desarrollo de software, incluyendo análisis de requerimientos, diseño, construcción, pruebas e implementación de soluciones informáticas. Esta formación me permitió adquirir competencias para desarrollar sistemas conforme a estándares de calidad técnica y enfocados en las necesidades reales de usuarios y organizaciones.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item timeline-item">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" width="120" height="120" src="assets/img/2555355.webp" alt="Análisis de Sistemas"></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2019</h4>
-                                    <h4 class="subheading">Técnico en Análisis de Sistemas</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Especialización en análisis, modelamiento, supervisión y mejora continua de sistemas informáticos. Desarrollé competencias en levantamiento de requerimientos, modelado de procesos de negocio, control de calidad de software, administración de proyectos informáticos y diseño de soluciones tecnológicas seguras, funcionales y adaptadas al contexto organizacional.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item timeline-item timeline-inverted">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" width="120" height="120" src="assets/img/3964906.webp" alt="Ingeniería en Informática"></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2021</h4>
-                                    <h4 class="subheading">Ingeniero de Ejecución en Informática</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Formación profesional en desarrollo, evaluación e implementación de soluciones informáticas integrales, aplicando metodologías de análisis, diseño, pruebas, seguridad informática y gestión de proyectos tecnológicos. Esta formación me permitió fortalecer capacidades para diseñar sistemas seguros, administrar proyectos TI, evaluar soluciones tecnológicas y aplicar conocimientos en áreas como infraestructura, software e IoT.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item timeline-item">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" width="120" height="120" src="assets/img/MunicipalidadCH.webp" alt="Municipalidad Chimbarongo"></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2019-2021</h4>
-                                    <h4 class="subheading"><strong>Prácticas Profesionales - Municipalidad Chimbarongo</strong></h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Experiencia en Ingeniería Informática desarrollada en la Municipalidad de Chimbarongo durante mi formación profesional. Participé en análisis y programación de sistemas, soporte técnico a usuarios, instalación y mantención de redes, equipos y plataformas informáticas. Desarrollé soluciones internas y mejoras funcionales en sistemas municipales, contribuyendo a la digitalización de procesos y la gestión tecnológica institucional.</p>
-                                    <div class="mt-3">
-                                        <span class="skill-pill">Análisis de Sistemas</span>
-                                        <span class="skill-pill">Programación</span>
-                                        <span class="skill-pill">Redes</span>
-                                        <span class="skill-pill">Soporte Técnico</span>
-                                        <span class="skill-pill">Sistemas Municipales</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item timeline-item timeline-inverted">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" width="120" height="120" src="assets/img/JohnsonFruit.webp" alt="Johnson Fruit"></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>OCT 2021 - AGO 2024</h4>
-                                    <h4 class="subheading"><strong>Encargado del Área TI - Johnson Fruit</strong></h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Responsable del área TI en empresa agrícola de producción y exportación frutícola, liderando la gestión tecnológica de sistemas de trazabilidad, bases de datos, redes, comunicaciones e infraestructura interna. Desarrollé soluciones informáticas para la optimización de procesos productivos y administrativos, administré servidores Windows, ejecuté soporte técnico avanzado, mantenimiento de equipos y capacitación al personal. Complementariamente, participé como Auditor Interno BRC v8, contribuyendo al cumplimiento normativo, control de procesos y mejora continua operacional.</p>
-                                    <div class="mt-3">
-                                        <span class="skill-pill">Trazabilidad</span>
-                                        <span class="skill-pill">Base de Datos</span>
-                                        <span class="skill-pill">Servidores Windows</span>
-                                        <span class="skill-pill">Redes</span>
-                                        <span class="skill-pill">Auditor BRC v8</span>
-                                        <span class="skill-pill">Soporte Técnico</span>
-                                        <span class="skill-pill">Capacitación</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item timeline-item">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/slep.webp" alt="SLEP Colchagua"></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>SEPT 2024 - Actualidad</h4>
-                                    <h4 class="subheading"><strong>Desarrollador Full Stack - SLEP Colchagua</strong></h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Desarrollo e implemento soluciones tecnológicas institucionales para SLEP Colchagua, entre ellas el Libro de Clases Digital, SIMPLE y APIs REST orientadas a la digitalización de procesos administrativos y educativos, utilizando Python, Flask, SQLAlchemy, Angular y PrimeNG. Además, administro infraestructura TI para más de 70 establecimientos educacionales, gestiono proyectos tecnológicos, brindo soporte técnico avanzado, integro sistemas y elaboro documentación técnica especializada para la operación y mejora continua de la organización.</p>
-                                    <div class="mt-3">
-                                        <span class="skill-pill">Python</span>
-                                        <span class="skill-pill">Flask</span>
-                                        <span class="skill-pill">SQLAlchemy</span>
-                                        <span class="skill-pill">Angular</span>
-                                        <span class="skill-pill">PrimeNG</span>
-                                        <span class="skill-pill">APIs REST</span>
-                                        <span class="skill-pill">Infraestructura TI</span>
-                                        <span class="skill-pill">Gestión de Proyectos</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item timeline-inverted">
-                            <div class="timeline-image timeline-end">
-                                <i class="fa fa-rocket" aria-hidden="true"></i>
-                                <h4>Evolución<br>Constante</h4>
-                            </div>
-                        </li>	
-                    </ul>
-					<div class="cv-download">
-						<h4 class="text-center mb-4">Descargar Currículum Vitae</h4>
-                        <a href="assets/curriculum-v3-2026.pdf" target="_blank" rel="noopener">
-								<img src="assets/img/descargar-pdf.webp" width="80" height="80" alt="Descargar CV" class="cv-icon">
-						</a>
-						<p class="text-muted mt-3">Haz clic en el icono para descargar mi CV completo</p>
-					</div>
-					
+
+            <details class="career-details">
+              <summary>
+                <span>Ver trayectoria completa</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </summary>
+              <div class="career-details-content">
+                {item.details?.map((paragraph) => <p>{paragraph}</p>)}
+                {item.milestones && (
+                  <div class="career-education-list">
+                    {item.milestones.map((milestone) => (
+                      <div class="career-education-item">
+                        <span>{milestone.year}</span>
+                        <div>
+                          <h4>{milestone.title}</h4>
+                          <p>{milestone.text}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <div class="career-tags">
+                  {item.tags.map((tag) => <span>{tag}</span>)}
                 </div>
-            </div>
-        </div>
-    </section>
+              </div>
+            </details>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="career-cv">
+      <div>
+        <span>PERFIL COMPLETO</span>
+        <h3>Currículum Vitae</h3>
+        <p>Consulta la experiencia, formación y competencias profesionales en detalle.</p>
+      </div>
+      <a href="assets/curriculum-v3-2026.pdf" target="_blank" rel="noopener">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        Descargar CV
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,220 +1,141 @@
-﻿    <section id="certifications" class="certifications-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center section-title">
-                    <h2 class="text-uppercase section-heading text-gradient">Certificaciones y Cursos</h2>
-                    <h3 class="text-muted section-subheading"><em>Formación continua y especialización profesional</em></h3>
-                </div>
-            </div>
+---
+const destacadas = [
+  { provider: 'Cisco', title: 'Cybersecurity Essentials', icon: 'fa-shield-alt', category: 'Seguridad' },
+  { provider: 'Google', title: 'Workspace Administrator', icon: 'fa-cloud', category: 'Sistemas' },
+  { provider: 'Udemy', title: 'Angular de Cero a Experto', icon: 'fa-code', category: 'Desarrollo' },
+  { provider: 'Udemy', title: 'Docker', icon: 'fa-cubes', category: 'Sistemas' },
+  { provider: 'Capacired', title: 'Auditor Interno BRC V8', icon: 'fa-certificate', category: 'Gestión' },
+  { provider: 'Factor Clave', title: 'Excel Nivel Avanzado', icon: 'fa-table', category: 'Productividad' },
+];
 
-            <!-- Certificaciones destacadas -->
-            <div class="row justify-content-center cert-featured-row">
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fas fa-lock cert-badge-icon"></i>
-                        <span>Ciberseguridad</span>
-                        <small>Cisco / Google / Platzi</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fas fa-cloud cert-badge-icon"></i>
-                        <span>Google Workspace</span>
-                        <small>Administrator</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fas fa-code-branch cert-badge-icon"></i>
-                        <span>Git / GitHub</span>
-                        <small>Udemy</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fas fa-cubes cert-badge-icon"></i>
-                        <span>Angular</span>
-                        <small>Educare y Udemy</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fas fa-code cert-badge-icon"></i>
-                        <span>C# / .NET</span>
-                        <small>Udemy</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fas fa-database cert-badge-icon"></i>
-                        <span>MySQL / MariaDB</span>
-                        <small>Udemy</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fas fa-table cert-badge-icon"></i>
-                        <span>Excel Avanzado</span>
-                        <small>Factor Clave / Udemy</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fab fa-node-js cert-badge-icon"></i>
-                        <span>Node.js Avanzado</span>
-                        <small>Udemy</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fab fa-python cert-badge-icon"></i>
-                        <span>Python Maestro</span>
-                        <small>Udemy</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fab fa-docker cert-badge-icon"></i>
-                        <span>Docker</span>
-                        <small>Udemy</small>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                    <div class="cert-badge">
-                        <i class="fab fa-angular cert-badge-icon"></i>
-                        <span>Angular Experto</span>
-                        <small>Udemy / Educare</small>
-                    </div>
-                </div>
-            </div>
+const categorias = [
+  { id: 'all', label: 'Todas' },
+  { id: 'desarrollo', label: 'Desarrollo' },
+  { id: 'seguridad', label: 'Seguridad' },
+  { id: 'sistemas', label: 'Sistemas' },
+  { id: 'hardware', label: 'Hardware' },
+  { id: 'gestion', label: 'Gestión' },
+  { id: 'productividad', label: 'Productividad' },
+];
 
-            <!-- Botón ver todas -->
-            <div class="row">
-                <div class="col-12 text-center mb-4">
-                    <button class="btn btn-outline-primary btn-sm cert-toggle-btn" type="button" id="certToggleBtn" onclick="toggleAllCerts()">
-                        <i class="fas fa-plus-circle me-1"></i> Ver todas las certificaciones
-                    </button>
-                </div>
-            </div>
+const certificaciones = [
+  { category: 'desarrollo', provider: 'Udemy', title: 'Angular de Cero a Experto' },
+  { category: 'desarrollo', provider: 'Udemy', title: 'Angular Experto' },
+  { category: 'desarrollo', provider: 'Udemy', title: 'Node.js Avanzado' },
+  { category: 'desarrollo', provider: 'Udemy', title: 'Python Maestro' },
+  { category: 'desarrollo', provider: 'Udemy', title: 'Docker' },
+  { category: 'desarrollo', provider: 'Udemy', title: 'C# .NET' },
+  { category: 'desarrollo', provider: 'Udemy', title: 'Git y GitHub' },
+  { category: 'desarrollo', provider: 'Sence', title: 'WordPress 5' },
+  { category: 'desarrollo', provider: 'Udemy', title: 'MySQL y MariaDB' },
+  { category: 'seguridad', provider: 'Cisco', title: 'Cybersecurity Essentials' },
+  { category: 'seguridad', provider: 'Udemy', title: 'Seguridad Informática y Hacking' },
+  { category: 'seguridad', provider: 'Google', title: 'Protege tu Negocio: Ciberseguridad' },
+  { category: 'seguridad', provider: 'Platzi', title: 'Seguridad Informática para Empresas' },
+  { category: 'seguridad', provider: 'Formación profesional', title: 'Análisis de Riesgos de Seguridad Informática' },
+  { category: 'sistemas', provider: 'Google', title: 'Workspace Administrator' },
+  { category: 'sistemas', provider: 'Formación profesional', title: 'Instalación y Configuración Windows Server' },
+  { category: 'sistemas', provider: 'Udemy', title: 'Redes de Computadores' },
+  { category: 'sistemas', provider: 'Formación profesional', title: 'Administrativo Computacional' },
+  { category: 'sistemas', provider: 'Gobierno Digital', title: 'Transformación Digital con SIMPLE' },
+  { category: 'hardware', provider: 'Instituto Conosur', title: 'Armado de Equipos' },
+  { category: 'hardware', provider: 'Formación técnica', title: 'Técnico en Reparación de Laptops' },
+  { category: 'hardware', provider: 'Formación técnica', title: 'Reparador de Tablets y Teléfonos' },
+  { category: 'hardware', provider: 'Udemy', title: 'Proyectos Master con Arduino' },
+  { category: 'hardware', provider: 'Udemy', title: 'Raspberry Pi 4 IoT' },
+  { category: 'gestion', provider: 'Capacired', title: 'Auditor Interno BRC V8' },
+  { category: 'gestion', provider: 'CEA', title: 'Administración del Estado' },
+  { category: 'gestion', provider: 'Experiencia profesional', title: 'Servicios Públicos y Privados' },
+  { category: 'gestion', provider: 'Estado de Chile', title: 'Integridad Pública' },
+  { category: 'productividad', provider: 'Factor Clave', title: 'Excel Nivel Avanzado' },
+  { category: 'productividad', provider: 'Udemy', title: 'Excel de Principiante a Avanzado' },
+  { category: 'productividad', provider: 'Lego Education Academy', title: 'SPIKE' },
+];
+---
 
-            <!-- Todas las certificaciones (ocultas por defecto) -->
-            <div id="allCertsBlock" style="display:none;">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 mb-5">
-                        <div class="cert-card">
-                            <div class="cert-card-header">
-                                <i class="fas fa-code cert-icon"></i>
-                                <h4 class="cert-title">Desarrollo y Programación</h4>
-                            </div>
-                            <div class="cert-skills">
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Angular de Cero a Experto</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Angular Experto</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Node.js Avanzado</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Python Maestro</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Docker</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy C# .NET</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Curso Git y GitHub</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Sence WordPress 5</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy MySQL y MariaDB</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb-5">
-                        <div class="cert-card">
-                            <div class="cert-card-header">
-                                <i class="fas fa-shield-alt cert-icon"></i>
-                                <h4 class="cert-title">Seguridad Informática</h4>
-                            </div>
-                            <div class="cert-skills">
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Cisco Cybersecurity Essentials</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Seguridad Informática y Hacking</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Google Protege tu Negocio Ciberseguridad</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Platzi Seguridad Informática para Empresas</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Análisis de Riesgos Seguridad Informática</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb-5">
-                        <div class="cert-card">
-                            <div class="cert-card-header">
-                                <i class="fas fa-server cert-icon"></i>
-                                <h4 class="cert-title">Administración de Sistemas</h4>
-                            </div>
-                            <div class="cert-skills">
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Google Workspace Administrator</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Instalación y Configuración Windows Server</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Redes de Computadores</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Administrativo Computacional</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Transformación Digital con SIMPLE</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb-5">
-                        <div class="cert-card">
-                            <div class="cert-card-header">
-                                <i class="fas fa-wrench cert-icon"></i>
-                                <h4 class="cert-title">Hardware y Soporte Técnico</h4>
-                            </div>
-                            <div class="cert-skills">
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Instituto Conosur Armado de Equipos</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Técnico en Reparación de Laptops</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Reparador de Tablets y Teléfonos</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Proyectos Master con Arduino</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Raspberry Pi 4 IoT</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb-5">
-                        <div class="cert-card">
-                            <div class="cert-card-header">
-                                <i class="fas fa-building cert-icon"></i>
-                                <h4 class="cert-title">Gestión Empresarial y Calidad</h4>
-                            </div>
-                            <div class="cert-skills">
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Capacired Auditor Interno BRC V8</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Curso CEA (Administración del Estado)</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Experiencia en Servicios Públicos y Privados</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Integridad Pública Del Estado</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 mb-5">
-                        <div class="cert-card">
-                            <div class="cert-card-header">
-                                <i class="fas fa-chart-line cert-icon"></i>
-                                <h4 class="cert-title">Herramientas de Productividad</h4>
-                            </div>
-                            <div class="cert-skills">
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Excel Nivel Avanzado Factor Clave</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Udemy Excel Principiante Hasta Avanzado</span></div>
-                                <div class="cert-item"><i class="fas fa-check-circle"></i><span class="cert-name">Lego Education Academy SPIKE</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section id="certifications" class="certifications-section">
+  <div class="container cert-container">
+    <header class="cert-heading text-center">
+      <span class="cert-eyebrow">FORMACIÓN CONTINUA</span>
+      <h2 class="text-uppercase section-heading text-gradient">Certificaciones y Cursos</h2>
+      <p class="section-subheading">Una selección de formación aplicada en desarrollo, infraestructura, seguridad y gestión.</p>
+    </header>
 
-            <div class="row mt-5">
-                <div class="col-lg-12 text-center">
-                    <div class="cert-summary">
-                        <h4 class="text-gradient mb-3">Resumen de Certificaciones</h4>
-                        <div class="row justify-content-center">
-                            <div class="col-md-2 col-sm-4 cert-stat">
-                                <div class="cert-number">30+</div>
-                                <div class="cert-label">Certificaciones</div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 cert-stat">
-                                <div class="cert-number">6</div>
-                                <div class="cert-label">áreas Técnicas</div>
-                            </div>
-                            <div class="col-md-2 col-sm-4 cert-stat">
-                                <div class="cert-number">10+</div>
-                                <div class="cert-label">Años Formándose</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="cert-featured-grid" aria-label="Certificaciones destacadas">
+      {destacadas.map((cert) => (
+        <article class="cert-featured-card">
+          <div class="cert-featured-icon" aria-hidden="true"><i class={`fas ${cert.icon}`}></i></div>
+          <span class="cert-provider">{cert.provider}</span>
+          <h3>{cert.title}</h3>
+          <span class="cert-category-label">{cert.category}</span>
+        </article>
+      ))}
+    </div>
+
+    <div class="cert-actions">
+      <button class="cert-toggle-btn" type="button" id="certToggleBtn" aria-expanded="false" aria-controls="allCertsBlock" onclick="toggleAllCerts()">
+        <i class="fas fa-plus-circle" aria-hidden="true"></i>
+        <span>Ver las 30+ certificaciones</span>
+      </button>
+    </div>
+
+    <div id="allCertsBlock" class="cert-catalog" style="display:none;">
+      <div class="cert-catalog-header">
+        <div>
+          <span class="cert-catalog-kicker">CATÁLOGO COMPLETO</span>
+          <h3>Explora por área</h3>
         </div>
-    </section>
-    
+        <span class="cert-catalog-count">{certificaciones.length} credenciales</span>
+      </div>
+
+      <div class="cert-filters" role="group" aria-label="Filtrar certificaciones por área">
+        {categorias.map((categoria, index) => (
+          <button class:list={['cert-filter-btn', { active: index === 0 }]} type="button" data-cert-filter={categoria.id} aria-pressed={index === 0 ? 'true' : 'false'}>
+            {categoria.label}
+          </button>
+        ))}
+      </div>
+
+      <div class="cert-catalog-grid" aria-live="polite">
+        {certificaciones.map((cert) => (
+          <article class="cert-catalog-item" data-cert-category={cert.category}>
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <div>
+              <span>{cert.provider}</span>
+              <h4>{cert.title}</h4>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <div class="cert-summary-strip" aria-label="Resumen de formación">
+      <div><strong>30+</strong><span>Certificaciones</span></div>
+      <div><strong>6</strong><span>Áreas profesionales</span></div>
+      <div><strong>10+</strong><span>Años formándose</span></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('[data-cert-filter]');
+    const items = document.querySelectorAll<HTMLElement>('[data-cert-category]');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.certFilter || 'all';
+
+        buttons.forEach((candidate) => {
+          const selected = candidate === button;
+          candidate.classList.toggle('active', selected);
+          candidate.setAttribute('aria-pressed', String(selected));
+        });
+
+        items.forEach((item) => {
+          item.hidden = filter !== 'all' && item.dataset.certCategory !== filter;
+        });
+      });
+    });
+  });
+</script>

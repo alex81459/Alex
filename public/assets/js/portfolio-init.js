@@ -98,10 +98,12 @@
 
     if (block.style.display === 'none') {
       block.style.display = 'block';
-      btn.innerHTML = '<i class="fa fa-minus-circle me-1"></i> Ocultar certificaciones';
+      btn.setAttribute('aria-expanded', 'true');
+      btn.innerHTML = '<i class="fa fa-minus-circle" aria-hidden="true"></i><span>Ocultar certificaciones</span>';
     } else {
       block.style.display = 'none';
-      btn.innerHTML = '<i class="fa fa-plus-circle me-1"></i> Ver todas las certificaciones';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '<i class="fa fa-plus-circle" aria-hidden="true"></i><span>Ver las 30+ certificaciones</span>';
     }
   }
 

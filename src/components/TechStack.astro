@@ -1,90 +1,91 @@
-    <section id="tech-stack" class="tech-stack-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center section-title">
-                    <h2 class="text-uppercase section-heading text-gradient">Stack Tecnológico</h2>
-                    <h3 class="text-muted section-subheading"><em>Tecnologías, capacidades y herramientas con las que trabajo</em></h3>
-                </div>
-            </div>
-            
-            <div class="row">
-                <!-- Tecnologías principales -->
-                <div class="col-lg-12 mb-5">
-                    <div class="tech-card">
-                        <div class="tech-card-header">
-                            <i class="fa fa-code tech-icon"></i>
-                            <h4 class="tech-title">Tecnologías principales</h4>
-                        </div>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">SQLAlchemy</span>
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">C#</span>
-                            <span class="tech-tag">MySQL / SQL Server</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Nginx</span>
-                        </div>
-                    </div>
-                </div>
+---
+const ecosistema = [
+  {
+    icon: 'fa-desktop',
+    title: 'Frontend',
+    description: 'Interfaces administrativas responsivas y orientadas a flujos complejos.',
+    technologies: [
+      { name: 'Angular', meta: 'Uso principal · Producción', projects: 'Libro de Clases, portales y paneles administrativos' },
+      { name: 'TypeScript', meta: 'Uso principal · Producción', projects: 'Aplicaciones SPA, formularios y servicios frontend' },
+      { name: 'PrimeNG', meta: 'Uso frecuente · Producción', projects: 'Tablas, dashboards y componentes institucionales' },
+      { name: 'React y ecosistema UI', meta: 'Experiencia aplicada', projects: 'React, Angular Material, Tailwind, Bootstrap, HTML5, CSS3 y SCSS' },
+    ],
+  },
+  {
+    icon: 'fa-code',
+    title: 'Backend',
+    description: 'Servicios seguros, integración de sistemas y lógica de negocio mantenible.',
+    technologies: [
+      { name: 'Python / Flask', meta: 'Uso principal · Producción', projects: 'Trámites Online, APIs institucionales y automatizaciones' },
+      { name: 'Node.js / NestJS', meta: 'Uso frecuente · Producción', projects: 'Servicios REST, integraciones y procesos en tiempo real' },
+      { name: 'C# / .NET', meta: 'Experiencia aplicada · Producción', projects: 'Minimal APIs, automatización industrial y aplicaciones empresariales' },
+      { name: 'APIs y mensajería', meta: 'Uso transversal', projects: 'REST, Swagger/OpenAPI, WebSockets, Socket.IO, SendGrid y Nodemailer' },
+    ],
+  },
+  {
+    icon: 'fa-database',
+    title: 'Datos',
+    description: 'Modelado relacional, persistencia y explotación de información operativa.',
+    technologies: [
+      { name: 'MySQL', meta: 'Uso principal · Producción', projects: 'Sistemas institucionales, trazabilidad y portales web' },
+      { name: 'SQL Server', meta: 'Uso frecuente · Producción', projects: 'Aplicaciones empresariales e integración de datos' },
+      { name: 'SQLAlchemy', meta: 'Uso principal · Producción', projects: 'Modelos, migraciones y consultas en plataformas Flask' },
+      { name: 'Reportes e integraciones', meta: 'Uso transversal', projects: 'SQLite, Google Sheets API, Excel/XLSX, PDFMake, jsPDF y Chart.js' },
+    ],
+  },
+  {
+    icon: 'fa-server',
+    title: 'Infraestructura',
+    description: 'Despliegue, observabilidad y continuidad de plataformas en producción.',
+    technologies: [
+      { name: 'Docker', meta: 'Uso principal · Producción', projects: 'Contenedores de aplicaciones, APIs y servicios institucionales' },
+      { name: 'Nginx', meta: 'Uso principal · Producción', projects: 'Proxy inverso, publicación segura y entrega de aplicaciones' },
+      { name: 'Linux', meta: 'Administración · Producción', projects: 'Servidores, Bash, monitoreo y continuidad operativa' },
+      { name: 'Operación y despliegue', meta: 'Experiencia aplicada', projects: 'GitHub Actions, Kubernetes, Sentry, Windows Server, redes y conectividad' },
+    ],
+  },
+];
+---
 
-                <!-- Capacidades clave -->
-                <div class="col-lg-6 col-md-12 mb-5">
-                    <div class="tech-card">
-                        <div class="tech-card-header">
-                            <i class="fa fa-bolt tech-icon"></i>
-                            <h4 class="tech-title">Capacidades clave</h4>
-                        </div>
-                        <ul class="tech-capabilities">
-                            <li>Aplicaciones de una sola página con Angular</li>
-                            <li>Desarrollo de API REST con Flask y Node.js</li>
-                            <li>Autenticación y control de acceso</li>
-                            <li>Dashboards y paneles de gestión</li>
-                            <li>Reportes e Informes en PDF y Excel</li>
-                            <li>Despliegue en producción</li>
-                            <li>Integración entre sistemas</li>
-                        </ul>
-                    </div>
-                </div>
+<section id="tech-stack" class="tech-stack-section">
+  <div class="container tech-ecosystem-container">
+    <header class="tech-ecosystem-heading text-center">
+      <span class="tech-ecosystem-eyebrow">ECOSISTEMA TECNOLÓGICO</span>
+      <h2 class="text-uppercase section-heading text-gradient">Stack Tecnológico</h2>
+      <p class="section-subheading">Tecnologías utilizadas en soluciones reales, organizadas según el lugar que ocupan dentro de la arquitectura.</p>
+    </header>
 
-                <!-- Herramientas complementarias -->
-                <div class="col-lg-6 col-md-12 mb-5">
-                    <div class="tech-card">
-                        <div class="tech-card-header">
-                            <i class="fa fa-wrench tech-icon"></i>
-                            <h4 class="tech-title">Herramientas complementarias</h4>
-                        </div>
-                        <div class="tech-tags">
-                            <span class="tech-tag tech-tag-sm">GitHub Actions</span>
-                            <span class="tech-tag tech-tag-sm">Kubernetes</span>
-                            <span class="tech-tag tech-tag-sm">Sentry</span>
-                            <span class="tech-tag tech-tag-sm">Mapbox</span>
-                            <span class="tech-tag tech-tag-sm">Google APIs</span>
-                            <span class="tech-tag tech-tag-sm">Google Calendar API</span>
-                            <span class="tech-tag tech-tag-sm">Google Sheets API</span>
-                            <span class="tech-tag tech-tag-sm">SendGrid / Nodemailer</span>
-                            <span class="tech-tag tech-tag-sm">Node.js / Express</span>
-                            <span class="tech-tag tech-tag-sm">WebSockets / Socket.IO</span>
-                            <span class="tech-tag tech-tag-sm">Swagger / OpenAPI</span>
-                            <span class="tech-tag tech-tag-sm">Chart.js</span>
-                            <span class="tech-tag tech-tag-sm">PDFMake / jsPDF</span>
-                            <span class="tech-tag tech-tag-sm">Excel / XLSX</span>
-                            <span class="tech-tag tech-tag-sm">PrimeNG</span>
-                            <span class="tech-tag tech-tag-sm">Angular Material</span>
-                            <span class="tech-tag tech-tag-sm">Tailwind CSS</span>
-                            <span class="tech-tag tech-tag-sm">Bootstrap</span>
-                            <span class="tech-tag tech-tag-sm">HTML5 / CSS3 / SCSS</span>
-                            <span class="tech-tag tech-tag-sm">C# .NET</span>
-                            <span class="tech-tag tech-tag-sm">Java SE</span>
-                            <span class="tech-tag tech-tag-sm">VB.NET / ASP.NET</span>
-                            <span class="tech-tag tech-tag-sm">Windows Server</span>
-                            <span class="tech-tag tech-tag-sm">Linux / Bash</span>
-                            <span class="tech-tag tech-tag-sm">Redes y conectividad</span>
-                            <span class="tech-tag tech-tag-sm">Documentación técnica</span>
-                        </div>
-                    </div>
-                </div>
+    <div class="tech-ecosystem-grid">
+      {ecosistema.map((grupo, index) => (
+        <article class="tech-domain-card">
+          <header class="tech-domain-header">
+            <div class="tech-domain-icon" aria-hidden="true"><i class={`fa ${grupo.icon}`}></i></div>
+            <div>
+              <span class="tech-domain-index">0{index + 1}</span>
+              <h3>{grupo.title}</h3>
             </div>
-        </div>
-    </section>
+          </header>
+          <p class="tech-domain-description">{grupo.description}</p>
+
+          <div class="tech-experience-list">
+            {grupo.technologies.map((technology) => (
+              <div class="tech-experience-item">
+                <div class="tech-experience-title">
+                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  <h4>{technology.name}</h4>
+                </div>
+                <span class="tech-experience-meta">{technology.meta}</span>
+                <p>{technology.projects}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="tech-ecosystem-note">
+      <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+      <p><strong>Integración transversal:</strong> autenticación y control de acceso, documentación técnica, Google APIs, Mapbox, reportes PDF/Excel y despliegue continuo se incorporan según las necesidades de cada solución.</p>
+    </div>
+  </div>
+</section>

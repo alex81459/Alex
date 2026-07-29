@@ -20,10 +20,8 @@ html, body {
         hyphens: auto;
         padding: 0 6px !important;
         max-width: 100%;
-        -webkit-text-fill-color: #1ecaff !important;
-        background: none !important;
-        color: #1ecaff !important;
-        text-shadow: 0 2px 8px #000, 0 0 2px #1ecaff;
+        color: var(--primary) !important;
+        text-shadow: 0 2px 8px #000;
     }
     .intro-lead-in {
         font-size: 0.82rem !important;
@@ -31,10 +29,10 @@ html, body {
         padding: 10px 5px !important;
     }
 }
-/* Botón hero unificado */
+/* Botï¿½n hero unificado */
 .btn-hero-gradient {
-    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
-    color: #fff !important;
+    background: var(--primary);
+    color: var(--bg-main) !important;
     font-weight: 700;
     border: none;
     border-radius: 30px;
@@ -44,15 +42,13 @@ html, body {
 .btn-hero-gradient:last-child {
     margin-right: 0;
     font-size: 1.15rem;
-    box-shadow: 0 4px 24px rgba(32,148,255,0.10);
     letter-spacing: 1px;
     transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
 }
 .btn-hero-gradient:hover, .btn-hero-gradient:focus {
-    background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
-    color: #fff !important;
-    box-shadow: 0 8px 32px rgba(32,148,255,0.18);
-    transform: translateY(-2px) scale(1.04);
+    background: var(--primary-dark);
+    color: var(--bg-main) !important;
+    transform: translateY(-2px);
 }
 :root {
     --primary-color: #2094ff;
@@ -1887,7 +1883,7 @@ footer {
     will-change: transform;
 }
 .typing-cursor::after {
-    content: '¦';
+    content: 'ï¿½';
     color: #4fc3f7;
     animation: blink 0.8s step-end infinite;
     font-weight: normal;

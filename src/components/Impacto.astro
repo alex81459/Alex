@@ -92,25 +92,65 @@ const metricas = [
 ];
 
 const modulosLibro = [
-  { icon: 'fa-bell', title: 'Sistema de Notificaciones', detail: 'En app y correo electrónico' },
-  { icon: 'fa-users', title: 'Configuración y Administración', detail: 'Gestión centralizada de usuarios y roles' },
-  { icon: 'fa-warning', title: 'Registro de Anotaciones', detail: 'Incidentes y Disciplina' },
-  { icon: 'fa-download', title: 'Visualización y Exportación', detail: 'Anotaciones con reportes descargables' },
-  { icon: 'fa-bar-chart', title: 'Paneles de Estadísticas', detail: 'Gráficos interactivos de datos' },
-  { icon: 'fa-puzzle-piece', title: 'Utilidades Compartidas', detail: 'Componentes y servicios del sistema' },
-  { icon: 'fa-pencil-square-o', title: 'Portal Home Docentes', detail: 'Acceso y panel del Profesor' },
-  { icon: 'fa-institution', title: 'Portal Home Director', detail: 'Panel de gestión directiva' },
-  { icon: 'fa-university', title: 'Portal Home UTP', detail: 'Estadísticas, seguimiento, operaciones y actividades' },
-  { icon: 'fa-id-card-o', title: 'Gestión de Matrículas', detail: 'Registro y control de matrículas' },
-  { icon: 'fa-calendar-check-o', title: 'Control de Asistencia', detail: 'Seguimiento y registro diario' },
-  { icon: 'fa-line-chart', title: 'Análisis y Exportación', detail: 'Reportes e informes descargables' },
-  { icon: 'fa-check-square-o', title: 'Cumplimiento Estándar CEDS', detail: 'Estándar de datos educacionales' },
-  { icon: 'fa-book', title: 'Gestión del Marco de Enseñanza', detail: 'Objetivos de aprendizaje y enseñanza' },
-  { icon: 'fa-graduation-cap', title: 'Control Centralizado de Notas', detail: 'Por curso, período, mes y alumno para análisis y exportación' },
-  { icon: 'fa-upload', title: 'Carga Masiva de Usuarios', detail: 'Docentes y apoderados desde CSV con validación y monitor de errores' },
-  { icon: 'fa-image', title: 'Gestión de Imágenes', detail: 'Módulo para subida y cambios de fotos de estudiantes' },
-  { icon: 'fa-search', title: 'Búsquedas Inteligentes', detail: 'Sistema contextual de módulos, opciones y funciones según rol' },
-  { icon: 'fa-list-alt', title: 'Leccionario y Objetivos Curriculares', detail: 'Borrador, versionado, aprobación UTP, firma OTP, notificaciones y auditoría' },
+  { icon: 'fa-list-alt', title: 'Leccionario y Objetivos Curriculares', detail: 'Planificación y registro de clases con borradores, control de versiones, aprobación UTP, firma OTP, notificaciones y trazabilidad de auditoría.', layout: 'hero' },
+  { icon: 'fa-calendar-check-o', title: 'Control de Asistencia', detail: 'Registro diario por curso y estudiante, con seguimiento de estados y consulta histórica para una gestión oportuna.', layout: 'standard' },
+  { icon: 'fa-id-card-o', title: 'Gestión de Matrículas', detail: 'Administración centralizada de matrículas, antecedentes de estudiantes y vinculación con cursos y periodos académicos.', layout: 'standard' },
+  { icon: 'fa-graduation-cap', title: 'Control Centralizado de Notas', detail: 'Consulta y gestión de calificaciones por curso, periodo, mes y estudiante, preparada para análisis y exportación.', layout: 'wide' },
+  { icon: 'fa-pencil-square-o', title: 'Portal Home Docentes', detail: 'Espacio de trabajo del profesor para acceder rápidamente a cursos, asistencia, notas, leccionario y tareas pendientes.', layout: 'portal' },
+  { icon: 'fa-institution', title: 'Portal Home Director', detail: 'Panel ejecutivo para supervisar indicadores académicos, actividad del establecimiento y avances de gestión.', layout: 'portal' },
+  { icon: 'fa-university', title: 'Portal Home UTP', detail: 'Seguimiento técnico-pedagógico mediante estadísticas, revisión de operaciones, actividades y cumplimiento académico.', layout: 'portal' },
+  { icon: 'fa-users', title: 'Configuración y Administración', detail: 'Gestión centralizada de usuarios, perfiles, roles, permisos y parámetros generales de cada establecimiento.', layout: 'portal' },
+  { icon: 'fa-bar-chart', title: 'Paneles de Estadísticas', detail: 'Indicadores y gráficos interactivos que transforman los registros académicos en información útil para decisiones.', layout: 'wide' },
+  { icon: 'fa-line-chart', title: 'Análisis y Exportación', detail: 'Generación de reportes filtrados e informes descargables para análisis académico, respaldo y gestión institucional.', layout: 'wide' },
+  { icon: 'fa-bell', title: 'Sistema de Notificaciones', detail: 'Alertas dentro de la plataforma y por correo para comunicar revisiones, aprobaciones y eventos relevantes.', layout: 'standard' },
+  { icon: 'fa-warning', title: 'Registro de Anotaciones', detail: 'Registro estructurado de observaciones, incidentes y antecedentes disciplinarios asociados a cada estudiante.', layout: 'standard' },
+  { icon: 'fa-check-square-o', title: 'Cumplimiento Estándar CEDS', detail: 'Estructuración de información conforme al estándar de datos educacionales para favorecer consistencia e interoperabilidad.', layout: 'standard' },
+  { icon: 'fa-search', title: 'Búsquedas Inteligentes', detail: 'Buscador contextual que encuentra módulos, opciones y funciones disponibles de acuerdo con el rol del usuario.', layout: 'standard' },
+  { icon: 'fa-download', title: 'Visualización y Exportación', detail: 'Consulta detallada de anotaciones y generación de reportes descargables para seguimiento y respaldo institucional.', layout: 'standard' },
+  { icon: 'fa-puzzle-piece', title: 'Utilidades Compartidas', detail: 'Servicios y componentes reutilizables que mantienen una experiencia consistente y simplifican tareas frecuentes.', layout: 'standard' },
+  { icon: 'fa-book', title: 'Gestión del Marco de Enseñanza', detail: 'Organización de objetivos de aprendizaje y contenidos para vincular planificación, enseñanza y registro de clases.', layout: 'standard' },
+  { icon: 'fa-upload', title: 'Carga Masiva de Usuarios', detail: 'Importación de docentes y apoderados desde archivos CSV, con validaciones y monitoreo detallado de errores.', layout: 'standard' },
+  { icon: 'fa-image', title: 'Gestión de Imágenes', detail: 'Carga, actualización y administración controlada de fotografías asociadas a los perfiles de estudiantes.', layout: 'standard' },
+];
+
+const resultadosClave = [
+  { icon: 'fa-cubes', value: '15+', label: 'Procesos digitalizados' },
+  { icon: 'fa-exchange', value: '18.000+', label: 'Interacciones mediante APIs' },
+  { icon: 'fa-clock-o', value: '3 h a 15 min', label: 'Búsqueda documental' },
+  { icon: 'fa-line-chart', value: '≈ CLP 35 M', label: 'Ahorro operacional' },
+];
+
+const categoriasImpacto = [
+  {
+    icon: 'fa-university',
+    title: 'Transformación institucional',
+    description: 'Digitalización de servicios y procesos críticos para una gestión pública más ágil y trazable.',
+    metrics: [
+      { value: '10.000+', label: 'ingresos anuales a trámites' },
+      { value: '100%', label: 'cobertura en evaluaciones digitales' },
+      { value: '140+', label: 'casos gestionados en canal de denuncias' },
+    ],
+  },
+  {
+    icon: 'fa-cogs',
+    title: 'Gestión tecnológica',
+    description: 'Planificación, ejecución y continuidad operativa de iniciativas tecnológicas institucionales.',
+    metrics: [
+      { value: '24', label: 'procesos de licitación TIC' },
+      { value: '20', label: 'proyectos TIC formulados' },
+      { value: '1.200+', label: 'casos de soporte resueltos' },
+    ],
+  },
+  {
+    icon: 'fa-industry',
+    title: 'Automatización productiva',
+    description: 'Control industrial y trazabilidad aplicados a calidad, eficiencia y reducción de pérdidas.',
+    metrics: [
+      { value: 'BRC A+', label: 'certificación internacional' },
+      { value: '3 h → 15 min', label: 'reducción en búsqueda documental' },
+      { value: '≈ CLP 35 M', label: 'de ahorro operacional' },
+    ],
+  },
 ];
 ---
 
@@ -125,27 +165,42 @@ const modulosLibro = [
             </div>
         </div>
 
-        <div class="row g-4 justify-content-center impacto-cards-row">
-            {metricas.map((metrica) => (
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="impacto-card">
-                        <div class="impacto-icon-wrap"><i class={`fa ${metrica.icon} impacto-icon`}></i></div>
-                        <div class="impacto-stat">
-                            {metrica.prefix && <span class="impacto-label-prefix">{metrica.prefix}</span>}
-                            {metrica.target ? (
-                                <span class="impacto-number" data-target={metrica.target}>{metrica.value}</span>
-                            ) : (
-                                <span class="impacto-number">{metrica.value}</span>
-                            )}
-                            {metrica.suffix && <span class="impacto-suffix">{metrica.suffix}</span>}
+        <div class="impacto-dashboard">
+            <div class="impacto-kpi-grid" aria-label="Resultados principales">
+                {resultadosClave.map((resultado) => (
+                    <article class="impacto-kpi">
+                        <div class="impacto-kpi-icon" aria-hidden="true"><i class={`fa ${resultado.icon}`}></i></div>
+                        <div>
+                            <div class="impacto-kpi-value">{resultado.value}</div>
+                            <div class="impacto-kpi-label">{resultado.label}</div>
                         </div>
-                        <div class="impacto-label">{metrica.label}</div>
-                        <p class="impacto-desc">{metrica.desc}</p>
-                    </div>
-                </div>
-            ))}
+                    </article>
+                ))}
+            </div>
 
-            <div class="col-12">
+            <div class="impacto-category-list">
+                {categoriasImpacto.map((categoria) => (
+                    <article class="impacto-category-card">
+                        <header class="impacto-category-header">
+                            <div class="impacto-category-icon" aria-hidden="true"><i class={`fa ${categoria.icon}`}></i></div>
+                            <div>
+                                <h3>{categoria.title}</h3>
+                                <p>{categoria.description}</p>
+                            </div>
+                        </header>
+                        <div class="impacto-category-metrics">
+                            {categoria.metrics.map((metrica) => (
+                                <div class="impacto-category-metric">
+                                    <strong>{metrica.value}</strong>
+                                    <span>{metrica.label}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </article>
+                ))}
+            </div>
+
+            <div class="impacto-detail-row">
                 <div class="impacto-card impacto-card-wide">
                     <div class="impacto-card-wide-header">
                         <div class="impacto-icon-wrap impacto-icon-wrap-wide">
@@ -159,7 +214,7 @@ const modulosLibro = [
 
                     <div class="impacto-wide-modules">
                         {modulosLibro.map((modulo) => (
-                            <div class="impacto-module">
+                                <div class:list={['impacto-module', `impacto-module--${modulo.layout}`]}>
                                 <i class={`fa ${modulo.icon} impacto-module-icon`}></i>
                                 <span class="impacto-module-text">{modulo.title}<br /><small>{modulo.detail}</small></span>
                             </div>
