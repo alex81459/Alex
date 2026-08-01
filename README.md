@@ -1,6 +1,6 @@
 # Portafolio Web - Alex Salinas Ponce
 
-Portafolio profesional interactivo de **Alex Salinas Ponce**, Desarrollador Full Stack especializado en desarrollo full stack, administración de infraestructura TI y gestión de proyectos tecnológicos.
+Portafolio profesional interactivo de **Alex Salinas Ponce**, Desarrollador Full Stack e Ingeniero TI con experiencia en análisis, arquitectura, desarrollo, interoperabilidad, seguridad, despliegue y mantención de sistemas institucionales en operación.
 
 **Sitio en vivo:** [alex81459.github.io/Alex](https://alex81459.github.io/Alex/)
 
@@ -12,18 +12,19 @@ Portafolio profesional interactivo de **Alex Salinas Ponce**, Desarrollador Full
 
 ## Descripción
 
-Portafolio web moderno, optimizado para rendimiento y SEO, que presenta la experiencia y proyectos de un Desarrollador Full Stack con experiencia en:
+Portafolio web moderno, optimizado para rendimiento y SEO, que presenta experiencia en desarrollo de sistemas institucionales, interoperabilidad, documentación técnica e infraestructura tecnológica en operación.
 
 ### Expertise
 - **Desarrollo Full Stack**: Aplicaciones web con Python, JavaScript, Angular, Flask y Node.js
-- **Infraestructura TI**: Administración de sistemas Linux, gestión de servidores y servicios
-- **APIs REST**: Diseño e implementación de APIs robustas y escalables
+- **Infraestructura TI**: Administración de sistemas, operación tecnológica y continuidad de servicios
+- **Interoperabilidad**: Diseño e implementación de APIs, integraciones y contratos REST
 - **Bases de Datos**: SQL, modelado y optimización de consultas
-- **DevOps**: Automatización, CI/CD y deployment en GitHub Pages
+- **Documentación Técnica**: Arquitectura, seguridad, operación y soporte funcional de plataformas
+- **DevOps**: Automatización, CI/CD y despliegue en GitHub Pages
 
 ### Proyectos Destacados
-- **Libro de Clases Digital**: Sistema web completo para gestión académica
-- **Trámites Online Institucional**: Plataforma gubernamental con ClaveÚnica
+- **Libro de Clases Digital**: Implementación para uso efectivo en 7 establecimientos, con expansión progresiva
+- **Trámites Online Institucional**: 13 trámites implementados y 10.000+ gestiones realizadas en Plataforma SIMPLE
 - **Sistema de Tareas y Proyectos**: Herramienta de gestión colaborativa
 - **Trazabilidad Documental**: Sistema de automatización industrial
 - **Evaluaciones Online**: Plataforma centralizada de evaluaciones
@@ -33,6 +34,7 @@ Portafolio web moderno, optimizado para rendimiento y SEO, que presenta la exper
 - Modales informativos con detalles de cada proyecto
 - Certificaciones profesionales verificadas
 - Métricas de impacto de proyectos implementados
+- Documentación técnica y funcional como capacidad destacada
 - Stack tecnológico con herramientas dominadas
 - Información de contacto y redes sociales
 
