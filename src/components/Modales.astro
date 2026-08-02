@@ -1,38 +1,71 @@
     <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal1">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <button class="modal-close-btn" type="button" data-bs-dismiss="modal" aria-label="Cerrar"><i class="fa fa-times"></i></button>
                 <div class="modal-body">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                              <div class="modal-body">
-                                    <h2 class="text-uppercase modal-title-33">Proyecto Emergencia bomberos</h2>
-                                    <p class="item-intro text-muted"><em>Sistema Informático para la Administración de Emergencias de Bomberos</em></p><img class="img-fluid d-block mx-auto" width="600" height="400" loading="lazy" src="assets/img/bomberos.webp" alt="Sistema de emergencias de bomberos">
-                                <p>Sistema Computacional de Aplicación de Escritorio más Base de Datos local, encargado de Registrar y Organizar los registros de las emergencias de bomberos, sus sistemas de claves, sus diferentes compañías de bomberos,
-                                        las Coordenadas por GPS de la emergencia, Publicar las emergencias en las redes sociales de Twitter y Facebook para notificar a la comunidad, y despachar automíticamente las señales radiales a las antenas para notificar
-                                        a las unidades, almacenar la situación de emergencia, el lugar, la descripción de la misma, el oficial a cargo de la emergencia. Y un sistema de gestión de los voluntarios de bomberos, la guía telefónica de los
-                                        números de contacto de apoyo en emergencias, la ubicación de los Grifos (GPS), la guía de materiales peligrosos y las claves radiales, y un sistema sencillo para hacer copias de seguridad de todos los datos registrados
-                                      y su restauración en caso de emergencia, la capacidad de llevar los datos a PDF para ser impresos</p>
-                                      <img loading="lazy" src="assets/img/ControlAntena.webp" width="500" height="350" alt="Dispositivo de control de transmisión de emergencias">
-										  <p>Imagen de Dispositivo de Control de Transmisión de Emergencias</p>
-									  <div class="video-responsive">
-									      <div class="youtube-facade" data-yt="GWFYVNBe6LI">
-									          <img src="https://img.youtube.com/vi/GWFYVNBe6LI/hqdefault.jpg" alt="Sistema Alarma Bomberos - Demostración" loading="lazy">
-									          <span class="yt-play-btn"></span>
-									      </div>
-									  </div>
-                                    <br>
-                                    <a href="https://github.com/alex81459/AlarmaBomberosChimbarongo" target="_blank" rel="noopener"><img src="assets/img/github.webp" width="104" height="104" alt="Repositorio en GitHub del proyecto de emergencias">
-                                    <p class="text-center text-lowercase text-primary-light"><strong><u>Click aqui o en la imagen para acceder al proyecto en gitHub</u></strong></p>
-                                    </a>
-                                    <ul class="list-unstyled">
-                                      <li>Fecha: Febrero 2019</li>
-                                      
-                                        <li>Cliente: Bomberos Chimbarongo</li>
-                                        <li>Categoría: Gestión Emergencias</li>
-                                </ul><button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Cerrar Proyecto</span></button></div>
-</div>
+                            <div class="col-lg-10 mx-auto">
+                                <div class="modal-body text-start">
+                                    <h2 class="project-modal-title">Sistema de Administración de Emergencias para Bomberos</h2>
+                                    <p class="project-modal-subtitle">Aplicación de escritorio orientada al registro, coordinación y despacho de emergencias para Bomberos Chimbarongo.</p>
+                                    <img class="img-fluid rounded shadow-sm w-100 mb-4" width="600" height="400" loading="lazy" src="assets/img/bomberos.webp" alt="Sistema de emergencias de bomberos">
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-bullseye"></i> Propósito</div>
+                                        <p>Construir una solución que ayudara a centralizar la información crítica de emergencias, mejorar la coordinación operativa y mantener trazabilidad sobre eventos, recursos y personas involucradas en cada salida.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
+                                        <p>La gestión de emergencias requería consolidar en un solo entorno datos dispersos como claves radiales, compañías, voluntarios, contactos de apoyo, grifos, materiales peligrosos, ubicación del incidente y antecedentes del despacho. Sin una herramienta unificada, la operación dependía más de registros manuales, memoria operativa y menor visibilidad histórica.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-lightbulb-o"></i> Solución</div>
+                                        <p>Desarrollé un sistema de escritorio con base de datos local que organiza el ciclo operativo de una emergencia: registro del evento, ubicación GPS, descripción, oficial a cargo, compañías involucradas, claves operativas, apoyo complementario, respaldos y exportación de información a PDF para consulta o impresión.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte</div>
+                                        <p>Implementé la lógica de administración de emergencias y la vinculación con componentes operativos complementarios, incluyendo despacho de señales radiales, gestión de voluntarios, guía telefónica de apoyo, inventario georreferenciado de grifos y respaldo/restauración de datos para continuidad operativa.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-microchip"></i> Integración física</div>
+                                        <p>El proyecto también contempló un dispositivo de control para la transmisión de emergencias, utilizado como apoyo al despacho operativo y a la notificación de unidades.</p>
+                                        <img class="img-fluid rounded shadow-sm mt-3" loading="lazy" src="assets/img/ControlAntena.webp" width="500" height="350" alt="Dispositivo de control de transmisión de emergencias">
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-cubes"></i> Stack</div>
+                                        <div class="tech-tags mt-2">
+                                            <span class="tech-tag tech-tag-sm">C#</span>
+                                            <span class="tech-tag tech-tag-sm">Aplicación de escritorio</span>
+                                            <span class="tech-tag tech-tag-sm">Base de datos local</span>
+                                            <span class="tech-tag tech-tag-sm">GPS</span>
+                                            <span class="tech-tag tech-tag-sm">PDF</span>
+                                            <span class="tech-tag tech-tag-sm">Backups y restauración</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block project-impact-block">
+                                        <div class="project-detail-label"><i class="fa fa-chart-line"></i> Resultado</div>
+                                        <p>La solución estructuró información crítica de respuesta a emergencias en un solo sistema, fortaleciendo el orden operativo, la consulta histórica y la capacidad de respaldo documental para la institución.</p>
+                                    </div>
+                                    <div class="video-responsive mb-4">
+                                        <div class="youtube-facade" data-yt="GWFYVNBe6LI">
+                                            <img src="https://img.youtube.com/vi/GWFYVNBe6LI/hqdefault.jpg" alt="Sistema Alarma Bomberos - Demostración" loading="lazy">
+                                            <span class="yt-play-btn"></span>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-briefcase"></i> Datos del proyecto</div>
+                                        <ul class="project-problem-list">
+                                            <li><strong>Fecha:</strong> Febrero 2019</li>
+                                            <li><strong>Cliente:</strong> Bomberos Chimbarongo</li>
+                                            <li><strong>Categoría:</strong> Gestión de Emergencias</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-modal-actions">
+                                        <a href="https://github.com/alex81459/AlarmaBomberosChimbarongo" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm"><i class="fa fa-github"></i>&nbsp;Ver GitHub</a>
+                                        <button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i>&nbsp;Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,19 +79,54 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-8 offset-0 mx-auto">
-                                <div class="modal-body modal-body-no-padding">
-                                    <h2 class="text-uppercase modal-title-41"><strong>PROYECTO CLUB DE HUASOS</strong><br></h2>
-                                    <p class="item-intro text-muted"><em>Herramienta Informática para la Gestión de un Club de Huasos</em></p><img class="img-fluid d-block mx-auto" width="600" height="400" loading="lazy" src="assets/img/57_EST_20.webp" alt="Proyecto club de huasos">
-                                    <p>Sistema Informático de Aplicación de Escritorio más Base de Datos, el cual se encarga de Registrar y Organizar los registros del Club de Huasos de los Maquis, Tomando en cuenta sus Gastos de Electricidad, Agua, Contrato
-                                        de Personal, Reparaciones, Construcciones, Arriendos de Maquinaria o Animales, sus Ganancias, Venta de animales, Plantaciones, Arriendo de su sus edificios para festividades o celebraciones, Control del personal,
-                                        Tiempos de trabajo, Tareas, Actividades, Registros de realización de eventos especiales, Copias de Seguridad de los Datos, Traspaso de Información y Tablas de Datos a formato de documento portátil (PDF), Generación
-                                        de estadísticas a base de los datos ingresados</p>
-                                    <ul class="list-unstyled">
-                                        <li>Fecha: Diciembre 2018</li>
-                                        <li>Cliente: Club de Huasos Los Maquis</li>
-                                        <li>Categoría: &nbsp;Administración</li>
-                                    </ul><button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Cerrar Info</span></button></div>
+                            <div class="col-lg-10 mx-auto">
+                                <div class="modal-body text-start">
+                                    <h2 class="project-modal-title">Sistema de Gestión para Club de Huasos</h2>
+                                    <p class="project-modal-subtitle">Aplicación de escritorio para ordenar la operación administrativa, financiera y organizacional del Club de Huasos Los Maquis.</p>
+                                    <img class="img-fluid rounded shadow-sm w-100 mb-4" width="600" height="400" loading="lazy" src="assets/img/57_EST_20.webp" alt="Proyecto club de huasos">
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-bullseye"></i> Propósito</div>
+                                        <p>Diseñar una herramienta que ayudara a registrar y controlar de forma ordenada la actividad administrativa del club, facilitando el seguimiento de ingresos, gastos, personal, eventos y activos asociados a su operación cotidiana.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
+                                        <p>La administración del club involucraba múltiples categorías de información, como gastos básicos, contratos, reparaciones, construcciones, arriendos, ventas, plantaciones, personal y eventos especiales. Sin una estructura digital centralizada, mantener consistencia y trazabilidad sobre estos registros era más difícil y consumía más tiempo.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-lightbulb-o"></i> Solución</div>
+                                        <p>Desarrollé un sistema de escritorio con base de datos para centralizar los principales registros del club en un solo entorno, permitiendo administrar movimientos operativos, generar reportes, mantener respaldos y exportar información relevante a PDF.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte</div>
+                                        <p>Implementé la estructura de datos y los módulos necesarios para registrar gastos, ingresos, tareas, tiempos de trabajo, actividades, arriendos, ventas, eventos y respaldos, buscando convertir una administración dispersa en una operación más organizada y consultable.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-cubes"></i> Stack</div>
+                                        <div class="tech-tags mt-2">
+                                            <span class="tech-tag tech-tag-sm">C#</span>
+                                            <span class="tech-tag tech-tag-sm">Aplicación de escritorio</span>
+                                            <span class="tech-tag tech-tag-sm">Base de datos</span>
+                                            <span class="tech-tag tech-tag-sm">PDF</span>
+                                            <span class="tech-tag tech-tag-sm">Backups</span>
+                                            <span class="tech-tag tech-tag-sm">Estadísticas</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block project-impact-block">
+                                        <div class="project-detail-label"><i class="fa fa-chart-line"></i> Resultado</div>
+                                        <p>El proyecto permitió estructurar la gestión administrativa del club en una herramienta única, mejorando el orden de los registros, la consulta de antecedentes y la generación de información de apoyo para la toma de decisiones.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-briefcase"></i> Datos del proyecto</div>
+                                        <ul class="project-problem-list">
+                                            <li><strong>Fecha:</strong> Diciembre 2018</li>
+                                            <li><strong>Cliente:</strong> Club de Huasos Los Maquis</li>
+                                            <li><strong>Categoría:</strong> Administración y Gestión Operativa</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-modal-actions">
+                                        <button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i>&nbsp;Cerrar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,30 +141,61 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase modal-title-40">PROYECTO SBEPA</h2>
-                                    <p class="item-intro text-muted"><em>Sistema de Búsqueda de Productos Asociados</em></p><img class="img-fluid d-block mx-auto" width="600" height="400" loading="lazy" src="assets/img/sbepa.webp" alt="Proyecto SBEPA">
-                                    <p>&nbsp;Sistema WEB multiplataforma (Pagina Web Responsiva y Escritorio) para ayudar a sus visitantes a buscar productos y locales cercanos de firma sencilla, y a los dueños de locales pequeños brindarles la capacidad
-                                        de tener presencia en internet sin tener que hacer un gran gasto de capital. La principal característica de este sistema es la facilidad de acceso y control de la información de los productos gracias a un sistema
-                                        de búsqueda simplificada web y gestión de escritorio para los dueños de pymes, resolviendo así necesidades de los clientes de buscar productos en la zona que se encuentre, escatimarlos y filtrarlos según sus preferencias,
-                                        y ayudando a los dueños de pequeños locales a la difusión de sus productos y emprendimientos, el sistema puede manejar tiendas, sucursales, productos, categorías de productos, administradores, accesos, cambios,
-                                        usuarios, cambios de productos, usuarios baneados, estadísticas, regiones y comunas, coordenadas por GPS, almacenar la información en PDF para ser impresa, copias de seguridad de los datos y capacidad para restaurarlo</p>
-                                    <div class="video-responsive">
+                            <div class="col-lg-10 mx-auto">
+                                <div class="modal-body text-start">
+                                    <h2 class="project-modal-title">SBEPA</h2>
+                                    <p class="project-modal-subtitle">Sistema de Búsqueda de Productos Asociados con experiencia web para usuarios y módulo administrativo para gestión de comercios y catálogos.</p>
+                                    <img class="img-fluid rounded shadow-sm w-100 mb-4" width="600" height="400" loading="lazy" src="assets/img/sbepa.webp" alt="Proyecto SBEPA">
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-bullseye"></i> Propósito</div>
+                                        <p>Crear una plataforma que facilitara a los usuarios encontrar productos y locales cercanos, y al mismo tiempo ofreciera a pequeños comercios una forma más accesible de publicar y administrar su oferta sin depender de una inversión alta en presencia digital.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
+                                        <p>Muchos negocios pequeños no contaban con una vitrina digital fácil de mantener, mientras que los usuarios tenían pocas herramientas simples para buscar productos por ubicación, categoría o preferencia dentro de su zona. Esa brecha reducía visibilidad comercial y dificultaba el descubrimiento local de productos.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-lightbulb-o"></i> Solución</div>
+                                        <p>Desarrollé una solución multiplataforma con enfoque web responsivo para búsqueda simplificada de productos y locales, complementada con un módulo administrativo para gestionar tiendas, sucursales, productos, categorías, usuarios, cambios de catálogo, estadísticas y respaldo de información.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte</div>
+                                        <p>Implementé la estructura funcional para publicación y administración de comercios, incluyendo control de accesos, gestión de productos, segmentación por regiones y comunas, coordenadas GPS, exportación a PDF y mecanismos de copia de seguridad y restauración.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-cubes"></i> Stack</div>
+                                        <div class="tech-tags mt-2">
+                                            <span class="tech-tag tech-tag-sm">C#</span>
+                                            <span class="tech-tag tech-tag-sm">Web responsiva</span>
+                                            <span class="tech-tag tech-tag-sm">Módulo administrativo</span>
+                                            <span class="tech-tag tech-tag-sm">GPS</span>
+                                            <span class="tech-tag tech-tag-sm">PDF</span>
+                                            <span class="tech-tag tech-tag-sm">Backups y restauración</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block project-impact-block">
+                                        <div class="project-detail-label"><i class="fa fa-chart-line"></i> Resultado</div>
+                                        <p>El proyecto planteó una forma más ordenada de conectar oferta local y búsqueda digital, entregando a pequeños negocios una herramienta de administración y difusión, y a los usuarios una experiencia más directa para descubrir productos cercanos.</p>
+                                    </div>
+                                    <div class="video-responsive mb-4">
                                         <div class="youtube-facade" data-yt="42wK4vkJnNQ">
                                             <img src="https://img.youtube.com/vi/42wK4vkJnNQ/hqdefault.jpg" alt="SBEPA Demostración - Sistema de Búsqueda de Productos" loading="lazy">
                                             <span class="yt-play-btn"></span>
                                         </div>
                                     </div>
-                                    <br><a href="https://github.com/alex81459/ProyectoSBEPA2Admin" target="_blank" rel="noopener"><img src="assets/img/github.webp" width="104" height="104" alt="Repositorio en GitHub del proyecto SBEPA">
-                                    <p class="text-center text-lowercase text-primary-light"><strong><u>Click aqui o en la imagen para acceder al proyecto en gitHub</u></strong></p>
-                                    </a>
-									<ul
-                                        class="list-unstyled">
-                                        <li>Fecha: Noviembre 2020</li>
-                                        <li>Cliente: Indeterminado</li>
-                                        <li>Categoría: Productos Online</li>
-                                        </ul><button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Cerrar Proyecto</span></button></div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-briefcase"></i> Datos del proyecto</div>
+                                        <ul class="project-problem-list">
+                                            <li><strong>Fecha:</strong> Noviembre 2020</li>
+                                            <li><strong>Cliente:</strong> Proyecto propio / caso de uso comercial</li>
+                                            <li><strong>Categoría:</strong> Descubrimiento de Productos y Gestión Comercial</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-modal-actions">
+                                        <a href="https://github.com/alex81459/ProyectoSBEPA2Admin" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm"><i class="fa fa-github"></i>&nbsp;Ver GitHub</a>
+                                        <button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i>&nbsp;Cerrar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -111,23 +210,58 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase modal-title-35">Proyecto Esteganografía</h2>
-                                    <p class="item-intro text-muted"><em>Sistema para Ocultar Información dentro de Imagen con Cifrado Blowfish</em></p><img class="img-fluid d-block mx-auto" width="600" height="400" loading="lazy" src="assets/img/esteganografia.webp" alt="Proyecto esteganografia">
-                                    <p>Sistema informático de escritorio desarrollado en C# que permite ocultar información secreta dentro de imágenes utilizando técnicas avanzadas de esteganografía combinadas con cifrado Blowfish para máxima seguridad. La aplicación permite insertar texto, documentos o cualquier tipo de información digital dentro de archivos de imagen sin alterar visiblemente la imagen original. El sistema incluye funciones de cifrado y descifrado, gestión de claves de seguridad, interfaz gráfica intuitiva y capacidad de procesar múltiples formatos de imagen. Ideal para comunicaciones seguras, protección de información confidencial y aplicaciones de seguridad informática donde la discreción es fundamental.</p>
-                                    <img class="img-fluid d-block mx-auto rounded shadow-sm mb-3" width="600" height="350" loading="lazy" src="assets/img/Esteganografia-captura.webp" alt="Captura de pantalla del sistema de esteganografía">
-                                    <p>Interfaz Principal del Sistema de Esteganografía con Cifrado</p>
-                                    <br>
-                                    <a href="https://github.com/alex81459/Esteganografia" target="_blank" rel="noopener"><img src="assets/img/github.webp" width="104" height="104" alt="Repositorio en GitHub del proyecto esteganografia">
-                                    <p class="text-center text-lowercase text-primary-light"><strong><u>Click aquí o en la imagen para acceder al proyecto en GitHub</u></strong></p>
-                                    </a>
-                                    <ul class="list-unstyled">
-                                        <li>Fecha: Abril 2022</li>
-                                        <li>Cliente: Proyecto Académico</li>
-                                        <li>Tecnologías: C#, .NET Framework, Cifrado Blowfish</li>
-                                        <li>Categoría: Seguridad Informática</li>
-                                    </ul><button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Cerrar Proyecto</span></button></div>
+                            <div class="col-lg-10 mx-auto">
+                                <div class="modal-body text-start">
+                                    <h2 class="project-modal-title">Esteganografía con Cifrado Simétrico</h2>
+                                    <p class="project-modal-subtitle">Proyecto académico de escritorio que combina esteganografía y cifrado simétrico Blowfish para explorar técnicas de ocultamiento y protección de información.</p>
+                                    <img class="img-fluid rounded shadow-sm w-100 mb-4" width="600" height="400" loading="lazy" src="assets/img/esteganografia.webp" alt="Proyecto esteganografia">
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-bullseye"></i> Propósito</div>
+                                        <p>Desarrollar una herramienta para experimentar con el ocultamiento de información dentro de imágenes, combinando discreción visual con una capa adicional de cifrado simétrico en un contexto académico y práctico.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-exclamation-circle"></i> Problema</div>
+                                        <p>Cuando se necesita compartir o almacenar información confidencial, cifrar el contenido puede no ser suficiente si la sola existencia del archivo ya despierta sospechas. El desafío era ocultar la presencia del mensaje y, al mismo tiempo, proteger su contenido frente a accesos no autorizados.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-lightbulb-o"></i> Solución</div>
+                                        <p>Construí una aplicación de escritorio en C# que inserta información dentro de imágenes mediante técnicas de esteganografía, complementadas con cifrado simétrico Blowfish para resguardar el contenido oculto. La solución permite encapsular texto u otros datos sin alterar de forma perceptible la imagen original.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-code"></i> Mi aporte</div>
+                                        <p>Implementé la interfaz gráfica, la lógica de ocultamiento y recuperación de información, el manejo de claves y el proceso de cifrado/descifrado. Además, el repositorio evolucionó hacia una base más moderna en .NET para mantener la aplicación y mejorar su compatibilidad.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-desktop"></i> Interfaz principal</div>
+                                        <img class="img-fluid rounded shadow-sm mt-2" width="600" height="350" loading="lazy" src="assets/img/Esteganografia-captura.webp" alt="Captura de pantalla del sistema de esteganografía">
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-cubes"></i> Stack</div>
+                                        <div class="tech-tags mt-2">
+                                            <span class="tech-tag tech-tag-sm">C#</span>
+                                            <span class="tech-tag tech-tag-sm">.NET 6 Windows Forms</span>
+                                            <span class="tech-tag tech-tag-sm">Blowfish</span>
+                                            <span class="tech-tag tech-tag-sm">Esteganografía</span>
+                                            <span class="tech-tag tech-tag-sm">Aplicación de escritorio</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block project-impact-block">
+                                        <div class="project-detail-label"><i class="fa fa-chart-line"></i> Resultado</div>
+                                        <p>El proyecto dio forma a una herramienta funcional para ocultar y proteger información dentro de imágenes, integrando esteganografía LSB y cifrado simétrico en una solución de escritorio útil para explorar técnicas de confidencialidad y discreción.</p>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-briefcase"></i> Datos del proyecto</div>
+                                        <ul class="project-problem-list">
+                                            <li><strong>Fecha:</strong> Abril 2022</li>
+                                            <li><strong>Cliente:</strong> Proyecto Académico</li>
+                                            <li><strong>Categoría:</strong> Seguridad Informática</li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-modal-actions">
+                                        <a href="https://github.com/alex81459/Esteganografia" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm"><i class="fa fa-github"></i>&nbsp;Ver GitHub</a>
+                                        <button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i>&nbsp;Cerrar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -993,7 +1127,7 @@
                                         <p>Desarrollo de <strong>siete servicios principales</strong> para integrar personas, roles, establecimientos, evaluaciones, RIOHS, bienestar, vehículos y otras plataformas institucionales. Las capacidades respaldadas incluyen integración entre distintas bases, contratos REST, consultas de personas y organizaciones, servicios Google, transacciones, pruebas y optimización.</p>
                                         <ul class="project-problem-list">
                                             <li><strong>7 APIs principales</strong></li>
-                                            <li><strong>8.000+ interacciones documentadas entre 2025 y 2026</strong>, según logs de consumo y documentación Swagger/Postman</li>
+                                            <li><strong>18.000+ interacciones anuales de APIs</strong>, según consumo, logs y documentación Swagger/Postman</li>
                                             <li><strong>Múltiples bases de datos integradas</strong></li>
                                             <li><strong>Swagger y Postman</strong> para documentación y pruebas</li>
                                         </ul>
@@ -1244,7 +1378,7 @@
                                     </div>
                                     <div class="project-detail-block project-impact-block">
                                         <div class="project-detail-label"><i class="fa fa-chart-line"></i> Impacto</div>
-                                        <p>La automatización optimizó los tiempos de solicitud y emisión, eliminando desfases de información y generando un <strong>ahorro de hasta $30.000.000 de pesos</strong> en pérdida de material por errores de etiquetado.</p>
+                                        <p>La automatización optimizó los tiempos de solicitud y emisión, eliminó desfases de información y generó un <strong>ahorro de aproximadamente $35.000.000 CLP por temporada</strong> en pérdidas por errores de etiquetado, considerando el período productivo entre fines de octubre y fines de febrero.</p>
                                     </div>
                                     <div class="project-modal-actions">
                                         <button class="btn btn-primary btn-primary-blue" data-bs-dismiss="modal" type="button"><i class="fa fa-times"></i>&nbsp;Cerrar</button>
