@@ -23,6 +23,53 @@
     return Array.prototype.slice.call((root || document).querySelectorAll(selector));
   }
 
+  function setupThemeToggle() {
+    var storageKey = 'alex-theme';
+    var root = document.documentElement;
+    var toggle = qs('#theme-toggle');
+    var metaTheme = qs('meta[name="theme-color"]');
+    var lightThemeNotice = 'El modo claro está actualmente en desarrollo. Por ahora se mantendrá el modo oscuro.';
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      if (toggle) {
+        toggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+        toggle.setAttribute('title', theme === 'light' ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro');
+      }
+      if (metaTheme) {
+        metaTheme.setAttribute('content', theme === 'light' ? '#eef6ff' : '#07111f');
+      }
+    }
+
+    function getCurrentTheme() {
+      return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    }
+
+    applyTheme(getCurrentTheme());
+
+    if (!toggle) return;
+
+    toggle.addEventListener('click', function () {
+      var currentTheme = getCurrentTheme();
+
+      if (currentTheme === 'dark') {
+        applyTheme('dark');
+        try {
+          localStorage.setItem(storageKey, 'dark');
+        } catch {}
+        window.alert(lightThemeNotice);
+        return;
+      }
+
+      var nextTheme = 'dark';
+      applyTheme(nextTheme);
+
+      try {
+        localStorage.setItem(storageKey, nextTheme);
+      } catch {}
+    });
+  }
+
   function cacheSectionOffsets() {
     sectionOffsets = sections.map(function (section) {
       return {
@@ -309,6 +356,7 @@
     observeImpactoCounters();
     setupPortfolioFilters();
     setupYoutubeFacades();
+    setupThemeToggle();
     setupScrollHandlers();
 
     window.setTimeout(function () {

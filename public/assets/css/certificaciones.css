@@ -2,7 +2,7 @@
     position: relative;
     padding: 110px 0;
     overflow: hidden;
-    background: #07111f;
+    background: var(--bg-main);
     color: var(--text-main);
 }
 
@@ -58,8 +58,8 @@
 .cert-featured-card {
     position: relative;
     display: grid;
-    min-height: 190px;
-    grid-template-rows: auto auto 1fr auto;
+    min-height: 290px;
+    grid-template-rows: auto auto auto auto auto 1fr;
     align-items: start;
     padding: 22px;
     overflow: hidden;
@@ -117,8 +117,30 @@
 }
 
 .cert-category-label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--primary-soft);
     color: var(--text-secondary);
     font-size: 0.68rem;
+    font-weight: 700;
+}
+
+.cert-evidence {
+    margin: 0 0 8px;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+.cert-evidence strong {
+    color: var(--text-main);
+}
+
+.cert-evidence-apply {
+    margin-top: 4px;
 }
 
 .cert-actions {
@@ -260,6 +282,16 @@
     font-size: 0.78rem;
     font-weight: 700;
     line-height: 1.4;
+}
+
+html[data-theme='light'] .cert-catalog {
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+}
+
+html[data-theme='light'] .cert-catalog-item {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(20, 142, 234, 0.1);
 }
 
 .cert-summary-strip {

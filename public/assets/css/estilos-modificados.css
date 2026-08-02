@@ -14,7 +14,8 @@
 
 html,
 body {
-    background: var(--bg-main);
+    background: var(--body-gradient);
+    color: var(--text-main);
 }
 
 .tech-stack-section,
@@ -31,7 +32,7 @@ body {
 .services-section .section-subheading,
 .service-card p {
     color: var(--text-secondary) !important;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: var(--text-shadow-soft);
 }
 
 .services-section .section-subheading {
@@ -55,7 +56,7 @@ body {
     color: var(--text-secondary) !important;
     opacity: 1 !important;
     font-weight: 500;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: var(--text-shadow-soft);
 }
 
 .portfolio-section .section-subheading {
@@ -81,10 +82,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(7, 17, 31, 0.78) !important;
+    background: var(--nav-surface) !important;
     border: 1px solid rgba(56, 189, 248, 0.45);
     border-radius: 50% !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 24px var(--floating-shadow);
     opacity: 0.92;
     z-index: 4;
     transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
@@ -245,7 +246,7 @@ body {
 .section-intro .section-subheading.section-lead {
     max-width: 700px;
     margin: 0 auto !important;
-    color: #aebdd0 !important;
+    color: var(--text-secondary) !important;
     font-size: 1rem !important;
     font-style: normal !important;
     font-weight: 500 !important;
@@ -256,7 +257,7 @@ body {
 .section-intro-detail {
     max-width: 760px;
     margin: 16px auto 0;
-    color: #8397ad;
+    color: var(--text-muted);
     font-size: 0.82rem;
     line-height: 1.65;
 }
@@ -267,7 +268,7 @@ body {
 }
 
 .contact-title.section-intro .contact-intro {
-    color: #aebdd0 !important;
+    color: var(--text-secondary) !important;
 }
 
 @media (max-width: 575.98px) {
@@ -621,4 +622,84 @@ body {
     .about-section .timeline-end .fa {
         font-size: 1.2rem;
     }
+}
+
+html[data-theme='light'] .section-intro .section-heading,
+html[data-theme='light'] .section-heading {
+    background: linear-gradient(90deg, #148eea 0%, #39c2dd 100%) !important;
+    color: #148eea !important;
+}
+
+html[data-theme='light'] .portfolio-section {
+    background:
+        radial-gradient(circle at 12% 18%, rgba(20, 142, 234, 0.07), transparent 24%),
+        linear-gradient(180deg, #f9fcff 0%, #eef5fb 100%);
+}
+
+html[data-theme='light'] .tech-stack-section {
+    background:
+        radial-gradient(circle at 82% 16%, rgba(57, 194, 221, 0.08), transparent 24%),
+        linear-gradient(180deg, #eef5fb 0%, #f8fbff 100%);
+}
+
+html[data-theme='light'] .certifications-section {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(20, 142, 234, 0.06), transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, #edf4fb 100%);
+}
+
+html[data-theme='light'] .about-section {
+    background:
+        radial-gradient(circle at 85% 14%, rgba(57, 194, 221, 0.07), transparent 24%),
+        linear-gradient(180deg, #edf4fb 0%, #f8fbff 100%);
+}
+
+html[data-theme='light'] .contact-section {
+    border-top: 1px solid rgba(20, 142, 234, 0.1);
+    border-bottom: 1px solid rgba(20, 142, 234, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+html[data-theme='light'] .portfolio-item,
+html[data-theme='light'] .tech-domain-card,
+html[data-theme='light'] .cert-featured-card,
+html[data-theme='light'] .career-card,
+html[data-theme='light'] .timeline-item,
+html[data-theme='light'] .impacto-category-card,
+html[data-theme='light'] .impacto-card,
+html[data-theme='light'] .skill-progress-item {
+    box-shadow: 0 18px 34px rgba(15, 23, 42, 0.08);
+}
+
+html[data-theme='light'] .portfolio-caption,
+html[data-theme='light'] .tech-domain-card,
+html[data-theme='light'] .cert-featured-card,
+html[data-theme='light'] .career-card,
+html[data-theme='light'] .timeline-item,
+html[data-theme='light'] .impacto-category-card,
+html[data-theme='light'] .impacto-card,
+html[data-theme='light'] .skill-progress-item,
+html[data-theme='light'] .career-education-item,
+html[data-theme='light'] .cert-catalog-item {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 252, 255, 0.92)) !important;
+    backdrop-filter: blur(14px);
+}
+
+html[data-theme='light'] .impacto-kpi-grid {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(244, 249, 255, 0.9));
+    box-shadow: 0 20px 38px rgba(15, 23, 42, 0.1);
+}
+
+html[data-theme='light'] .impacto-kpi {
+    background: linear-gradient(145deg, rgba(20, 142, 234, 0.07), rgba(255, 255, 255, 0) 60%);
+}
+
+html[data-theme='light'] .career-marker {
+    background: #ffffff;
+    box-shadow: 0 0 0 7px rgba(20, 142, 234, 0.08), 0 10px 26px rgba(15, 23, 42, 0.16);
+}
+
+html[data-theme='light'] .portfolio-link:hover .portfolio-hover,
+html[data-theme='light'] .portfolio-link:focus .portfolio-hover {
+    box-shadow: 0 12px 28px rgba(20, 142, 234, 0.22);
 }

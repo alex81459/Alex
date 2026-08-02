@@ -1,11 +1,59 @@
 ---
 const destacadas = [
-  { provider: 'Cisco', title: 'Cybersecurity Essentials', icon: 'fa-shield-alt', category: 'Seguridad' },
-  { provider: 'Google', title: 'Workspace Administrator', icon: 'fa-cloud', category: 'Sistemas' },
-  { provider: 'Udemy', title: 'Angular de Cero a Experto', icon: 'fa-code', category: 'Desarrollo' },
-  { provider: 'Udemy', title: 'Docker', icon: 'fa-cubes', category: 'Sistemas' },
-  { provider: 'Capacired', title: 'Auditor Interno BRC V8', icon: 'fa-certificate', category: 'Gestión' },
-  { provider: 'Factor Clave', title: 'Excel Nivel Avanzado', icon: 'fa-table', category: 'Productividad' },
+  {
+    provider: 'Cisco',
+    title: 'Cybersecurity Essentials',
+    icon: 'fa-shield-alt',
+    category: 'Seguridad',
+    issued: 'Fecha no pública en este portafolio',
+    credential: 'Identificador disponible a solicitud',
+    applied: 'Aplicado en hardening, control de acceso y trazabilidad en Libro de Clases, SIMPLE y APIs institucionales.',
+  },
+  {
+    provider: 'Google',
+    title: 'Workspace Administrator',
+    icon: 'fa-cloud',
+    category: 'Sistemas',
+    issued: 'Fecha no pública en este portafolio',
+    credential: 'Identificador disponible a solicitud',
+    applied: 'Aplicado en administración de servicios colaborativos e integración operativa para equipos institucionales.',
+  },
+  {
+    provider: 'Udemy',
+    title: 'Angular de Cero a Experto',
+    icon: 'fa-code',
+    category: 'Desarrollo',
+    issued: 'Fecha no pública en este portafolio',
+    credential: 'Credencial disponible a solicitud',
+    applied: 'Base aplicada en frontend productivo con Angular y NG Prime 22 para Libro de Clases y portales administrativos.',
+  },
+  {
+    provider: 'Udemy',
+    title: 'Docker',
+    icon: 'fa-cubes',
+    category: 'Sistemas',
+    issued: 'Fecha no pública en este portafolio',
+    credential: 'Credencial disponible a solicitud',
+    applied: 'Aplicado en despliegues, entornos aislados y operación de servicios para plataformas institucionales y demos técnicas.',
+  },
+  {
+    provider: 'Capacired',
+    title: 'Auditor Interno BRC V8',
+    icon: 'fa-certificate',
+    category: 'Gestión',
+    issued: 'Fecha no pública en este portafolio',
+    credential: 'Certificación disponible a solicitud',
+    applied: 'Aplicado en trazabilidad documental y control de evidencia para procesos exportadores auditables.',
+  },
+  {
+    provider: 'Factor Clave',
+    title: 'Excel Nivel Avanzado',
+    icon: 'fa-table',
+    category: 'Productividad',
+    issued: 'Fecha no pública en este portafolio',
+    credential: 'Certificado disponible a solicitud',
+    applied: 'Aplicado en reportería operativa, exportaciones y consolidación de antecedentes para áreas institucionales.',
+  },
 ];
 
 const categorias = [
@@ -58,7 +106,7 @@ const certificaciones = [
     <header class="cert-heading text-center">
       <span class="cert-eyebrow">FORMACIÓN CONTINUA</span>
       <h2 class="text-uppercase section-heading text-gradient">Certificaciones y Cursos</h2>
-      <p class="section-subheading">Una selección de formación aplicada en desarrollo, infraestructura, seguridad y gestión.</p>
+      <p class="section-subheading">Seis credenciales especialmente relevantes por su aplicación directa en sistemas en producción, seguridad, operación e interoperabilidad.</p>
     </header>
 
     <div class="cert-featured-grid" aria-label="Certificaciones destacadas">
@@ -68,6 +116,9 @@ const certificaciones = [
           <span class="cert-provider">{cert.provider}</span>
           <h3>{cert.title}</h3>
           <span class="cert-category-label">{cert.category}</span>
+          <p class="cert-evidence"><strong>Fecha:</strong> {cert.issued}</p>
+          <p class="cert-evidence"><strong>Credencial:</strong> {cert.credential}</p>
+          <p class="cert-evidence cert-evidence-apply"><strong>Aplicación:</strong> {cert.applied}</p>
         </article>
       ))}
     </div>
@@ -75,7 +126,7 @@ const certificaciones = [
     <div class="cert-actions">
       <button class="cert-toggle-btn" type="button" id="certToggleBtn" aria-expanded="false" aria-controls="allCertsBlock" onclick="toggleAllCerts()">
         <i class="fas fa-plus-circle" aria-hidden="true"></i>
-        <span>Ver las 30+ certificaciones</span>
+        <span>Ver catálogo completo</span>
       </button>
     </div>
 
@@ -110,7 +161,7 @@ const certificaciones = [
     </div>
 
     <div class="cert-summary-strip" aria-label="Resumen de formación">
-      <div><strong>30+</strong><span>Certificaciones</span></div>
+      <div><strong>6</strong><span>Credenciales destacadas</span></div>
       <div><strong>6</strong><span>Áreas profesionales</span></div>
       <div><strong>10+</strong><span>Años formándose</span></div>
     </div>

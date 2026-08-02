@@ -2,7 +2,7 @@
     position: relative;
     padding: 110px 0;
     overflow: hidden;
-    background: #07111f;
+    background: var(--bg-main);
     color: var(--text-main);
 }
 
@@ -207,6 +207,11 @@
 
 .tech-ecosystem-note strong {
     color: var(--text-main);
+}
+
+html[data-theme='light'] .tech-experience-item {
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(20, 142, 234, 0.1);
 }
 
 .text-gradient {
