@@ -3,13 +3,17 @@ const galeria = [
   {
     className: 'gallery-editorial-main',
     image: 'assets/img/albun/nuevas/cuenta-publica-evaluaciones.webp',
+    width: 3039,
+    height: 2280,
     title: 'Evaluaciones online, Cuenta Pública y ClaveÚnica',
-    description: 'Implementé un sistema de evaluaciones online con autenticación mediante ClaveÚnica, trazabilidad por etapas y respaldo digital. Su resultado fue presentado en Cuenta Pública como evidencia de modernización administrativa siende el primer sistema de evaluacion bajo el estandar gubernamental y gratis.',
+    description: 'Implementé un sistema de evaluaciones online con autenticación mediante ClaveÚnica, trazabilidad por etapas y respaldo digital. Su resultado fue presentado en la Cuenta Pública como evidencia de modernización administrativa, constituyéndose en el primer sistema institucional de evaluación funcionaria integrado con ClaveÚnica y desarrollado sin costos de licenciamiento.',
     alt: 'Presentación del sistema de evaluaciones online en Cuenta Pública',
   },
   {
     className: 'gallery-editorial-tall',
     image: 'assets/img/albun/nuevas/4v3.webp',
+    width: 2400,
+    height: 1800,
     title: 'Operación de infraestructura',
     description: 'Administré servidores Debian y Windows, Nginx, Docker, respaldos y monitoreo de servicios institucionales para sostener continuidad operativa.',
     alt: 'Administración de servidores Linux',
@@ -17,6 +21,8 @@ const galeria = [
   {
     className: 'gallery-editorial-small',
     image: 'assets/img/albun/nuevas/13.webp',
+    width: 2400,
+    height: 1800,
     title: 'Trabajo con equipos y usuarios',
     description: 'Levanté requerimientos con usuarios, facilité conversaciones técnicas y ajusté soluciones según necesidades reales de operación.',
     alt: 'Trabajo colaborativo con equipos y usuarios',
@@ -24,6 +30,8 @@ const galeria = [
   {
     className: 'gallery-editorial-medium',
     image: 'assets/img/albun/nuevas/19v2.webp',
+    width: 2400,
+    height: 1800,
     title: 'Implementación en terreno',
     description: 'Validé sistemas en operación junto a usuarios, resolví incidencias en terreno y ajusté flujos según uso real de áreas institucionales.',
     alt: 'Supervisión de sistemas en terreno',
@@ -31,6 +39,8 @@ const galeria = [
   {
     className: 'gallery-editorial-wide',
     image: 'assets/img/albun/nuevas/23v2.webp',
+    width: 2400,
+    height: 1800,
     title: 'Desarrollo e interoperabilidad',
     description: 'Desarrollé frontend y backend de sistemas institucionales, integré APIs, documenté contratos y publiqué servicios para operación administrativa real.',
     alt: 'Desarrollo de aplicaciones web backend y frontend',
@@ -38,6 +48,8 @@ const galeria = [
   {
     className: 'gallery-editorial-third',
     image: 'assets/img/albun/nuevas/8v2.webp',
+    width: 2400,
+    height: 1800,
     title: 'Seguridad informática',
     description: 'Realicé análisis de seguridad, revisión de exposición y recomendaciones de hardening para reducir riesgos en servicios y entornos conectados.',
     alt: 'Análisis de seguridad informática',
@@ -45,6 +57,8 @@ const galeria = [
   {
     className: 'gallery-editorial-third',
     image: 'assets/img/albun/nuevas/10v3.webp',
+    width: 2400,
+    height: 1800,
     title: 'Licitaciones tecnológicas',
     description: 'Preparé antecedentes técnicos, criterios de evaluación y revisión funcional de propuestas para compras y servicios TI.',
     alt: 'Evaluación de oferentes y preparación de antecedentes técnicos',
@@ -52,6 +66,8 @@ const galeria = [
   {
     className: 'gallery-editorial-third',
     image: 'assets/img/albun/nuevas/12.webp',
+    width: 2400,
+    height: 1800,
     title: 'Difusión e innovación pública',
     description: 'Presenté iniciativas de digitalización y compartí resultados de modernización con foco en adopción y mejora continua.',
     alt: 'Presentación de iniciativas de innovación y digitalización',
@@ -59,6 +75,8 @@ const galeria = [
   {
     className: 'gallery-editorial-wide',
     image: 'assets/img/albun/nuevas/3.webp',
+    width: 2397,
+    height: 1800,
     title: 'Trabajo colaborativo',
     description: 'Coordiné análisis y decisiones con distintas áreas institucionales para alinear objetivos técnicos, tiempos y prioridades operativas.',
     alt: 'Reunión de trabajo colaborativo',
@@ -66,6 +84,8 @@ const galeria = [
   {
     className: 'gallery-editorial-third',
     image: 'assets/img/albun/nuevas/18v2.webp',
+    width: 2400,
+    height: 1534,
     title: 'Seguimiento y control',
     description: 'Consolidé datos operativos y evidencias de avance para apoyar seguimiento, validación y control de procesos institucionales.',
     alt: 'Seguimiento y control mediante planillas y reportes',
@@ -73,6 +93,8 @@ const galeria = [
   {
     className: 'gallery-editorial-full',
     image: 'assets/img/albun/nuevas/1.webp',
+    width: 2400,
+    height: 1694,
     title: 'Estación de desarrollo y operación TI',
     description: 'Mantuve un entorno de trabajo orientado a desarrollo, pruebas, monitoreo y soporte continuo de sistemas en producción.',
     alt: 'Estación profesional de desarrollo y operación TI',
@@ -91,7 +113,7 @@ const galeria = [
     <div class="gallery-editorial-grid">
       {galeria.map((item, index) => (
         <figure class:list={['gallery-editorial-item', item.className]}>
-          <img src={item.image} alt={item.alt} loading={index === 0 ? 'eager' : 'lazy'}>
+          <img src={item.image} width={item.width} height={item.height} alt={item.alt} loading={index === 0 ? 'eager' : 'lazy'} decoding="async">
           <figcaption>
             <span>{String(index + 1).padStart(2, '0')}</span>
             <div>

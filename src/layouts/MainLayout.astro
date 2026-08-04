@@ -105,10 +105,7 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
           }
         } catch {}
 
-        root.setAttribute(
-          'data-theme',
-          window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
-        );
+        root.setAttribute('data-theme', 'dark');
       })();
     </script>
   </head>

@@ -28,7 +28,6 @@
     var root = document.documentElement;
     var toggle = qs('#theme-toggle');
     var metaTheme = qs('meta[name="theme-color"]');
-    var lightThemeNotice = 'El modo claro está actualmente en desarrollo. Por ahora se mantendrá el modo oscuro.';
 
     function applyTheme(theme) {
       root.setAttribute('data-theme', theme);
@@ -51,17 +50,7 @@
 
     toggle.addEventListener('click', function () {
       var currentTheme = getCurrentTheme();
-
-      if (currentTheme === 'dark') {
-        applyTheme('dark');
-        try {
-          localStorage.setItem(storageKey, 'dark');
-        } catch {}
-        window.alert(lightThemeNotice);
-        return;
-      }
-
-      var nextTheme = 'dark';
+      var nextTheme = currentTheme === 'light' ? 'dark' : 'light';
       applyTheme(nextTheme);
 
       try {
@@ -150,7 +139,7 @@
     } else {
       block.style.display = 'none';
       btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = '<i class="fa fa-plus-circle" aria-hidden="true"></i><span>Ver las 30+ certificaciones</span>';
+      btn.innerHTML = '<i class="fa fa-plus-circle" aria-hidden="true"></i><span>Ver catálogo completo</span>';
     }
   }
 

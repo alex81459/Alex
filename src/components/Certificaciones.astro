@@ -5,8 +5,6 @@ const destacadas = [
     title: 'Cybersecurity Essentials',
     icon: 'fa-shield-alt',
     category: 'Seguridad',
-    issued: 'Fecha no pública en este portafolio',
-    credential: 'Identificador disponible a solicitud',
     applied: 'Aplicado en hardening, control de acceso y trazabilidad en Libro de Clases, SIMPLE y APIs institucionales.',
   },
   {
@@ -14,8 +12,6 @@ const destacadas = [
     title: 'Workspace Administrator',
     icon: 'fa-cloud',
     category: 'Sistemas',
-    issued: 'Fecha no pública en este portafolio',
-    credential: 'Identificador disponible a solicitud',
     applied: 'Aplicado en administración de servicios colaborativos e integración operativa para equipos institucionales.',
   },
   {
@@ -23,17 +19,13 @@ const destacadas = [
     title: 'Angular de Cero a Experto',
     icon: 'fa-code',
     category: 'Desarrollo',
-    issued: 'Fecha no pública en este portafolio',
-    credential: 'Credencial disponible a solicitud',
-    applied: 'Base aplicada en frontend productivo con Angular y NG Prime 22 para Libro de Clases y portales administrativos.',
+    applied: 'Base aplicada en frontend productivo con Angular y PrimeNG 22 para Libro de Clases y portales administrativos.',
   },
   {
     provider: 'Udemy',
     title: 'Docker',
     icon: 'fa-cubes',
     category: 'Sistemas',
-    issued: 'Fecha no pública en este portafolio',
-    credential: 'Credencial disponible a solicitud',
     applied: 'Aplicado en despliegues, entornos aislados y operación de servicios para plataformas institucionales y demos técnicas.',
   },
   {
@@ -41,8 +33,6 @@ const destacadas = [
     title: 'Auditor Interno BRC V8',
     icon: 'fa-certificate',
     category: 'Gestión',
-    issued: 'Fecha no pública en este portafolio',
-    credential: 'Certificación disponible a solicitud',
     applied: 'Aplicado en trazabilidad documental y control de evidencia para procesos exportadores auditables.',
   },
   {
@@ -50,8 +40,6 @@ const destacadas = [
     title: 'Excel Nivel Avanzado',
     icon: 'fa-table',
     category: 'Productividad',
-    issued: 'Fecha no pública en este portafolio',
-    credential: 'Certificado disponible a solicitud',
     applied: 'Aplicado en reportería operativa, exportaciones y consolidación de antecedentes para áreas institucionales.',
   },
 ];
@@ -116,12 +104,12 @@ const certificaciones = [
           <span class="cert-provider">{cert.provider}</span>
           <h3>{cert.title}</h3>
           <span class="cert-category-label">{cert.category}</span>
-          <p class="cert-evidence"><strong>Fecha:</strong> {cert.issued}</p>
-          <p class="cert-evidence"><strong>Credencial:</strong> {cert.credential}</p>
           <p class="cert-evidence cert-evidence-apply"><strong>Aplicación:</strong> {cert.applied}</p>
         </article>
       ))}
     </div>
+
+    <p class="cert-availability-note">Certificaciones disponibles a solicitud de forma digital.</p>
 
     <div class="cert-actions">
       <button class="cert-toggle-btn" type="button" id="certToggleBtn" aria-expanded="false" aria-controls="allCertsBlock" onclick="toggleAllCerts()">
@@ -163,7 +151,7 @@ const certificaciones = [
     <div class="cert-summary-strip" aria-label="Resumen de formación">
       <div><strong>6</strong><span>Credenciales destacadas</span></div>
       <div><strong>6</strong><span>Áreas profesionales</span></div>
-      <div><strong>10+</strong><span>Años formándose</span></div>
+      <div><strong>10+</strong><span>Años de formación continua</span></div>
     </div>
   </div>
 </section>

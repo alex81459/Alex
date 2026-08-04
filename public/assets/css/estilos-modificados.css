@@ -626,8 +626,21 @@ body {
 
 html[data-theme='light'] .section-intro .section-heading,
 html[data-theme='light'] .section-heading {
-    background: linear-gradient(90deg, #148eea 0%, #39c2dd 100%) !important;
-    color: #148eea !important;
+    background: none !important;
+    color: #184d96 !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: currentColor !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+html[data-theme='light'] .section-heading.text-gradient,
+html[data-theme='light'] .section-intro .section-heading.text-gradient {
+    background: none !important;
+    color: #184d96 !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: currentColor !important;
 }
 
 html[data-theme='light'] .portfolio-section {

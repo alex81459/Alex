@@ -714,11 +714,38 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .carousel-section .carousel-control-prev,
 .carousel-section .carousel-control-next {
-    color: var(--primary-color);
+    color: #f8fbff;
+    width: 64px;
 }
 .carousel-section .carousel-control-prev:hover,
 .carousel-section .carousel-control-next:hover {
-    color: var(--secondary-color);
+    color: #ffffff;
+}
+.carousel-section .carousel-control-prev-icon,
+.carousel-section .carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid rgba(32, 148, 255, 0.95);
+    border-radius: 999px;
+    background-color: rgba(14, 23, 33, 0.42);
+    background-size: 1.35rem 1.35rem;
+    box-shadow:
+        0 0 0 2px rgba(4, 29, 52, 0.22),
+        0 0 14px rgba(32, 148, 255, 0.72),
+        0 0 28px rgba(32, 148, 255, 0.3);
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.carousel-section .carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-section .carousel-control-next:hover .carousel-control-next-icon,
+.carousel-section .carousel-control-prev:focus-visible .carousel-control-prev-icon,
+.carousel-section .carousel-control-next:focus-visible .carousel-control-next-icon {
+    transform: scale(1.06);
+    background-color: rgba(14, 23, 33, 0.6);
+    box-shadow:
+        0 0 0 2px rgba(4, 29, 52, 0.3),
+        0 0 18px rgba(32, 148, 255, 0.92),
+        0 0 34px rgba(32, 148, 255, 0.42);
 }
 .carousel-section .carousel-item {
     position: relative;

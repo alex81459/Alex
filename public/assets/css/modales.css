@@ -55,6 +55,33 @@
     margin-bottom: 22px;
     text-align: left;
 }
+
+/* Uniforma la altura visual de imágenes principales y galerías dentro de modales */
+.portfolio-modal .modal-body > .container > .row > .col-lg-10 > .modal-body > img.img-fluid.rounded.shadow-sm.w-100.mb-4 {
+    width: 100%;
+    height: clamp(280px, 48vw, 420px);
+    object-fit: cover;
+    object-position: top center;
+}
+
+.portfolio-modal .carousel-item img {
+    width: 100%;
+    height: clamp(260px, 46vw, 400px);
+    object-fit: cover;
+    object-position: top center;
+}
+
+.portfolio-modal .project-detail-block img {
+    width: 100%;
+    max-height: 340px;
+    object-fit: contain;
+    background: rgba(7, 17, 31, 0.16);
+    border-radius: 12px;
+}
+
+html[data-theme='light'] .portfolio-modal .project-detail-block img {
+    background: rgba(148, 163, 184, 0.12);
+}
 .project-detail-block {
     background: rgba(255, 255, 255, 0.02);
     border-left: 3px solid var(--primary);
@@ -94,6 +121,41 @@
 }
 .project-impact-block .project-detail-label {
     color: var(--success);
+}
+
+html[data-theme='light'] .project-detail-block {
+    background: rgba(255, 255, 255, 0.88);
+    border-left-color: rgba(20, 142, 234, 0.9);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+html[data-theme='light'] .project-detail-label {
+    color: #167fd6;
+}
+
+html[data-theme='light'] .project-detail-block p,
+html[data-theme='light'] .project-detail-block ul,
+html[data-theme='light'] .project-detail-block li {
+    color: #38516d;
+}
+
+html[data-theme='light'] .project-detail-block strong {
+    color: #18314d;
+}
+
+html[data-theme='light'] .project-impact-block {
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.14), rgba(255, 255, 255, 0.9));
+    border-left-color: #10b981;
+}
+
+html[data-theme='light'] .project-impact-block .project-detail-label {
+    color: #0f9f6c;
+}
+
+html[data-theme='light'] .project-impact-block p,
+html[data-theme='light'] .project-impact-block ul,
+html[data-theme='light'] .project-impact-block li {
+    color: #46637c;
 }
 .project-modal-actions {
     display: flex;
