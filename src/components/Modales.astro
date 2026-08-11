@@ -934,6 +934,46 @@
                                             <div class="project-module-item"><i class="fa fa-camera"></i><span>Gestión de Imágenes — subida y cambios de fotos de estudiantes</span></div>
                                             <div class="project-module-item"><i class="fa fa-search"></i><span>Búsquedas Inteligentes — sistema contextual según rol</span></div>
                                             <div class="project-module-item"><i class="fa fa-book"></i><span>Leccionario y Objetivos Curriculares — borrador, versionado, aprobación UTP, firma OTP, notificaciones y auditoría</span></div>
+                                            <div class="project-module-item"><i class="fa fa-mobile"></i><span>Gestión de OTP — firma digital de contingencia, autenticación en dos pasos y administración de códigos</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-mobile-phone"></i> Gestión de OTP</div>
+                                        <p class="project-contribution-summary">Módulo de contingencia para firma digital de leccionarios y documentos críticos cuando el servicio oficial del MINEDUC no esté disponible. Permite configurar una app autenticadora como método alternativo de validación, firmar mediante código enviado al teléfono o correo electrónico, y reutilizar la firma en diferentes módulos del sistema.</p>
+                                        <div class="project-contribution-grid">
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-shield"></i> Firma digital OTP</h5>
+                                                <ul>
+                                                    <li>Firma de leccionarios mediante código OTP enviado al teléfono o correo electrónico como método de contingencia ante indisponibilidad del servicio MINEDUC.</li>
+                                                    <li>App autenticadora configurable como segundo factor para firma digital de documentos oficiales.</li>
+                                                    <li>Validación criptográfica del código OTP con expiración programable por intento de firma.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-cogs"></i> Administración y control</h5>
+                                                <ul>
+                                                    <li>Panel de administración de códigos OTP con control de acceso granular por rol y establecimiento.</li>
+                                                    <li>Registro de trazabilidad y auditoría de cada firma realizada mediante OTP con timestamp y metadata del firmante.</li>
+                                                    <li>Gestión de caducidad, reenvío y revocación de códigos desde el panel administrativo.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-retweet"></i> Firma reutilizable y compartida</h5>
+                                                <ul>
+                                                    <li>Módulo de firma reutilizable para aplicar en diferentes módulos críticos del sistema sin necesidad de reautenticación.</li>
+                                                    <li>Integración transversal con leccionario, anotaciones, matrículas y otros módulos que requieran validación oficial.</li>
+                                                    <li>API de firma compartida para que cualquier módulo del ecosistema pueda solicitar validación OTP de forma estandarizada.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-contribution-card">
+                                                <h5><i class="fa fa-mobile"></i> Firma modular por celular o correo</h5>
+                                                <ul>
+                                                    <li>Envío de código OTP por SMS al teléfono móvil registrado del docente o directivo para firma inmediata de leccionarios.</li>
+                                                    <li>Alternativa de recepción por correo electrónico institucional como canal secundario de contingencia.</li>
+                                                    <li>Flujo modular desacoplado: cada módulo crítico (leccionario, anotaciones, matrículas) invoca el servicio de firma OTP de forma independiente.</li>
+                                                    <li>Notificación de confirmación post-firma con comprobante digital almacenado en el registro de auditoría.</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="project-detail-block">
