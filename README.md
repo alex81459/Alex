@@ -23,7 +23,7 @@ Portafolio web moderno, optimizado para rendimiento y SEO, que presenta experien
 - **DevOps**: Automatización, CI/CD y despliegue en GitHub Pages
 
 ### Proyectos Destacados
-- **Libro de Clases Digital**: Implementación para uso efectivo en 7 establecimientos, con expansión progresiva
+- **Libro de Clases Digital**: 7 establecimientos desplegados · 5 en operación activa, con expansión progresiva
 - **Trámites Online Institucional**: 13 trámites implementados y 10.000+ gestiones realizadas en Plataforma SIMPLE
 - **Sistema de Tareas y Proyectos**: Herramienta de gestión colaborativa
 - **Trazabilidad Documental**: Sistema de automatización industrial

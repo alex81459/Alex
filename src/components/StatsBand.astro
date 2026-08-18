@@ -1,10 +1,10 @@
 ---
 const stats = [
-  { target: '70', suffix: '+', label: 'Establecimientos atendidos' },
-  { target: '13', suffix: '+', label: 'Procesos digitalizados' },
-  { target: '7', suffix: ' APIs', label: 'Integradas/desarrolladas' },
-  { target: '1000', suffix: '+', label: 'Casos de soporte' },
-  { target: '500', suffix: '+ páginas', label: 'Documentación técnica' },
+  { target: '69', display: '69', suffix: '+', label: 'Establecimientos atendidos' },
+  { target: '13', display: '13', suffix: '+', label: 'Procesos digitalizados' },
+  { target: '7', display: '7', suffix: ' APIs', label: 'Integradas/desarrolladas' },
+  { target: '1000', display: '1.000', suffix: '+', label: 'Casos de soporte' },
+  { target: '500', display: '500', suffix: '+ páginas', label: 'Documentación técnica' },
 ];
 ---
 
@@ -14,7 +14,7 @@ const stats = [
       {stats.map((stat) => (
         <div class="statsband-item">
           <div class="statsband-value">
-            <span class="statsband-number" data-target={stat.target}>0</span>
+            <span class="statsband-number" data-target={stat.target}>{stat.display}</span>
             <span class="statsband-suffix">{stat.suffix}</span>
           </div>
           <div class="statsband-label">{stat.label}</div>

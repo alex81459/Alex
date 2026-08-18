@@ -292,6 +292,9 @@
         return;
       }
 
+      // El HTML ya contiene el valor final; se resetea a 0 solo para animar.
+      el.textContent = '0';
+
       var duration = 1400;
       var frameRate = 16;
       var steps = duration / frameRate;
