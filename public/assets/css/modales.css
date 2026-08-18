@@ -287,19 +287,50 @@ html[data-theme='light'] .project-impact-block li {
     row-gap: 8px;
 }
 .arch-node {
-    background: rgba(99, 102, 241, 0.14);
-    border: 1px solid rgba(99, 102, 241, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.32);
     color: #c7d2fe;
-    border-radius: 8px;
-    padding: 6px 12px;
+    border-radius: 10px;
+    padding: 6px 13px 6px 7px;
     font-size: 0.78rem;
     font-weight: 600;
     white-space: nowrap;
+}
+.arch-node-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--arch-c, var(--primary));
+    font-size: 0.82rem;
 }
 .arch-arrow {
     color: var(--text-secondary);
     font-size: 0.8rem;
     opacity: 0.85;
+}
+.arch-stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+}
+.arch-stack-label {
+    margin-right: 4px;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 .case-list {
     margin: 0;
@@ -327,6 +358,48 @@ html[data-theme='light'] .project-impact-block li {
 .case-result .case-list li::before {
     color: var(--success);
 }
+.case-decisions {
+    margin-top: 12px;
+}
+.decision-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.decision-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+.decision-question {
+    color: var(--text-main);
+    font-size: 0.82rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+.decision-question .fa {
+    color: var(--primary);
+    margin-right: 6px;
+}
+.decision-answer {
+    margin: 0;
+    color: #c8d8e4;
+    font-size: 0.82rem;
+    line-height: 1.55;
+}
+html[data-theme='light'] .decision-card {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+html[data-theme='light'] .decision-answer {
+    color: #38516d;
+}
+@media (max-width: 575.98px) {
+    .decision-list {
+        grid-template-columns: 1fr;
+    }
+}
 
 html[data-theme='light'] .case-cell {
     background: rgba(255, 255, 255, 0.9);
@@ -343,8 +416,13 @@ html[data-theme='light'] .case-badge {
 }
 html[data-theme='light'] .arch-node {
     background: rgba(99, 102, 241, 0.08);
-    border-color: rgba(99, 102, 241, 0.3);
+    border-color: rgba(99, 102, 241, 0.28);
     color: #4f5bd5;
+}
+html[data-theme='light'] .arch-node-icon {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(76, 106, 141, 0.18);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 }
 html[data-theme='light'] .case-problem {
     background: rgba(244, 63, 94, 0.05);

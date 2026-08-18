@@ -287,7 +287,7 @@
                                                 <p>Detección reactiva de fallas en servicios TI: el equipo se entera de un incidente cuando un usuario lo reporta o cuando el impacto ya es evidente.</p>
                                             </div>
                                             <div class="case-cell">
-                                                <span class="case-cell-label"><i class="fa fa-user-check"></i> Mi participación</span>
+                                                <span class="case-cell-label"><i class="fa fa-user-circle"></i> Mi participación</span>
                                                 <div class="case-badges">
                                                     <span class="case-badge">Arquitectura</span>
                                                     <span class="case-badge">Backend</span>
@@ -300,10 +300,10 @@
                                         <div class="case-cell">
                                             <span class="case-cell-label"><i class="fa fa-sitemap"></i> Arquitectura</span>
                                             <div class="arch-flow">
-                                                <span class="arch-node">HTTP / TCP / DNS / SSH / BD</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Motor Python (ThreadPool)</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Dashboard Flask</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Alertas Email / Telegram</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#38bdf8"><i class="fa fa-globe"></i></span>HTTP / TCP / DNS / SSH / BD</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#4584b6"><i class="fab fa-python"></i></span>Motor Python (ThreadPool)</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#34d399"><i class="fa fa-tachometer"></i></span>Dashboard Flask</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#f59e0b"><i class="fa fa-bell"></i></span>Alertas Email / Telegram</span>
                                             </div>
                                         </div>
                                         <div class="case-cell">
@@ -338,6 +338,23 @@
                                                     <li>Menor tiempo de respuesta</li>
                                                     <li>Open source en GitHub</li>
                                                 </ul>
+                                            </div>
+                                        </div>
+                                        <div class="case-cell case-decisions">
+                                            <span class="case-cell-label"><i class="fa fa-cogs"></i> Decisiones de ingeniería</span>
+                                            <div class="decision-list">
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué ThreadPool?</div>
+                                                    <p class="decision-answer">Verificaciones paralelas para monitorear varios servicios sin bloquear la ejecución.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué alertas por Email y Telegram?</div>
+                                                    <p class="decision-answer">Doble canal: correo formal y notificación instantánea para reaccionar antes.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué configuración en JSON/YAML?</div>
+                                                    <p class="decision-answer">Configuración flexible, legible y versionable para adaptarse a distintas infraestructuras.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -686,7 +703,7 @@
                                                 <p>Gestión de tareas basada en planillas, correos y acuerdos verbales, sin visibilidad del estado real ni trazabilidad sobre responsables y avances.</p>
                                             </div>
                                             <div class="case-cell">
-                                                <span class="case-cell-label"><i class="fa fa-user-check"></i> Mi participación</span>
+                                                <span class="case-cell-label"><i class="fa fa-user-circle"></i> Mi participación</span>
                                                 <div class="case-badges">
                                                     <span class="case-badge">Arquitectura</span>
                                                     <span class="case-badge">Frontend</span>
@@ -699,11 +716,15 @@
                                         <div class="case-cell">
                                             <span class="case-cell-label"><i class="fa fa-sitemap"></i> Arquitectura</span>
                                             <div class="arch-flow">
-                                                <span class="arch-node">Usuarios</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Angular</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">API Flask</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">MySQL</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Notificaciones</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#94a3b8"><i class="fa fa-users"></i></span>Usuarios</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#dd0031"><i class="fab fa-angular"></i></span>Angular</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#4584b6"><i class="fab fa-python"></i></span>API Flask</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#43b8d4"><i class="fa fa-database"></i></span>MySQL</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#f59e0b"><i class="fa fa-bell"></i></span>Notificaciones</span>
+                                            </div>
+                                            <div class="arch-stack">
+                                                <span class="arch-stack-label">Despliegue</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#2496ed"><i class="fab fa-docker"></i></span>Docker</span>
                                             </div>
                                         </div>
                                         <div class="case-cell">
@@ -742,6 +763,27 @@
                                                     <li>Preparado para Docker</li>
                                                     <li>Listo para equipos reales</li>
                                                 </ul>
+                                            </div>
+                                        </div>
+                                        <div class="case-cell case-decisions">
+                                            <span class="case-cell-label"><i class="fa fa-cogs"></i> Decisiones de ingeniería</span>
+                                            <div class="decision-list">
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué Angular + Angular Material?</div>
+                                                    <p class="decision-answer">SPA administrativa con componentes consistentes y vista Kanban con drag & drop.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué arquitectura multi-tenant?</div>
+                                                    <p class="decision-answer">Aislamiento de datos por usuario y contexto sin duplicar la plataforma.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué JWT + refresh tokens?</div>
+                                                    <p class="decision-answer">Sesiones seguras y renovables sin mantener estado en el servidor.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué Docker?</div>
+                                                    <p class="decision-answer">Entorno completo (frontend, backend y base de datos) reproducible en un comando.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1002,7 +1044,7 @@
                                                 <p>Digitalizar los procesos académicos y administrativos que antes dependían de libros de clases físicos, registros manuales y plataformas desconectadas entre los establecimientos.</p>
                                             </div>
                                             <div class="case-cell">
-                                                <span class="case-cell-label"><i class="fa fa-user-check"></i> Mi participación</span>
+                                                <span class="case-cell-label"><i class="fa fa-user-circle"></i> Mi participación</span>
                                                 <div class="case-badges">
                                                     <span class="case-badge">Arquitectura</span>
                                                     <span class="case-badge">Frontend</span>
@@ -1016,12 +1058,18 @@
                                         <div class="case-cell">
                                             <span class="case-cell-label"><i class="fa fa-sitemap"></i> Arquitectura</span>
                                             <div class="arch-flow">
-                                                <span class="arch-node">Usuarios</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Nginx</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Angular + PrimeNG</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">API Flask</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">MySQL</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Servicios OTP / correo</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#94a3b8"><i class="fa fa-users"></i></span>Usuarios</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#f38020"><i class="fa fa-cloud"></i></span>Cloudflare</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#2fb344"><i class="fa fa-server"></i></span>Nginx</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#dd0031"><i class="fab fa-angular"></i></span>Angular + PrimeNG</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#4584b6"><i class="fab fa-python"></i></span>API Flask</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#43b8d4"><i class="fa fa-database"></i></span>MySQL</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#a78bfa"><i class="fa fa-envelope"></i></span>Servicios OTP / correo</span>
+                                            </div>
+                                            <div class="arch-stack">
+                                                <span class="arch-stack-label">Despliegue</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#2496ed"><i class="fab fa-docker"></i></span>Docker</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#f7c948"><i class="fab fa-linux"></i></span>Linux</span>
                                             </div>
                                         </div>
                                         <div class="case-cell">
@@ -1063,6 +1111,35 @@
                                                     <li>Menor dependencia de procesos manuales</li>
                                                     <li>Trazabilidad de operaciones</li>
                                                 </ul>
+                                            </div>
+                                        </div>
+                                        <div class="case-cell case-decisions">
+                                            <span class="case-cell-label"><i class="fa fa-cogs"></i> Decisiones de ingeniería</span>
+                                            <div class="decision-list">
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué Angular + PrimeNG?</div>
+                                                    <p class="decision-answer">Aplicaciones administrativas grandes con portales para directivos, docentes y UTP: tipado fuerte, modularidad y mantenibilidad a largo plazo.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué Flask (Python)?</div>
+                                                    <p class="decision-answer">Backend ligero y controlado para APIs institucionales, rápido de mantener y fácil de integrar con sistemas existentes.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué Docker?</div>
+                                                    <p class="decision-answer">Despliegues reproducibles y menor dependencia del servidor host: mismo entorno en desarrollo, pruebas y producción.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué Nginx?</div>
+                                                    <p class="decision-answer">Reverse proxy, TLS y separación frontend/backend detrás de una única entrada pública.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Cómo protejo las APIs?</div>
+                                                    <p class="decision-answer">JWT, RBAC, validación de entrada, rate limiting y auditoría de cada acción relevante.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué MySQL?</div>
+                                                    <p class="decision-answer">Modelo relacional para datos académicos (cursos, asistencia, notas) con integridad referencial y consultas eficientes.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1233,7 +1310,7 @@
                                     </div>
                                     <div class="project-detail-block project-impact-block">
                                         <div class="project-detail-label"><i class="fa fa-chart-line"></i> Impacto</div>
-                                        <p>Implementado para <strong>uso efectivo en 7 establecimientos educacionales</strong> del SLEP Colchagua, con <strong>3 portales diferenciados</strong> (Docente, Director, UTP). Reemplazó el libro físico por una solución digital con respaldo automático y firma OTP, respaldada por la Circular N°30 del Ministerio de Educación y el Estándar REX N°3335/2020. Cumple con el <strong>estándar CEDS</strong> de interoperabilidad de datos educacionales.</p>
+                                        <p>Implementado para <strong>uso efectivo en 5 establecimientos educacionales</strong> del SLEP Colchagua, con <strong>3 portales diferenciados</strong> (Docente, Director, UTP). Reemplazó el libro físico por una solución digital con respaldo automático y firma OTP, respaldada por la Circular N°30 del Ministerio de Educación y el Estándar REX N°3335/2020. Cumple con el <strong>estándar CEDS</strong> de interoperabilidad de datos educacionales.</p>
                                     </div>
                                     <div class="project-modal-actions">
                                         <a href="https://libro.slepcolchagua.cl/faqs" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm"><i class="fa fa-external-link"></i>&nbsp;Ver sitio web</a>
@@ -1266,7 +1343,7 @@
                                                 <p>Gestión descentralizada de los Consejos Escolares: información dispersa entre establecimientos, actas sin respaldo central y sin visión institucional del cumplimiento.</p>
                                             </div>
                                             <div class="case-cell">
-                                                <span class="case-cell-label"><i class="fa fa-user-check"></i> Mi participación</span>
+                                                <span class="case-cell-label"><i class="fa fa-user-circle"></i> Mi participación</span>
                                                 <div class="case-badges">
                                                     <span class="case-badge">Arquitectura</span>
                                                     <span class="case-badge">Backend</span>
@@ -1280,12 +1357,17 @@
                                         <div class="case-cell">
                                             <span class="case-cell-label"><i class="fa fa-sitemap"></i> Arquitectura</span>
                                             <div class="arch-flow">
-                                                <span class="arch-node">Usuarios</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Google OAuth</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Next.js + React</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">API NestJS</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">MySQL</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Google Drive</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#94a3b8"><i class="fa fa-users"></i></span>Usuarios</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#ea4335"><i class="fab fa-google"></i></span>Google OAuth</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#61dafb"><i class="fab fa-react"></i></span>Next.js + React</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#83cd29"><i class="fab fa-node-js"></i></span>API NestJS</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#43b8d4"><i class="fa fa-database"></i></span>MySQL</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#fbbc04"><i class="fab fa-google-drive"></i></span>Google Drive</span>
+                                            </div>
+                                            <div class="arch-stack">
+                                                <span class="arch-stack-label">Infraestructura</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#2496ed"><i class="fab fa-docker"></i></span>Docker</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#2fb344"><i class="fa fa-server"></i></span>Nginx</span>
                                             </div>
                                         </div>
                                         <div class="case-cell">
@@ -1319,10 +1401,31 @@
                                                 <span class="case-cell-label"><i class="fa fa-chart-line"></i> Resultado</span>
                                                 <ul class="case-list">
                                                     <li>Arquitectura institucional propia</li>
-                                                    <li>Control de 4 sesiones anuales</li>
+                                                    <li>Control de 4 sesiones anuales minimas en 69 establecimientos educacionales</li>
                                                     <li>Trazabilidad por RBD</li>
                                                     <li>Mayor control de datos</li>
                                                 </ul>
+                                            </div>
+                                        </div>
+                                        <div class="case-cell case-decisions">
+                                            <span class="case-cell-label"><i class="fa fa-cogs"></i> Decisiones de ingeniería</span>
+                                            <div class="decision-list">
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué NestJS?</div>
+                                                    <p class="decision-answer">Arquitectura modular y tipada sobre Node.js para un backend institucional mantenible y escalable.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué Prisma + MySQL?</div>
+                                                    <p class="decision-answer">Modelado de datos tipado y migraciones seguras para actas, sesiones y permisos.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué Google OAuth + Drive?</div>
+                                                    <p class="decision-answer">Reutilizar la autenticación institucional existente y respaldar documentos sin gestionar almacenamiento propio.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Cómo protejo el acceso por RBD?</div>
+                                                    <p class="decision-answer">Los permisos se validan desde el backend en cada operación, no solo en la interfaz.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1565,7 +1668,7 @@
                                                 <p>Procesos administrativos gestionados de forma manual, por correo y planillas, sin trazabilidad sobre el estado de cada solicitud ni respaldo documental centralizado.</p>
                                             </div>
                                             <div class="case-cell">
-                                                <span class="case-cell-label"><i class="fa fa-user-check"></i> Mi participación</span>
+                                                <span class="case-cell-label"><i class="fa fa-user-circle"></i> Mi participación</span>
                                                 <div class="case-badges">
                                                     <span class="case-badge">Arquitectura</span>
                                                     <span class="case-badge">Frontend</span>
@@ -1579,12 +1682,12 @@
                                         <div class="case-cell">
                                             <span class="case-cell-label"><i class="fa fa-sitemap"></i> Arquitectura</span>
                                             <div class="arch-flow">
-                                                <span class="arch-node">Funcionarios</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">ClaveÚnica</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Plataforma SIMPLE</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">API Flask</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">MySQL</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Reportes PDF/Excel</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#94a3b8"><i class="fa fa-users"></i></span>Funcionarios</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#fbbf24"><i class="fa fa-key"></i></span>ClaveÚnica</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#38bdf8"><i class="fa fa-file-text-o"></i></span>Plataforma SIMPLE</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#4584b6"><i class="fab fa-python"></i></span>API Flask</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#43b8d4"><i class="fa fa-database"></i></span>MySQL</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#ef4444"><i class="fa fa-file-pdf-o"></i></span>Reportes PDF/Excel</span>
                                             </div>
                                         </div>
                                         <div class="case-cell">
@@ -1622,6 +1725,27 @@
                                                     <li>Respaldo automático</li>
                                                     <li>Procesos auditables</li>
                                                 </ul>
+                                            </div>
+                                        </div>
+                                        <div class="case-cell case-decisions">
+                                            <span class="case-cell-label"><i class="fa fa-cogs"></i> Decisiones de ingeniería</span>
+                                            <div class="decision-list">
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué ClaveÚnica?</div>
+                                                    <p class="decision-answer">Autenticación oficial del Estado: validez legal y no repudio en trámites sensibles como evaluaciones y renuncias.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué flujos jerárquicos?</div>
+                                                    <p class="decision-answer">Cada etapa tiene un responsable y trazabilidad: revisión, derivación, aprobación, rechazo y cierre documentados.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Cómo garantizo trazabilidad?</div>
+                                                    <p class="decision-answer">Historial completo por solicitud, folios, comprobantes y respaldo automático de antecedentes.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué APIs REST?</div>
+                                                    <p class="decision-answer">Interoperabilidad entre sistemas institucionales, con contratos documentados en Swagger y pruebas en Postman.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1821,7 +1945,7 @@
                                                 <p>Más de 150 documentos críticos dispersos en distintas áreas y formatos, con búsquedas de hasta 3 horas durante auditorías y riesgo de inconsistencias.</p>
                                             </div>
                                             <div class="case-cell">
-                                                <span class="case-cell-label"><i class="fa fa-user-check"></i> Mi participación</span>
+                                                <span class="case-cell-label"><i class="fa fa-user-circle"></i> Mi participación</span>
                                                 <div class="case-badges">
                                                     <span class="case-badge">Arquitectura</span>
                                                     <span class="case-badge">Backend</span>
@@ -1834,11 +1958,17 @@
                                         <div class="case-cell">
                                             <span class="case-cell-label"><i class="fa fa-sitemap"></i> Arquitectura</span>
                                             <div class="arch-flow">
-                                                <span class="arch-node">Materia prima</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Producción</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Calidad</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Embarque</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Exportación</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#34d399"><i class="fa fa-leaf"></i></span>Materia prima</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#38bdf8"><i class="fa fa-industry"></i></span>Producción</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#f59e0b"><i class="fa fa-check-circle"></i></span>Calidad</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#60a5fa"><i class="fa fa-ship"></i></span>Embarque</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#a78bfa"><i class="fa fa-globe"></i></span>Exportación</span>
+                                            </div>
+                                            <div class="arch-stack">
+                                                <span class="arch-stack-label">Plataforma</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#43b8d4"><i class="fa fa-database"></i></span>MySQL / SQL Server</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#4584b6"><i class="fab fa-python"></i></span>Python</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#38bdf8"><i class="fa fa-code"></i></span>C#</span>
                                             </div>
                                         </div>
                                         <div class="case-cell">
@@ -1871,6 +2001,23 @@
                                                     <li>Búsqueda de 3h → 15 min</li>
                                                     <li>Calificación BRC A+</li>
                                                 </ul>
+                                            </div>
+                                        </div>
+                                        <div class="case-cell case-decisions">
+                                            <span class="case-cell-label"><i class="fa fa-cogs"></i> Decisiones de ingeniería</span>
+                                            <div class="decision-list">
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué centralizar la documentación?</div>
+                                                    <p class="decision-answer">Reducir la búsqueda de antecedentes de 3 horas a 15 minutos y detectar inconsistencias más rápido.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué respaldo digital + físico?</div>
+                                                    <p class="decision-answer">El equipo auditor BRC requería copia física para revisar en detalle durante la certificación.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué MySQL y SQL Server?</div>
+                                                    <p class="decision-answer">Consolidar datos de producción y exportación con integridad referencial y consultas eficientes.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1986,7 +2133,7 @@
                                                 <p>Emisión manual de etiquetas con desfases de información, etiquetado incorrecto y pérdida significativa de material en la línea de producción de exportación.</p>
                                             </div>
                                             <div class="case-cell">
-                                                <span class="case-cell-label"><i class="fa fa-user-check"></i> Mi participación</span>
+                                                <span class="case-cell-label"><i class="fa fa-user-circle"></i> Mi participación</span>
                                                 <div class="case-badges">
                                                     <span class="case-badge">Arquitectura</span>
                                                     <span class="case-badge">Integración industrial</span>
@@ -1999,11 +2146,11 @@
                                         <div class="case-cell">
                                             <span class="case-cell-label"><i class="fa fa-sitemap"></i> Arquitectura</span>
                                             <div class="arch-flow">
-                                                <span class="arch-node">PLC</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Raspberry Pi</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Servidor de aplicaciones</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Base de datos</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node">Impresora térmica</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#94a3b8"><i class="fa fa-microchip"></i></span>PLC</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#c51a4a"><i class="fab fa-raspberry-pi"></i></span>Raspberry Pi</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#38bdf8"><i class="fa fa-server"></i></span>Servidor de aplicaciones</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#43b8d4"><i class="fa fa-database"></i></span>Base de datos</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--arch-c:#f59e0b"><i class="fa fa-print"></i></span>Impresora térmica</span>
                                             </div>
                                         </div>
                                         <div class="case-cell">
@@ -2034,6 +2181,23 @@
                                                     <li>Reducción de errores de etiquetado</li>
                                                     <li>Operación más rápida y confiable</li>
                                                 </ul>
+                                            </div>
+                                        </div>
+                                        <div class="case-cell case-decisions">
+                                            <span class="case-cell-label"><i class="fa fa-cogs"></i> Decisiones de ingeniería</span>
+                                            <div class="decision-list">
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué Raspberry Pi como pasarela?</div>
+                                                    <p class="decision-answer">Orquesta la solicitud en campo sin asumir lógica de negocio ni persistencia central.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué validar en el servidor?</div>
+                                                    <p class="decision-answer">El servidor resuelve lotes, códigos e información de etiqueta para evitar errores en línea de producción.</p>
+                                                </div>
+                                                <div class="decision-card">
+                                                    <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué PLC + botonera física?</div>
+                                                    <p class="decision-answer">Captura la condición real del proceso y dispara la impresión de forma automática.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

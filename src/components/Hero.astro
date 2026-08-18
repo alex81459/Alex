@@ -3,9 +3,21 @@
         <div class="container hero-container">
             <!-- Columna izquierda: contenido principal -->
             <div class="hero-left">
-                <span class="hero-tag">INGENIERO TI · DESARROLLADOR FULL STACK</span>
+                <span class="hero-name">Alex Salinas Ponce</span>
+                <span class="hero-tag">INGENIERO DE SOFTWARE · FULL STACK · INFRAESTRUCTURA &amp; DEVOPS</span>
                 <h1 class="hero-title">Desarrollo sistemas que <span class="hero-highlight">reducen trabajo manual</span> y mejoran la operación.</h1>
-                <p class="hero-desc">Diseño e implemento plataformas institucionales, APIs, automatizaciones e infraestructura tecnológica para organizaciones que necesitan digitalizar procesos con resultados concretos.</p>
+                <p class="hero-desc">Diseño, desarrollo e implemento plataformas digitales, APIs e infraestructura tecnológica para organizaciones y entornos de alta operación.</p>
+                <div class="hero-tech-tags">
+                    <span class="hero-tech-tag">Angular</span>
+                    <span class="hero-tech-tag">Python</span>
+                    <span class="hero-tech-tag">Flask</span>
+                    <span class="hero-tech-tag">Node.js</span>
+                    <span class="hero-tech-tag">C#</span>
+                    <span class="hero-tech-tag">MySQL</span>
+                    <span class="hero-tech-tag">Docker</span>
+                    <span class="hero-tech-tag">Linux</span>
+                    <span class="hero-tech-tag">Nginx</span>
+                </div>
                 <div class="hero-buttons">
                     <a class="btn btn-hero-gradient js-scroll-trigger" role="button" href="#portfolio">Ver proyectos</a>
                     <a class="btn btn-hero-outline" role="button" href="assets/curriculum-v3-2026.pdf" target="_blank" rel="noopener">
@@ -27,7 +39,7 @@
                     <!-- Fondo degradado -->
                     <div class="hero-photo-bg"></div>
                     <!-- Foto rectangular -->
-                    <img src="assets/img/frontalv2-circular.webp" width="400" height="400" alt="Alex Salinas Ponce - Desarrollador Full Stack" class="hero-photo">
+                    <img src="assets/img/frontalv2-circular.webp" width="400" height="400" alt="Alex Salinas Ponce - Ingeniero de Software Full Stack" class="hero-photo">
                     <!-- Terminal compacta superpuesta -->
                     <div class="hero-terminal" aria-hidden="true">
                         <div class="hero-terminal-dots">
@@ -94,6 +106,15 @@
             text-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
         }
 
+        .hero-name {
+            display: block;
+            color: var(--text-main);
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.6rem;
+        }
+
         .hero-tag {
             display: inline-block;
             color: var(--primary);
@@ -113,6 +134,26 @@
             line-height: 1.65;
             max-width: 540px;
             margin-bottom: 2rem;
+        }
+
+        .hero-tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1.9rem;
+        }
+
+        .hero-tech-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 13px;
+            border-radius: 999px;
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            background: rgba(56, 189, 248, 0.08);
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            font-weight: 600;
+            white-space: nowrap;
         }
 
         .hero-buttons {
@@ -201,6 +242,16 @@
         }
 
         html[data-theme='light'] .hero-desc {
+            color: #41566e;
+        }
+
+        html[data-theme='light'] .hero-name {
+            color: #102236;
+        }
+
+        html[data-theme='light'] .hero-tech-tag {
+            border-color: rgba(20, 142, 234, 0.24);
+            background: rgba(20, 142, 234, 0.07);
             color: #41566e;
         }
 

@@ -1,6 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import Hero from '../components/Hero.astro';
+import StatsBand from '../components/StatsBand.astro';
+import ZonaReclutadores from '../components/ZonaReclutadores.astro';
 import Impacto from '../components/Impacto.astro';
 import Servicios from '../components/Servicios.astro';
 import TechStack from '../components/TechStack.astro';
@@ -10,13 +12,16 @@ import Galeria from '../components/Galeria.astro';
 import Acerca from '../components/Acerca.astro';
 import Contacto from '../components/Contacto.astro';
 import Modales from '../components/Modales.astro';
+import Terminal from '../components/Terminal.astro';
 
-const pageTitle = 'Alex Salinas Ponce - Desarrollador Full Stack';
-const pageDescription = 'Ingeniero Informático especializado en desarrollo full stack, automatización industrial e infraestructura TI. Python, Angular, Flask y soluciones empresariales.';
+const pageTitle = 'Alex Salinas Ponce - Ingeniero de Software Full Stack';
+const pageDescription = 'Ingeniero de Software Full Stack especializado en plataformas digitales, APIs e infraestructura tecnológica (DevOps). Python, Angular, Flask y soluciones empresariales.';
 ---
 
 <MainLayout title={pageTitle} description={pageDescription}>
   <Hero />
+  <StatsBand />
+  <ZonaReclutadores />
   <Impacto />
   <Portafolio />
   <Servicios />
@@ -26,4 +31,5 @@ const pageDescription = 'Ingeniero Informático especializado en desarrollo full
   <Galeria />
   <Contacto />
   <Modales />
+  <Terminal />
 </MainLayout>

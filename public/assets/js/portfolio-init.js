@@ -152,11 +152,11 @@
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     var texts = [
-      'Soy Alex Salinas Ponce, Desarrollador Full Stack.',
-      'Desarrollo sistemas, APIs e infraestructura tecnológica para instituciones y empresas que necesitan digitalizar procesos y operar mejor.',
-      'Combino desarrollo web, bases de datos, servidores, automatización e integración de sistemas para resolver necesidades reales.'
+      'Soy Alex Salinas Ponce, Ingeniero de Software Full Stack.',
+      'Diseño, desarrollo e implemento plataformas digitales, APIs e infraestructura tecnológica para organizaciones y entornos de alta operación.',
+      'Combino desarrollo web, bases de datos, servidores, automatización, DevOps e integración de sistemas para resolver necesidades reales.'
     ];
-    var subtitle = 'Desarrollador Full Stack<br>';
+    var subtitle = 'Ingeniero de Software · Full Stack · Infraestructura & DevOps<br>';
     
     // Si el usuario prefiere menos movimiento, mostrar todo inmediatamente
     if (prefersReducedMotion) {
@@ -274,6 +274,60 @@
     checkImpactoVisible();
   }
 
+  function animateStatsBandCounters() {
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    qsa('.statsband-number').forEach(function (el) {
+      if (el.classList.contains('counted')) return;
+      el.classList.add('counted');
+
+      var target = parseInt(el.dataset.target, 10);
+      if (Number.isNaN(target)) return;
+
+      var isBig = target >= 1000;
+      var finalText = isBig ? target.toLocaleString('es-CL') : String(target);
+
+      if (prefersReduced) {
+        el.textContent = finalText;
+        return;
+      }
+
+      var duration = 1400;
+      var frameRate = 16;
+      var steps = duration / frameRate;
+      var increment = target / steps;
+      var current = 0;
+      var timer = window.setInterval(function () {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          window.clearInterval(timer);
+        }
+        el.textContent = isBig ? Math.floor(current).toLocaleString('es-CL') : Math.floor(current);
+      }, frameRate);
+    });
+  }
+
+  function observeStatsBandCounters() {
+    var band = qs('.stats-band');
+    if (!band) return;
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateStatsBandCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25, rootMargin: '0px 0px -40px 0px' });
+      observer.observe(band);
+      return;
+    }
+
+    animateStatsBandCounters();
+  }
+
   function setupPortfolioFilters() {
     document.addEventListener('click', function (event) {
       var button = event.target.closest('.filter-btn');
@@ -343,6 +397,7 @@
     latestScrollTop = window.scrollY;
     handleScroll();
     observeImpactoCounters();
+    observeStatsBandCounters();
     setupPortfolioFilters();
     setupYoutubeFacades();
     setupThemeToggle();

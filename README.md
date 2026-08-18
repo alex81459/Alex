@@ -1,6 +1,6 @@
 # Portafolio Web - Alex Salinas Ponce
 
-Portafolio profesional interactivo de **Alex Salinas Ponce**, Desarrollador Full Stack e Ingeniero TI con experiencia en análisis, arquitectura, desarrollo, interoperabilidad, seguridad, despliegue y mantención de sistemas institucionales en operación.
+Portafolio profesional interactivo de **Alex Salinas Ponce**, Ingeniero de Software · Full Stack · Infraestructura & DevOps con experiencia en análisis, arquitectura, desarrollo, interoperabilidad, seguridad, despliegue y mantención de sistemas institucionales en operación.
 
 **Sitio en vivo:** [alex81459.github.io/Alex](https://alex81459.github.io/Alex/)
 

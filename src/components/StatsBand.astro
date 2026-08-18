@@ -1,0 +1,148 @@
+---
+const stats = [
+  { target: '70', suffix: '+', label: 'Establecimientos atendidos' },
+  { target: '13', suffix: '+', label: 'Procesos digitalizados' },
+  { target: '7', suffix: ' APIs', label: 'Integradas/desarrolladas' },
+  { target: '1000', suffix: '+', label: 'Casos de soporte' },
+  { target: '500', suffix: '+ páginas', label: 'Documentación técnica' },
+];
+---
+
+<section class="stats-band" aria-label="Métricas clave del trabajo profesional">
+  <div class="container">
+    <div class="stats-band-grid">
+      {stats.map((stat) => (
+        <div class="statsband-item">
+          <div class="statsband-value">
+            <span class="statsband-number" data-target={stat.target}>0</span>
+            <span class="statsband-suffix">{stat.suffix}</span>
+          </div>
+          <div class="statsband-label">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats-band {
+    position: relative;
+    padding: 46px 0;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(56, 189, 248, 0.09), transparent 42%),
+      radial-gradient(circle at 88% 100%, rgba(99, 102, 241, 0.09), transparent 42%),
+      #081120;
+  }
+
+  .stats-band::before,
+  .stats-band::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  .stats-band::before {
+    top: 0;
+  }
+
+  .stats-band::after {
+    bottom: 0;
+  }
+
+  .stats-band-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .statsband-item {
+    position: relative;
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+  .statsband-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 54px;
+    background: var(--border);
+  }
+
+  .statsband-value {
+    white-space: nowrap;
+  }
+
+  .statsband-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    background: linear-gradient(120deg, var(--primary), #67e8f9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .statsband-suffix {
+    margin-left: 4px;
+    color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .statsband-label {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  html[data-theme='light'] .stats-band {
+    background:
+      radial-gradient(circle at 12% 0%, rgba(20, 142, 234, 0.07), transparent 42%),
+      radial-gradient(circle at 88% 100%, rgba(99, 102, 241, 0.07), transparent 42%),
+      #f4f9ff;
+  }
+
+  @media (max-width: 991.98px) {
+    .stats-band-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      row-gap: 24px;
+    }
+
+    .statsband-item:nth-child(3n)::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .stats-band {
+      padding: 36px 0;
+    }
+
+    .stats-band-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 24px;
+    }
+
+    .statsband-item:nth-child(3n)::after {
+      display: block;
+    }
+
+    .statsband-item:nth-child(2n)::after {
+      display: none;
+    }
+  }
+</style>

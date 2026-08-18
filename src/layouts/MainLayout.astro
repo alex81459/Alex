@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = 'Alex Salinas Ponce - Desarrollador Full Stack',
-  description = 'Ingeniero Informático especializado en desarrollo full stack, automatización industrial e infraestructura TI. Python, Angular, Flask y soluciones empresariales.',
+  title = 'Alex Salinas Ponce - Ingeniero de Software Full Stack',
+  description = 'Ingeniero de Software Full Stack especializado en plataformas digitales, APIs e infraestructura tecnológica (DevOps). Python, Angular, Flask y soluciones empresariales.',
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL;
@@ -22,18 +22,18 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
     <base href={base}>
     <title>{title}</title>
     <meta name="description" content={description}>
-    <meta name="keywords" content="Alex Salinas Ponce, Desarrollador Full Stack, Python, Angular, Flask, SQLAlchemy, Administración TI, Gestión Proyectos, SLEP Colchagua, Johnson Fruit, Chimbarongo">
+    <meta name="keywords" content="Alex Salinas Ponce, Ingeniero de Software, Full Stack, Infraestructura, DevOps, Python, Angular, Flask, SQLAlchemy, Administración TI, Gestión Proyectos, SLEP Colchagua, Johnson Fruit, Chimbarongo">
     <meta name="author" content="Alex Salinas Ponce">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#07111f">
 
-    <meta property="og:title" content="Alex Salinas Ponce - Desarrollador Full Stack">
-    <meta property="og:description" content="Desarrollador Full Stack especializado en soluciones tecnológicas empresariales">
+    <meta property="og:title" content="Alex Salinas Ponce - Ingeniero de Software Full Stack">
+    <meta property="og:description" content="Ingeniero de Software Full Stack especializado en plataformas digitales, APIs e infraestructura tecnológica">
     <meta property="og:type" content="website">
     <meta property="og:url" content={siteUrl}>
     <meta property="og:image" content={previewImage}>
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alex Salinas Ponce - Desarrollador Full Stack">
+    <meta name="twitter:title" content="Alex Salinas Ponce - Ingeniero de Software Full Stack">
     <meta name="twitter:description" content="Desarrollo sistemas web, APIs e infraestructura TI para digitalizar procesos institucionales.">
     <meta name="twitter:image" content={previewImage}>
 
