@@ -50,6 +50,10 @@
                             </div>
                         </div>
                     </div>
+                    <p class="contact-privacy-note">
+                        <i class="fa fa-shield" aria-hidden="true"></i>
+                        Los datos que me envíes por correo o redes se usarán únicamente para responder tu consulta. Consulta la <a href="privacidad/">Política de Privacidad</a>.
+                    </p>
                 </div>
             </div>
         </div>
@@ -107,6 +111,25 @@
 
         .contact-options-grid {
             margin-top: 14px;
+        }
+
+        .contact-privacy-note {
+            margin: 18px auto 0;
+            max-width: 720px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            line-height: 1.55;
+        }
+
+        .contact-privacy-note a {
+            color: #8feaff;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        html[data-theme='light'] .contact-privacy-note a {
+            color: var(--primary);
         }
 
         .contact-option-card {
@@ -388,7 +411,10 @@
                 </div>
                 <div class="col-lg-4">
                     <h4 class="footer-heading">Privacidad</h4>
-                    <p class="privacy-policy">Esta página respeta la privacidad de sus visitantes, no registra datos personales identificables ni utiliza cookies de rastreo.</p>
+                    <p class="privacy-policy">Este sitio no utiliza cookies de rastreo ni recopila datos personales mediante formularios. Al cargarlo se usan recursos de terceros (Google Fonts y Bootstrap CDN).</p>
+                    <div class="footer-links">
+                        <a href="privacidad/"><i class="fa fa-shield" aria-hidden="true"></i> Política de Privacidad</a>
+                    </div>
                     <p class="footer-note">Respuesta rápida por correo y Telegram.</p>
                 </div>
             </div>

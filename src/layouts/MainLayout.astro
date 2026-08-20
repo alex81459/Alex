@@ -110,6 +110,37 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
     </script>
   </head>
   <body id="page-top">
+    <div id="privacy-notice" class="privacy-notice" role="dialog" aria-labelledby="privacy-notice-title">
+      <div class="privacy-notice-card">
+        <div class="privacy-notice-icon" aria-hidden="true"><i class="fa fa-shield"></i></div>
+        <div class="privacy-notice-body">
+          <p id="privacy-notice-title" class="privacy-notice-title">Privacidad y transparencia</p>
+          <p class="privacy-notice-text">
+            Este sitio no utiliza cookies de rastreo ni recopila datos mediante formularios. Solo se guarda tu preferencia de tema en tu dispositivo y se cargan recursos de terceros (Google Fonts y Bootstrap CDN). Conoce los detalles en nuestra <a href={`${base}privacidad/`}>Política de Privacidad</a>.
+          </p>
+        </div>
+        <div class="privacy-notice-actions">
+          <button id="privacy-notice-accept" class="privacy-notice-btn" type="button">Entendido</button>
+        </div>
+      </div>
+    </div>
+    <script is:inline>
+      (() => {
+        const notice = document.getElementById('privacy-notice');
+        const btn = document.getElementById('privacy-notice-accept');
+        const key = 'alex-privacy-notice';
+        if (!notice || !btn) return;
+        try {
+          if (localStorage.getItem(key) === 'accepted') return;
+        } catch {}
+        notice.classList.add('is-visible');
+        btn.addEventListener('click', () => {
+          notice.classList.remove('is-visible');
+          try { localStorage.setItem(key, 'accepted'); } catch {}
+        });
+      })();
+    </script>
+
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     
     <div id="loading-overlay" class="loading-overlay">
@@ -497,6 +528,126 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border-width: 0;
+      }
+
+      /* Aviso de privacidad (Ley N° 21.719) */
+      .privacy-notice {
+        display: none;
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        z-index: 1040;
+      }
+
+      .privacy-notice.is-visible {
+        display: block;
+      }
+
+      .privacy-notice-card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px 18px;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 16px 18px;
+        border-radius: 16px;
+        background: var(--hud-bg);
+        border: 1px solid var(--hud-border);
+        box-shadow: 0 18px 40px var(--floating-shadow);
+        backdrop-filter: blur(14px);
+        color: var(--text-main);
+      }
+
+      .privacy-notice-icon {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        color: #8feaff;
+        font-size: 1.2rem;
+        background: linear-gradient(145deg, rgba(32, 148, 255, 0.18), rgba(0, 212, 255, 0.08));
+        border: 1px solid rgba(32, 148, 255, 0.35);
+      }
+
+      .privacy-notice-body {
+        flex: 1 1 260px;
+        min-width: 0;
+      }
+
+      .privacy-notice-title {
+        margin: 0 0 4px;
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      .privacy-notice-text {
+        margin: 0;
+        color: var(--text-secondary);
+        font-size: 0.86rem;
+        line-height: 1.5;
+      }
+
+      .privacy-notice-text a {
+        color: #8feaff;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+
+      .privacy-notice-actions {
+        flex: 0 0 auto;
+      }
+
+      .privacy-notice-btn {
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.88rem;
+        color: var(--bg-main);
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .privacy-notice-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(56, 189, 248, 0.3);
+      }
+
+      html[data-theme='light'] .privacy-notice-icon {
+        color: var(--primary);
+        background: linear-gradient(145deg, rgba(20, 142, 234, 0.12), rgba(57, 194, 221, 0.08));
+        border-color: rgba(20, 142, 234, 0.22);
+      }
+
+      html[data-theme='light'] .privacy-notice-text a {
+        color: var(--primary);
+      }
+
+      html[data-theme='light'] .privacy-notice-btn {
+        color: #fff;
+      }
+
+      @media (max-width: 575.98px) {
+        .privacy-notice {
+          left: 10px;
+          right: 10px;
+          bottom: 80px;
+        }
+
+        .privacy-notice-card {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .privacy-notice-actions {
+          align-self: flex-start;
+        }
       }
 
       /* Respeta prefers-reduced-motion */

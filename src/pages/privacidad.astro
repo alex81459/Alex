@@ -1,0 +1,263 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const siteUrl = Astro.site ?? 'https://alex81459.github.io';
+const homeUrl = `${siteUrl}${base}`;
+
+const pageTitle = 'Política de Privacidad - Alex Salinas Ponce';
+const pageDescription = 'Política de privacidad del portafolio de Alex Salinas Ponce, conforme a la Ley N° 21.719 sobre protección de datos personales (Chile).';
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+  <section class="privacy-page">
+    <div class="container">
+      <header class="privacy-hero">
+        <span class="section-kicker">PRIVACIDAD</span>
+        <h1 class="privacy-title">Política de Privacidad</h1>
+        <p class="privacy-subtitle">Última actualización: agosto de 2026 · Conforme a la Ley N° 21.719 (Chile)</p>
+      </header>
+
+      <div class="privacy-content">
+
+        <div class="privacy-card">
+          <h2>1. Objeto y alcance</h2>
+          <p>Esta Política de Privacidad describe cómo se tratan los datos personales de quienes visitan este sitio web (portafolio personal), en cumplimiento de la <strong>Ley N° 21.719 sobre Protección de Datos Personales</strong> de la República de Chile y su normativa complementaria.</p>
+          <p>Este sitio es de carácter estático e informativo. <strong>No recopila datos personales mediante formularios, registros de usuario ni sistemas de seguimiento publicitario.</strong></p>
+        </div>
+
+        <div class="privacy-card">
+          <h2>2. Responsable del tratamiento</h2>
+          <ul>
+            <li><strong>Responsable:</strong> Alex Salinas Ponce</li>
+            <li><strong>Domicilio:</strong> Región de O'Higgins, Chile</li>
+            <li><strong>Correo de contacto:</strong> <a href="mailto:alex81459@gmail.com">alex81459@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <div class="privacy-card">
+          <h2>3. Datos personales que se tratan</h2>
+          <p>Durante la navegación pueden tratarse las siguientes categorías de datos:</p>
+          <ul>
+            <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, páginas visitadas y datos técnicos recogidos automáticamente por el servicio de alojamiento (GitHub Pages) por motivos técnicos y de seguridad.</li>
+            <li><strong>Preferencia de tema:</strong> la elección de tema claro/oscuro se guarda localmente en tu dispositivo mediante <em>localStorage</em>. No se transmite a ningún servidor.</li>
+            <li><strong>Datos de contacto:</strong> nombre y correo electrónico que decidas compartir voluntariamente al escribirme por correo, con el único fin de responder tu consulta.</li>
+            <li><strong>Datos transmitidos a proveedores externos:</strong> al cargar la página se solicitan recursos a servicios de terceros (Google Fonts y jsDelivr para Bootstrap), lo que implica que tu dirección IP puede ser visible para esos proveedores.</li>
+          </ul>
+        </div>
+
+        <div class="privacy-card">
+          <h2>4. Finalidades y bases legales</h2>
+          <ul>
+            <li><strong>Funcionamiento técnico y seguridad del sitio</strong> (base: interés legítimo y necesidad técnica).</li>
+            <li><strong>Responder consultas recibidas por correo</strong> (base: ejecución de medidas precontractuales a solicitud tuya).</li>
+            <li><strong>Recordar la preferencia de tema</strong> (base: almacenamiento estrictamente necesario en tu dispositivo, que no requiere consentimiento previo).</li>
+            <li><strong>Mejora visual y de rendimiento mediante recursos de terceros</strong>, minimizados a lo indispensable y debidamente informados.</li>
+          </ul>
+        </div>
+
+        <div class="privacy-card">
+          <h2>5. Destinatarios y transferencias internacionales</h2>
+          <p>Para el funcionamiento del sitio intervienen los siguientes proveedores:</p>
+          <ul>
+            <li><strong>GitHub Pages (GitHub, Inc. / Microsoft)</strong>: alojamiento del sitio y registros técnicos del servidor.</li>
+            <li><strong>Google LLC</strong>: servicio de fuentes tipográficas (Google Fonts).</li>
+            <li><strong>jsDelivr</strong>: red de distribución de contenido (CDN) para Bootstrap.</li>
+            <li><strong>Proveedor de correo electrónico (Gmail/Google)</strong>: cuando envías un correo a la dirección indicada.</li>
+          </ul>
+          <p>Algunos de estos proveedores pueden estar ubicados fuera de Chile, lo que constituye una <strong>transferencia internacional de datos</strong> amparada en las bases legales de la Ley N° 21.719. Si haces clic en enlaces a LinkedIn, GitHub o Telegram, abandonarás este sitio y el tratamiento de tus datos se regirá por las políticas de privacidad de esas plataformas.</p>
+        </div>
+
+        <div class="privacy-card">
+          <h2>6. Plazos de conservación</h2>
+          <ul>
+            <li><strong>Registros del servidor:</strong> se conservan según los plazos establecidos por GitHub Pages, habitualmente por un período limitado con fines de seguridad y funcionamiento.</li>
+            <li><strong>Preferencia de tema:</strong> permanece en tu navegador hasta que la elimines desde la configuración de tu dispositivo.</li>
+            <li><strong>Correos recibidos:</strong> se conservan únicamente el tiempo necesario para atender y cerrar tu consulta.</li>
+          </ul>
+        </div>
+
+        <div class="privacy-card">
+          <h2>7. Derechos del titular de los datos</h2>
+          <p>De acuerdo con la Ley N° 21.719, como titular de datos personales puedes ejercer los siguientes derechos:</p>
+          <ul>
+            <li><strong>Acceso:</strong> conocer qué datos se tratan y cómo.</li>
+            <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
+            <li><strong>Supresión:</strong> solicitar la eliminación de tus datos.</li>
+            <li><strong>Oposición:</strong> oponerte a un tratamiento determinado.</li>
+            <li><strong>Portabilidad:</strong> solicitar copia de tus datos en un formato estructurado.</li>
+          </ul>
+          <p>Para ejercerlos, escríbeme a <a href="mailto:alex81459@gmail.com">alex81459@gmail.com</a> indicando el derecho que deseas ejercer. También tienes derecho a presentar un reclamo ante la <strong>Agencia de Protección de Datos Personales</strong> de Chile.</p>
+        </div>
+
+        <div class="privacy-card">
+          <h2>8. Seguridad de la información</h2>
+          <p>Se aplican medidas razonables de seguridad: conexión cifrada mediante HTTPS, minimización de datos (no se almacenan datos personales en servidores propios) y uso limitado de servicios de terceros. Recuerda que ningún sistema es infalible, por lo que no podemos garantizar una seguridad absoluta.</p>
+        </div>
+
+        <div class="privacy-card">
+          <h2>9. Menores de edad</h2>
+          <p>Este sitio no está dirigido a menores de edad ni recopila deliberadamente datos de ellos.</p>
+        </div>
+
+        <div class="privacy-card">
+          <h2>10. Cambios a esta política</h2>
+          <p>Esta política puede actualizarse para reflejar cambios legales o del sitio. La fecha de última actualización figura al inicio de esta página.</p>
+        </div>
+
+      </div>
+
+      <div class="privacy-footer">
+        <a class="privacy-back" href={homeUrl}><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver al inicio</a>
+        <p class="privacy-contact">¿Dudas sobre privacidad? Escríbeme a <a href="mailto:alex81459@gmail.com">alex81459@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .privacy-page {
+      padding: 130px 0 70px;
+      min-height: 80vh;
+    }
+
+    .privacy-hero {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .privacy-title {
+      margin: 6px 0 10px;
+      color: var(--text-main);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .privacy-subtitle {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .privacy-content {
+      display: grid;
+      gap: 18px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .privacy-card {
+      padding: 24px 26px;
+      border-radius: 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-light);
+      backdrop-filter: blur(12px);
+    }
+
+    .privacy-card h2 {
+      margin: 0 0 12px;
+      color: var(--text-main);
+      font-size: 1.12rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .privacy-card p {
+      margin: 0 0 10px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 0.96rem;
+    }
+
+    .privacy-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .privacy-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 0.96rem;
+      display: grid;
+      gap: 6px;
+    }
+
+    .privacy-card a {
+      color: #8feaff;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    html[data-theme='light'] .privacy-card a {
+      color: var(--primary);
+    }
+
+    .privacy-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      max-width: 860px;
+      margin: 34px auto 0;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .privacy-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--bg-main);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .privacy-back:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(56, 189, 248, 0.3);
+    }
+
+    html[data-theme='light'] .privacy-back {
+      color: #fff;
+    }
+
+    .privacy-contact {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .privacy-contact a {
+      color: #8feaff;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    html[data-theme='light'] .privacy-contact a {
+      color: var(--primary);
+    }
+
+    @media (max-width: 575.98px) {
+      .privacy-page {
+        padding-top: 110px;
+      }
+
+      .privacy-card {
+        padding: 20px;
+      }
+
+      .privacy-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</MainLayout>
