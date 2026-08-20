@@ -8,6 +8,7 @@
                         <h2 class="text-uppercase section-heading">Contacto</h2>
                         <p class="section-lead">Elige el motivo y escríbeme por el canal más directo.</p>
                         <p class="contact-intro">Dos vías claras según lo que necesites: sumarme a tu equipo o avanzar con un proyecto. Priorizo contacto por correo y doy seguimiento profesional por LinkedIn.</p>
+                        <p class="contact-privacy-note">Los datos que me envíes por correo o redes se usarán únicamente para responder tu consulta. Consulta la <a href="https://alex81459.github.io/Alex/privacidad/">Política de Privacidad</a>.</p>
                     </div>
 
                     <div class="row justify-content-center g-4 contact-options-grid">
@@ -59,6 +60,20 @@
         .contact-intro-support {
             opacity: 0.9;
             font-weight: 600;
+        }
+
+        .contact-privacy-note {
+            max-width: 760px;
+            margin: 16px auto 0;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .contact-privacy-note a {
+            color: #8feaff;
+            font-weight: 700;
+            text-decoration: underline;
         }
 
         .contact-cta-shell {
@@ -276,6 +291,20 @@
             color: rgba(143, 234, 255, 0.9);
         }
 
+        .privacy-policy-link {
+            margin: 10px 0 0;
+        }
+
+        .privacy-policy-link a {
+            color: #8feaff;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .privacy-policy-link a:hover {
+            color: #fff;
+        }
+
         .footer-bottom {
             display: flex;
             justify-content: space-between;
@@ -346,7 +375,16 @@
             color: var(--primary);
         }
 
+        html[data-theme='light'] .contact-privacy-note a,
+        html[data-theme='light'] .privacy-policy-link a {
+            color: var(--primary);
+        }
+
         html[data-theme='light'] .footer-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        html[data-theme='light'] .privacy-policy-link a:hover {
             color: var(--primary-dark);
         }
 
@@ -388,7 +426,8 @@
                 </div>
                 <div class="col-lg-4">
                     <h4 class="footer-heading">Privacidad</h4>
-                    <p class="privacy-policy">Esta página respeta la privacidad de sus visitantes, no registra datos personales identificables ni utiliza cookies de rastreo.</p>
+                    <p class="privacy-policy">Este sitio no utiliza cookies de rastreo ni recopila datos personales mediante formularios. Al cargarlo se usan recursos de terceros (Google Fonts y Bootstrap CDN).</p>
+                    <p class="privacy-policy-link"><a href="https://alex81459.github.io/Alex/privacidad/">Política de Privacidad</a></p>
                     <p class="footer-note">Respuesta rápida por correo y Telegram.</p>
                 </div>
             </div>
