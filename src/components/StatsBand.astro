@@ -1,10 +1,10 @@
 ---
 const stats = [
-  { target: '69', display: '69', suffix: '+', label: 'Establecimientos atendidos' },
-  { target: '13', display: '13', suffix: '+', label: 'Procesos digitalizados' },
-  { target: '7', display: '7', suffix: ' APIs', label: 'Integradas/desarrolladas' },
-  { target: '1000', display: '1.000', suffix: '+', label: 'Casos de soporte' },
-  { target: '500', display: '500', suffix: '+ páginas', label: 'Documentación técnica' },
+  { target: '69', display: '69', suffix: '+', label: 'Establecimientos atendidos', context: 'SLEP Colchagua · operación institucional' },
+  { target: '13', display: '13', suffix: '+', label: 'Procesos digitalizados', context: 'Plataforma SIMPLE · registros 2025-2026' },
+  { target: '7', display: '7', suffix: ' APIs', label: 'Integradas/desarrolladas', context: 'Servicios institucionales documentados' },
+  { target: '1000', display: '1.000', suffix: '+', label: 'Casos de soporte', context: 'Usuarios y establecimientos · 2024-2026' },
+  { target: '500', display: '500', suffix: '+ páginas', label: 'Documentación técnica', context: 'Libro de Clases Digital · operación' },
 ];
 ---
 
@@ -18,6 +18,7 @@ const stats = [
             <span class="statsband-suffix">{stat.suffix}</span>
           </div>
           <div class="statsband-label">{stat.label}</div>
+          <div class="statsband-context">{stat.context}</div>
         </div>
       ))}
     </div>
@@ -105,6 +106,15 @@ const stats = [
     margin-top: 8px;
     color: var(--text-secondary);
     font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .statsband-context {
+    max-width: 170px;
+    margin: 5px auto 0;
+    color: var(--text-muted);
+    font-size: 0.68rem;
     font-weight: 600;
     line-height: 1.35;
   }
