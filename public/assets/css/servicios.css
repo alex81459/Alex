@@ -3,7 +3,7 @@
     padding: 110px 0;
     overflow: hidden;
     background: #0d1a2b;
-    color: var(--text-main);
+    color: var(--texto-principal);
 }
 
 .services-section::before {
@@ -23,7 +23,7 @@
     bottom: 0;
     left: 10%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    background: linear-gradient(90deg, transparent, var(--borde), transparent);
 }
 
 .services-container {
@@ -39,7 +39,7 @@
 .services-eyebrow {
     display: inline-block;
     margin-bottom: 14px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.16em;
@@ -52,7 +52,7 @@
 .services-heading .section-subheading {
     max-width: 680px;
     margin: 0 auto;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 1rem;
     font-style: normal;
     line-height: 1.7;
@@ -65,7 +65,7 @@
     gap: 30px;
     margin-bottom: 22px;
     padding-bottom: 15px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--borde);
 }
 
 .services-block-heading > div {
@@ -75,7 +75,7 @@
 }
 
 .services-block-index {
-    color: var(--primary);
+    color: var(--primario);
     font-family: 'Courier New', Consolas, monospace;
     font-size: 0.74rem;
     font-weight: 700;
@@ -83,14 +83,14 @@
 
 .services-block-heading h3 {
     margin: 0;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1.18rem;
     font-weight: 800;
 }
 
 .services-block-heading > p {
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.78rem;
 }
 
@@ -107,9 +107,9 @@
     flex-direction: column;
     padding: 28px;
     overflow: hidden;
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 16px;
-    background: linear-gradient(145deg, rgba(56, 189, 248, 0.055), transparent 48%), var(--bg-card);
+    background: linear-gradient(145deg, rgba(56, 189, 248, 0.055), transparent 48%), var(--fondo-tarjeta);
     box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
@@ -121,14 +121,14 @@
     right: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    background: linear-gradient(90deg, var(--primario), var(--secundario));
     opacity: 0.8;
 }
 
 .service-primary-card:hover {
     transform: translateY(-6px);
     border-color: rgba(56, 189, 248, 0.38);
-    background-color: var(--bg-card-hover);
+    background-color: var(--fondo-tarjeta-activa);
 }
 
 .service-primary-topline {
@@ -147,8 +147,8 @@
     height: 52px;
     border: 1px solid rgba(56, 189, 248, 0.25);
     border-radius: 13px;
-    background: var(--primary-soft);
-    color: var(--primary);
+    background: var(--primario-suave);
+    color: var(--primario);
     font-size: 1.3rem;
 }
 
@@ -161,7 +161,7 @@
 
 .service-primary-card h3 {
     margin: 0 0 10px;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1.35rem;
     font-weight: 800;
     line-height: 1.25;
@@ -169,7 +169,7 @@
 
 .service-primary-summary {
     margin: 0 0 18px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.86rem;
     font-weight: 700;
     line-height: 1.5;
@@ -177,7 +177,7 @@
 
 .service-primary-description {
     margin: 0 0 24px;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.84rem;
     line-height: 1.75;
 }
@@ -194,8 +194,8 @@
     padding: 5px 9px;
     border: 1px solid rgba(56, 189, 248, 0.17);
     border-radius: 999px;
-    background: var(--primary-soft);
-    color: var(--primary);
+    background: var(--primario-suave);
+    color: var(--primario);
     font-size: 0.68rem;
     font-weight: 700;
 }
@@ -211,7 +211,7 @@
 }
 
 .service-capability-card {
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 12px;
     background: rgba(16, 30, 49, 0.72);
     transition: border-color 0.25s ease, background 0.25s ease;
@@ -219,7 +219,7 @@
 
 .service-capability-card[open] {
     border-color: rgba(56, 189, 248, 0.34);
-    background: var(--bg-card);
+    background: var(--fondo-tarjeta);
 }
 
 .service-capability-card summary {
@@ -229,7 +229,7 @@
     gap: 13px;
     min-height: 78px;
     padding: 14px 18px;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 0.9rem;
     font-weight: 700;
     cursor: pointer;
@@ -242,7 +242,7 @@
 
 .service-capability-card summary:focus-visible {
     border-radius: 12px;
-    outline: 2px solid var(--primary);
+    outline: 2px solid var(--primario);
     outline-offset: 3px;
 }
 
@@ -254,7 +254,7 @@
 }
 
 .service-capability-chevron {
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.7rem;
     transition: transform 0.25s ease;
 }
@@ -269,7 +269,7 @@
 
 .service-capability-content p {
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.8rem;
     line-height: 1.7;
 }

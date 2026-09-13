@@ -1,6 +1,5 @@
 /*estilos-modificados.css - hoja principal de estilos para la carga*/
 @import 'variables-base.css';
-@import 'inicio.css';
 @import 'servicios.css';
 @import 'impacto.css';
 @import 'tech-stack.css';
@@ -14,8 +13,20 @@
 
 html,
 body {
-    background: var(--body-gradient);
-    color: var(--text-main);
+    background: var(--degradado-cuerpo);
+    color: var(--texto-principal);
+}
+
+/* Teclado y movimiento compartidos, incluidos los componentes con estilos propios. */
+html { scroll-padding-top: 96px; }
+:focus-visible { outline: 2px solid var(--primario); outline-offset: 5px; }
+main > section:focus, #main-content:focus { outline: none; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 .tech-stack-section,
@@ -31,8 +42,8 @@ body {
 
 .services-section .section-subheading,
 .service-card p {
-    color: var(--text-secondary) !important;
-    text-shadow: var(--text-shadow-soft);
+    color: var(--texto-secundario) !important;
+    text-shadow: var(--sombra-texto-suave);
 }
 
 .services-section .section-subheading {
@@ -53,10 +64,10 @@ body {
 .about-section .section-subheading,
 .certifications-section .section-subheading,
 .section-subheading.text-muted {
-    color: var(--text-secondary) !important;
+    color: var(--texto-secundario) !important;
     opacity: 1 !important;
     font-weight: 500;
-    text-shadow: var(--text-shadow-soft);
+    text-shadow: var(--sombra-texto-suave);
 }
 
 .portfolio-section .section-subheading {
@@ -68,7 +79,7 @@ body {
     display: block;
     position: relative;
     overflow: hidden;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border-radius: var(--radio-borde) var(--radio-borde) 0 0;
 }
 
 .portfolio-hover {
@@ -82,10 +93,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--nav-surface) !important;
+    background: var(--superficie-navegacion) !important;
     border: 1px solid rgba(56, 189, 248, 0.45);
     border-radius: 50% !important;
-    box-shadow: 0 8px 24px var(--floating-shadow);
+    box-shadow: 0 8px 24px var(--sombra-flotante);
     opacity: 0.92;
     z-index: 4;
     transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
@@ -95,7 +106,7 @@ body {
 .portfolio-link:focus .portfolio-hover {
     opacity: 1;
     transform: scale(1.08);
-    background: var(--primary) !important;
+    background: var(--primario) !important;
 }
 
 .portfolio-hover-content {
@@ -120,13 +131,13 @@ body {
     width: 100%;
     padding-top: 12px;
     margin-top: 4px;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--borde);
 }
 
 .portfolio-contribution-label {
     display: block;
     margin-bottom: 8px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -145,9 +156,9 @@ body {
     min-height: 26px;
     padding: 4px 10px;
     border-radius: 999px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
     border: 1px solid rgba(56, 189, 248, 0.22);
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.78rem;
     font-weight: 700;
     line-height: 1.2;
@@ -155,7 +166,7 @@ body {
 
 .project-contribution-summary {
     margin-bottom: 14px !important;
-    color: var(--text-secondary) !important;
+    color: var(--texto-secundario) !important;
     line-height: 1.65;
 }
 
@@ -167,7 +178,7 @@ body {
 
 .project-contribution-card {
     padding: 14px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
     border: 1px solid rgba(56, 189, 248, 0.12);
     border-radius: 8px;
 }
@@ -177,13 +188,13 @@ body {
     align-items: center;
     gap: 8px;
     margin: 0 0 10px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.95rem;
     font-weight: 800;
 }
 
 .project-contribution-card h5 .fa {
-    color: var(--primary);
+    color: var(--primario);
 }
 
 .project-contribution-card ul {
@@ -193,7 +204,7 @@ body {
 
 .project-contribution-card li {
     margin-bottom: 8px !important;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     line-height: 1.5;
 }
 
@@ -218,7 +229,7 @@ body {
 .section-kicker {
     display: inline-block;
     margin-bottom: 14px;
-    color: var(--primary) !important;
+    color: var(--primario) !important;
     font-size: 0.72rem !important;
     font-weight: 800 !important;
     line-height: 1.2;
@@ -246,7 +257,7 @@ body {
 .section-intro .section-subheading.section-lead {
     max-width: 700px;
     margin: 0 auto !important;
-    color: var(--text-secondary) !important;
+    color: var(--texto-secundario) !important;
     font-size: 1rem !important;
     font-style: normal !important;
     font-weight: 500 !important;
@@ -257,7 +268,7 @@ body {
 .section-intro-detail {
     max-width: 760px;
     margin: 16px auto 0;
-    color: var(--text-muted);
+    color: var(--texto-tenue);
     font-size: 0.82rem;
     line-height: 1.65;
 }
@@ -268,7 +279,7 @@ body {
 }
 
 .contact-title.section-intro .contact-intro {
-    color: var(--text-secondary) !important;
+    color: var(--texto-secundario) !important;
 }
 
 @media (max-width: 575.98px) {
@@ -310,12 +321,12 @@ body {
     align-items: flex-start;
     gap: 10px;
     padding: 10px 12px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
     border: 1px solid rgba(56, 189, 248, 0.1);
     border-radius: 8px;
     font-size: 0.88rem;
     line-height: 1.45;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     transition: background 0.2s, border-color 0.2s;
 }
 
@@ -325,7 +336,7 @@ body {
 }
 
 .project-module-item .fa {
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.95rem;
     margin-top: 2px;
     flex-shrink: 0;
@@ -377,7 +388,7 @@ body {
     width: 3px;
     transform: translateX(-50%);
     display: block !important;
-    background: linear-gradient(180deg, transparent, var(--primary), var(--secondary), transparent);
+    background: linear-gradient(180deg, transparent, var(--primario), var(--secundario), transparent);
 }
 
 .about-section .timeline-item {
@@ -410,7 +421,7 @@ body {
     overflow: hidden;
     border-radius: 50%;
     background: #ffffff;
-    border: 4px solid var(--primary-color);
+    border: 4px solid var(--color-primario);
     box-shadow: 0 0 22px rgba(32, 148, 255, 0.4);
     z-index: 3;
 }
@@ -465,7 +476,7 @@ body {
 }
 
 .about-section .timeline-heading h4:first-child {
-    color: var(--secondary-color) !important;
+    color: var(--color-secundario) !important;
     font-size: 1.05rem;
     font-weight: 800;
     margin-bottom: 8px;
@@ -499,7 +510,7 @@ body {
     flex-direction: column;
     gap: 8px;
     border-radius: 50% !important;
-    background: var(--primary) !important;
+    background: var(--primario) !important;
     border: 3px solid rgba(56, 189, 248, 0.5);
     box-shadow:
         0 12px 34px rgba(0, 0, 0, 0.32);
@@ -507,7 +518,7 @@ body {
 
 .about-section .timeline-end h4 {
     margin: 0;
-    color: var(--bg-main);
+    color: var(--fondo-principal);
     font-size: 0.98rem;
     font-weight: 800;
     line-height: 1.15;
@@ -738,11 +749,11 @@ html[data-theme='light'] .portfolio-link:focus .portfolio-hover {
     max-width: 780px;
     margin: 0 auto;
     padding: 16px 18px;
-    color: var(--text-main);
-    background: var(--hud-bg);
-    border: 1px solid var(--hud-border);
+    color: var(--texto-principal);
+    background: var(--fondo-indicador);
+    border: 1px solid var(--borde-indicador);
     border-radius: 16px;
-    box-shadow: 0 18px 40px var(--floating-shadow);
+    box-shadow: 0 18px 40px var(--sombra-flotante);
     backdrop-filter: blur(14px);
 }
 
@@ -767,14 +778,14 @@ html[data-theme='light'] .portfolio-link:focus .portfolio-hover {
 
 #privacy-notice .privacy-notice-title {
     margin: 0 0 4px;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 0.95rem;
     font-weight: 700;
 }
 
 #privacy-notice .privacy-notice-text {
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.86rem;
     line-height: 1.5;
 }
@@ -791,11 +802,11 @@ html[data-theme='light'] .portfolio-link:focus .portfolio-hover {
 
 #privacy-notice .privacy-notice-btn {
     padding: 10px 18px;
-    color: var(--bg-main);
+    color: var(--fondo-principal);
     font-size: 0.88rem;
     font-weight: 700;
     cursor: pointer;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primario), var(--secundario));
     border: 0;
     border-radius: 999px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -807,13 +818,13 @@ html[data-theme='light'] .portfolio-link:focus .portfolio-hover {
 }
 
 html[data-theme='light'] #privacy-notice .privacy-notice-icon {
-    color: var(--primary);
+    color: var(--primario);
     background: linear-gradient(145deg, rgba(20, 142, 234, 0.12), rgba(57, 194, 221, 0.08));
     border-color: rgba(20, 142, 234, 0.22);
 }
 
 html[data-theme='light'] #privacy-notice .privacy-notice-text a {
-    color: var(--primary);
+    color: var(--primario);
 }
 
 html[data-theme='light'] #privacy-notice .privacy-notice-btn {

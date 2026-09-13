@@ -71,7 +71,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    color: var(--text-muted);
+    color: var(--texto-tenue);
     font-size: 14px;
     text-align: center;
     opacity: 0;

@@ -1,58 +1,58 @@
 ---
 const serviciosPrincipales = [
   {
-    icon: 'fa-code',
-    title: 'Desarrollo de sistemas',
-    summary: 'Frontend, backend, APIs y bases de datos.',
-    description: 'Diseño y desarrollo de plataformas web institucionales y empresariales, aplicaciones SPA responsivas y APIs REST seguras. Soluciones modulares orientadas a digitalización, trazabilidad y mejora de procesos.',
-    tags: ['Angular', 'React', 'TypeScript', 'Python', 'Flask', 'Nest.js', 'C#'],
+    icono: 'fa-code',
+    titulo: 'Desarrollo de sistemas',
+    resumen: 'Frontend, backend, APIs y bases de datos.',
+    descripcion: 'Diseño y desarrollo de plataformas web institucionales y empresariales, aplicaciones SPA responsivas y APIs REST seguras. Soluciones modulares orientadas a digitalización, trazabilidad y mejora de procesos.',
+    etiquetas: ['Angular', 'React', 'TypeScript', 'Python', 'Flask', 'Nest.js', 'C#'],
   },
   {
-    icon: 'fa-exchange',
-    title: 'Automatización e integración',
-    summary: 'Flujos, interoperabilidad y reducción de tareas manuales.',
-    description: 'Integración de plataformas heterogéneas mediante APIs y servicios web. Automatización de tareas repetitivas, digitalización de flujos administrativos y reducción de errores operativos con soluciones a medida.',
-    tags: ['APIs REST', 'Interoperabilidad', 'Automatización', 'Docker'],
+    icono: 'fa-exchange',
+    titulo: 'Automatización e integración',
+    resumen: 'Flujos, interoperabilidad y reducción de tareas manuales.',
+    descripcion: 'Integración de plataformas heterogéneas mediante APIs y servicios web. Automatización de tareas repetitivas, digitalización de flujos administrativos y reducción de errores operativos con soluciones a medida.',
+    etiquetas: ['APIs REST', 'Interoperabilidad', 'Automatización', 'Docker'],
   },
   {
-    icon: 'fa-server',
-    title: 'Infraestructura TI',
-    summary: 'Servidores, redes, despliegue, seguridad y continuidad.',
-    description: 'Administración de servidores Windows y Linux, Active Directory, redes segmentadas, despliegue continuo, monitoreo, respaldos y recuperación ante desastres para infraestructuras distribuidas.',
-    tags: ['Windows/Linux', 'Active Directory', 'Redes', 'Backups', 'Continuidad'],
+    icono: 'fa-server',
+    titulo: 'Infraestructura TI',
+    resumen: 'Servidores, redes, despliegue, seguridad y continuidad.',
+    descripcion: 'Administración de servidores Windows y Linux, Active Directory, redes segmentadas, despliegue continuo, monitoreo, respaldos y recuperación ante desastres para infraestructuras distribuidas.',
+    etiquetas: ['Windows/Linux', 'Active Directory', 'Redes', 'Backups', 'Continuidad'],
   },
 ];
 
 const capacidades = [
   {
-    icon: 'fa-sitemap',
-    title: 'Arquitectura de sistemas',
-    description: 'Arquitecturas backend mantenibles y escalables, separación por capas, definición de APIs REST y seguridad desde el diseño, adaptadas a las necesidades del negocio.',
+    icono: 'fa-sitemap',
+    titulo: 'Arquitectura de sistemas',
+    descripcion: 'Arquitecturas backend mantenibles y escalables, separación por capas, definición de APIs REST y seguridad desde el diseño, adaptadas a las necesidades del negocio.',
   },
   {
-    icon: 'fa-clipboard',
-    title: 'Gestión de proyectos',
-    description: 'Planificación y ejecución de proyectos TI desde la etapa conceptual hasta producción, incluyendo presupuesto, evaluación SaaS u on-premise y coordinación multidisciplinaria.',
+    icono: 'fa-clipboard',
+    titulo: 'Gestión de proyectos',
+    descripcion: 'Planificación y ejecución de proyectos TI desde la etapa conceptual hasta producción, incluyendo presupuesto, evaluación SaaS u on-premise y coordinación multidisciplinaria.',
   },
   {
-    icon: 'fa-lock',
-    title: 'Seguridad informática',
-    description: 'Auditoría de sistemas y redes, análisis y mitigación de vulnerabilidades, cifrado, protección de datos sensibles, controles de acceso y destrucción segura de información.',
+    icono: 'fa-lock',
+    titulo: 'Seguridad informática',
+    descripcion: 'Auditoría de sistemas y redes, análisis y mitigación de vulnerabilidades, cifrado, protección de datos sensibles, controles de acceso y destrucción segura de información.',
   },
   {
-    icon: 'fa-database',
-    title: 'Bases de datos',
-    description: 'Modelado relacional, migraciones controladas y optimización de consultas para MySQL, SQL Server y SQLite mediante SQLAlchemy y otras herramientas de persistencia.',
+    icono: 'fa-database',
+    titulo: 'Bases de datos',
+    descripcion: 'Modelado relacional, migraciones controladas y optimización de consultas para MySQL, SQL Server y SQLite mediante SQLAlchemy y otras herramientas de persistencia.',
   },
   {
-    icon: 'fa-file-text-o',
-    title: 'Documentación técnica',
-    description: 'Elaboración de documentación especializada, manuales operativos, estándares de procesos TI y antecedentes técnicos para fiscalizaciones y continuidad institucional.',
+    icono: 'fa-file-text-o',
+    titulo: 'Documentación técnica',
+    descripcion: 'Elaboración de documentación especializada, manuales operativos, estándares de procesos TI y antecedentes técnicos para fiscalizaciones y continuidad institucional.',
   },
   {
-    icon: 'fa-gavel',
-    title: 'Licitaciones tecnológicas',
-    description: 'Preparación de bases técnicas, evaluación técnica y económica de ofertas, criterios de aceptación y apoyo formal en procesos de compra pública tecnológica.',
+    icono: 'fa-gavel',
+    titulo: 'Licitaciones tecnológicas',
+    descripcion: 'Preparación de bases técnicas, evaluación técnica y económica de ofertas, criterios de aceptación y apoyo formal en procesos de compra pública tecnológica.',
   },
 ];
 ---
@@ -74,17 +74,17 @@ const capacidades = [
     </div>
 
     <div class="services-primary-grid">
-      {serviciosPrincipales.map((servicio, index) => (
+      {serviciosPrincipales.map((servicio, indice) => (
         <article class="service-primary-card">
           <div class="service-primary-topline">
-            <span class="service-primary-icon" aria-hidden="true"><i class={`fa ${servicio.icon}`}></i></span>
-            <span class="service-primary-number">0{index + 1}</span>
+            <span class="service-primary-icon" aria-hidden="true"><i class={`fa ${servicio.icono}`}></i></span>
+            <span class="service-primary-number">0{indice + 1}</span>
           </div>
-          <h3>{servicio.title}</h3>
-          <p class="service-primary-summary">{servicio.summary}</p>
-          <p class="service-primary-description">{servicio.description}</p>
+          <h3>{servicio.titulo}</h3>
+          <p class="service-primary-summary">{servicio.resumen}</p>
+          <p class="service-primary-description">{servicio.descripcion}</p>
           <div class="service-tags" aria-label="Tecnologías y capacidades relacionadas">
-            {servicio.tags.map((tag) => <span>{tag}</span>)}
+            {servicio.etiquetas.map((etiqueta) => <span>{etiqueta}</span>)}
           </div>
         </article>
       ))}
@@ -102,12 +102,12 @@ const capacidades = [
       {capacidades.map((capacidad) => (
         <details class="service-capability-card">
           <summary>
-            <span class="service-capability-icon" aria-hidden="true"><i class={`fa ${capacidad.icon}`}></i></span>
-            <span>{capacidad.title}</span>
+            <span class="service-capability-icon" aria-hidden="true"><i class={`fa ${capacidad.icono}`}></i></span>
+            <span>{capacidad.titulo}</span>
             <i class="fa fa-chevron-down service-capability-chevron" aria-hidden="true"></i>
           </summary>
           <div class="service-capability-content">
-            <p>{capacidad.description}</p>
+            <p>{capacidad.descripcion}</p>
           </div>
         </details>
       ))}

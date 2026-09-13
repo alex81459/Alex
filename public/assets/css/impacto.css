@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    background: linear-gradient(90deg, transparent, var(--primario), transparent);
 }
 .impacto-section::after {
     content: '';
@@ -20,7 +20,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    background: linear-gradient(90deg, transparent, var(--primario), transparent);
 }
 .impacto-cards-row {
     margin-top: 40px;
@@ -34,7 +34,7 @@
 .impacto-kpi-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 18px;
     overflow: hidden;
     background: rgba(16, 30, 49, 0.72);
@@ -48,7 +48,7 @@
     gap: 14px;
     min-height: 150px;
     padding: 26px 22px;
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--borde);
     background: linear-gradient(145deg, rgba(56, 189, 248, 0.055), transparent 58%);
 }
 
@@ -65,13 +65,13 @@
     height: 42px;
     border: 1px solid rgba(56, 189, 248, 0.24);
     border-radius: 11px;
-    background: var(--primary-soft);
-    color: var(--primary);
+    background: var(--primario-suave);
+    color: var(--primario);
     font-size: 1.1rem;
 }
 
 .impacto-kpi-value {
-    color: var(--primary);
+    color: var(--primario);
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(1.65rem, 2.4vw, 2.35rem);
     font-weight: 900;
@@ -83,7 +83,7 @@
 .impacto-kpi-label {
     max-width: 170px;
     margin-top: 8px;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 0.82rem;
     font-weight: 700;
     line-height: 1.35;
@@ -101,10 +101,10 @@
     align-items: center;
     gap: 30px;
     padding: 25px 28px;
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--primary);
+    border: 1px solid var(--borde);
+    border-left: 4px solid var(--primario);
     border-radius: 14px;
-    background: var(--bg-card);
+    background: var(--fondo-tarjeta);
     box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
     transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
@@ -112,7 +112,7 @@
 .impacto-category-card:hover {
     transform: translateY(-3px);
     border-color: rgba(56, 189, 248, 0.38);
-    background: var(--bg-card-hover);
+    background: var(--fondo-tarjeta-activa);
 }
 
 .impacto-category-header {
@@ -123,14 +123,14 @@
 
 .impacto-category-header h3 {
     margin: 0 0 6px;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1.08rem;
     font-weight: 800;
 }
 
 .impacto-category-header p {
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.78rem;
     line-height: 1.55;
 }
@@ -146,11 +146,11 @@
     flex-direction: column;
     justify-content: center;
     padding: 4px 20px;
-    border-left: 1px solid var(--border);
+    border-left: 1px solid var(--borde);
 }
 
 .impacto-category-metric strong {
-    color: var(--primary);
+    color: var(--primario);
     font-size: 1.2rem;
     font-weight: 900;
     line-height: 1.15;
@@ -158,7 +158,7 @@
 
 .impacto-category-metric span {
     margin-top: 5px;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.74rem;
     line-height: 1.4;
 }
@@ -177,7 +177,7 @@
     }
 
     .impacto-kpi:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--borde);
     }
 
     .impacto-category-card {
@@ -232,7 +232,7 @@
     .impacto-category-metric {
         min-height: 0;
         padding: 12px 0;
-        border-top: 1px solid var(--border);
+        border-top: 1px solid var(--borde);
         border-left: 0;
     }
 
@@ -241,8 +241,8 @@
     }
 }
 .impacto-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    background: var(--fondo-tarjeta);
+    border: 1px solid var(--borde);
     border-radius: 16px;
     padding: 32px 20px 28px;
     text-align: center;
@@ -258,7 +258,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--primary);
+    background: var(--primario);
     border-radius: 16px 16px 0 0;
     opacity: 0;
     transition: opacity 0.35s ease;
@@ -267,7 +267,7 @@
     transform: translateY(-6px);
     border-color: rgba(56, 189, 248, 0.35);
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
-    background: var(--bg-card-hover);
+    background: var(--fondo-tarjeta-activa);
 }
 .impacto-card:hover::before {
     opacity: 1;
@@ -275,7 +275,7 @@
 .impacto-icon-wrap {
     width: 62px;
     height: 62px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
     border: 1px solid rgba(56, 189, 248, 0.22);
     border-radius: 50%;
     display: flex;
@@ -290,7 +290,7 @@
 }
 .impacto-icon {
     font-size: 1.6rem;
-    color: var(--primary);
+    color: var(--primario);
     transition: color 0.35s ease;
 }
 .impacto-stat {
@@ -304,21 +304,21 @@
     font-size: 2.8rem;
     font-weight: 900;
     line-height: 1;
-    color: var(--primary);
+    color: var(--primario);
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -1px;
 }
 .impacto-label-prefix {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primario);
     margin-right: 5px;
     display: inline-block;
 }
 .impacto-suffix {
     font-size: 1.8rem;
     font-weight: 900;
-    color: var(--primary);
+    color: var(--primario);
     line-height: 1;
 }
 .impacto-label {
@@ -360,24 +360,24 @@
     display: block;
     margin: 20px auto 0;
     padding: 14px 24px 14px 20px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
     border: 1px solid rgba(56, 189, 248, 0.18);
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid var(--primario);
     border-radius: 8px;
     font-size: 0.88rem;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     line-height: 1.7;
     max-width: 660px;
     text-align: center;
 }
 .impacto-autoria .fa {
     font-size: 1rem;
-    color: var(--primary);
+    color: var(--primario);
     margin-right: 6px;
     vertical-align: middle;
 }
 .impacto-autoria strong {
-    color: var(--text-main);
+    color: var(--texto-principal);
 }
 @media (max-width: 575.98px) {
     .impacto-autoria {
@@ -458,7 +458,7 @@
     position: absolute;
     top: 18px;
     left: 22px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.58rem;
     font-weight: 800;
     letter-spacing: 0.14em;
@@ -482,9 +482,9 @@
     min-width: 34px;
     border: 1px solid rgba(56, 189, 248, 0.2);
     border-radius: 9px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
     font-size: 1rem;
-    color: var(--primary);
+    color: var(--primario);
     transition: color 0.3s ease;
 }
 .impacto-module--hero .impacto-module-icon {
@@ -496,20 +496,20 @@
 }
 .impacto-module-text {
     min-width: 0;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 0.78rem;
     font-weight: 700;
     line-height: 1.4;
 }
 .impacto-module--hero .impacto-module-text {
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1rem;
     line-height: 1.45;
 }
 .impacto-module-text small {
     display: inline-block;
     margin-top: 4px;
-    color: var(--text-muted);
+    color: var(--texto-tenue);
     font-size: 0.68rem;
     font-weight: 500;
     line-height: 1.45;
@@ -528,11 +528,11 @@ html[data-theme='light'] .impacto-kpi-grid {
 
 html[data-theme='light'] .impacto-label,
 html[data-theme='light'] .impacto-desc-wide {
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
 }
 
 html[data-theme='light'] .impacto-desc {
-    color: var(--text-muted);
+    color: var(--texto-tenue);
 }
 
 html[data-theme='light'] .impacto-module {

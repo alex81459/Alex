@@ -1,158 +1,52 @@
 ---
-const stats = [
-  { target: '69', display: '69', suffix: '+', label: 'Establecimientos atendidos', context: 'SLEP Colchagua · operación institucional' },
-  { target: '13', display: '13', suffix: '+', label: 'Procesos digitalizados', context: 'Plataforma SIMPLE · registros 2025-2026' },
-  { target: '7', display: '7', suffix: ' APIs', label: 'Integradas/desarrolladas', context: 'Servicios institucionales documentados' },
-  { target: '1000', display: '1.000', suffix: '+', label: 'Casos de soporte', context: 'Usuarios y establecimientos · 2024-2026' },
-  { target: '500', display: '500', suffix: '+ páginas', label: 'Documentación técnica', context: 'Libro de Clases Digital · operación' },
+const estadisticas = [
+  { objetivo: 69, valorVisible: '69', etiqueta: 'Establecimientos', contexto: 'Operación TI · SLEP Colchagua' },
+  { objetivo: 10000, valorVisible: '10.000', etiqueta: 'Gestiones digitalizadas', contexto: 'SIMPLE · registros 2025–2026' },
+  { objetivo: 7, valorVisible: '7', etiqueta: 'APIs / servicios', contexto: 'Integración institucional' },
 ];
 ---
 
-<section class="stats-band" aria-label="Métricas clave del trabajo profesional">
-  <div class="container">
-    <div class="stats-band-grid">
-      {stats.map((stat) => (
-        <div class="statsband-item">
-          <div class="statsband-value">
-            <span class="statsband-number" data-target={stat.target}>{stat.display}</span>
-            <span class="statsband-suffix">{stat.suffix}</span>
-          </div>
-          <div class="statsband-label">{stat.label}</div>
-          <div class="statsband-context">{stat.context}</div>
-        </div>
-      ))}
+<dl class="hero-metrics" aria-label="Resultados del trabajo profesional">
+  {estadisticas.map((estadistica) => (
+    <div class="hero-metric">
+      <dt>{estadistica.etiqueta}</dt>
+      <dd><span class="hero-metric-number" data-target={estadistica.objetivo}>{estadistica.valorVisible}</span><span class="hero-metric-plus">+</span></dd>
+      <dd class="hero-metric-context">{estadistica.contexto}</dd>
     </div>
-  </div>
-</section>
+  ))}
+</dl>
+
+<script>
+  const metricas = document.querySelector<HTMLElement>('.hero-metrics');
+  const movimientoReducido = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (metricas && !movimientoReducido.matches && 'IntersectionObserver' in window) {
+    const observador = new IntersectionObserver((entradas) => {
+      if (!entradas.some((entrada) => entrada.isIntersecting)) return;
+      observador.disconnect();
+      const numeros = [...metricas.querySelectorAll<HTMLElement>('[data-target]')];
+      const formateador = new Intl.NumberFormat('es-CL');
+      const inicio = performance.now();
+      function animarContadores(ahora: number) {
+        const progreso = movimientoReducido.matches ? 1 : Math.min((ahora - inicio) / 1000, 1);
+        numeros.forEach((numero) => {
+          numero.textContent = formateador.format(Math.round(Number(numero.dataset.target) * (1 - (1 - progreso) ** 3)));
+        });
+        if (progreso < 1) requestAnimationFrame(animarContadores);
+      }
+      requestAnimationFrame(animarContadores);
+    }, { threshold: .5 });
+    observador.observe(metricas);
+  }
+</script>
 
 <style>
-  .stats-band {
-    position: relative;
-    padding: 46px 0;
-    background:
-      radial-gradient(circle at 12% 0%, rgba(56, 189, 248, 0.09), transparent 42%),
-      radial-gradient(circle at 88% 100%, rgba(99, 102, 241, 0.09), transparent 42%),
-      #081120;
-  }
-
-  .stats-band::before,
-  .stats-band::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border), transparent);
-  }
-
-  .stats-band::before {
-    top: 0;
-  }
-
-  .stats-band::after {
-    bottom: 0;
-  }
-
-  .stats-band-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .statsband-item {
-    position: relative;
-    padding: 8px 12px;
-    text-align: center;
-  }
-
-  .statsband-item:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -4px;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 54px;
-    background: var(--border);
-  }
-
-  .statsband-value {
-    white-space: nowrap;
-  }
-
-  .statsband-number {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2rem, 3.4vw, 3rem);
-    font-weight: 900;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    background: linear-gradient(120deg, var(--primary), #67e8f9);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-
-  .statsband-suffix {
-    margin-left: 4px;
-    color: var(--primary);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 800;
-    white-space: nowrap;
-  }
-
-  .statsband-label {
-    margin-top: 8px;
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    font-weight: 600;
-    line-height: 1.35;
-  }
-
-  .statsband-context {
-    max-width: 170px;
-    margin: 5px auto 0;
-    color: var(--text-muted);
-    font-size: 0.68rem;
-    font-weight: 600;
-    line-height: 1.35;
-  }
-
-  html[data-theme='light'] .stats-band {
-    background:
-      radial-gradient(circle at 12% 0%, rgba(20, 142, 234, 0.07), transparent 42%),
-      radial-gradient(circle at 88% 100%, rgba(99, 102, 241, 0.07), transparent 42%),
-      #f4f9ff;
-  }
-
-  @media (max-width: 991.98px) {
-    .stats-band-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      row-gap: 24px;
-    }
-
-    .statsband-item:nth-child(3n)::after {
-      display: none;
-    }
-  }
-
-  @media (max-width: 575.98px) {
-    .stats-band {
-      padding: 36px 0;
-    }
-
-    .stats-band-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      row-gap: 24px;
-    }
-
-    .statsband-item:nth-child(3n)::after {
-      display: block;
-    }
-
-    .statsband-item:nth-child(2n)::after {
-      display: none;
-    }
-  }
+  .hero-metrics { display: grid; grid-template-columns: 1fr 1.42fr .9fr; gap: 16px; margin: 0; padding-top: 23px; border-top: 1px solid var(--borde-destacado); }
+  .hero-metric { display: flex; flex-direction: column; min-width: 0; }
+  .hero-metric + .hero-metric { border-left: 1px solid var(--borde); padding-left: 17px; }
+  dt { font-size: .59rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--texto-secundario); }
+  dd { order: -1; margin: 0 0 8px; color: var(--texto-principal); font-size: clamp(1.9rem, 2.6vw, 2.5rem); font-weight: 600; line-height: 1; letter-spacing: -.055em; font-variant-numeric: tabular-nums; }
+  .hero-metric-plus { font-weight: 400; color: var(--acento-portada); margin-left: 2px; }
+  .hero-metric-context { order: 1; margin: 7px 0 0; color: var(--texto-secundario); font-size: .6rem; font-weight: 400; letter-spacing: 0; line-height: 1.6; }
+  @media (max-width: 991px) { .hero-metrics { gap: 10px; } .hero-metric + .hero-metric { padding-left: 10px; } dd { font-size: 1.85rem; } dt { font-size: .53rem; letter-spacing: .025em; } }
+  @media (max-width: 767px) { dd { font-size: clamp(1.85rem, 6.5vw, 2.7rem); } dt { font-size: .56rem; } }
 </style>

@@ -1,6 +1,6 @@
 .about-section {
-    background: var(--bg-section);
-    color: var(--text-main);
+    background: var(--fondo-seccion);
+    color: var(--texto-principal);
     padding: 120px 0;
     position: relative;
 }
@@ -35,26 +35,26 @@
 }
 .timeline-item {
     margin-bottom: 50px;
-    background: var(--bg-card);
+    background: var(--fondo-tarjeta);
     backdrop-filter: blur(10px);
-    border-radius: var(--border-radius);
+    border-radius: var(--radio-borde);
     padding: 30px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    border: 1px solid var(--borde);
+    box-shadow: var(--sombra-ligera);
+    transition: var(--transicion);
 }
 .timeline-item:hover {
-    background: var(--bg-card-hover);
+    background: var(--fondo-tarjeta-activa);
     transform: translateY(-5px);
-    box-shadow: var(--shadow-heavy);
+    box-shadow: var(--sombra-intensa);
 }
 .timeline-image img {
     border-radius: 50%;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--primario);
 }
 .timeline-end {
-    background: var(--primary);
-    color: var(--bg-main);
+    background: var(--primario);
+    color: var(--fondo-principal);
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
@@ -64,7 +64,7 @@
     100% { transform: scale(1); }
 }
 .contact-section {
-    background: linear-gradient(135deg, color-mix(in srgb, var(--bg-main) 88%, transparent) 0%, color-mix(in srgb, var(--bg-section) 92%, transparent) 100%), url('../img/map-image.webp');
+    background: linear-gradient(135deg, color-mix(in srgb, var(--fondo-principal) 88%, transparent) 0%, color-mix(in srgb, var(--fondo-seccion) 92%, transparent) 100%), url('../img/map-image.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -98,17 +98,17 @@
     margin-bottom: 80px;
 }
 .contact-icon {
-    color: var(--primary);
+    color: var(--primario);
     font-size: 3.5rem;
     margin-bottom: 20px;
-    transition: var(--transition);
+    transition: var(--transicion);
 }
 .contact-icon:hover {
-    color: var(--primary);
+    color: var(--primario);
     transform: scale(1.15);
 }
 .contact-text {
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 30px;
@@ -116,25 +116,25 @@
 .contact-intro {
     max-width: 820px;
     margin: 0 auto 34px;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 1.05rem;
     line-height: 1.7;
 }
 .contact-text a {
-    color: var(--primary);
+    color: var(--primario);
     text-decoration: none;
-    transition: var(--transition);
+    transition: var(--transicion);
 }
 .contact-text a:hover {
-    color: var(--primary);
+    color: var(--primario);
 }
 footer {
-    background: var(--bg-main);
+    background: var(--fondo-principal);
     padding: 60px 0 40px;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--borde);
 }
 .copyright {
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-weight: 500;
     padding-top: 10px;
 }
@@ -142,7 +142,7 @@ footer {
     padding-top: 10px;
 }
 .social-buttons a {
-    background: var(--primary);
+    background: var(--primario);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -150,29 +150,29 @@ footer {
     align-items: center;
     justify-content: center;
     margin: 0 10px;
-    transition: var(--transition);
+    transition: var(--transicion);
 }
 .social-buttons a:hover {
     transform: translateY(-5px) scale(1.1);
 }
 .privacy-policy {
-    color: var(--text-muted);
+    color: var(--texto-tenue);
     font-size: 0.9rem;
     line-height: 1.6;
     margin-top: 20px;
 }
 .carousel {
-    background: var(--dark-bg);
+    background: var(--fondo-oscuro);
     padding: 60px 0;
-    border-radius: var(--border-radius);
+    border-radius: var(--radio-borde);
     margin: 60px 0;
-    box-shadow: var(--shadow-heavy);
+    box-shadow: var(--sombra-intensa);
 }
 .carousel-item img {
     max-width: 800px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-heavy);
-    transition: var(--transition);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-intensa);
+    transition: var(--transicion);
 }
 .carousel-item:hover img {
     transform: scale(1.02);
@@ -192,7 +192,7 @@ footer {
 .career-eyebrow {
     display: inline-block;
     margin-bottom: 14px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.16em;
@@ -205,7 +205,7 @@ footer {
 .career-heading .section-subheading {
     max-width: 680px;
     margin: 0 auto;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 1rem;
     font-style: normal;
     line-height: 1.7;
@@ -231,7 +231,7 @@ html[data-theme='light'] .carousel {
     bottom: 30px;
     left: 30px;
     width: 2px;
-    background: linear-gradient(180deg, var(--primary), var(--secondary), rgba(56, 189, 248, 0.12));
+    background: linear-gradient(180deg, var(--primario), var(--secundario), rgba(56, 189, 248, 0.12));
 }
 
 .career-entry {
@@ -250,12 +250,12 @@ html[data-theme='light'] .carousel {
     height: 62px;
     border: 2px solid rgba(56, 189, 248, 0.38);
     border-radius: 50%;
-    background: var(--bg-main);
+    background: var(--fondo-principal);
     box-shadow: 0 0 0 7px rgba(56, 189, 248, 0.06), 0 10px 26px rgba(0, 0, 0, 0.28);
 }
 
 .career-marker span {
-    color: var(--primary);
+    color: var(--primario);
     font-family: 'Courier New', Consolas, monospace;
     font-size: 0.72rem;
     font-weight: 800;
@@ -263,9 +263,9 @@ html[data-theme='light'] .carousel {
 
 .career-card {
     overflow: hidden;
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 15px;
-    background: linear-gradient(145deg, rgba(56, 189, 248, 0.045), transparent 42%), var(--bg-card);
+    background: linear-gradient(145deg, rgba(56, 189, 248, 0.045), transparent 42%), var(--fondo-tarjeta);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
     transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
 }
@@ -273,7 +273,7 @@ html[data-theme='light'] .carousel {
 .career-card:hover {
     transform: translateY(-3px);
     border-color: rgba(56, 189, 248, 0.34);
-    background-color: var(--bg-card-hover);
+    background-color: var(--fondo-tarjeta-activa);
 }
 
 .career-card-main {
@@ -297,7 +297,7 @@ html[data-theme='light'] .carousel {
 .career-period {
     display: inline-block;
     margin-bottom: 5px;
-    color: var(--primary);
+    color: var(--primario);
     font-family: 'Courier New', Consolas, monospace;
     font-size: 0.72rem;
     font-weight: 800;
@@ -306,27 +306,27 @@ html[data-theme='light'] .carousel {
 
 .career-card-copy h3 {
     margin: 0 0 4px;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1.35rem;
     font-weight: 800;
 }
 
 .career-role {
     display: block;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.78rem;
     font-weight: 700;
 }
 
 .career-summary {
     margin: 13px 0 0;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 0.9rem;
     line-height: 1.65;
 }
 
 .career-details {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--borde);
 }
 
 .career-details summary {
@@ -336,7 +336,7 @@ html[data-theme='light'] .carousel {
     gap: 16px;
     min-height: 50px;
     padding: 11px 28px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.75rem;
     font-weight: 800;
     cursor: pointer;
@@ -348,7 +348,7 @@ html[data-theme='light'] .carousel {
 }
 
 .career-details summary:focus-visible {
-    outline: 2px solid var(--primary);
+    outline: 2px solid var(--primario);
     outline-offset: -3px;
 }
 
@@ -367,7 +367,7 @@ html[data-theme='light'] .carousel {
 
 .career-details-content > p {
     margin: 0 0 13px;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.83rem;
     line-height: 1.75;
 }
@@ -389,7 +389,7 @@ html[data-theme='light'] .carousel {
 }
 
 .career-education-item > span {
-    color: var(--primary);
+    color: var(--primario);
     font-family: 'Courier New', Consolas, monospace;
     font-size: 0.75rem;
     font-weight: 800;
@@ -397,14 +397,14 @@ html[data-theme='light'] .carousel {
 
 .career-education-item h4 {
     margin: 0 0 6px;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 0.86rem;
     font-weight: 800;
 }
 
 .career-education-item p {
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.76rem;
     line-height: 1.65;
 }
@@ -420,8 +420,8 @@ html[data-theme='light'] .carousel {
     padding: 5px 9px;
     border: 1px solid rgba(56, 189, 248, 0.17);
     border-radius: 999px;
-    background: var(--primary-soft);
-    color: var(--primary);
+    background: var(--primario-suave);
+    color: var(--primario);
     font-size: 0.67rem;
     font-weight: 700;
 }
@@ -434,13 +434,13 @@ html[data-theme='light'] .carousel {
     gap: 28px;
     margin: 38px 0 0 auto;
     padding: 24px 28px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 13px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
 }
 
 .career-cv span {
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 0.12em;
@@ -448,14 +448,14 @@ html[data-theme='light'] .carousel {
 
 .career-cv h3 {
     margin: 4px 0;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1.05rem;
     font-weight: 800;
 }
 
 .career-cv p {
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.76rem;
 }
 
@@ -468,8 +468,8 @@ html[data-theme='light'] .carousel {
     min-height: 44px;
     padding: 0 18px;
     border-radius: 10px;
-    background: var(--primary);
-    color: var(--bg-main);
+    background: var(--primario);
+    color: var(--fondo-principal);
     font-size: 0.76rem;
     font-weight: 800;
     text-decoration: none;

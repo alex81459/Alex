@@ -1,13 +1,14 @@
+---
+import ProyectoDestacado from './ProyectoDestacado.astro';
+---
     <section id="portfolio" class="portfolio-section">
         <div class="container">
+            <ProyectoDestacado />
             <div class="row">
                 <div class="col-lg-12 text-center section-intro portfolio-heading">
                     <span class="section-kicker">PROYECTOS Y SOLUCIONES</span>
-                    <h2 class="text-uppercase section-heading">Portafolio</h2>
+                    <h2 class="text-uppercase section-heading">Más sistemas. Más soluciones reales.</h2>
                     <p class="section-lead">Soluciones reales desarrolladas para instituciones, empresas y operaciones productivas. Haz clic en cada proyecto para ver más detalles.</p>
-                    <p class="section-intro-detail">
-                        Aquí presento sistemas, automatizaciones e iniciativas tecnológicas orientadas a digitalizar procesos, mejorar la continuidad operativa y generar resultados medibles en contextos institucionales y empresariales.
-                    </p>
                 </div>
             </div>
 
@@ -18,51 +19,38 @@
                 </div>
             </div>
             <div class="row portfolio-container mb-5">
-                <div class="col-sm-6 col-md-6 portfolio-item system portfolio-featured">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal9">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-info-circle fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid portfolio-main-shot" width="400" height="300" src="assets/img/libroclases3_resultadov3.webp" alt="Libro de Clases Digital - Panel operativo y navegación del sistema">
-                        <img class="portfolio-secondary-shot" width="210" height="150" loading="lazy" src="assets/img/libroclases2_resultadov3.webp" alt="Vista complementaria del Libro de Clases Digital">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Libro de Clases Digital</h4>
-                        <p class="text-muted"><strong>7 establecimientos desplegados · 5 en operación activa</strong> · Versión en producción con Angular + PrimeNG 22, firma digital OTP y gestión modular.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 portfolio-item system portfolio-featured">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal10">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-info-circle fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid portfolio-main-shot" width="400" height="300" src="assets/img/tramitesimple3_resultado.webp" alt="Plataforma de Trámites Online Institucional - Catálogo de trámites disponibles">
-                        <img class="portfolio-secondary-shot" width="210" height="150" loading="lazy" src="assets/img/tramitesimple2_resultado.webp" alt="Vista complementaria de Trámites Online Institucional">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Trámites Online Institucional</h4>
-                        <p class="text-muted">13 trámites implementados, autenticación con ClaveÚnica y 10.000+ gestiones registradas en SIMPLE entre 2025 y 2026.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 portfolio-item system portfolio-featured">
+                <div class="col-sm-6 col-md-6 col-xl-4 portfolio-item system portfolio-featured">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal13">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"><i class="fa fa-info-circle fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid portfolio-main-shot" width="400" height="300" src="assets/img/concejo/concejos-escolares-1.webp" alt="Sistema de Concejos Escolares - Panel de gestión y seguimiento de sesiones">
-                        <img class="portfolio-secondary-shot" width="210" height="150" loading="lazy" src="assets/img/concejo/concejos-escolares-2.webp" alt="Vista complementaria del Sistema de Concejos Escolares">
+                        <img class="img-fluid portfolio-main-shot" width="400" height="300" loading="lazy" src="assets/img/concejo/concejos-escolares-1.webp" alt="Portal de Consejos Escolares - Vista principal de la plataforma institucional">
+                        <img class="portfolio-secondary-shot" width="210" height="150" loading="lazy" src="assets/img/concejo/concejos-escolares-2.webp" alt="Vista complementaria del Portal de Consejos Escolares">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Sistema de Concejos Escolares</h4>
-                        <p class="text-muted">Gestión de sesiones, actas, acuerdos y seguimiento de compromisos para concejos escolares.</p>
+                        <h4>Portal de Consejos Escolares</h4>
+                        <p class="text-muted">Gestión de sesiones, actas, acuerdos y seguimiento territorial con Next.js, NestJS y Prisma.</p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 portfolio-item system portfolio-featured">
+                <div class="col-sm-6 col-md-6 col-xl-4 portfolio-item system portfolio-featured">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal10">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-info-circle fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid portfolio-main-shot" width="400" height="300" loading="lazy" src="assets/img/tramitesimple3_resultado.webp" alt="Plataforma de Trámites Online Institucional - Catálogo de trámites disponibles">
+                        <img class="portfolio-secondary-shot" width="210" height="150" loading="lazy" src="assets/img/tramitesimple2_resultado.webp" alt="Vista complementaria de Trámites Online Institucional">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Trámites Online Institucional</h4>
+                        <p class="text-muted">Trámites digitales con autenticación ClaveÚnica, trazabilidad e integración con APIs institucionales.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-xl-4 portfolio-item system portfolio-featured">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal7">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"><i class="fa fa-info-circle fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid portfolio-main-shot" width="400" height="300" src="assets/img/tareasproyectos1_resultado.webp" alt="Sistema de Tareas y Proyectos - Panel de control con métricas y tareas próximas">
+                        <img class="img-fluid portfolio-main-shot" width="400" height="300" loading="lazy" src="assets/img/tareasproyectos1_resultado.webp" alt="Sistema de Tareas y Proyectos - Panel de control con métricas y tareas próximas">
                         <img class="portfolio-secondary-shot" width="210" height="150" loading="lazy" src="assets/img/tareasproyectos4_resultado.webp" alt="Vista complementaria del Sistema de Tareas y Proyectos">
                     </a>
                     <div class="portfolio-caption">
@@ -123,7 +111,7 @@
             <!-- -- OTROS PROYECTOS -- -->
             <div class="row">
                 <div class="col-12">
-                    <h3 class="portfolio-group-label portfolio-group-label--secondary"><i class="fa fa-folder-open me-2"></i>Otros proyectos</h3>
+                    <h3 class="portfolio-group-label portfolio-group-label--secundario"><i class="fa fa-folder-open me-2"></i>Otros proyectos</h3>
                 </div>
             </div>
             <div class="row portfolio-container">

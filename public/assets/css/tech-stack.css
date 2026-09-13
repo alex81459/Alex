@@ -2,8 +2,8 @@
     position: relative;
     padding: 110px 0;
     overflow: hidden;
-    background: var(--bg-main);
-    color: var(--text-main);
+    background: var(--fondo-principal);
+    color: var(--texto-principal);
 }
 
 .tech-stack-section::before {
@@ -31,7 +31,7 @@
 .tech-ecosystem-eyebrow {
     display: inline-block;
     margin-bottom: 14px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.16em;
@@ -44,7 +44,7 @@
 .tech-ecosystem-heading .section-subheading {
     max-width: 680px;
     margin: 0 auto;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 1rem;
     font-style: normal;
     line-height: 1.7;
@@ -60,9 +60,9 @@
     position: relative;
     padding: 28px;
     overflow: hidden;
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 16px;
-    background: linear-gradient(145deg, rgba(56, 189, 248, 0.06), transparent 42%), var(--bg-card);
+    background: linear-gradient(145deg, rgba(56, 189, 248, 0.06), transparent 42%), var(--fondo-tarjeta);
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
     transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
@@ -74,13 +74,13 @@
     right: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    background: linear-gradient(90deg, var(--primario), var(--secundario));
 }
 
 .tech-domain-card:hover {
     transform: translateY(-5px);
     border-color: rgba(56, 189, 248, 0.36);
-    background-color: var(--bg-card-hover);
+    background-color: var(--fondo-tarjeta-activa);
 }
 
 .tech-domain-header {
@@ -98,15 +98,15 @@
     height: 54px;
     border: 1px solid rgba(56, 189, 248, 0.26);
     border-radius: 14px;
-    background: var(--primary-soft);
-    color: var(--primary);
+    background: var(--primario-suave);
+    color: var(--primario);
     font-size: 1.35rem;
 }
 
 .tech-domain-index {
     display: block;
     margin-bottom: 2px;
-    color: var(--primary);
+    color: var(--primario);
     font-family: 'Courier New', Consolas, monospace;
     font-size: 0.65rem;
     font-weight: 700;
@@ -114,7 +114,7 @@
 
 .tech-domain-header h3 {
     margin: 0;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1.4rem;
     font-weight: 800;
 }
@@ -122,7 +122,7 @@
 .tech-domain-description {
     min-height: 48px;
     margin: 0 0 22px;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.82rem;
     line-height: 1.65;
 }
@@ -143,7 +143,7 @@
 .tech-experience-item:hover {
     transform: translateX(4px);
     border-color: rgba(56, 189, 248, 0.28);
-    background: var(--primary-soft);
+    background: var(--primario-suave);
 }
 
 .tech-experience-title {
@@ -153,13 +153,13 @@
 }
 
 .tech-experience-title .fa {
-    color: var(--success);
+    color: var(--exito);
     font-size: 0.78rem;
 }
 
 .tech-experience-title h4 {
     margin: 0;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 0.94rem;
     font-weight: 800;
 }
@@ -167,7 +167,7 @@
 .tech-experience-meta {
     display: block;
     margin: 6px 0 4px 22px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.025em;
@@ -175,7 +175,7 @@
 
 .tech-experience-item p {
     margin: 0 0 0 22px;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.73rem;
     line-height: 1.55;
 }
@@ -187,26 +187,26 @@
     margin-top: 24px;
     padding: 18px 22px;
     border: 1px solid rgba(56, 189, 248, 0.18);
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid var(--primario);
     border-radius: 10px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
 }
 
 .tech-ecosystem-note .fa {
     margin-top: 3px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 1rem;
 }
 
 .tech-ecosystem-note p {
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.78rem;
     line-height: 1.65;
 }
 
 .tech-ecosystem-note strong {
-    color: var(--text-main);
+    color: var(--texto-principal);
 }
 
 html[data-theme='light'] .tech-experience-item {
@@ -215,7 +215,7 @@ html[data-theme='light'] .tech-experience-item {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primario), var(--secundario));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -275,17 +275,17 @@ html[data-theme='light'] .tech-experience-item {
 /* Enlace de GitHub utilizado en el portafolio */
 .github-profile-link {
     display: inline-block;
-    transition: var(--transition);
+    transition: var(--transicion);
 }
 
 .github-icon {
-    border: 3px solid var(--primary-color) !important;
-    border-radius: var(--border-radius) !important;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    border: 3px solid var(--color-primario) !important;
+    border-radius: var(--radio-borde) !important;
+    box-shadow: var(--sombra-ligera);
+    transition: var(--transicion);
 }
 
 .github-profile-link:hover .github-icon {
     transform: scale(1.05) rotate(5deg);
-    border-color: var(--primary) !important;
+    border-color: var(--primario) !important;
 }

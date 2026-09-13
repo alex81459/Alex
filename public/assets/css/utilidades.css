@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--bg-main);
+    background: var(--fondo-principal);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@
     width: 80px;
     height: 80px;
     border: 4px solid rgba(56, 189, 248, 0.1);
-    border-top: 4px solid var(--primary);
+    border-top: 4px solid var(--primario);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     position: absolute;
@@ -39,7 +39,7 @@
     100% { transform: rotate(360deg); }
 }
 .loading-text {
-    color: var(--text-light);
+    color: var(--texto-claro);
     margin-top: 120px;
     font-size: 1.2rem;
     animation: pulse 2s infinite;
@@ -57,7 +57,7 @@
     width: 100%;
     z-index: 1000;
     display: none;
-    transition: var(--transition);
+    transition: var(--transicion);
 }
 @media (max-width: 768px) {
     .breadcrumbs-nav,
@@ -73,18 +73,18 @@
     background: transparent;
 }
 .breadcrumb-item {
-    color: var(--text-muted);
+    color: var(--texto-tenue);
 }
 .breadcrumb-item + .breadcrumb-item::before {
     content: "/";
-    color: var(--primary-color);
+    color: var(--color-primario);
 }
 .breadcrumb-item a {
-    color: var(--primary-color);
+    color: var(--color-primario);
     text-decoration: none;
 }
 .breadcrumb-item a:hover {
-    color: var(--secondary-color);
+    color: var(--color-secundario);
 }
 .scroll-to-top-btn {
     position: fixed;
@@ -92,7 +92,7 @@
     right: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
     color: white;
     border: none;
     border-radius: 50%;
@@ -100,9 +100,9 @@
     cursor: pointer;
     opacity: 0;
     transform: translateY(100px);
-    transition: var(--transition);
+    transition: var(--transicion);
     z-index: 1000;
-    box-shadow: var(--shadow-heavy);
+    box-shadow: var(--sombra-intensa);
 }
 .scroll-to-top-btn.show {
     opacity: 1;
@@ -117,20 +117,20 @@
 }
 .filter-btn {
     background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 2px solid var(--primario);
+    color: var(--primario);
     padding: 12px 25px;
     margin: 5px;
     border-radius: 30px;
     font-weight: 500;
     cursor: pointer;
-    transition: var(--transition);
+    transition: var(--transicion);
     font-size: 0.9rem;
 }
 .filter-btn:hover,
 .filter-btn.active {
-    background: var(--primary);
-    color: var(--bg-main);
+    background: var(--primario);
+    color: var(--fondo-principal);
     transform: translateY(-2px);
 }
 .portfolio-item {
@@ -183,8 +183,8 @@
     animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 .skills-progress-section {
-    background: var(--bg-section);
-    color: var(--text-main);
+    background: var(--fondo-seccion);
+    color: var(--texto-principal);
     padding: 120px 0;
     position: relative;
 }
@@ -207,16 +207,16 @@
 }
 .skill-progress-item {
     margin-bottom: 30px;
-    background: var(--bg-card);
+    background: var(--fondo-tarjeta);
     padding: 25px;
-    border-radius: var(--border-radius);
+    border-radius: var(--radio-borde);
     backdrop-filter: blur(10px);
-    border: 1px solid var(--border);
-    transition: var(--transition);
+    border: 1px solid var(--borde);
+    transition: var(--transicion);
 }
 .skill-progress-item:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-heavy);
+    box-shadow: var(--sombra-intensa);
     border-color: rgba(56, 189, 248, 0.35);
 }
 .skill-info {
@@ -228,24 +228,24 @@
 .skill-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--text-main);
+    color: var(--texto-principal);
 }
 .skill-percentage {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primario);
 }
 .progress-bar-container {
     width: 100%;
     height: 10px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
     border-radius: 5px;
     overflow: hidden;
     position: relative;
 }
 .progress-bar {
     height: 100%;
-    background: var(--primary);
+    background: var(--primario);
     border-radius: 5px;
     width: 0;
     transition: width 2s ease-in-out;
@@ -280,7 +280,7 @@
     .navbar-toggler {
         position: relative;
         z-index: 1051;
-        background: var(--primary) !important;
+        background: var(--primario) !important;
         border: 2px solid rgba(255, 255, 255, 0.2) !important;
     }
     .navbar-toggler:focus {
@@ -288,7 +288,7 @@
         outline: none !important;
     }
     .navbar-brand {
-        color: var(--primary) !important;
+        color: var(--primario) !important;
         font-size: 1.3rem !important;
         font-weight: 700;
         margin-right: auto;

@@ -1,11 +1,11 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import DisenoPrincipal from '../layouts/MainLayout.astro';
 
-const pageTitle = 'Política de Privacidad - Alex Salinas Ponce';
-const pageDescription = 'Política de Privacidad del portafolio personal de Alex Salinas Ponce, conforme a la Ley N° 21.719 de Chile.';
+const tituloPagina = 'Política de Privacidad - Alex Salinas Ponce';
+const descripcionPagina = 'Política de Privacidad del portafolio personal de Alex Salinas Ponce, conforme a la Ley N° 21.719 de Chile.';
 ---
 
-<MainLayout title={pageTitle} description={pageDescription}>
+<DisenoPrincipal titulo={tituloPagina} descripcion={descripcionPagina}>
   <section class="privacy-page" aria-labelledby="privacy-title">
     <div class="container privacy-page-container">
       <a class="privacy-back-link" href={import.meta.env.BASE_URL}>
@@ -99,7 +99,7 @@ const pageDescription = 'Política de Privacidad del portafolio personal de Alex
       background:
         radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.09), transparent 28%),
         radial-gradient(circle at 86% 20%, rgba(103, 232, 249, 0.08), transparent 24%),
-        var(--bg-main);
+        var(--fondo-principal);
     }
 
     .privacy-page-container {
@@ -111,18 +111,18 @@ const pageDescription = 'Política de Privacidad del portafolio personal de Alex
       align-items: center;
       gap: 8px;
       margin-bottom: 26px;
-      color: var(--primary);
+      color: var(--primario);
       font-weight: 700;
       text-decoration: none;
     }
 
     .privacy-back-link:hover {
-      color: var(--secondary);
+      color: var(--secundario);
     }
 
     .privacy-page-title {
       margin: 0 0 12px;
-      color: var(--text-main);
+      color: var(--texto-principal);
       font-size: clamp(2rem, 5vw, 3.4rem);
       font-weight: 900;
       line-height: 1.08;
@@ -130,23 +130,23 @@ const pageDescription = 'Política de Privacidad del portafolio personal de Alex
 
     .privacy-page-updated {
       margin: 0 0 34px;
-      color: var(--text-secondary);
+      color: var(--texto-secundario);
       font-weight: 600;
     }
 
     .privacy-content {
       padding: 34px;
-      color: var(--text-secondary);
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      color: var(--texto-secundario);
+      background: var(--fondo-tarjeta);
+      border: 1px solid var(--borde);
       border-radius: 18px;
-      box-shadow: var(--shadow-heavy);
+      box-shadow: var(--sombra-intensa);
       backdrop-filter: blur(14px);
     }
 
     .privacy-content h2 {
       margin: 34px 0 14px;
-      color: var(--text-main);
+      color: var(--texto-principal);
       font-size: 1.25rem;
       font-weight: 800;
     }
@@ -181,7 +181,7 @@ const pageDescription = 'Política de Privacidad del portafolio personal de Alex
 
     .privacy-contact {
       margin-bottom: 0;
-      color: var(--text-main);
+      color: var(--texto-principal);
       font-weight: 700;
     }
 
@@ -198,7 +198,7 @@ const pageDescription = 'Política de Privacidad del portafolio personal de Alex
     }
 
     html[data-theme='light'] .privacy-content a {
-      color: var(--primary);
+      color: var(--primario);
     }
 
     @media (max-width: 575.98px) {
@@ -227,4 +227,4 @@ const pageDescription = 'Política de Privacidad del portafolio personal de Alex
       }
     }
   </style>
-</MainLayout>
+</DisenoPrincipal>

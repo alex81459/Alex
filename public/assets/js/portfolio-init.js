@@ -1,422 +1,213 @@
 (function () {
   'use strict';
 
-  var latestScrollTop = 0;
-  var isTicking = false;
-  var sectionOffsets = [];
-  var sections = [
-    { selector: '#impacto', label: 'Impacto' },
-    { selector: '#portfolio', label: 'Portafolio' },
-    { selector: '#services', label: 'Servicios' },
-    { selector: '#tech-stack', label: 'Stack' },
-    { selector: '#certifications', label: 'Certificados' },
-    { selector: '#about', label: 'Acerca de' },
-    { selector: '#gallery', label: 'Galeria' },
-    { selector: '#contact', label: 'Contacto' }
+  var ultimaPosicionDesplazamiento = 0;
+  var actualizacionPendiente = false;
+  var posicionesSecciones = [];
+  var secciones = [
+    { selector: '#portfolio', etiqueta: 'Proyectos' },
+    { selector: '#impacto', etiqueta: 'Impacto' },
+    { selector: '#experiencia', etiqueta: 'Experiencia' },
+    { selector: '#tech-stack', etiqueta: 'Tecnologías' },
+    { selector: '#certifications', etiqueta: 'Certificados' },
+    { selector: '#about', etiqueta: 'Sobre mí' },
+    { selector: '#services', etiqueta: 'Servicios' },
+    { selector: '#gallery', etiqueta: 'Galería' },
+    { selector: '#contact', etiqueta: 'Contacto' }
   ];
 
-  function qs(selector, root) {
-    return (root || document).querySelector(selector);
+  function seleccionarElemento(selector, raiz) {
+    return (raiz || document).querySelector(selector);
   }
 
-  function qsa(selector, root) {
-    return Array.prototype.slice.call((root || document).querySelectorAll(selector));
+  function seleccionarElementos(selector, raiz) {
+    return Array.prototype.slice.call((raiz || document).querySelectorAll(selector));
   }
 
-  function setupThemeToggle() {
-    var storageKey = 'alex-theme';
-    var root = document.documentElement;
-    var toggle = qs('#theme-toggle');
-    var metaTheme = qs('meta[name="theme-color"]');
+  function configurarSelectorTema() {
+    var claveAlmacenamiento = 'alex-theme';
+    var raiz = document.documentElement;
+    var selectorTema = seleccionarElemento('#theme-toggle');
+    var metadatoTema = seleccionarElemento('meta[name="theme-color"]');
 
-    function applyTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      if (toggle) {
-        toggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
-        toggle.setAttribute('title', theme === 'light' ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro');
+    function aplicarTema(tema) {
+      raiz.setAttribute('data-theme', tema);
+      if (selectorTema) {
+        selectorTema.setAttribute('aria-pressed', tema === 'light' ? 'true' : 'false');
+        selectorTema.setAttribute('title', tema === 'light' ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro');
+        selectorTema.setAttribute('aria-label', tema === 'light' ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro');
       }
-      if (metaTheme) {
-        metaTheme.setAttribute('content', theme === 'light' ? '#eef6ff' : '#07111f');
+      if (metadatoTema) {
+        metadatoTema.setAttribute('content', tema === 'light' ? '#eef6ff' : '#07111f');
       }
     }
 
-    function getCurrentTheme() {
-      return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    function obtenerTemaActual() {
+      return raiz.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
     }
 
-    applyTheme(getCurrentTheme());
+    aplicarTema(obtenerTemaActual());
 
-    if (!toggle) return;
+    if (!selectorTema) return;
 
-    toggle.addEventListener('click', function () {
-      var currentTheme = getCurrentTheme();
-      var nextTheme = currentTheme === 'light' ? 'dark' : 'light';
-      applyTheme(nextTheme);
+    selectorTema.addEventListener('click', function () {
+      var temaActual = obtenerTemaActual();
+      var siguienteTema = temaActual === 'light' ? 'dark' : 'light';
+      aplicarTema(siguienteTema);
 
       try {
-        localStorage.setItem(storageKey, nextTheme);
+        localStorage.setItem(claveAlmacenamiento, siguienteTema);
       } catch {}
     });
   }
 
-  function cacheSectionOffsets() {
-    sectionOffsets = sections.map(function (section) {
+  function guardarPosicionesSecciones() {
+    posicionesSecciones = secciones.map(function (seccion) {
       return {
-        selector: section.selector,
-        label: section.label,
-        top: getOffsetTop(section.selector)
+        selector: seccion.selector,
+        etiqueta: seccion.etiqueta,
+        posicionSuperior: obtenerPosicionSuperior(seccion.selector)
       };
-    }).filter(function (section) {
-      return section.top !== null;
+    }).filter(function (seccion) {
+      return seccion.posicionSuperior !== null;
     });
   }
 
-  function getOffsetTop(selector) {
-    var el = qs(selector);
-    return el ? el.getBoundingClientRect().top + window.scrollY : null;
+  function obtenerPosicionSuperior(selector) {
+    var elemento = seleccionarElemento(selector);
+    return elemento ? elemento.getBoundingClientRect().top + window.scrollY : null;
   }
 
-  function handleScroll() {
-    var scrollTop = latestScrollTop;
-    var parallaxBg = qs('.parallax-bg');
-    if (parallaxBg) {
-      parallaxBg.style.transform = 'translate3d(0,' + scrollTop * -0.15 + 'px,0)';
-    }
+  function gestionarDesplazamiento() {
+    var posicionDesplazamiento = ultimaPosicionDesplazamiento;
 
-    var showControls = scrollTop > 100;
-    var scrollToTop = qs('#scroll-to-top');
-    var sectionIndicator = qs('#section-indicator');
-    var scrollHud = qs('#scroll-hud');
-    if (scrollToTop) scrollToTop.classList.toggle('show', showControls);
-    if (sectionIndicator) sectionIndicator.classList.toggle('show', showControls);
-    if (scrollHud) scrollHud.classList.toggle('show', showControls);
+    var mostrarControles = posicionDesplazamiento > 100;
+    var botonVolverArriba = seleccionarElemento('#scroll-to-top');
+    var indicadorSeccion = seleccionarElemento('#section-indicator');
+    var panelDesplazamiento = seleccionarElemento('#scroll-hud');
+    if (botonVolverArriba) botonVolverArriba.classList.toggle('show', mostrarControles);
+    if (indicadorSeccion) indicadorSeccion.classList.toggle('show', mostrarControles);
+    if (panelDesplazamiento) panelDesplazamiento.classList.toggle('show', mostrarControles);
 
-    updateScrollProgress(scrollTop);
-    isTicking = false;
+    actualizarProgresoDesplazamiento(posicionDesplazamiento);
+    actualizacionPendiente = false;
   }
 
-  function updateScrollProgress(scrollTop) {
-    var sectionIndicator = qs('#section-indicator');
-    var sectionValue = qs('#section-indicator-value');
-    var sectionLabel = qs('.section-indicator-label');
-    var doc = document.documentElement;
-    var maxScroll = Math.max(doc.scrollHeight - window.innerHeight, 1);
-    var progress = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
-    var currentSection = getCurrentSection(scrollTop);
+  function actualizarProgresoDesplazamiento(posicionDesplazamiento) {
+    var indicadorSeccion = seleccionarElemento('#section-indicator');
+    var valorSeccion = seleccionarElemento('#section-indicator-value');
+    var etiquetaSeccion = seleccionarElemento('.section-indicator-label');
+    var documento = document.documentElement;
+    var desplazamientoMaximo = Math.max(documento.scrollHeight - window.innerHeight, 1);
+    var progreso = Math.min(Math.max(posicionDesplazamiento / desplazamientoMaximo, 0), 1);
+    var seccionActual = obtenerSeccionActual(posicionDesplazamiento);
 
-    if (sectionLabel) {
-      sectionLabel.textContent = currentSection;
+    if (etiquetaSeccion) {
+      etiquetaSeccion.textContent = seccionActual;
     }
 
-    if (sectionValue) {
-      sectionValue.textContent = Math.round(progress * 100) + '%';
+    if (valorSeccion) {
+      valorSeccion.textContent = Math.round(progreso * 100) + '%';
     }
   }
 
-  function getCurrentSection(scrollTop) {
-    if (!sectionOffsets.length || scrollTop < sectionOffsets[0].top - 120) {
+  function obtenerSeccionActual(posicionDesplazamiento) {
+    if (!posicionesSecciones.length || posicionDesplazamiento < posicionesSecciones[0].posicionSuperior - 120) {
       return 'Inicio';
     }
 
-    for (var i = sectionOffsets.length - 1; i >= 0; i -= 1) {
-      if (scrollTop >= sectionOffsets[i].top - 120) {
-        return sectionOffsets[i].label;
+    for (var indice = posicionesSecciones.length - 1; indice >= 0; indice -= 1) {
+      if (posicionDesplazamiento >= posicionesSecciones[indice].posicionSuperior - 120) {
+        return posicionesSecciones[indice].etiqueta;
       }
     }
 
     return 'Inicio';
   }
 
-  function toggleAllCerts() {
-    var block = qs('#allCertsBlock');
-    var btn = qs('#certToggleBtn');
-    if (!block || !btn) return;
+  function alternarCertificaciones() {
+    var bloque = seleccionarElemento('#allCertsBlock');
+    var boton = seleccionarElemento('#certToggleBtn');
+    if (!bloque || !boton) return;
 
-    if (block.style.display === 'none') {
-      block.style.display = 'block';
-      btn.setAttribute('aria-expanded', 'true');
-      btn.innerHTML = '<i class="fa fa-minus-circle" aria-hidden="true"></i><span>Ocultar certificaciones</span>';
+    if (bloque.style.display === 'none') {
+      bloque.style.display = 'block';
+      boton.setAttribute('aria-expanded', 'true');
+      boton.innerHTML = '<i class="fa fa-minus-circle" aria-hidden="true"></i><span>Ocultar certificaciones</span>';
     } else {
-      block.style.display = 'none';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = '<i class="fa fa-plus-circle" aria-hidden="true"></i><span>Ver catálogo completo</span>';
+      bloque.style.display = 'none';
+      boton.setAttribute('aria-expanded', 'false');
+      boton.innerHTML = '<i class="fa fa-plus-circle" aria-hidden="true"></i><span>Ver catálogo completo</span>';
     }
   }
 
-  function startTypingAnimation() {
-    var typingText = qs('#typing-text');
-    var typingSubtitle = qs('#typing-subtitle');
-    if (!typingText || !typingSubtitle) return;
+  function configurarFiltrosPortafolio() {
+    document.addEventListener('click', function (evento) {
+      var boton = evento.target.closest('.filter-btn');
+      if (!boton) return;
 
-    // Respetar prefers-reduced-motion
-    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    var texts = [
-      'Soy Alex Salinas Ponce, Ingeniero de Software Full Stack.',
-      'Diseño, desarrollo e implemento plataformas digitales, APIs e infraestructura tecnológica para organizaciones y entornos de alta operación.',
-      'Combino desarrollo web, bases de datos, servidores, automatización, DevOps e integración de sistemas para resolver necesidades reales.'
-    ];
-    var subtitle = 'Ingeniero de Software · Full Stack · Infraestructura & DevOps<br>';
-    
-    // Si el usuario prefiere menos movimiento, mostrar todo inmediatamente
-    if (prefersReducedMotion) {
-      typingText.innerHTML = texts.join('<br>');
-      var leadIn = qs('.intro-lead-in');
-      var profile = qs('#profile-photo-reveal');
-      if (leadIn) leadIn.classList.add('normal-mode');
-      if (profile) profile.classList.add('visible');
-      typingSubtitle.innerHTML = subtitle;
-      typingSubtitle.style.opacity = '1';
-      typingSubtitle.style.transform = 'translateY(0)';
-      return;
-    }
-
-    var textIndex = 0;
-    var charIndex = 0;
-
-    function typeText() {
-      if (textIndex >= texts.length) return;
-
-      if (charIndex <= texts[textIndex].length) {
-        var currentText = texts[textIndex].substring(0, charIndex);
-        var previousText = texts.slice(0, textIndex).join('<br>');
-        var terminalText = previousText ? previousText + '<br>' + currentText : currentText;
-        typingText.innerHTML = terminalText + '<span class="typing-cursor"></span>';
-        charIndex += 1;
-        window.setTimeout(typeText, 16);
-        return;
-      }
-
-      window.setTimeout(function () {
-        textIndex += 1;
-        charIndex = 0;
-        if (textIndex >= texts.length) {
-          typingText.innerHTML = texts.join('<br>') + '<span class="typing-cursor"></span>';
-          window.setTimeout(typeSubtitle, 250);
-        } else {
-          window.setTimeout(typeText, 100);
-        }
-      }, 300);
-    }
-
-    function typeSubtitle() {
-      qsa('.typing-cursor').forEach(function (cursor) {
-        cursor.remove();
+      var filtro = boton.dataset.filter;
+      seleccionarElementos('.filter-btn').forEach(function (boton) {
+        boton.classList.remove('active');
       });
+      boton.classList.add('active');
 
-      var leadIn = qs('.intro-lead-in');
-      var profile = qs('#profile-photo-reveal');
-      if (leadIn) leadIn.classList.add('normal-mode');
-      typingText.innerHTML = texts.join('<br>');
-
-      window.setTimeout(function () {
-        if (profile) profile.classList.add('visible');
-        typingSubtitle.innerHTML = subtitle;
-        typingSubtitle.style.opacity = '1';
-        typingSubtitle.style.transform = 'translateY(0)';
-        typingSubtitle.style.transition = 'all 0.6s ease';
-      }, 400);
-    }
-
-    typeText();
-  }
-
-  function animateImpactoCounters() {
-    qsa('.impacto-number').forEach(function (el) {
-      if (el.classList.contains('counted')) return;
-      el.classList.add('counted');
-
-      var target = parseInt(el.dataset.target, 10);
-      if (Number.isNaN(target)) return;
-
-      var duration = 1600;
-      var frameRate = 16;
-      var steps = duration / frameRate;
-      var increment = target / steps;
-      var current = 0;
-      var isBig = target >= 1000;
-      var timer = window.setInterval(function () {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          window.clearInterval(timer);
-        }
-        el.textContent = isBig ? Math.floor(current).toLocaleString('es-CL') : Math.floor(current);
-      }, frameRate);
-    });
-  }
-
-  function observeImpactoCounters() {
-    var impactoEl = qs('#impacto');
-    if (!impactoEl) return;
-
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            animateImpactoCounters();
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-      observer.observe(impactoEl);
-      return;
-    }
-
-    function checkImpactoVisible() {
-      var rect = impactoEl.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        animateImpactoCounters();
-        window.removeEventListener('scroll', checkImpactoVisible);
-      }
-    }
-    window.addEventListener('scroll', checkImpactoVisible, { passive: true });
-    checkImpactoVisible();
-  }
-
-  function animateStatsBandCounters() {
-    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    qsa('.statsband-number').forEach(function (el) {
-      if (el.classList.contains('counted')) return;
-      el.classList.add('counted');
-
-      var target = parseInt(el.dataset.target, 10);
-      if (Number.isNaN(target)) return;
-
-      var isBig = target >= 1000;
-      var finalText = isBig ? target.toLocaleString('es-CL') : String(target);
-
-      if (prefersReduced) {
-        el.textContent = finalText;
-        return;
-      }
-
-      // El HTML ya contiene el valor final; se resetea a 0 solo para animar.
-      el.textContent = '0';
-
-      var duration = 1400;
-      var frameRate = 16;
-      var steps = duration / frameRate;
-      var increment = target / steps;
-      var current = 0;
-      var timer = window.setInterval(function () {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          window.clearInterval(timer);
-        }
-        el.textContent = isBig ? Math.floor(current).toLocaleString('es-CL') : Math.floor(current);
-      }, frameRate);
-    });
-  }
-
-  function observeStatsBandCounters() {
-    var band = qs('.stats-band');
-    if (!band) return;
-
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            animateStatsBandCounters();
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.25, rootMargin: '0px 0px -40px 0px' });
-      observer.observe(band);
-      return;
-    }
-
-    animateStatsBandCounters();
-  }
-
-  function setupPortfolioFilters() {
-    document.addEventListener('click', function (event) {
-      var button = event.target.closest('.filter-btn');
-      if (!button) return;
-
-      var filter = button.dataset.filter;
-      qsa('.filter-btn').forEach(function (btn) {
-        btn.classList.remove('active');
-      });
-      button.classList.add('active');
-
-      qsa('.portfolio-item').forEach(function (item) {
-        var shouldShow = filter === '*' || item.matches(filter);
-        item.classList.toggle('filtered-out', !shouldShow);
+      seleccionarElementos('.portfolio-item').forEach(function (elemento) {
+        var debeMostrarse = filtro === '*' || elemento.matches(filtro);
+        elemento.classList.toggle('filtered-out', !debeMostrarse);
       });
     });
   }
 
-  function setupYoutubeFacades() {
-    document.addEventListener('click', function (event) {
-      var facade = event.target.closest('.youtube-facade');
-      if (!facade) return;
+  function configurarVistasPreviasYoutube() {
+    document.addEventListener('click', function (evento) {
+      var vistaPrevia = evento.target.closest('.youtube-facade');
+      if (!vistaPrevia) return;
 
-      var id = facade.dataset.yt;
-      if (!id) return;
+      var identificador = vistaPrevia.dataset.yt;
+      if (!identificador) return;
 
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
-      iframe.frameBorder = '0';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      iframe.allowFullscreen = true;
-      facade.replaceWith(iframe);
+      var marcoVideo = document.createElement('iframe');
+      marcoVideo.src = 'https://www.youtube.com/embed/' + identificador + '?autoplay=1&rel=0&modestbranding=1';
+      marcoVideo.frameBorder = '0';
+      marcoVideo.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      marcoVideo.allowFullscreen = true;
+      vistaPrevia.replaceWith(marcoVideo);
     });
   }
 
-  function setupScrollHandlers() {
+  function configurarEventosDesplazamiento() {
     window.addEventListener('scroll', function () {
-      latestScrollTop = window.scrollY;
-      if (!isTicking) {
-        window.requestAnimationFrame(handleScroll);
-        isTicking = true;
+      ultimaPosicionDesplazamiento = window.scrollY;
+      if (!actualizacionPendiente) {
+        window.requestAnimationFrame(gestionarDesplazamiento);
+        actualizacionPendiente = true;
       }
     }, { passive: true });
 
-    var scrollToTop = qs('#scroll-to-top');
-    if (scrollToTop) {
-      scrollToTop.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    var botonVolverArriba = seleccionarElemento('#scroll-to-top');
+    if (botonVolverArriba) {
+      botonVolverArriba.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
       });
     }
 
     window.addEventListener('resize', function () {
-      cacheSectionOffsets();
-      latestScrollTop = window.scrollY;
-      handleScroll();
+      guardarPosicionesSecciones();
+      ultimaPosicionDesplazamiento = window.scrollY;
+      gestionarDesplazamiento();
     }, { passive: true });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    // Nota: loading="lazy" ahora está configurado directamente en HTML para las imágenes de modales
-    // qsa('.portfolio-modal img').forEach(function (img) {
-    //   img.loading = 'lazy';
-    // });
+    window.alternarCertificaciones = alternarCertificaciones;
+    guardarPosicionesSecciones();
+    ultimaPosicionDesplazamiento = window.scrollY;
+    gestionarDesplazamiento();
+    configurarFiltrosPortafolio();
+    configurarVistasPreviasYoutube();
+    configurarSelectorTema();
+    configurarEventosDesplazamiento();
 
-    window.toggleAllCerts = toggleAllCerts;
-    cacheSectionOffsets();
-    latestScrollTop = window.scrollY;
-    handleScroll();
-    observeImpactoCounters();
-    observeStatsBandCounters();
-    setupPortfolioFilters();
-    setupYoutubeFacades();
-    setupThemeToggle();
-    setupScrollHandlers();
-
-    window.setTimeout(function () {
-      var overlay = qs('#loading-overlay');
-      if (overlay) {
-        overlay.classList.add('hidden');
-        window.setTimeout(function () {
-          overlay.style.display = 'none';
-          startTypingAnimation();
-        }, 500);
-      } else {
-        startTypingAnimation();
-      }
-    }, 700);
   });
 })();

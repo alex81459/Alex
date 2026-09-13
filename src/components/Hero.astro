@@ -1,548 +1,113 @@
-    <header class="masthead parallax-header">
-        <div class="parallax-bg"></div>
-        <div class="container hero-container">
-            <!-- Columna izquierda: contenido principal -->
-            <div class="hero-left">
-                <span class="hero-name">Alex Salinas Ponce</span>
-                <span class="hero-tag">INGENIERO DE SOFTWARE · FULL STACK · INFRAESTRUCTURA &amp; DEVOPS</span>
-                <h1 class="hero-title">Desarrollo sistemas que <span class="hero-highlight">reducen trabajo manual</span> y mejoran la operación.</h1>
-                <p class="hero-desc">Diseño, desarrollo e implemento plataformas digitales, APIs e infraestructura tecnológica para organizaciones y entornos de alta operación.</p>
-                <div class="hero-tech-tags">
-                    <span class="hero-tech-tag">Angular</span>
-                    <span class="hero-tech-tag">Python</span>
-                    <span class="hero-tech-tag">Flask</span>
-                    <span class="hero-tech-tag">Node.js</span>
-                    <span class="hero-tech-tag">C#</span>
-                    <span class="hero-tech-tag">MySQL</span>
-                    <span class="hero-tech-tag">Docker</span>
-                    <span class="hero-tech-tag">Linux</span>
-                    <span class="hero-tech-tag">Nginx</span>
-                </div>
-                <div class="hero-buttons">
-                    <a class="btn btn-hero-gradient js-scroll-trigger" role="button" href="#portfolio">Ver proyectos</a>
-                    <a class="btn btn-hero-outline" role="button" href="assets/curriculum-v3-2026.pdf" target="_blank" rel="noopener">
-                        <i class="fa fa-download me-2"></i>Descargar CV
-                    </a>
-                </div>
-                <div class="hero-stats-row">
-                    <span class="hero-stat"><strong>13</strong> trámites en SIMPLE</span>
-                    <span class="hero-stat-sep">│</span>
-                    <span class="hero-stat"><strong>69</strong> establecimientos SLEP</span>
-                    <span class="hero-stat-sep">│</span>
-                    <span class="hero-stat"><strong>7</strong> APIs documentadas</span>
-                </div>
-            </div>
-
-            <!-- Columna derecha: composición visual -->
-            <div class="hero-right">
-                <div class="hero-visual">
-                    <!-- Fondo degradado -->
-                    <div class="hero-photo-bg"></div>
-                    <!-- Foto rectangular -->
-                    <img src="assets/img/frontalv2-circular.webp" width="400" height="400" alt="Alex Salinas Ponce - Ingeniero de Software Full Stack" class="hero-photo">
-                    <!-- Terminal compacta superpuesta -->
-                    <div class="hero-terminal" aria-hidden="true">
-                        <div class="hero-terminal-dots">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <div class="hero-terminal-body">
-                            <span class="hero-terminal-prompt">alex@portfolio:~$</span>
-                            <span class="hero-terminal-line">> Desarrollo Full Stack</span>
-                            <span class="hero-terminal-line">> Automatización e integración</span>
-                            <span class="hero-terminal-line">> Infraestructura TI</span>
-                            <span class="hero-terminal-cursor">▌</span>
-                        </div>
-                    </div>
-                    <!-- Tarjeta flotante 1 -->
-                    <div class="hero-float-card hero-float-card-1">
-                        <span class="hero-float-number">69</span>
-                        <span class="hero-float-label">establecimientos atendidos</span>
-                        <span class="hero-float-sub">SLEP Colchagua · operación TI</span>
-                    </div>
-                    <!-- Tarjeta flotante 2 -->
-                    <div class="hero-float-card hero-float-card-2">
-                        <span class="hero-float-number">13</span>
-                        <span class="hero-float-label">trámites digitalizados</span>
-                        <span class="hero-float-sub">SIMPLE · registros 2025-2026</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <style>
-        .hero-title {
-            color: var(--text-main);
-            font-size: clamp(2rem, 4.5vw, 3.2rem);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
-            letter-spacing: -0.02em;
-            text-wrap: balance;
-        }
-
-        .hero-highlight {
-            display: inline;
-            color: #67e8f9;
-            background: linear-gradient(90deg, var(--primary), #67e8f9);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 18px rgba(56, 189, 248, 0.18);
-            box-decoration-break: clone;
-            -webkit-box-decoration-break: clone;
-        }
-
-        @supports not (-webkit-background-clip: text) {
-            .hero-highlight {
-                background: none;
-                color: #67e8f9;
-            }
-        }
-
-        html[data-theme='dark'] .hero-highlight {
-            color: #7dd3fc;
-            background: none;
-            -webkit-text-fill-color: currentColor;
-            text-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
-        }
-
-        .hero-name {
-            display: block;
-            color: var(--text-main);
-            font-size: 1.15rem;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-            margin-bottom: 0.6rem;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            color: var(--primary);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            margin-bottom: 1.4rem;
-            padding: 6px 14px;
-            border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
-            border-radius: 999px;
-            background: var(--primary-soft);
-        }
-
-        .hero-desc {
-            color: var(--text-secondary);
-            font-size: 1.08rem;
-            line-height: 1.65;
-            max-width: 540px;
-            margin-bottom: 2rem;
-        }
-
-        .hero-tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 1.9rem;
-        }
-
-        .hero-tech-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 5px 13px;
-            border-radius: 999px;
-            border: 1px solid rgba(56, 189, 248, 0.28);
-            background: rgba(56, 189, 248, 0.08);
-            color: var(--text-secondary);
-            font-size: 0.78rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .btn-hero-outline {
-            background: transparent;
-            color: var(--primary);
-            font-weight: 700;
-            border: 2px solid var(--primary);
-            border-radius: 18px;
-            height: 56px;
-            width: 205px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 28px;
-            transition: background 0.3s, color 0.3s, transform 0.2s;
-        }
-
-        .btn-hero-outline:hover {
-            background: var(--primary);
-            color: var(--bg-main);
-            transform: translateY(-2px);
-        }
-
-        .hero-stats-row {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            color: var(--text-secondary);
-            font-size: 0.88rem;
-        }
-
-        .hero-stat strong {
-            color: var(--text-main);
-        }
-
-        .hero-stat-sep {
-            color: var(--border);
-        }
-
-        /* Columna derecha */
-        .hero-visual {
-            position: relative;
-            width: 300px;
-            height: 510px;
-            margin: 0 62px 0 auto;
-            isolation: isolate;
-        }
-
-        .hero-photo-bg {
-            position: absolute;
-            top: 20px;
-            right: -10px;
-            bottom: 120px;
-            left: 40px;
-            border-radius: 28px;
-            background: linear-gradient(145deg, var(--primary), var(--secondary));
-            opacity: 0.25;
-            filter: blur(40px);
-        }
-
-        html[data-theme='light'] .hero-left {
-            padding: 28px 30px;
-            border: 1px solid rgba(20, 142, 234, 0.12);
-            border-radius: 28px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(248, 252, 255, 0.52));
-            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
-            backdrop-filter: blur(10px);
-        }
-
-        html[data-theme='light'] .hero-title {
-            color: #102236;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
-        }
-
-        html[data-theme='light'] .hero-tag {
-            color: #0d77c8;
-            background: rgba(20, 142, 234, 0.12);
-            border-color: rgba(20, 142, 234, 0.18);
-        }
-
-        html[data-theme='light'] .hero-desc {
-            color: #41566e;
-        }
-
-        html[data-theme='light'] .hero-name {
-            color: #102236;
-        }
-
-        html[data-theme='light'] .hero-tech-tag {
-            border-color: rgba(20, 142, 234, 0.24);
-            background: rgba(20, 142, 234, 0.07);
-            color: #41566e;
-        }
-
-        html[data-theme='light'] .hero-stat strong {
-            color: #102236;
-        }
-
-        html[data-theme='light'] .btn-hero-outline {
-            background: rgba(255, 255, 255, 0.62);
-            border-color: rgba(20, 142, 234, 0.42);
-            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-        }
-
-        html[data-theme='light'] .hero-terminal-line {
-            color: #0d77c8;
-        }
-
-        html[data-theme='light'] .hero-float-label {
-            color: #102236;
-        }
-
-        html[data-theme='light'] .hero-float-sub {
-            color: #546a81;
-        }
-
-        .hero-photo {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 370px;
-            object-fit: cover;
-            object-position: top;
-            border-radius: 24px;
-            border: 2px solid var(--hero-image-border);
-            box-shadow: 0 24px 60px var(--hero-shadow);
-        }
-
-        .hero-terminal {
-            position: absolute;
-            z-index: 3;
-            top: 386px;
-            bottom: auto;
-            left: 0;
-            right: 0;
-            background: var(--hero-terminal-bg);
-            border: 1px solid var(--hero-terminal-border);
-            border-radius: 10px;
-            padding: 12px 14px 14px;
-            font-family: 'Courier New', Consolas, Monaco, monospace;
-            font-size: 0.8rem;
-            line-height: 1.7;
-            box-shadow: 0 12px 32px var(--floating-shadow);
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-terminal-dots {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 8px;
-        }
-
-        .hero-terminal-dots span {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-
-        .hero-terminal-dots span:nth-child(1) { background: #ff5f57; }
-        .hero-terminal-dots span:nth-child(2) { background: #ffbd2e; }
-        .hero-terminal-dots span:nth-child(3) { background: #28c840; }
-
-        .hero-terminal-prompt {
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .hero-terminal-line {
-            display: block;
-            color: var(--primary);
-        }
-
-        .hero-terminal-cursor {
-            color: var(--primary);
-            animation: heroCursorBlink 0.85s steps(1, end) infinite;
-        }
-
-        @keyframes heroCursorBlink {
-            0%, 46% { opacity: 1; }
-            47%, 100% { opacity: 0; }
-        }
-
-        .hero-float-card {
-            position: absolute;
-            z-index: 4;
-            background: var(--hero-float-bg);
-            border: 1px solid var(--hero-terminal-border);
-            border-radius: 14px;
-            padding: 14px 16px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 12px 32px var(--floating-shadow);
-            display: flex;
-            flex-direction: column;
-            width: 158px;
-            min-height: 108px;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero-float-card::before {
-            content: '';
-            position: absolute;
-            inset: 0 auto 0 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--primary), var(--secondary));
-        }
-
-        .hero-float-card-1 {
-            top: 20px;
-            right: -108px;
-        }
-
-        .hero-float-card-2 {
-            right: -108px;
-            top: 224px;
-            bottom: auto;
-        }
-
-        .hero-float-number {
-            color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: 900;
-            line-height: 1;
-            letter-spacing: -0.03em;
-        }
-
-        .hero-float-label {
-            color: var(--text-main);
-            font-size: 0.82rem;
-            font-weight: 700;
-            margin-top: 2px;
-        }
-
-        .hero-float-sub {
-            color: var(--text-secondary);
-            font-size: 0.7rem;
-            margin-top: 2px;
-        }
-
-        @media (max-width: 1199px) {
-            .hero-visual {
-                margin-right: 42px;
-            }
-
-            .hero-float-card-1,
-            .hero-float-card-2 {
-                left: auto;
-                right: -78px;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .hero-visual {
-                margin: 0 auto;
-            }
-
-            .hero-float-card {
-                width: 142px;
-                min-width: 0;
-                min-height: 96px;
-            }
-
-            .hero-float-card-1 {
-                top: 18px;
-                left: auto;
-                right: -72px;
-            }
-
-            .hero-float-card-2 {
-                left: auto;
-                right: -72px;
-                top: 196px;
-                bottom: auto;
-            }
-        }
-
-        @media (max-width: 575px) {
-            .hero-container {
-                padding: 112px 20px 42px !important;
-                gap: 38px;
-            }
-
-            .hero-left {
-                order: 0;
-                width: 100%;
-            }
-
-            .hero-right {
-                order: 1;
-                width: 100%;
-                padding-top: 4px;
-            }
-
-            .hero-tag {
-                max-width: 100%;
-                margin-bottom: 1.1rem;
-                padding: 6px 11px;
-                font-size: 0.66rem;
-                letter-spacing: 0.08em;
-                white-space: normal;
-            }
-
-            .hero-title {
-                font-size: clamp(1.75rem, 8.5vw, 2.15rem);
-                line-height: 1.12;
-                margin-bottom: 1rem;
-            }
-
-            .hero-desc {
-                font-size: 0.98rem;
-                line-height: 1.65;
-                margin-bottom: 1.6rem;
-            }
-
-            .hero-buttons {
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                gap: 14px;
-                margin-bottom: 1.8rem;
-            }
-
-            .hero-buttons .btn {
-                width: min(100%, 260px);
-                margin: 0;
-            }
-
-            .hero-stats-row {
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-                margin-bottom: 0;
-            }
-
-            .hero-stat-sep {
-                display: none;
-            }
-
-            .hero-visual {
-                width: min(220px, 62vw);
-                height: 430px;
-                margin: 0 auto;
-            }
-
-            .hero-photo {
-                height: 270px;
-            }
-
-            .hero-photo-bg {
-                bottom: 112px;
-            }
-
-            .hero-float-card {
-                width: calc(50% - 5px);
-                min-height: 78px;
-                padding: 8px 8px 8px 11px;
-            }
-
-            .hero-float-card-1 {
-                top: 218px;
-                left: 0;
-                right: auto;
-            }
-
-            .hero-float-card-2 {
-                top: 218px;
-                left: auto;
-                right: 0;
-                bottom: auto;
-            }
-
-            .hero-terminal {
-                top: 310px;
-                left: 0;
-                right: 0;
-                bottom: auto;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .hero-title {
-                font-size: 1.7rem;
-            }
-        }
-    </style>
+---
+import Arquitectura from './Arquitectura.astro';
+import MetricasPortada from './StatsBand.astro';
+const rutaBase = import.meta.env.BASE_URL;
+---
+
+<header class="engineering-hero" aria-labelledby="hero-title">
+  <div class="container engineering-hero-layout">
+    <div class="engineering-hero-copy">
+      <p class="hero-identity hero-enter">Alex Salinas Ponce <span>· Chile</span></p>
+      <p class="hero-eyebrow hero-enter"><span aria-hidden="true"></span> INGENIERO DE SOFTWARE</p>
+      <h1 id="hero-title" class="hero-enter">Construyo sistemas<br class="hero-desktop-break" /> que llegan a <span>producción.</span></h1>
+      <p class="hero-description hero-enter">Desarrollo software, APIs e infraestructura para transformar procesos reales en plataformas digitales escalables.</p>
+      <p class="hero-disciplines hero-enter">Desarrollo integral <span>·</span> APIs <span>·</span> Infraestructura <span>·</span> DevOps</p>
+      <div class="hero-actions hero-enter">
+        <a class="hero-action hero-action-primary js-scroll-trigger" href="#portfolio">Explorar proyectos <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        <a class="hero-action hero-action-secondary" href={`${rutaBase}assets/curriculum-v3-2026.pdf`} download><i class="fa fa-download" aria-hidden="true"></i> Descargar CV</a>
+      </div>
+      <div class="hero-connections hero-enter">
+        <a href="https://github.com/alex81459" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Alex Salinas (abre otra pestaña)"><i class="fab fa-github" aria-hidden="true"></i> GitHub <span aria-hidden="true">↗︎</span></a>
+        <a href="https://www.linkedin.com/in/alex-salinas-ponce-5276691a3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Alex Salinas (abre otra pestaña)"><i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn <span aria-hidden="true">↗︎</span></a>
+        <span class="hero-experience">Experiencia TI desde 2019</span>
+      </div>
+      <MetricasPortada />
+    </div>
+    <Arquitectura />
+    <div class="hero-bottom">
+      <p><span aria-hidden="true">↳</span> Diseño. Desarrollo. Integro. Despliego. Mantengo.</p>
+      <a class="js-scroll-trigger" href="#portfolio">De la arquitectura a los resultados <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .engineering-hero {
+    --acento-portada: #82d3f7;
+    position: relative;
+    isolation: isolate;
+    min-height: calc(100svh - 150px);
+    display: grid;
+    align-items: center;
+    padding: 110px 0 20px;
+    background: var(--fondo-principal);
+  }
+  .engineering-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(ellipse at 82% 35%, var(--primario-suave), transparent 48%),
+      linear-gradient(var(--borde) 1px, transparent 1px), linear-gradient(90deg, var(--borde) 1px, transparent 1px);
+    background-size: auto, 64px 64px, 64px 64px;
+    mask-image: linear-gradient(90deg, transparent 30%, #000 100%);
+    opacity: .38;
+  }
+  .engineering-hero-layout { display: grid; grid-template-columns: minmax(0, 1.13fr) minmax(0, 1fr); align-items: center; column-gap: clamp(28px, 4vw, 68px); row-gap: 24px; }
+  .engineering-hero-copy { min-width: 0; }
+  .hero-identity { margin: 0 0 14px; font-size: .9rem; font-weight: 600; color: var(--texto-principal); }
+  .hero-identity span { color: var(--texto-secundario); font-weight: 400; margin-left: 7px; }
+  .hero-eyebrow { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; color: var(--acento-portada); font-size: .68rem; font-weight: 700; letter-spacing: .17em; }
+  .hero-eyebrow > span { width: 6px; height: 6px; background: currentColor; border-radius: 2px; }
+  h1 { margin: 0 0 20px; color: var(--texto-principal); font-size: clamp(2.7rem, 3.95vw, 4.1rem); line-height: 1.09; font-weight: 700; letter-spacing: -.055em; text-wrap: balance; }
+  h1 > span { color: var(--acento-portada); }
+  .hero-description { max-width: 560px; margin: 0 0 16px; color: var(--texto-secundario); font-size: clamp(1rem, 1.25vw, 1.1rem); line-height: 1.7; }
+  .hero-disciplines { display: flex; flex-wrap: wrap; gap: 6px 9px; margin: 0 0 22px; color: var(--texto-principal); font-size: .8rem; font-weight: 500; }
+  .hero-disciplines span { color: var(--texto-tenue); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-action { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; gap: 14px; padding: 12px 20px; border: 1px solid transparent; border-radius: 8px; font-size: .84rem; font-weight: 700; text-decoration: none; transition: transform .2s, background .2s, border-color .2s; }
+  .hero-action-primary { color: #07111f; background: #82d3f7; }
+  .hero-action-primary:hover { color: #07111f; background: #a9e2fb; transform: translateY(-2px); }
+  .hero-action-secondary { color: var(--texto-principal); border-color: var(--borde-destacado); background: var(--fondo-tarjeta-alternativo); }
+  .hero-action-secondary:hover { color: var(--texto-principal); background: var(--primario-suave); border-color: var(--acento-portada); transform: translateY(-2px); }
+  .hero-connections { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 20px; margin: 10px 0 20px; }
+  .hero-connections a { display: inline-flex; align-items: center; gap: 7px; min-height: 35px; color: var(--texto-secundario); font-size: .78rem; text-decoration: none; }
+  .hero-connections a:hover { color: var(--acento-portada); }
+  .hero-connections a > span { color: var(--texto-tenue); }
+  .hero-experience { color: var(--texto-secundario); font-size: .7rem; padding-left: 16px; border-left: 1px solid var(--borde-destacado); }
+  .hero-bottom { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-top: 12px; border-top: 1px solid var(--borde); color: var(--texto-secundario); font-size: .72rem; }
+  .hero-bottom p { margin: 0; }
+  .hero-bottom p > span { color: var(--acento-portada); margin-right: 8px; }
+  .hero-bottom a { display: inline-flex; align-items: center; gap: 14px; min-height: 30px; color: var(--texto-secundario); text-decoration: none; }
+  .hero-bottom a:hover { color: var(--acento-portada); }
+  .hero-bottom a > span { color: var(--acento-portada); font-size: 1.1rem; }
+  :global(html[data-theme='light']) .engineering-hero { --acento-portada: #096aaa; }
+  :global(html[data-theme='light']) .hero-action-primary { background: #096aaa; color: #fff; }
+  :global(html[data-theme='light']) .hero-action-primary:hover { background: #075489; }
+  .hero-enter { animation: hero-enter .65s both; }
+  .hero-enter:nth-child(2) { animation-delay: .06s; }
+  .hero-enter:nth-child(3) { animation-delay: .12s; }
+  .hero-enter:nth-child(4) { animation-delay: .18s; }
+  .hero-enter:nth-child(5) { animation-delay: .24s; }
+  .hero-enter:nth-child(6) { animation-delay: .3s; }
+  .hero-enter:nth-child(7) { animation-delay: .36s; }
+  @keyframes hero-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @media (min-width: 1400px) { .engineering-hero-layout { max-width: 1280px; } }
+  @media (max-width: 1199px) { .engineering-hero-layout { max-width: 1080px; } h1 { font-size: clamp(2.6rem, 4.6vw, 3.65rem); } .hero-experience { border: 0; padding: 0; flex-basis: 100%; } }
+  @media (max-width: 991px) { .engineering-hero { padding-top: 116px; } .engineering-hero-layout { column-gap: 26px; padding-inline: 26px; } h1 { font-size: clamp(2.5rem, 4.6vw, 3rem); } .hero-desktop-break { display: none; } .hero-identity { margin-bottom: 22px; } .hero-action { padding-inline: 15px; } .hero-bottom { font-size: .65rem; } }
+  @media (max-width: 767px) {
+    .engineering-hero { padding: 106px 0 22px; min-height: auto; }
+    .engineering-hero-layout { grid-template-columns: minmax(0, 1fr); gap: 36px; padding-inline: 22px; }
+    .engineering-hero-copy { max-width: 540px; }
+    h1 { max-width: 530px; font-size: clamp(2.5rem, 8.6vw, 3.75rem); }
+    .hero-description { font-size: 1rem; }
+    .hero-identity { font-size: .82rem; margin-bottom: 23px; }
+    .hero-eyebrow { font-size: .62rem; }
+    .hero-disciplines { font-size: .73rem; gap: 6px; }
+    .hero-experience { border-left: 1px solid var(--borde-destacado); padding-left: 14px; flex-basis: auto; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 20px; font-size: .7rem; }
+  }
+  @media (max-width: 380px) { .engineering-hero-layout { padding-inline: 18px; } .hero-actions { flex-direction: column; } .hero-experience { padding: 0; border: 0; flex-basis: 100%; } }
+  @media (prefers-reduced-motion: reduce) { .hero-enter { animation: none; } .hero-action { transition: none; } .hero-action:hover { transform: none; } }
+</style>

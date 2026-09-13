@@ -1,8 +1,8 @@
 .modal-content {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--border-radius);
-    color: var(--text-main);
+    background: var(--fondo-tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-borde);
+    color: var(--texto-principal);
     position: relative;
 }
 .portfolio-modal .modal-dialog {
@@ -16,40 +16,40 @@
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 50%;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: var(--transition);
+    transition: var(--transicion);
     z-index: 10;
     padding: 0;
     line-height: 1;
 }
 .portfolio-modal .modal-close-btn:hover {
-    background: var(--primary);
-    color: var(--bg-main);
+    background: var(--primario);
+    color: var(--fondo-principal);
     transform: rotate(90deg);
 }
 .modal-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primario);
     margin-bottom: 20px;
 }
 /* Modales de proyectos destacados */
 .project-modal-title {
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--text-main);
+    color: var(--texto-principal);
     margin-bottom: 6px;
     text-align: left;
 }
 .project-modal-subtitle {
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-style: italic;
     font-size: 0.95rem;
     margin-bottom: 22px;
@@ -84,7 +84,7 @@ html[data-theme='light'] .portfolio-modal .project-detail-block img {
 }
 .project-detail-block {
     background: rgba(255, 255, 255, 0.02);
-    border-left: 3px solid var(--primary);
+    border-left: 3px solid var(--primario);
     border-radius: 0 8px 8px 0;
     padding: 14px 18px;
     margin-bottom: 14px;
@@ -95,7 +95,7 @@ html[data-theme='light'] .portfolio-modal .project-detail-block img {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    color: var(--primary);
+    color: var(--primario);
     margin-bottom: 8px;
 }
 .project-detail-label .fa {
@@ -116,11 +116,11 @@ html[data-theme='light'] .portfolio-modal .project-detail-block img {
     margin-bottom: 5px;
 }
 .project-impact-block {
-    border-left-color: var(--success);
+    border-left-color: var(--exito);
     background: rgba(52, 211, 153, 0.06);
 }
 .project-impact-block .project-detail-label {
-    color: var(--success);
+    color: var(--exito);
 }
 
 html[data-theme='light'] .project-detail-block {
@@ -166,46 +166,46 @@ html[data-theme='light'] .project-impact-block li {
 }
 
 .btn-modal-close {
-    background: var(--primary);
+    background: var(--primario);
     border: none;
     border-radius: 25px;
     padding: 12px 30px;
-    color: var(--bg-main);
+    color: var(--fondo-principal);
     font-weight: 600;
-    transition: var(--transition);
+    transition: var(--transicion);
 }
 .btn-modal-close:hover {
     transform: translateY(-2px);
     opacity: 0.9;
 }
 .github-link {
-    color: var(--primary);
+    color: var(--primario);
     font-weight: 600;
     text-decoration: underline;
-    transition: var(--transition);
+    transition: var(--transicion);
 }
 .github-link:hover {
-    color: var(--primary);
+    color: var(--primario);
 }
 .cv-download {
     margin: 80px 0;
     padding: 40px;
-    background: var(--bg-card);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border);
+    background: var(--fondo-tarjeta);
+    border-radius: var(--radio-borde);
+    border: 1px solid var(--borde);
     text-align: center;
-    transition: var(--transition);
+    transition: var(--transicion);
 }
 .cv-download:hover {
-    background: var(--bg-card-hover);
+    background: var(--fondo-tarjeta-activa);
     transform: translateY(-5px);
-    box-shadow: var(--shadow-heavy);
+    box-shadow: var(--sombra-intensa);
 }
 .cv-download img {
-    transition: var(--transition);
+    transition: var(--transicion);
     border-radius: 15px;
     padding: 15px;
-    background: var(--primary);
+    background: var(--primario);
 }
 .cv-download img:hover {
     transform: scale(1.1) rotate(5deg);
@@ -223,7 +223,7 @@ html[data-theme='light'] .project-impact-block li {
 }
 .case-cell {
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 10px;
     padding: 14px 16px;
     text-align: left;
@@ -236,7 +236,7 @@ html[data-theme='light'] .project-impact-block li {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.1px;
-    color: var(--primary);
+    color: var(--primario);
     margin-bottom: 10px;
 }
 .case-cell-label .fa {
@@ -256,11 +256,11 @@ html[data-theme='light'] .project-impact-block li {
     color: #fb7185;
 }
 .case-result {
-    border-left: 3px solid var(--success);
+    border-left: 3px solid var(--exito);
     background: rgba(52, 211, 153, 0.07);
 }
 .case-result .case-cell-label {
-    color: var(--success);
+    color: var(--exito);
 }
 .case-badges {
     display: flex;
@@ -272,7 +272,7 @@ html[data-theme='light'] .project-impact-block li {
     align-items: center;
     background: rgba(56, 189, 248, 0.12);
     border: 1px solid rgba(56, 189, 248, 0.35);
-    color: var(--primary);
+    color: var(--primario);
     border-radius: 999px;
     padding: 4px 12px;
     font-size: 0.75rem;
@@ -309,11 +309,11 @@ html[data-theme='light'] .project-impact-block li {
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--arch-c, var(--primary));
+    color: var(--color-arquitectura, var(--primario));
     font-size: 0.82rem;
 }
 .arch-arrow {
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.8rem;
     opacity: 0.85;
 }
@@ -326,7 +326,7 @@ html[data-theme='light'] .project-impact-block li {
 }
 .arch-stack-label {
     margin-right: 4px;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.7rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -353,10 +353,10 @@ html[data-theme='light'] .project-impact-block li {
     left: 0;
     top: 2px;
     font-size: 0.72rem;
-    color: var(--primary);
+    color: var(--primario);
 }
 .case-result .case-list li::before {
-    color: var(--success);
+    color: var(--exito);
 }
 .case-decisions {
     margin-top: 12px;
@@ -368,18 +368,18 @@ html[data-theme='light'] .project-impact-block li {
 }
 .decision-card {
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 10px;
     padding: 12px 14px;
 }
 .decision-question {
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 0.82rem;
     font-weight: 800;
     margin-bottom: 6px;
 }
 .decision-question .fa {
-    color: var(--primary);
+    color: var(--primario);
     margin-right: 6px;
 }
 .decision-answer {

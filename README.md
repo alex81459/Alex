@@ -30,6 +30,9 @@ Portafolio web moderno, optimizado para rendimiento y SEO, que presenta experien
 - **Evaluaciones Online**: Plataforma centralizada de evaluaciones
 
 ### Secciones Incluidas
+- Portada con arquitectura interactiva: Angular, REST, Flask/NestJS, datos, Docker, Nginx y producción
+- Caso destacado del Libro de Clases Digital, enlazado a su modal original
+- Experiencia profesional y formación separadas de la presentación personal
 - Galería interactiva con carrusel de proyectos
 - Modales informativos con detalles de cada proyecto
 - Certificaciones profesionales verificadas
@@ -37,6 +40,16 @@ Portafolio web moderno, optimizado para rendimiento y SEO, que presenta experien
 - Documentación técnica y funcional como capacidad destacada
 - Stack tecnológico con herramientas dominadas
 - Información de contacto y redes sociales
+
+### Portada y navegación
+
+`Hero.astro` concentra la presentación, el CV, las redes y las tres métricas principales. `StatsBand.astro` muestra las cifras dentro del hero y anima su primera aparición. `Arquitectura.astro` contiene los nodos, sus descripciones y los enlaces a proyectos: funcionan con cursor, toque, Tab y teclas de dirección. Sus estados son ilustrativos, no telemetría de los servicios.
+
+El diagrama incluye Angular, React, Astro y Next.js en la interfaz, y Flask, NestJS, .NET Core y Prisma en el servidor. Cada conexión tiene dos vías paralelas con puertos independientes: envío en celeste y recepción en violeta. El flujo continuo utiliza SVG y CSS, también en móvil. Se puede pausar manualmente; además, se detiene cuando el diagrama queda fuera de pantalla o la pestaña está oculta, y respeta la preferencia de movimiento reducido.
+
+`ProyectoDestacado.astro` abre la sección `#portfolio`. La trayectoria completa se conserva en `Experiencia.astro` (`#experiencia`) y `Acerca.astro` mantiene `#about`. Servicios, galería, certificaciones, modales y terminal interactiva siguen disponibles. El resumen para reclutadores se integró en el hero para evitar duplicaciones.
+
+La portada usa CSS y pequeños scripts compilados por Astro, sin dependencias de animación. Respeta `prefers-reduced-motion`, conserva contenido y cifras sin JavaScript y reutiliza el selector de tema con la clave `alex-theme`. El despliegue continúa siendo estático bajo `/Alex/` en GitHub Pages.
 
 ---
 

@@ -1,17 +1,18 @@
 ---
 interface Props {
-  title?: string;
-  description?: string;
+  titulo?: string;
+  descripcion?: string;
 }
 
 const {
-  title = 'Alex Salinas Ponce - Ingeniero de Software Full Stack',
-  description = 'Ingeniero de Software Full Stack especializado en plataformas digitales, APIs e infraestructura tecnológica (DevOps). Python, Angular, Flask y soluciones empresariales.',
+  titulo = 'Alex Salinas Ponce - Ingeniero de Software Full Stack',
+  descripcion = 'Ingeniero de Software Full Stack especializado en plataformas digitales, APIs e infraestructura tecnológica (DevOps). Python, Angular, Flask y soluciones empresariales.',
 } = Astro.props;
 
-const base = import.meta.env.BASE_URL;
-const siteUrl = `${Astro.site}${base}`;
-const previewImage = `${siteUrl}assets/img/preview.webp`;
+const rutaBase = import.meta.env.BASE_URL;
+const urlSitio = new URL(rutaBase, Astro.site).href;
+const urlCanonica = new URL(Astro.url.pathname, Astro.site).href;
+const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
 ---
 
 <!DOCTYPE html>
@@ -19,26 +20,26 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <base href={base}>
-    <title>{title}</title>
-    <meta name="description" content={description}>
+    <base href={rutaBase} />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion}>
     <meta name="keywords" content="Alex Salinas Ponce, Ingeniero de Software, Full Stack, Infraestructura, DevOps, Python, Angular, Flask, SQLAlchemy, Administración TI, Gestión Proyectos, SLEP Colchagua, Johnson Fruit, Chimbarongo">
     <meta name="author" content="Alex Salinas Ponce">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#07111f">
 
-    <meta property="og:title" content="Alex Salinas Ponce - Ingeniero de Software Full Stack">
-    <meta property="og:description" content="Ingeniero de Software Full Stack especializado en plataformas digitales, APIs e infraestructura tecnológica">
+    <meta property="og:title" content={titulo}>
+    <meta property="og:description" content={descripcion}>
     <meta property="og:type" content="website">
-    <meta property="og:url" content={siteUrl}>
-    <meta property="og:image" content={previewImage}>
+    <meta property="og:url" content={urlCanonica}>
+    <meta property="og:image" content={imagenPrevia}>
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alex Salinas Ponce - Ingeniero de Software Full Stack">
-    <meta name="twitter:description" content="Desarrollo sistemas web, APIs e infraestructura TI para digitalizar procesos institucionales.">
-    <meta name="twitter:image" content={previewImage}>
+    <meta name="twitter:title" content={titulo}>
+    <meta name="twitter:description" content={descripcion}>
+    <meta name="twitter:image" content={imagenPrevia}>
 
-    <link rel="canonical" href={siteUrl}>
-    <link rel="shortcut icon" href={`${base}favicon.png`}>
+    <link rel="canonical" href={urlCanonica} />
+    <link rel="shortcut icon" href={`${rutaBase}favicon.png`} />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -48,8 +49,8 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
         "@type": "Person",
         "name": "Alex Salinas Ponce",
         "jobTitle": "Ingeniero Informático",
-        "image": previewImage,
-        "url": siteUrl,
+        "image": imagenPrevia,
+        "url": urlSitio,
         "sameAs": [
           "https://github.com/alex81459",
           "https://www.linkedin.com/in/alex-salinas-ponce-5276691a3"
@@ -79,33 +80,33 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
       }
     })}></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" as="style">
-    <link rel="preload" href={`${base}assets/css/estilos-modificados.css`} as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" as="style" />
+    <link rel="preload" href={`${rutaBase}assets/css/estilos-modificados.css`} as="style" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-    <link rel="stylesheet" href={`${base}assets/fonts/fontawesome-all.min.css`}>
-    <link rel="stylesheet" href={`${base}assets/fonts/font-awesome.min.css`}>
-    <link rel="stylesheet" href={`${base}assets/fonts/fontawesome5-overrides.min.css`}>
-    <link rel="stylesheet" href={`${base}assets/css/estilos-modificados.css`}>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+    <link rel="stylesheet" href={`${rutaBase}assets/fonts/fontawesome-all.min.css`} />
+    <link rel="stylesheet" href={`${rutaBase}assets/fonts/font-awesome.min.css`} />
+    <link rel="stylesheet" href={`${rutaBase}assets/fonts/fontawesome5-overrides.min.css`} />
+    <link rel="stylesheet" href={`${rutaBase}assets/css/estilos-modificados.css`} />
     <script is:inline>
       (() => {
-        const storageKey = 'alex-theme';
-        const root = document.documentElement;
+        const claveAlmacenamiento = 'alex-theme';
+        const raiz = document.documentElement;
 
         try {
-          const savedTheme = localStorage.getItem(storageKey);
-          if (savedTheme === 'light' || savedTheme === 'dark') {
-            root.setAttribute('data-theme', savedTheme);
+          const temaGuardado = localStorage.getItem(claveAlmacenamiento);
+          if (temaGuardado === 'light' || temaGuardado === 'dark') {
+            raiz.setAttribute('data-theme', temaGuardado);
             return;
           }
         } catch {}
 
-        root.setAttribute('data-theme', 'dark');
+        raiz.setAttribute('data-theme', 'dark');
       })();
     </script>
   </head>
@@ -116,7 +117,7 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
         <div class="privacy-notice-body">
           <p id="privacy-notice-title" class="privacy-notice-title">Privacidad y transparencia</p>
           <p class="privacy-notice-text">
-            Este sitio no utiliza cookies de rastreo ni recopila datos mediante formularios. Solo se guarda tu preferencia de tema en tu dispositivo y se cargan recursos de terceros (Google Fonts y Bootstrap CDN). Conoce los detalles en nuestra <a href={`${base}privacidad/`}>Política de Privacidad</a>.
+            Este sitio no utiliza cookies de rastreo ni recopila datos mediante formularios. Solo se guarda tu preferencia de tema en tu dispositivo y se cargan recursos de terceros (Google Fonts y Bootstrap CDN). Conoce los detalles en nuestra <a href={`${rutaBase}privacidad/`}>Política de Privacidad</a>.
           </p>
         </div>
         <div class="privacy-notice-actions">
@@ -127,33 +128,23 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
 
     <script is:inline>
       (() => {
-        const notice = document.getElementById('privacy-notice');
-        const btn = document.getElementById('privacy-notice-accept');
-        const key = 'alex-privacy-notice';
-        if (!notice || !btn) return;
+        const aviso = document.getElementById('privacy-notice');
+        const boton = document.getElementById('privacy-notice-accept');
+        const clave = 'alex-privacy-notice';
+        if (!aviso || !boton) return;
         try {
-          if (localStorage.getItem(key) === 'accepted') return;
+          if (localStorage.getItem(clave) === 'accepted') return;
         } catch {}
-        notice.classList.add('is-visible');
-        btn.addEventListener('click', () => {
-          notice.classList.remove('is-visible');
-          try { localStorage.setItem(key, 'accepted'); } catch {}
+        aviso.classList.add('is-visible');
+        boton.addEventListener('click', () => {
+          aviso.classList.remove('is-visible');
+          try { localStorage.setItem(clave, 'accepted'); } catch {}
         });
       })();
     </script>
 
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     
-    <div id="loading-overlay" class="loading-overlay">
-      <div class="loading-spinner">
-        <div class="spinner-ring"></div>
-        <div class="spinner-ring"></div>
-        <div class="spinner-ring"></div>
-        <div class="spinner-ring"></div>
-        <p class="loading-text">Cargando Portafolio...</p>
-      </div>
-    </div>
-
     <div id="scroll-hud" class="scroll-hud" aria-live="off" aria-label="Indicador de sección actual">
       <div id="section-indicator" class="section-indicator">
         <span class="section-indicator-label">Inicio</span>
@@ -165,24 +156,22 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
       </button>
     </div>
 
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" aria-label="Navegación principal">
       <div class="container">
-        <a class="navbar-brand" href="#page-top">
-          <span class="navbar-brand-mark" aria-hidden="true"><i class="fa fa-code"></i></span>
-          <span class="navbar-brand-name">Alex Salinas Ponce</span>
+        <a class="navbar-brand" href="#page-top" aria-label="Alex Salinas Ponce, inicio">
+          <span class="navbar-brand-mark" aria-hidden="true">AS<span>/</span></span>
+          <span class="navbar-brand-name">Alex Salinas<span>Ingeniero Informático · Desarrollador</span></span>
         </a>
         <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Alternar navegación">
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="nav navbar-nav text-uppercase flex-lg-row ms-auto">
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">SERVICIOS</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tech-stack">STACK</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#certifications">CERTIFICADOS</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">PORTAFOLIO</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#gallery">GALERÍA</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">ACERCA DE</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger fw-bold" style="color: var(--primary)" href="#contact">CONTACTO</a></li>
+          <ul class="nav navbar-nav flex-lg-row ms-auto">
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experiencia">Experiencia</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tech-stack">Tecnologías</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre mí</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto <span aria-hidden="true">↗︎</span></a></li>
           </ul>
         </div>
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar entre tema oscuro y claro" aria-pressed="false" title="Cambiar tema">
@@ -200,9 +189,39 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
     </main>
 
     <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script is:inline src={`${base}assets/js/bootstrap5-init.js`}></script>
-    <script is:inline src={`${base}assets/js/portfolio-init.js`}></script>
+    <script is:inline src={`${rutaBase}assets/js/bootstrap5-init.js`}></script>
+    <script is:inline src={`${rutaBase}assets/js/portfolio-init.js`}></script>
     <style>
+      #mainNav { height: 80px; padding: 0; box-shadow: none; border-bottom: 1px solid var(--borde); background: var(--fondo-navegacion) !important; }
+      #mainNav .container { max-width: 1280px; padding-inline: 22px; gap: 20px; }
+      #mainNav .navbar-brand { display: inline-flex; align-items: center; gap: 14px; color: var(--texto-principal) !important; margin: 0 auto 0 0; padding: 0; font-size: .85rem; letter-spacing: 0; text-shadow: none; }
+      #mainNav .navbar-brand:hover { transform: none; }
+      #mainNav .navbar-brand-mark { display: inline-flex; align-items: center; width: auto; height: 40px; flex: 0 0 auto; border: 0; background: none; box-shadow: none; border-radius: 0; font-size: 1.55rem; font-weight: 700; letter-spacing: -.06em; }
+      #mainNav .navbar-brand-mark > span { color: var(--primario); margin-left: 2px; }
+      #mainNav .navbar-brand-name { display: block; font-weight: 600; }
+      #mainNav .navbar-brand-name > span { display: block; margin-top: 3px; color: var(--texto-secundario); font-size: .59rem; font-weight: 400; }
+      #mainNav .navbar-collapse { flex-grow: 0; }
+      #mainNav .navbar-nav { width: auto; gap: 6px; }
+      #mainNav .nav-link { display: flex; align-items: center; gap: 7px; padding: 10px 13px !important; margin: 0; border: 0; color: var(--texto-secundario) !important; text-transform: none; letter-spacing: 0; font-size: .77rem !important; font-weight: 500 !important; min-height: 44px; }
+      #mainNav .nav-link::before { display: none; }
+      #mainNav .nav-link:hover, #mainNav .nav-link.active { color: var(--texto-principal) !important; background: var(--primario-suave); box-shadow: none; transform: none; }
+      #mainNav .nav-link > span { color: var(--texto-secundario); }
+      #mainNav .theme-toggle { margin-left: 0; min-height: 44px; }
+      #mainNav .theme-toggle-track { box-shadow: none; }
+      #mainNav .theme-toggle-thumb { background: var(--primario-suave); box-shadow: none; border: 1px solid var(--borde-destacado); }
+      #mainNav .navbar-toggler { border: 1px solid var(--borde-destacado); border-radius: 8px; background: transparent; margin: 0; width: 44px; height: 44px; padding: 0; box-shadow: none; }
+      #mainNav .navbar-toggler .fa-bars { color: var(--texto-principal); font-size: 1rem; }
+      @media (max-width: 991.98px) {
+        #mainNav .container { flex-wrap: wrap; gap: 12px; }
+        #mainNav .navbar-brand { order: 0; max-width: none; }
+        #mainNav .theme-toggle { order: 1; }
+        #mainNav .navbar-toggler { order: 2; }
+        #mainNav .navbar-collapse { order: 3; position: absolute; top: 79px; left: 0; right: 0; margin: 0; padding: 0; background: var(--fondo-navegacion-movil); border-bottom: 1px solid var(--borde-destacado); border-radius: 0; box-shadow: 0 15px 25px -20px var(--sombra-flotante); max-height: calc(100svh - 80px); overflow-y: auto; }
+        #mainNav .navbar-nav { width: 100%; padding: 12px 22px; gap: 2px; margin: 0; background: transparent; box-shadow: none; }
+        #mainNav .nav-link { padding-inline: 14px !important; }
+      }
+      @media (max-width: 479px) { #mainNav .navbar-brand-name { display: none; } }
+
       .scroll-hud {
         position: fixed;
         right: 22px;
@@ -232,13 +251,13 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
         width: max-content;
         max-width: max-content;
         border-radius: 999px;
-        background: var(--hud-bg);
-        border: 1px solid var(--hud-border);
-        color: var(--text-main);
+        background: var(--fondo-indicador);
+        border: 1px solid var(--borde-indicador);
+        color: var(--texto-principal);
         font-size: 0.92rem;
         font-weight: 700;
         letter-spacing: 0.02em;
-        box-shadow: 0 18px 40px var(--floating-shadow);
+        box-shadow: 0 18px 40px var(--sombra-flotante);
         backdrop-filter: blur(14px);
         opacity: 0;
         transform: translateY(8px);
@@ -246,7 +265,7 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
         z-index: 1100;
         pointer-events: none;
         white-space: nowrap;
-        filter: drop-shadow(0 12px 30px var(--floating-shadow));
+        filter: drop-shadow(0 12px 30px var(--sombra-flotante));
       }
 
       .section-indicator.show {
@@ -255,7 +274,7 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
       }
 
       .section-indicator-label {
-        color: var(--text-secondary);
+        color: var(--texto-secundario);
       }
 
       .section-indicator-value {
@@ -265,8 +284,8 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
         min-width: 52px;
         padding: 4px 10px;
         border-radius: 999px;
-        background: linear-gradient(135deg, var(--primary-soft), rgba(103, 232, 249, 0.2));
-        color: var(--text-main);
+        background: linear-gradient(135deg, var(--primario-suave), rgba(103, 232, 249, 0.2));
+        color: var(--texto-principal);
         font-size: 0.82rem;
       }
 
@@ -291,16 +310,16 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
         height: 42px;
         padding: 0 12px;
         border-radius: 999px;
-        background: var(--nav-surface);
-        border: 1px solid var(--border-strong);
-        box-shadow: 0 12px 28px var(--floating-shadow);
+        background: var(--superficie-navegacion);
+        border: 1px solid var(--borde-destacado);
+        box-shadow: 0 12px 28px var(--sombra-flotante);
         backdrop-filter: blur(16px);
       }
 
       .theme-icon {
         position: relative;
         z-index: 1;
-        color: var(--text-secondary);
+        color: var(--texto-secundario);
         font-size: 0.95rem;
         transition: color 0.25s ease, transform 0.25s ease;
       }
@@ -320,7 +339,7 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        background: linear-gradient(135deg, var(--primario), var(--secundario));
         box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35);
         transition: transform 0.25s ease;
       }
@@ -331,7 +350,7 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
 
       html[data-theme='dark'] .theme-icon-moon,
       html[data-theme='light'] .theme-icon-sun {
-        color: var(--text-main);
+        color: var(--texto-principal);
         transform: scale(1.05);
       }
 
@@ -356,11 +375,11 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
         max-width: 780px;
         margin: 0 auto;
         padding: 16px 18px;
-        color: var(--text-main);
-        background: var(--hud-bg);
-        border: 1px solid var(--hud-border);
+        color: var(--texto-principal);
+        background: var(--fondo-indicador);
+        border: 1px solid var(--borde-indicador);
         border-radius: 16px;
-        box-shadow: 0 18px 40px var(--floating-shadow);
+        box-shadow: 0 18px 40px var(--sombra-flotante);
         backdrop-filter: blur(14px);
       }
 
@@ -391,7 +410,7 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
 
       .privacy-notice-text {
         margin: 0;
-        color: var(--text-secondary);
+        color: var(--texto-secundario);
         font-size: 0.86rem;
         line-height: 1.5;
       }
@@ -408,11 +427,11 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
 
       .privacy-notice-btn {
         padding: 10px 18px;
-        color: var(--bg-main);
+        color: var(--fondo-principal);
         font-size: 0.88rem;
         font-weight: 700;
         cursor: pointer;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        background: linear-gradient(135deg, var(--primario), var(--secundario));
         border: 0;
         border-radius: 999px;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -424,145 +443,17 @@ const previewImage = `${siteUrl}assets/img/preview.webp`;
       }
 
       html[data-theme='light'] .privacy-notice-icon {
-        color: var(--primary);
+        color: var(--primario);
         background: linear-gradient(145deg, rgba(20, 142, 234, 0.12), rgba(57, 194, 221, 0.08));
         border-color: rgba(20, 142, 234, 0.22);
       }
 
       html[data-theme='light'] .privacy-notice-text a {
-        color: var(--primary);
+        color: var(--primario);
       }
 
       html[data-theme='light'] .privacy-notice-btn {
         color: #ffffff;
-      }
-
-      @media (max-width: 1314.98px) {
-        #mainNav .container {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: flex-start;
-          max-width: 100%;
-          gap: 0;
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-
-        #mainNav .navbar-brand {
-          order: 1;
-          margin-right: auto;
-          gap: 8px;
-          max-width: calc(100% - 76px);
-          color: var(--primary-color) !important;
-          font-size: 1.3rem !important;
-          font-weight: 700;
-        }
-
-        #mainNav .navbar-brand-mark {
-          width: 34px;
-          height: 34px;
-          flex-basis: 34px;
-          border-radius: 9px;
-          font-size: 0.92rem;
-        }
-
-        #mainNav .navbar-brand-name {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-
-        #mainNav .navbar-toggler {
-          display: block !important;
-          order: 2;
-          position: relative;
-          z-index: 1051;
-          margin-left: 12px;
-        }
-
-        #mainNav .theme-toggle {
-          order: 2;
-          margin-left: auto;
-        }
-
-        #mainNav .navbar-collapse {
-          display: none !important;
-          position: fixed !important;
-          top: 80px !important;
-          left: 0 !important;
-          right: 0 !important;
-          order: 3;
-          width: 100%;
-          max-width: 100%;
-          max-height: calc(100vh - 80px);
-          overflow-y: auto;
-          margin-top: 0;
-          padding: 0;
-          background: var(--nav-mobile-bg);
-          backdrop-filter: blur(10px);
-          border-radius: 0 0 15px 15px;
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        #mainNav .navbar-collapse.show {
-          display: block !important;
-          width: 100%;
-        }
-
-        #mainNav .navbar-collapse.collapsing {
-          display: block !important;
-          width: 100%;
-        }
-
-        #mainNav .navbar-nav {
-          position: static !important;
-          width: 100%;
-          margin-left: 0 !important;
-          background: var(--nav-mobile-bg);
-          backdrop-filter: blur(10px);
-          border-radius: 0 0 15px 15px;
-          padding: 15px 0;
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-          flex-direction: column !important;
-          align-items: flex-start;
-          text-align: left;
-        }
-
-        #mainNav .navbar-collapse.show .navbar-nav {
-          animation: navSlideDown1315 0.3s ease-out;
-        }
-
-        #mainNav .nav-link {
-          display: block;
-          width: 100%;
-          padding: 12px 25px !important;
-          margin: 0;
-          border-radius: 0;
-          white-space: normal;
-          background: transparent;
-          border-color: transparent;
-          box-shadow: none;
-          transform: none;
-        }
-
-        #mainNav .nav-link:hover {
-          background: var(--primary-soft);
-          border-color: transparent;
-          transform: none;
-          box-shadow: none;
-        }
-      }
-
-      @keyframes navSlideDown1315 {
-        0% {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
 
       @media (max-width: 768px) {

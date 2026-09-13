@@ -1,5 +1,5 @@
 ---
-const base = import.meta.env.BASE_URL;
+const rutaBase = import.meta.env.BASE_URL;
 ---
 
 <button class="terminal-launcher" id="terminal-launcher" type="button" aria-label="Abrir terminal interactiva" aria-expanded="false">
@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL;
   <div class="terminal-egg-output" id="terminal-egg-output" aria-live="polite"></div>
   <div class="terminal-egg-inputline">
     <span class="terminal-egg-prompt">alex@portfolio:~$</span>
-    <input class="terminal-egg-input" id="terminal-egg-input" type="text" autocomplete="off" spellcheck="false" aria-label="Escribir comando" placeholder="escribe un comando (help)">
+    <input class="terminal-egg-input" id="terminal-egg-input" type="text" autocomplete="off" spellcheck="false" aria-label="Escribir comando" placeholder="escribe un comando (help)" />
   </div>
 </div>
 
@@ -32,32 +32,32 @@ const base = import.meta.env.BASE_URL;
     height: 46px;
     padding: 0;
     border-radius: 50%;
-    border: 1px solid var(--hud-border, var(--border));
-    background: var(--hud-bg, rgba(7, 17, 31, 0.88));
-    color: var(--primary);
+    border: 1px solid var(--borde-indicador, var(--borde));
+    background: var(--fondo-indicador, rgba(7, 17, 31, 0.88));
+    color: var(--primario);
     font-size: 1.05rem;
     cursor: pointer;
     backdrop-filter: blur(12px);
-    box-shadow: 0 18px 40px var(--floating-shadow, rgba(0, 0, 0, 0.35));
-    transition: var(--transition);
+    box-shadow: 0 18px 40px var(--sombra-flotante, rgba(0, 0, 0, 0.35));
+    transition: var(--transicion);
   }
 
   .terminal-launcher .fa {
-    color: var(--primary);
+    color: var(--primario);
   }
 
   .terminal-launcher:hover {
-    background: var(--primary);
-    color: var(--bg-main);
+    background: var(--primario);
+    color: var(--fondo-principal);
     transform: translateY(-2px);
   }
 
   .terminal-launcher:hover .fa {
-    color: var(--bg-main);
+    color: var(--fondo-principal);
   }
 
   .terminal-launcher:hover .fa {
-    color: var(--bg-main);
+    color: var(--fondo-principal);
   }
 
   .terminal-easteregg {
@@ -70,7 +70,7 @@ const base = import.meta.env.BASE_URL;
     display: flex;
     flex-direction: column;
     border-radius: 12px;
-    border: 1px solid var(--hud-border, rgba(148, 163, 184, 0.18));
+    border: 1px solid var(--borde-indicador, rgba(148, 163, 184, 0.18));
     background: #0b1220;
     color: #d7e6f2;
     font-family: 'Courier New', Consolas, Monaco, monospace;
@@ -100,7 +100,7 @@ const base = import.meta.env.BASE_URL;
     gap: 10px;
     padding: 10px 14px;
     background: rgba(255, 255, 255, 0.04);
-    border-bottom: 1px solid var(--hud-border, rgba(148, 163, 184, 0.16));
+    border-bottom: 1px solid var(--borde-indicador, rgba(148, 163, 184, 0.16));
   }
 
   .terminal-egg-dots {
@@ -121,13 +121,13 @@ const base = import.meta.env.BASE_URL;
   .terminal-egg-title {
     flex: 1;
     font-size: 0.75rem;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
   }
 
   .terminal-egg-close {
     background: none;
     border: none;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     cursor: pointer;
     font-size: 0.9rem;
     padding: 0 2px;
@@ -135,7 +135,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .terminal-egg-close:hover {
-    color: var(--text-main);
+    color: var(--texto-principal);
   }
 
   .terminal-egg-output {
@@ -169,7 +169,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .egg-link {
-    color: var(--primary);
+    color: var(--primario);
     text-decoration: underline;
   }
 
@@ -178,7 +178,7 @@ const base = import.meta.env.BASE_URL;
     align-items: center;
     gap: 8px;
     padding: 10px 14px;
-    border-top: 1px solid var(--hud-border, rgba(148, 163, 184, 0.16));
+    border-top: 1px solid var(--borde-indicador, rgba(148, 163, 184, 0.16));
     background: rgba(255, 255, 255, 0.03);
   }
 
@@ -217,4 +217,4 @@ const base = import.meta.env.BASE_URL;
   }
 </style>
 
-<script is:inline src={`${base}assets/js/terminal-init.js`}></script>
+<script is:inline src={`${rutaBase}assets/js/terminal-init.js`}></script>

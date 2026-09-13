@@ -1,165 +1,73 @@
 ---
-const metricas = [
-  {
-    icon: 'fa-cubes',
-    target: '13',
-    value: '13',
-    suffix: '',
-    label: 'Trámites Digitalizados',
-    desc: 'Procesos institucionales digitalizados, operativos en producción y con trazabilidad completa',
-  },
-  {
-    icon: 'fa-file-text-o',
-    target: '10000',
-    value: '10.000',
-    suffix: '+',
-    label: 'Ingresos a Trámites / año',
-    desc: 'Solicitudes y flujos administrativos procesados anualmente en la plataforma institucional',
-  },
-  {
-    icon: 'fa-check-circle',
-    target: '100',
-    value: '100',
-    suffix: '%',
-    label: 'Cobertura de Evaluaciones Digitales',
-    desc: 'Sistema de evaluación implantado en Programa 01 de acuerdo con la Circular N°30 del Ministerio de Educación',
-  },
-  {
-    icon: 'fa-shield',
-    target: '140',
-    value: '140',
-    suffix: '+',
-    label: 'Casos en Canal de Denuncias Online',
-    desc: 'Denuncias gestionadas en el canal institucional digital conforme a Ley Karin (Ley N°21.643), desarrollado por mí',
-  },
-  {
-    icon: 'fa-exchange',
-    target: '18000',
-    value: '18.000',
-    suffix: '+',
-    label: 'Interacciones con APIs Institucionales Desarrolladas / año',
-    desc: '18.000+ interacciones anuales de la API registradas en consumo, pruebas y documentación técnica de 7 APIs institucionales conectadas',
-  },
-  {
-    icon: 'fa-gavel',
-    target: '24',
-    value: '24',
-    suffix: '',
-    label: 'Procesos de Licitaciones TIC',
-    desc: 'Bases técnicas, evaluaciones y adjudicaciones en compras públicas TIC',
-  },
-  {
-    icon: 'fa-lightbulb-o',
-    target: '20',
-    value: '20',
-    suffix: '',
-    label: 'Proyectos TIC Implementados',
-    desc: '20 proyectos tecnológicos formulados e implementados íntegramente para la institución',
-  },
-  {
-    icon: 'fa-headphones',
-    target: '1200',
-    value: '1.200',
-    suffix: '+',
-    label: 'Atenciones Operativas y Soporte',
-    desc: '1.200+ incidencias, mantenciones y soportes resueltos entre fines de 2024 y 2026 para usuarios y establecimientos',
-  },
-  {
-    icon: 'fa-clock-o',
-    target: '15',
-    value: '15',
-    suffix: ' min',
-    label: 'Búsqueda Documental (antes: 3 horas)',
-    desc: 'Trazabilidad documental de más de 150 documentos para exportación redujo el tiempo de búsqueda y consolidación de 3 horas a 15 minutos',
-  },
-  {
-    icon: 'fa-trophy',
-    target: '',
-    value: 'A+',
-    suffix: '',
-    label: 'Certificación BRC Internacional',
-    desc: 'Calificación BRC (British Retail Consortium) mediante implementación de sistema de trazabilidad documental automatizado',
-  },
-  {
-    icon: 'fa-dollar',
-    target: '35',
-    value: '35',
-    suffix: 'M',
-    prefix: '≈ CLP',
-    label: 'Ahorro en Etiquetado Industrial / temporada',
-    desc: 'Ahorro durante la temporada productiva de fines de octubre a fines de febrero, reduciendo pérdidas por errores de etiquetado mediante integración de PLCs, Raspberry Pi, servidor de aplicaciones, base de datos e impresión térmica industrial',
-  },
-];
-
 const modulosLibro = [
-  { icon: 'fa-list-alt', title: 'Leccionario y Objetivos Curriculares', detail: 'Planificación y registro de clases con borradores, control de versiones, aprobación UTP, firma OTP, notificaciones y trazabilidad de auditoría.', layout: 'hero' },
-  { icon: 'fa-calendar-check-o', title: 'Control de Asistencia', detail: 'Registro diario por curso y estudiante, con seguimiento de estados y consulta histórica para una gestión oportuna.', layout: 'standard' },
-  { icon: 'fa-id-card-o', title: 'Gestión de Matrículas', detail: 'Administración centralizada de matrículas, antecedentes de estudiantes y vinculación con cursos y periodos académicos.', layout: 'standard' },
-  { icon: 'fa-graduation-cap', title: 'Control Centralizado de Notas', detail: 'Consulta y gestión de calificaciones por curso, periodo, mes y estudiante, preparada para análisis y exportación.', layout: 'wide' },
-  { icon: 'fa-pencil-square-o', title: 'Portal Home Docentes', detail: 'Espacio de trabajo del profesor para acceder rápidamente a cursos, asistencia, notas, leccionario y tareas pendientes.', layout: 'portal' },
-  { icon: 'fa-institution', title: 'Portal Home Director', detail: 'Panel ejecutivo para supervisar indicadores académicos, actividad del establecimiento y avances de gestión.', layout: 'portal' },
-  { icon: 'fa-university', title: 'Portal Home UTP', detail: 'Seguimiento técnico-pedagógico mediante estadísticas, revisión de operaciones, actividades y cumplimiento académico.', layout: 'portal' },
-  { icon: 'fa-users', title: 'Configuración y Administración', detail: 'Gestión centralizada de usuarios, perfiles, roles, permisos y parámetros generales de cada establecimiento.', layout: 'portal' },
-  { icon: 'fa-bar-chart', title: 'Paneles de Estadísticas', detail: 'Indicadores y gráficos interactivos que transforman los registros académicos en información útil para decisiones.', layout: 'wide' },
-  { icon: 'fa-line-chart', title: 'Análisis y Exportación', detail: 'Generación de reportes filtrados e informes descargables para análisis académico, respaldo y gestión institucional.', layout: 'wide' },
-  { icon: 'fa-bell', title: 'Sistema de Notificaciones', detail: 'Alertas dentro de la plataforma y por correo para comunicar revisiones, aprobaciones y eventos relevantes.', layout: 'standard' },
-  { icon: 'fa-warning', title: 'Registro de Anotaciones', detail: 'Registro estructurado de observaciones, incidentes y antecedentes disciplinarios asociados a cada estudiante.', layout: 'standard' },
-  { icon: 'fa-check-square-o', title: 'Cumplimiento Estándar CEDS', detail: 'Estructuración de información conforme al estándar de datos educacionales para favorecer consistencia e interoperabilidad.', layout: 'standard' },
-  { icon: 'fa-search', title: 'Búsquedas Inteligentes', detail: 'Buscador contextual que encuentra módulos, opciones y funciones disponibles de acuerdo con el rol del usuario.', layout: 'standard' },
-  { icon: 'fa-download', title: 'Visualización y Exportación', detail: 'Consulta detallada de anotaciones y generación de reportes descargables para seguimiento y respaldo institucional.', layout: 'standard' },
-  { icon: 'fa-puzzle-piece', title: 'Utilidades Compartidas', detail: 'Servicios y componentes reutilizables que mantienen una experiencia consistente y simplifican tareas frecuentes.', layout: 'standard' },
-  { icon: 'fa-book', title: 'Gestión del Marco de Enseñanza', detail: 'Organización de objetivos de aprendizaje y contenidos para vincular planificación, enseñanza y registro de clases.', layout: 'standard' },
-  { icon: 'fa-upload', title: 'Carga Masiva de Usuarios', detail: 'Importación de docentes y apoderados desde archivos CSV, con validaciones y monitoreo detallado de errores.', layout: 'standard' },
-  { icon: 'fa-image', title: 'Gestión de Imágenes', detail: 'Carga, actualización y administración controlada de fotografías asociadas a los perfiles de estudiantes.', layout: 'standard' },
-  { icon: 'fa-mobile', title: 'Gestión de OTP', detail: 'Firma digital modular por celular o correo como contingencia ante indisponibilidad del MINEDUC, con app autenticadora, control de códigos y firma reutilizable entre módulos críticos.', layout: 'standard' },
-];
-
-const resultadosClave = [
-  { icon: 'fa-cubes', value: '13', label: 'Trámites digitales implementados en SIMPLE' },
-  { icon: 'fa-file-text-o', value: '10.000+', label: 'Trámites gestionados 2025–2026 · registros SIMPLE' },
-  { icon: 'fa-exchange', value: '18.000+', label: 'Interacciones APIs / año · consumo, logs y Swagger/Postman' },
-  { icon: 'fa-book', value: '≈500 páginas', label: 'Documentación técnica · Libro de Clases Digital' },
+  { icono: 'fa-list-alt', titulo: 'Leccionario y Objetivos Curriculares', detalle: 'Planificación y registro de clases con borradores, control de versiones, aprobación UTP, firma OTP, notificaciones y trazabilidad de auditoría.', disposicion: 'hero' },
+  { icono: 'fa-calendar-check-o', titulo: 'Control de Asistencia', detalle: 'Registro diario por curso y estudiante, con seguimiento de estados y consulta histórica para una gestión oportuna.', disposicion: 'standard' },
+  { icono: 'fa-id-card-o', titulo: 'Gestión de Matrículas', detalle: 'Administración centralizada de matrículas, antecedentes de estudiantes y vinculación con cursos y periodos académicos.', disposicion: 'standard' },
+  { icono: 'fa-graduation-cap', titulo: 'Control Centralizado de Notas', detalle: 'Consulta y gestión de calificaciones por curso, periodo, mes y estudiante, preparada para análisis y exportación.', disposicion: 'wide' },
+  { icono: 'fa-pencil-square-o', titulo: 'Portal Home Docentes', detalle: 'Espacio de trabajo del profesor para acceder rápidamente a cursos, asistencia, notas, leccionario y tareas pendientes.', disposicion: 'portal' },
+  { icono: 'fa-institution', titulo: 'Portal Home Director', detalle: 'Panel ejecutivo para supervisar indicadores académicos, actividad del establecimiento y avances de gestión.', disposicion: 'portal' },
+  { icono: 'fa-university', titulo: 'Portal Home UTP', detalle: 'Seguimiento técnico-pedagógico mediante estadísticas, revisión de operaciones, actividades y cumplimiento académico.', disposicion: 'portal' },
+  { icono: 'fa-users', titulo: 'Configuración y Administración', detalle: 'Gestión centralizada de usuarios, perfiles, roles, permisos y parámetros generales de cada establecimiento.', disposicion: 'portal' },
+  { icono: 'fa-bar-chart', titulo: 'Paneles de Estadísticas', detalle: 'Indicadores y gráficos interactivos que transforman los registros académicos en información útil para decisiones.', disposicion: 'wide' },
+  { icono: 'fa-line-chart', titulo: 'Análisis y Exportación', detalle: 'Generación de reportes filtrados e informes descargables para análisis académico, respaldo y gestión institucional.', disposicion: 'wide' },
+  { icono: 'fa-bell', titulo: 'Sistema de Notificaciones', detalle: 'Alertas dentro de la plataforma y por correo para comunicar revisiones, aprobaciones y eventos relevantes.', disposicion: 'standard' },
+  { icono: 'fa-warning', titulo: 'Registro de Anotaciones', detalle: 'Registro estructurado de observaciones, incidentes y antecedentes disciplinarios asociados a cada estudiante.', disposicion: 'standard' },
+  { icono: 'fa-check-square-o', titulo: 'Cumplimiento Estándar CEDS', detalle: 'Estructuración de información conforme al estándar de datos educacionales para favorecer consistencia e interoperabilidad.', disposicion: 'standard' },
+  { icono: 'fa-search', titulo: 'Búsquedas Inteligentes', detalle: 'Buscador contextual que encuentra módulos, opciones y funciones disponibles de acuerdo con el rol del usuario.', disposicion: 'standard' },
+  { icono: 'fa-download', titulo: 'Visualización y Exportación', detalle: 'Consulta detallada de anotaciones y generación de reportes descargables para seguimiento y respaldo institucional.', disposicion: 'standard' },
+  { icono: 'fa-puzzle-piece', titulo: 'Utilidades Compartidas', detalle: 'Servicios y componentes reutilizables que mantienen una experiencia consistente y simplifican tareas frecuentes.', disposicion: 'standard' },
+  { icono: 'fa-book', titulo: 'Gestión del Marco de Enseñanza', detalle: 'Organización de objetivos de aprendizaje y contenidos para vincular planificación, enseñanza y registro de clases.', disposicion: 'standard' },
+  { icono: 'fa-upload', titulo: 'Carga Masiva de Usuarios', detalle: 'Importación de docentes y apoderados desde archivos CSV, con validaciones y monitoreo detallado de errores.', disposicion: 'standard' },
+  { icono: 'fa-image', titulo: 'Gestión de Imágenes', detalle: 'Carga, actualización y administración controlada de fotografías asociadas a los perfiles de estudiantes.', disposicion: 'standard' },
+  { icono: 'fa-mobile', titulo: 'Gestión de OTP', detalle: 'Firma digital modular por celular o correo como contingencia ante indisponibilidad del MINEDUC, con app autenticadora, control de códigos y firma reutilizable entre módulos críticos.', disposicion: 'standard' },
 ];
 
 const categoriasImpacto = [
   {
-    icon: 'fa-book',
-    title: 'Documentación técnica y funcional',
-    description: 'Arquitectura, seguridad, autenticación, módulos, portales, roles y operación del Libro de Clases Digital.',
-    metrics: [
-      { value: '≈500 páginas', label: 'documentación técnica y funcional' },
+    icono: 'fa-cogs',
+    titulo: 'Automatización industrial',
+    descripcion: 'Integración de PLC, Raspberry Pi, servidor de aplicaciones, base de datos e impresión térmica para reducir errores de etiquetado en Johnson Fruit.',
+    metricas: [
+      { valor: '≈ $35M CLP', etiqueta: 'ahorro estimado por temporada productiva' },
+      { valor: '3 h → 15 min', etiqueta: 'búsqueda y consolidación documental para exportación' },
+      { valor: 'BRC A+', etiqueta: 'trazabilidad documental para certificación internacional' },
     ],
   },
   {
-    icon: 'fa-university',
-    title: 'Transformación institucional',
-    description: 'Digitalización de servicios y procesos críticos para una gestión pública más ágil y trazable.',
-    metrics: [
-      { value: '13', label: 'trámites digitales implementados en SIMPLE' },
-      { value: '10.000+', label: 'trámites gestionados en SIMPLE entre 2025 y 2026' },
-      { value: '6+', label: 'áreas institucionales impactadas' },
+    icono: 'fa-book',
+    titulo: 'Documentación técnica y funcional',
+    descripcion: 'Arquitectura, seguridad, autenticación, módulos, portales, roles y operación del Libro de Clases Digital.',
+    metricas: [
+      { valor: '≈500 páginas', etiqueta: 'documentación técnica y funcional' },
     ],
   },
   {
-    icon: 'fa-cogs',
-    title: 'Gestión tecnológica',
-    description: 'Planificación, ejecución y continuidad operativa de iniciativas tecnológicas institucionales.',
-    metrics: [
-      { value: '69', label: 'establecimientos SLEP atendidos en operación TI' },
-      { value: '1.200+', label: 'atenciones operativas entre fines de 2024 y 2026' },
-      { value: '20', label: 'compras y licitaciones TIC formuladas o evaluadas' },
-      { value: '24', label: 'proyectos EvalTIC acompañados institucionalmente' },
+    icono: 'fa-university',
+    titulo: 'Transformación institucional',
+    descripcion: 'Digitalización de servicios y procesos críticos para una gestión pública más ágil y trazable.',
+    metricas: [
+      { valor: '13', etiqueta: 'trámites digitales implementados en SIMPLE' },
+      { valor: '6+', etiqueta: 'áreas institucionales impactadas' },
     ],
   },
   {
-    icon: 'fa-random',
-    title: 'Ingeniería e interoperabilidad',
-    description: 'Desarrollo de siete servicios principales para integrar personas, roles, establecimientos, evaluaciones, RIOHS, bienestar, vehículos y otras plataformas institucionales.',
-    metrics: [
-      { value: '7', label: 'APIs principales con contratos y documentación técnica' },
-      { value: '18.000+', label: 'interacciones anuales según consumo, logs y Swagger/Postman' },
-      { value: 'Múltiples', label: 'bases de datos integradas' },
-      { value: 'Swagger y Postman', label: 'contratos y pruebas' },
+    icono: 'fa-cogs',
+    titulo: 'Gestión tecnológica',
+    descripcion: 'Planificación, ejecución y continuidad operativa de iniciativas tecnológicas institucionales.',
+    metricas: [
+      { valor: '1.200+', etiqueta: 'atenciones operativas entre fines de 2024 y 2026' },
+      { valor: '20', etiqueta: 'compras y licitaciones TIC formuladas o evaluadas' },
+      { valor: '24', etiqueta: 'proyectos EvalTIC acompañados institucionalmente' },
+    ],
+  },
+  {
+    icono: 'fa-random',
+    titulo: 'Ingeniería e interoperabilidad',
+    descripcion: 'Servicios para integrar personas, roles, establecimientos, evaluaciones, RIOHS, bienestar, vehículos y otras plataformas institucionales.',
+    metricas: [
+      { valor: '18.000+', etiqueta: 'interacciones anuales según consumo, logs y Swagger/Postman' },
+      { valor: 'Múltiples', etiqueta: 'bases de datos integradas' },
+      { valor: 'Swagger y Postman', etiqueta: 'contratos y pruebas' },
     ],
   },
 ];
@@ -171,39 +79,27 @@ const categoriasImpacto = [
             <div class="col-lg-12 text-center section-title">
                 <h2 class="text-uppercase section-heading text-gradient">Impacto Profesional</h2>
                 <div class="impacto-autoria">
-                    <i class="fa fa-code"></i>Ingeniero de Software responsable de sistemas institucionales en operación para 69 establecimientos educacionales.
+                    <i class="fa fa-code"></i>Resultados de digitalización, interoperabilidad y operación tecnológica en instituciones y procesos productivos.
                 </div>
             </div>
         </div>
 
         <div class="impacto-dashboard">
-            <div class="impacto-kpi-grid" aria-label="Resultados principales">
-                {resultadosClave.map((resultado) => (
-                    <article class="impacto-kpi">
-                        <div class="impacto-kpi-icon" aria-hidden="true"><i class={`fa ${resultado.icon}`}></i></div>
-                        <div>
-                            <div class="impacto-kpi-value">{resultado.value}</div>
-                            <div class="impacto-kpi-label">{resultado.label}</div>
-                        </div>
-                    </article>
-                ))}
-            </div>
-
             <div class="impacto-category-list">
                 {categoriasImpacto.map((categoria) => (
                     <article class="impacto-category-card">
                         <header class="impacto-category-header">
-                            <div class="impacto-category-icon" aria-hidden="true"><i class={`fa ${categoria.icon}`}></i></div>
+                            <div class="impacto-category-icon" aria-hidden="true"><i class={`fa ${categoria.icono}`}></i></div>
                             <div>
-                                <h3>{categoria.title}</h3>
-                                <p>{categoria.description}</p>
+                                <h3>{categoria.titulo}</h3>
+                                <p>{categoria.descripcion}</p>
                             </div>
                         </header>
                         <div class="impacto-category-metrics">
-                            {categoria.metrics.map((metrica) => (
+                            {categoria.metricas.map((metrica) => (
                                 <div class="impacto-category-metric">
-                                    <strong>{metrica.value}</strong>
-                                    <span>{metrica.label}</span>
+                                    <strong>{metrica.valor}</strong>
+                                    <span>{metrica.etiqueta}</span>
                                 </div>
                             ))}
                         </div>
@@ -225,9 +121,9 @@ const categoriasImpacto = [
 
                     <div class="impacto-wide-modules">
                         {modulosLibro.map((modulo) => (
-                                <div class:list={['impacto-module', `impacto-module--${modulo.layout}`]}>
-                                <i class={`fa ${modulo.icon} impacto-module-icon`}></i>
-                                <span class="impacto-module-text">{modulo.title}<br /><small>{modulo.detail}</small></span>
+                                <div class:list={['impacto-module', `impacto-module--${modulo.disposicion}`]}>
+                                <i class={`fa ${modulo.icono} impacto-module-icon`}></i>
+                                <span class="impacto-module-text">{modulo.titulo}<br /><small>{modulo.detalle}</small></span>
                             </div>
                         ))}
                     </div>

@@ -1,91 +1,92 @@
 ---
 const destacadas = [
   {
-    provider: 'Cisco',
-    title: 'Cybersecurity Essentials',
-    icon: 'fa-shield-alt',
-    category: 'Seguridad',
-    applied: 'Aplicado en hardening, control de acceso y trazabilidad en Libro de Clases, SIMPLE y APIs institucionales.',
+    institucion: 'Cisco',
+    titulo: 'Cybersecurity Essentials',
+    icono: 'fa-shield-alt',
+    categoria: 'Seguridad',
+    aplicacion: 'Aplicado en hardening, control de acceso y trazabilidad en Libro de Clases, SIMPLE y APIs institucionales.',
   },
   {
-    provider: 'Google',
-    title: 'Workspace Administrator',
-    icon: 'fa-cloud',
-    category: 'Sistemas',
-    applied: 'Aplicado en administración de servicios colaborativos e integración operativa para equipos institucionales.',
+    institucion: 'Google',
+    titulo: 'Workspace Administrator',
+    icono: 'fa-cloud',
+    categoria: 'Sistemas',
+    aplicacion: 'Aplicado en administración de servicios colaborativos e integración operativa para equipos institucionales.',
   },
   {
-    provider: 'Udemy',
-    title: 'Angular de Cero a Experto',
-    icon: 'fa-code',
-    category: 'Desarrollo',
-    applied: 'Base aplicada en frontend productivo con Angular y PrimeNG 22 para Libro de Clases y portales administrativos.',
+    institucion: 'Udemy',
+    titulo: 'Angular de Cero a Experto',
+    icono: 'fa-code',
+    categoria: 'Desarrollo',
+    aplicacion: 'Base aplicada en frontend productivo con Angular y PrimeNG 22 para Libro de Clases y portales administrativos.',
   },
   {
-    provider: 'Udemy',
-    title: 'Docker',
-    icon: 'fa-cubes',
-    category: 'Sistemas',
-    applied: 'Aplicado en despliegues, entornos aislados y operación de servicios para plataformas institucionales y demos técnicas.',
+    institucion: 'Udemy',
+    titulo: 'Docker',
+    icono: 'fa-cubes',
+    categoria: 'Sistemas',
+    aplicacion: 'Aplicado en despliegues, entornos aislados y operación de servicios para plataformas institucionales y demos técnicas.',
   },
   {
-    provider: 'Capacired',
-    title: 'Auditor Interno BRC V8',
-    icon: 'fa-certificate',
-    category: 'Gestión',
-    applied: 'Aplicado en trazabilidad documental y control de evidencia para procesos exportadores auditables.',
+    institucion: 'Capacired',
+    titulo: 'Auditor Interno BRC V8',
+    icono: 'fa-certificate',
+    categoria: 'Gestión',
+    aplicacion: 'Aplicado en trazabilidad documental y control de evidencia para procesos exportadores auditables.',
   },
   {
-    provider: 'Factor Clave',
-    title: 'Excel Nivel Avanzado',
-    icon: 'fa-table',
-    category: 'Productividad',
-    applied: 'Aplicado en reportería operativa, exportaciones y consolidación de antecedentes para áreas institucionales.',
+    institucion: 'Factor Clave',
+    titulo: 'Excel Nivel Avanzado',
+    icono: 'fa-table',
+    categoria: 'Productividad',
+    aplicacion: 'Aplicado en reportería operativa, exportaciones y consolidación de antecedentes para áreas institucionales.',
   },
 ];
 
 const categorias = [
-  { id: 'all', label: 'Todas' },
-  { id: 'desarrollo', label: 'Desarrollo' },
-  { id: 'seguridad', label: 'Seguridad' },
-  { id: 'sistemas', label: 'Sistemas' },
-  { id: 'hardware', label: 'Hardware' },
-  { id: 'gestion', label: 'Gestión' },
-  { id: 'productividad', label: 'Productividad' },
+  { identificador: 'all', etiqueta: 'Todas' },
+  { identificador: 'desarrollo', etiqueta: 'Desarrollo' },
+  { identificador: 'seguridad', etiqueta: 'Seguridad' },
+  { identificador: 'sistemas', etiqueta: 'Sistemas' },
+  { identificador: 'hardware', etiqueta: 'Hardware' },
+  { identificador: 'gestion', etiqueta: 'Gestión' },
+  { identificador: 'productividad', etiqueta: 'Productividad' },
 ];
 
 const certificaciones = [
-  { category: 'desarrollo', provider: 'Udemy', title: 'Angular de Cero a Experto' },
-  { category: 'desarrollo', provider: 'Udemy', title: 'Angular Experto' },
-  { category: 'desarrollo', provider: 'Udemy', title: 'Node.js Avanzado' },
-  { category: 'desarrollo', provider: 'Udemy', title: 'Python Maestro' },
-  { category: 'desarrollo', provider: 'Udemy', title: 'Docker' },
-  { category: 'desarrollo', provider: 'Udemy', title: 'C# .NET' },
-  { category: 'desarrollo', provider: 'Udemy', title: 'Git y GitHub' },
-  { category: 'desarrollo', provider: 'Sence', title: 'WordPress 5' },
-  { category: 'desarrollo', provider: 'Udemy', title: 'MySQL y MariaDB' },
-  { category: 'seguridad', provider: 'Cisco', title: 'Cybersecurity Essentials' },
-  { category: 'seguridad', provider: 'Udemy', title: 'Seguridad Informática y Hacking' },
-  { category: 'seguridad', provider: 'Google', title: 'Protege tu Negocio: Ciberseguridad' },
-  { category: 'seguridad', provider: 'Platzi', title: 'Seguridad Informática para Empresas' },
-  { category: 'seguridad', provider: 'Formación profesional', title: 'Análisis de Riesgos de Seguridad Informática' },
-  { category: 'sistemas', provider: 'Google', title: 'Workspace Administrator' },
-  { category: 'sistemas', provider: 'Formación profesional', title: 'Instalación y Configuración Windows Server' },
-  { category: 'sistemas', provider: 'Udemy', title: 'Redes de Computadores' },
-  { category: 'sistemas', provider: 'Formación profesional', title: 'Administrativo Computacional' },
-  { category: 'sistemas', provider: 'Gobierno Digital', title: 'Transformación Digital con SIMPLE' },
-  { category: 'hardware', provider: 'Instituto Conosur', title: 'Armado de Equipos' },
-  { category: 'hardware', provider: 'Formación técnica', title: 'Técnico en Reparación de Laptops' },
-  { category: 'hardware', provider: 'Formación técnica', title: 'Reparador de Tablets y Teléfonos' },
-  { category: 'hardware', provider: 'Udemy', title: 'Proyectos Master con Arduino' },
-  { category: 'hardware', provider: 'Udemy', title: 'Raspberry Pi 4 IoT' },
-  { category: 'gestion', provider: 'Capacired', title: 'Auditor Interno BRC V8' },
-  { category: 'gestion', provider: 'CEA', title: 'Administración del Estado' },
-  { category: 'gestion', provider: 'Experiencia profesional', title: 'Servicios Públicos y Privados' },
-  { category: 'gestion', provider: 'Estado de Chile', title: 'Integridad Pública' },
-  { category: 'productividad', provider: 'Factor Clave', title: 'Excel Nivel Avanzado' },
-  { category: 'productividad', provider: 'Udemy', title: 'Excel de Principiante a Avanzado' },
-  { category: 'productividad', provider: 'Lego Education Academy', title: 'SPIKE' },
+  { categoria: 'desarrollo', institucion: 'Udemy', titulo: 'Angular de Cero a Experto' },
+  { categoria: 'desarrollo', institucion: 'Udemy', titulo: 'Angular Experto' },
+  { categoria: 'desarrollo', institucion: 'Udemy', titulo: 'Node.js Avanzado' },
+  { categoria: 'desarrollo', institucion: 'Udemy', titulo: 'Python Maestro' },
+  { categoria: 'desarrollo', institucion: 'Udemy', titulo: 'Docker' },
+  { categoria: 'desarrollo', institucion: 'Udemy', titulo: 'C# .NET' },
+  { categoria: 'desarrollo', institucion: 'Udemy', titulo: 'Git y GitHub' },
+  { categoria: 'desarrollo', institucion: 'Sence', titulo: 'WordPress 5' },
+  { categoria: 'desarrollo', institucion: 'Udemy', titulo: 'MySQL y MariaDB' },
+  { categoria: 'seguridad', institucion: 'Cisco', titulo: 'Cybersecurity Essentials' },
+  { categoria: 'seguridad', institucion: 'Udemy', titulo: 'Seguridad Informática y Hacking' },
+  { categoria: 'seguridad', institucion: 'Google', titulo: 'Protege tu Negocio: Ciberseguridad' },
+  { categoria: 'seguridad', institucion: 'Platzi', titulo: 'Seguridad Informática para Empresas' },
+  { categoria: 'seguridad', institucion: 'Formación profesional', titulo: 'Análisis de Riesgos de Seguridad Informática' },
+  { categoria: 'sistemas', institucion: 'Google', titulo: 'Workspace Administrator' },
+  { categoria: 'sistemas', institucion: 'Formación profesional', titulo: 'Instalación y Configuración Windows Server' },
+  { categoria: 'sistemas', institucion: 'Udemy', titulo: 'Redes de Computadores' },
+  { categoria: 'sistemas', institucion: 'Formación profesional', titulo: 'Administrativo Computacional' },
+  { categoria: 'sistemas', institucion: 'Gobierno Digital', titulo: 'Transformación Digital con SIMPLE' },
+  { categoria: 'hardware', institucion: 'Instituto Conosur', titulo: 'Armado de Equipos' },
+  { categoria: 'hardware', institucion: 'Formación técnica', titulo: 'Técnico en Reparación de Laptops' },
+  { categoria: 'hardware', institucion: 'Formación técnica', titulo: 'Reparador de Tablets y Teléfonos' },
+  { categoria: 'hardware', institucion: 'Udemy', titulo: 'Proyectos Master con Arduino' },
+  { categoria: 'hardware', institucion: 'Udemy', titulo: 'Raspberry Pi 4 IoT' },
+  { categoria: 'gestion', institucion: 'Capacired', titulo: 'Auditor Interno BRC V8' },
+  { categoria: 'gestion', institucion: 'CEA', titulo: 'Administración del Estado' },
+  { categoria: 'gestion', institucion: 'Experiencia profesional', titulo: 'Servicios Públicos y Privados' },
+  { categoria: 'gestion', institucion: 'Estado de Chile', titulo: 'Integridad Pública' },
+  { categoria: 'gestion', institucion: 'Formación profesional', titulo: 'Curso Fiscal Instructor y Actuario de la Administración Pública' },
+  { categoria: 'productividad', institucion: 'Factor Clave', titulo: 'Excel Nivel Avanzado' },
+  { categoria: 'productividad', institucion: 'Udemy', titulo: 'Excel de Principiante a Avanzado' },
+  { categoria: 'productividad', institucion: 'Lego Education Academy', titulo: 'SPIKE' },
 ];
 ---
 
@@ -98,13 +99,13 @@ const certificaciones = [
     </header>
 
     <div class="cert-featured-grid" aria-label="Certificaciones destacadas">
-      {destacadas.map((cert) => (
+      {destacadas.map((certificado) => (
         <article class="cert-featured-card">
-          <div class="cert-featured-icon" aria-hidden="true"><i class={`fas ${cert.icon}`}></i></div>
-          <span class="cert-provider">{cert.provider}</span>
-          <h3>{cert.title}</h3>
-          <span class="cert-category-label">{cert.category}</span>
-          <p class="cert-evidence cert-evidence-apply"><strong>Aplicación:</strong> {cert.applied}</p>
+          <div class="cert-featured-icon" aria-hidden="true"><i class={`fas ${certificado.icono}`}></i></div>
+          <span class="cert-provider">{certificado.institucion}</span>
+          <h3>{certificado.titulo}</h3>
+          <span class="cert-category-label">{certificado.categoria}</span>
+          <p class="cert-evidence cert-evidence-apply"><strong>Aplicación:</strong> {certificado.aplicacion}</p>
         </article>
       ))}
     </div>
@@ -112,7 +113,7 @@ const certificaciones = [
     <p class="cert-availability-note">Certificaciones disponibles a solicitud de forma digital.</p>
 
     <div class="cert-actions">
-      <button class="cert-toggle-btn" type="button" id="certToggleBtn" aria-expanded="false" aria-controls="allCertsBlock" onclick="toggleAllCerts()">
+      <button class="cert-toggle-btn" type="button" id="certToggleBtn" aria-expanded="false" aria-controls="allCertsBlock" onclick="alternarCertificaciones()">
         <i class="fas fa-plus-circle" aria-hidden="true"></i>
         <span>Ver catálogo completo</span>
       </button>
@@ -128,20 +129,20 @@ const certificaciones = [
       </div>
 
       <div class="cert-filters" role="group" aria-label="Filtrar certificaciones por área">
-        {categorias.map((categoria, index) => (
-          <button class:list={['cert-filter-btn', { active: index === 0 }]} type="button" data-cert-filter={categoria.id} aria-pressed={index === 0 ? 'true' : 'false'}>
-            {categoria.label}
+        {categorias.map((categoria, indice) => (
+          <button class:list={['cert-filter-btn', { active: indice === 0 }]} type="button" data-cert-filter={categoria.identificador} aria-pressed={indice === 0 ? 'true' : 'false'}>
+            {categoria.etiqueta}
           </button>
         ))}
       </div>
 
       <div class="cert-catalog-grid" aria-live="polite">
-        {certificaciones.map((cert) => (
-          <article class="cert-catalog-item" data-cert-category={cert.category}>
+        {certificaciones.map((certificado) => (
+          <article class="cert-catalog-item" data-cert-category={certificado.categoria}>
             <i class="fas fa-check-circle" aria-hidden="true"></i>
             <div>
-              <span>{cert.provider}</span>
-              <h4>{cert.title}</h4>
+              <span>{certificado.institucion}</span>
+              <h4>{certificado.titulo}</h4>
             </div>
           </article>
         ))}
@@ -158,21 +159,21 @@ const certificaciones = [
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll<HTMLButtonElement>('[data-cert-filter]');
-    const items = document.querySelectorAll<HTMLElement>('[data-cert-category]');
+    const botones = document.querySelectorAll<HTMLButtonElement>('[data-cert-filter]');
+    const elementos = document.querySelectorAll<HTMLElement>('[data-cert-category]');
 
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const filter = button.dataset.certFilter || 'all';
+    botones.forEach((boton) => {
+      boton.addEventListener('click', () => {
+        const filtro = boton.dataset.certFilter || 'all';
 
-        buttons.forEach((candidate) => {
-          const selected = candidate === button;
-          candidate.classList.toggle('active', selected);
-          candidate.setAttribute('aria-pressed', String(selected));
+        botones.forEach((candidato) => {
+          const seleccionado = candidato === boton;
+          candidato.classList.toggle('active', seleccionado);
+          candidato.setAttribute('aria-pressed', String(seleccionado));
         });
 
-        items.forEach((item) => {
-          item.hidden = filter !== 'all' && item.dataset.certCategory !== filter;
+        elementos.forEach((elemento) => {
+          elemento.hidden = filtro !== 'all' && elemento.dataset.certCategory !== filtro;
         });
       });
     });

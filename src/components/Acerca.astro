@@ -1,144 +1,28 @@
----
-const trayectoria = [
-  {
-    period: '2024 — Actualidad',
-    organization: 'SLEP Colchagua',
-    role: 'Desarrollador Full Stack',
-    image: 'assets/img/slep.webp',
-    alt: 'SLEP Colchagua',
-    summary: 'Desarrollo de sistemas e infraestructura tecnológica para 69 establecimientos educacionales.',
-    details: [
-      'Desarrollo e implemento soluciones tecnológicas institucionales para SLEP Colchagua, entre ellas el Libro de Clases Digital, la plataforma SIMPLE y servicios de interoperabilidad para digitalización de procesos administrativos y educativos, utilizando Python, Flask, SQLAlchemy, Angular y PrimeNG 22.',
-      'Además, administro infraestructura TI para 69 establecimientos educacionales, gestiono proyectos tecnológicos, brindo soporte técnico avanzado, integro sistemas y elaboro documentación técnica especializada para la operación y mejora continua de la organización.',
-    ],
-    tags: ['Python', 'Flask', 'SQLAlchemy', 'Angular', 'PrimeNG 22', 'APIs REST', 'Infraestructura TI', 'Gestión de Proyectos'],
-  },
-  {
-    period: '2021 — 2024',
-    organization: 'Johnson Fruit',
-    role: 'Encargado del Área TI',
-    image: 'assets/img/JohnsonFruit.webp',
-    alt: 'Johnson Fruit',
-    summary: 'Automatización, trazabilidad e infraestructura industrial para una operación productiva y exportadora.',
-    details: [
-      'Responsable del área TI en empresa agrícola de producción y exportación frutícola, liderando la gestión tecnológica de sistemas de trazabilidad, bases de datos, redes, comunicaciones e infraestructura interna.',
-      'Desarrollé soluciones informáticas para la optimización de procesos productivos y administrativos, administré servidores Windows, ejecuté soporte técnico avanzado, mantenimiento de equipos y capacitación al personal. Complementariamente, participé como Auditor Interno BRC v8, contribuyendo al cumplimiento normativo, control de procesos y mejora continua operacional.',
-    ],
-    tags: ['Trazabilidad', 'Bases de Datos', 'Servidores Windows', 'Redes', 'Auditor BRC v8', 'Soporte Técnico', 'Capacitación'],
-  },
-  {
-    period: '2019 — 2021',
-    organization: 'Municipalidad de Chimbarongo',
-    role: 'Prácticas Profesionales',
-    image: 'assets/img/MunicipalidadCH.webp',
-    alt: 'Municipalidad de Chimbarongo',
-    summary: 'Desarrollo de sistemas, redes y soporte tecnológico para la gestión institucional municipal.',
-    details: [
-      'Experiencia en Ingeniería Informática desarrollada en la Municipalidad de Chimbarongo durante mi formación profesional. Participé en análisis y programación de sistemas, soporte técnico a usuarios, instalación y mantención de redes, equipos y plataformas informáticas.',
-      'Desarrollé soluciones internas y mejoras funcionales en sistemas municipales, contribuyendo a la digitalización de procesos y la gestión tecnológica institucional.',
-    ],
-    tags: ['Análisis de Sistemas', 'Programación', 'Redes', 'Soporte Técnico', 'Sistemas Municipales'],
-  },
-  {
-    period: '2016 — 2021',
-    organization: 'Formación técnica y profesional',
-    role: 'Informática, programación y análisis de sistemas',
-    image: 'assets/img/3964906.webp',
-    alt: 'Formación en Ingeniería Informática',
-    summary: 'Formación progresiva en soporte computacional, programación, análisis de sistemas e Ingeniería Informática.',
-    milestones: [
-      {
-        year: '2016',
-        title: 'Administrativo Computacional Microsoft',
-        text: 'Formación en herramientas computacionales y ofimáticas, con dominio en entorno Windows y Microsoft Office. Además, obtuve mención en Armado y Mantención de Computadoras, fortaleciendo competencias en soporte técnico, diagnóstico, mantenimiento preventivo y correctivo, y resolución de problemas de hardware.',
-      },
-      {
-        year: '2017',
-        title: 'Técnico Superior en Programación',
-        text: 'Formación técnica orientada al ciclo completo de desarrollo de software, incluyendo análisis de requerimientos, diseño, construcción, pruebas e implementación de soluciones informáticas. Esta formación me permitió adquirir competencias para desarrollar sistemas conforme a estándares de calidad técnica y enfocados en las necesidades reales de usuarios y organizaciones.',
-      },
-      {
-        year: '2019',
-        title: 'Técnico en Análisis de Sistemas',
-        text: 'Especialización en análisis, modelamiento, supervisión y mejora continua de sistemas informáticos. Desarrollé competencias en levantamiento de requerimientos, modelado de procesos de negocio, control de calidad de software, administración de proyectos informáticos y diseño de soluciones tecnológicas seguras, funcionales y adaptadas al contexto organizacional.',
-      },
-      {
-        year: '2021',
-        title: 'Ingeniero de Ejecución en Informática',
-        text: 'Formación profesional en desarrollo, evaluación e implementación de soluciones informáticas integrales, aplicando metodologías de análisis, diseño, pruebas, seguridad informática y gestión de proyectos tecnológicos. Esta formación me permitió fortalecer capacidades para diseñar sistemas seguros, administrar proyectos TI, evaluar soluciones tecnológicas y aplicar conocimientos en áreas como infraestructura, software e IoT.',
-      },
-    ],
-    tags: ['Soporte Computacional', 'Programación', 'Análisis de Sistemas', 'Ingeniería Informática', 'Seguridad', 'IoT'],
-  },
-];
----
-
-<section id="about" class="about-section">
-  <div class="container career-container">
-    <header class="career-heading section-intro text-center">
-      <span class="career-eyebrow section-kicker">TRAYECTORIA PROFESIONAL</span>
-      <h2 class="text-uppercase section-heading">Acerca de mí</h2>
-      <p class="section-subheading section-lead">Experiencia y formación construidas desde la operación técnica hasta el desarrollo de soluciones institucionales.</p>
-    </header>
-
-    <div class="career-timeline">
-      {trayectoria.map((item, index) => (
-        <article class="career-entry">
-          <div class="career-marker" aria-hidden="true">
-            <span>{String(index + 1).padStart(2, '0')}</span>
-          </div>
-
-          <div class="career-card">
-            <div class="career-card-main">
-              <img src={item.image} width="76" height="76" loading={index === 0 ? 'eager' : 'lazy'} alt={item.alt}>
-              <div class="career-card-copy">
-                <span class="career-period">{item.period}</span>
-                <h3>{item.organization}</h3>
-                <span class="career-role">{item.role}</span>
-                <p class="career-summary">{item.summary}</p>
-              </div>
-            </div>
-
-            <details class="career-details">
-              <summary>
-                <span>Ver trayectoria completa</span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-              </summary>
-              <div class="career-details-content">
-                {item.details?.map((paragraph) => <p>{paragraph}</p>)}
-                {item.milestones && (
-                  <div class="career-education-list">
-                    {item.milestones.map((milestone) => (
-                      <div class="career-education-item">
-                        <span>{milestone.year}</span>
-                        <div>
-                          <h4>{milestone.title}</h4>
-                          <p>{milestone.text}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                <div class="career-tags">
-                  {item.tags.map((tag) => <span>{tag}</span>)}
-                </div>
-              </div>
-            </details>
-          </div>
-        </article>
-      ))}
+<section id="about" class="about-profile" aria-labelledby="about-title">
+  <div class="container about-profile-layout">
+    <div class="about-portrait">
+      <img src="assets/img/frontalv2-circular.webp" width="400" height="400" loading="lazy" decoding="async" alt="Alex Salinas Ponce, Ingeniero Informático">
+      <span>Alex Salinas Ponce <small>Ingeniero Informático · Chile</small></span>
     </div>
-
-    <div class="career-cv">
-      <div>
-        <span>RESUMEN PROFESIONAL</span>
-        <h3>Currículum Vitae</h3>
-        <p>Descarga una versión resumida de mi experiencia, formación, competencias y principales resultados profesionales.</p>
-      </div>
-      <a href="assets/curriculum-v3-2026.pdf" target="_blank" rel="noopener">
-        <i class="fa fa-download" aria-hidden="true"></i>
-        Descargar CV
-      </a>
+    <div>
+      <span class="section-kicker">SOBRE MÍ</span>
+      <h2 id="about-title">La tecnología tiene sentido<br />cuando resuelve algo real.</h2>
+      <p>Mi trabajo conecta el desarrollo de software con las personas y los procesos que lo necesitan. Participo desde el levantamiento de requerimientos y la arquitectura hasta el despliegue, la documentación y la mantención de cada solución.</p>
+      <p>He trabajado en educación pública, gestión municipal y producción industrial. Esa experiencia me permite entender tanto una plataforma digital como la infraestructura y la operación que la sostienen.</p>
+      <a class="js-scroll-trigger" href="#services">Cómo puedo aportar a tu equipo <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
+
+<style>
+  .about-profile { padding: 90px 0; background: var(--fondo-principal); }
+  .about-profile-layout { display: grid; grid-template-columns: 230px minmax(0, 660px); justify-content: center; align-items: center; gap: 70px; }
+  .about-portrait img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--borde-destacado); border-radius: 14px; }
+  .about-portrait > span { display: block; font-size: .9rem; font-weight: 600; color: var(--texto-principal); margin-top: 16px; }
+  .about-portrait small { display: block; font-size: .72rem; color: var(--texto-secundario); font-weight: 400; margin-top: 4px; }
+  h2 { font-size: clamp(1.65rem, 2.8vw, 2.3rem); line-height: 1.2; letter-spacing: -.035em; font-weight: 600; color: var(--texto-principal); margin-bottom: 24px; }
+  p { color: var(--texto-secundario); font-size: .95rem; line-height: 1.85; }
+  a { display: inline-flex; align-items: center; gap: 20px; min-height: 44px; color: var(--texto-principal); font-size: .85rem; text-underline-offset: 6px; }
+  a:hover, a > span { color: var(--primario); }
+  @media (max-width: 767px) { .about-profile { padding: 65px 0; } .about-profile-layout { grid-template-columns: minmax(0, 1fr); padding-inline: 22px; gap: 30px; } .about-portrait { max-width: 180px; } }
+</style>

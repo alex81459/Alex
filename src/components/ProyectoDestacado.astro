@@ -1,0 +1,53 @@
+<article class="featured-project" aria-labelledby="featured-project-title">
+  <div class="featured-project-heading">
+    <div>
+      <span class="featured-eyebrow"><span aria-hidden="true">02 /</span> PROYECTO DESTACADO</span>
+      <h2 id="featured-project-title">Libro de Clases Digital<span>.</span></h2>
+    </div>
+    <span class="featured-category">INGENIERÍA APLICADA · SLEP COLCHAGUA</span>
+  </div>
+  <div class="featured-project-layout">
+    <div class="featured-project-copy">
+      <h3>Gestión académica conectada<br />en una sola plataforma.</h3>
+      <p><strong>Libro de Clases Digital</strong> Plataforma modular de gestión académica y técnico-pedagógica, desarrollada con <strong>Angular y PrimeNG </strong>. Integra leccionario, asistencia, notas, matrículas, anotaciones, objetivos curriculares, reportes, notificaciones y firma digital para directivos, UTP, administradores, alumnos y apoderados</p>
+      <p><strong>Control de clases, aprobación UTP, auditoría, estadísticas, informes, usuarios, roles y seguimiento académico</strong>. Firma OTP mediante aplicación o correo, Uso del estándar <strong>CEDS</strong> de EEUU facilita estandarizacion de los datos.</p>
+      <div class="featured-project-tags" aria-label="Tecnologías del proyecto">
+        {['Angular', 'PrimeNG 22', 'Flask', 'MySQL', 'Docker', 'Nginx'].map((tecnologia) => <span>{tecnologia}</span>)}
+      </div>
+      <a class="featured-project-link" href="#portfolioModal9" data-bs-toggle="modal">Explorar caso de estudio <span aria-hidden="true">↗︎</span></a>
+      <p class="featured-project-scope">7 establecimientos desplegados · 5 en operación activa</p>
+    </div>
+    <a class="featured-project-preview" href="#portfolioModal9" data-bs-toggle="modal" aria-label="Ver el caso de estudio del Libro de Clases Digital">
+      <div class="featured-preview-bar" aria-hidden="true"><span><i class="fa fa-lock"></i> Plataforma institucional</span><span>Vista del sistema ↗︎</span></div>
+      <img src="assets/img/libroclases3_resultadov3.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Libro de Clases Digital: panel operativo y navegación de los módulos de gestión académica">
+    </a>
+  </div>
+</article>
+
+<style>
+  .featured-project { margin-bottom: 75px; padding-top: 28px; }
+  .featured-project-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+  .featured-eyebrow { color: var(--texto-principal); font-size: .65rem; font-weight: 600; letter-spacing: .15em; }
+  .featured-eyebrow > span { color: var(--primario); margin-right: 12px; }
+  .featured-category { color: var(--texto-secundario); font-size: .57rem; letter-spacing: .08em; }
+  .featured-project-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 38px; align-items: center; padding: 36px; border: 1px solid var(--borde-destacado); border-radius: 14px; background: var(--fondo-tarjeta); }
+  h2 { color: var(--texto-principal); font-size: clamp(1.4rem, 2vw, 1.8rem); letter-spacing: -.035em; font-weight: 500; line-height: 1.2; margin: 10px 0 0; }
+  h3 { color: var(--texto-principal); font-size: clamp(1.5rem, 2.5vw, 2.1rem); letter-spacing: -.035em; font-weight: 600; line-height: 1.2; margin: 0 0 20px; }
+  h2 > span { color: var(--primario); }
+  p { color: var(--texto-secundario); font-size: .88rem; line-height: 1.8; max-width: 390px; }
+  .featured-project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 20px 0; }
+  .featured-project-tags > span { padding: 4px 9px; background: var(--fondo-tarjeta-alternativo); border: 1px solid var(--borde); border-radius: 5px; color: var(--texto-secundario); font-size: .67rem; }
+  .featured-project-link { display: inline-flex; align-items: center; gap: 28px; min-height: 44px; color: var(--texto-principal); font-size: .85rem; font-weight: 600; text-decoration: none; }
+  .featured-project-link > span { color: var(--primario); font-size: 1.2rem; transition: transform .2s; }
+  .featured-project-link:hover > span { transform: translate(2px, -2px); }
+  .featured-project-link:hover { color: var(--primario); }
+  .featured-project-scope { font-size: .61rem; margin: 10px 0 0; }
+  .featured-project-preview { display: block; align-self: stretch; min-height: 0; border: 1px solid var(--borde-destacado); border-radius: 9px; background: var(--fondo-principal); overflow: hidden; text-decoration: none; transition: border-color .2s; }
+  .featured-project-preview:hover { border-color: var(--primario); }
+  .featured-preview-bar { display: flex; align-items: center; justify-content: space-between; padding: 12px; color: var(--texto-secundario); font-size: .56rem; gap: 10px; border-bottom: 1px solid var(--borde); }
+  .featured-preview-bar i { margin-right: 5px; }
+  img { display: block; width: 100%; height: auto; aspect-ratio: 1.6; object-fit: cover; object-position: top left; }
+  @media (max-width: 991px) { .featured-project-layout { gap: 25px; padding: 25px; } .featured-category { display: none; } }
+  @media (max-width: 767px) { .featured-project { padding-top: 14px; margin-bottom: 50px; } .featured-project-heading { margin-bottom: 22px; } .featured-project-layout { grid-template-columns: minmax(0, 1fr); padding: 22px; } .featured-project-scope { font-size: .55rem; } }
+  @media (prefers-reduced-motion: reduce) { .featured-project-link:hover > span { transform: none; } }
+</style>

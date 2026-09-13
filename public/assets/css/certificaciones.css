@@ -2,8 +2,8 @@
     position: relative;
     padding: 110px 0;
     overflow: hidden;
-    background: var(--bg-main);
-    color: var(--text-main);
+    background: var(--fondo-principal);
+    color: var(--texto-principal);
 }
 
 .certifications-section::before {
@@ -30,7 +30,7 @@
 .cert-catalog-kicker {
     display: inline-block;
     margin-bottom: 13px;
-    color: var(--secondary);
+    color: var(--secundario);
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.16em;
@@ -43,7 +43,7 @@
 .cert-heading .section-subheading {
     max-width: 680px;
     margin: 0 auto;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 1rem;
     font-style: normal;
     line-height: 1.7;
@@ -63,9 +63,9 @@
     align-items: start;
     padding: 22px;
     overflow: hidden;
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 14px;
-    background: linear-gradient(145deg, rgba(139, 92, 246, 0.08), transparent 48%), var(--bg-card);
+    background: linear-gradient(145deg, rgba(139, 92, 246, 0.08), transparent 48%), var(--fondo-tarjeta);
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
     transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
 }
@@ -77,13 +77,13 @@
     right: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    background: linear-gradient(90deg, var(--secundario), var(--primario));
 }
 
 .cert-featured-card:hover {
     transform: translateY(-5px);
     border-color: rgba(139, 92, 246, 0.42);
-    background-color: var(--bg-card-hover);
+    background-color: var(--fondo-tarjeta-activa);
 }
 
 .cert-featured-icon {
@@ -95,13 +95,13 @@
     border: 1px solid rgba(139, 92, 246, 0.28);
     border-radius: 11px;
     background: rgba(139, 92, 246, 0.1);
-    color: var(--secondary);
+    color: var(--secundario);
     font-size: 1.05rem;
 }
 
 .cert-provider {
     margin-bottom: 5px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -110,7 +110,7 @@
 
 .cert-featured-card h3 {
     margin: 0 0 14px;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1rem;
     font-weight: 800;
     line-height: 1.35;
@@ -122,21 +122,21 @@
     margin-bottom: 12px;
     padding: 5px 10px;
     border-radius: 999px;
-    background: var(--primary-soft);
-    color: var(--text-secondary);
+    background: var(--primario-suave);
+    color: var(--texto-secundario);
     font-size: 0.68rem;
     font-weight: 700;
 }
 
 .cert-evidence {
     margin: 0 0 8px;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.78rem;
     line-height: 1.55;
 }
 
 .cert-evidence strong {
-    color: var(--text-main);
+    color: var(--texto-principal);
 }
 
 .cert-evidence-apply {
@@ -145,7 +145,7 @@
 
 .cert-availability-note {
     margin: 22px auto 0;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.92rem;
     font-weight: 600;
     line-height: 1.6;
@@ -165,10 +165,10 @@
     gap: 9px;
     min-height: 48px;
     padding: 0 24px;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--primario);
     border-radius: 999px;
     background: transparent;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.82rem;
     font-weight: 800;
     transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
@@ -177,20 +177,20 @@
 .cert-toggle-btn:hover,
 .cert-toggle-btn:focus-visible {
     transform: translateY(-2px);
-    background: var(--primary);
-    color: var(--bg-main);
+    background: var(--primario);
+    color: var(--fondo-principal);
 }
 
 .cert-toggle-btn:focus-visible,
 .cert-filter-btn:focus-visible {
-    outline: 2px solid var(--primary);
+    outline: 2px solid var(--primario);
     outline-offset: 3px;
 }
 
 .cert-catalog {
     margin-top: 34px;
     padding: 28px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 16px;
     background: rgba(16, 30, 49, 0.72);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
@@ -210,13 +210,13 @@
 
 .cert-catalog-header h3 {
     margin: 0;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 1.25rem;
     font-weight: 800;
 }
 
 .cert-catalog-count {
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.74rem;
 }
 
@@ -226,15 +226,15 @@
     gap: 8px;
     margin-bottom: 24px;
     padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--borde);
 }
 
 .cert-filter-btn {
     padding: 7px 13px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 999px;
     background: transparent;
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.72rem;
     font-weight: 700;
     transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
@@ -243,8 +243,8 @@
 .cert-filter-btn:hover,
 .cert-filter-btn.active {
     border-color: rgba(56, 189, 248, 0.42);
-    background: var(--primary-soft);
-    color: var(--primary);
+    background: var(--primario-suave);
+    color: var(--primario);
 }
 
 .cert-catalog-grid {
@@ -271,14 +271,14 @@
 
 .cert-catalog-item > .fa {
     margin-top: 2px;
-    color: var(--success);
+    color: var(--exito);
     font-size: 0.78rem;
 }
 
 .cert-catalog-item span {
     display: block;
     margin-bottom: 4px;
-    color: var(--primary);
+    color: var(--primario);
     font-size: 0.63rem;
     font-weight: 800;
     letter-spacing: 0.04em;
@@ -287,7 +287,7 @@
 
 .cert-catalog-item h4 {
     margin: 0;
-    color: var(--text-main);
+    color: var(--texto-principal);
     font-size: 0.78rem;
     font-weight: 700;
     line-height: 1.4;
@@ -307,9 +307,9 @@ html[data-theme='light'] .cert-catalog-item {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 30px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--borde);
     border-radius: 12px;
-    background: var(--primary-soft);
+    background: var(--primario-suave);
 }
 
 .cert-summary-strip > div {
@@ -318,7 +318,7 @@ html[data-theme='light'] .cert-catalog-item {
     justify-content: center;
     gap: 8px;
     padding: 18px;
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--borde);
 }
 
 .cert-summary-strip > div:last-child {
@@ -326,13 +326,13 @@ html[data-theme='light'] .cert-catalog-item {
 }
 
 .cert-summary-strip strong {
-    color: var(--primary);
+    color: var(--primario);
     font-size: 1.35rem;
     font-weight: 900;
 }
 
 .cert-summary-strip span {
-    color: var(--text-secondary);
+    color: var(--texto-secundario);
     font-size: 0.72rem;
 }
 
@@ -387,7 +387,7 @@ html[data-theme='light'] .cert-catalog-item {
 
     .cert-summary-strip > div {
         border-right: 0;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--borde);
     }
 
     .cert-summary-strip > div:last-child {

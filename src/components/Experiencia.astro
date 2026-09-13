@@ -1,0 +1,133 @@
+---
+const trayectoria = [
+  {
+    periodo: '2024 — Actualidad',
+    organizacion: 'SLEP Colchagua',
+    cargo: 'Desarrollador Full Stack',
+    imagen: 'assets/img/slep.webp',
+    textoAlternativo: 'SLEP Colchagua',
+    resumen: 'Desarrollo de sistemas e infraestructura tecnológica para la red educacional de SLEP Colchagua.',
+    detalles: [
+      'Desarrollo e implemento soluciones tecnológicas institucionales para SLEP Colchagua, entre ellas el Libro de Clases Digital, la plataforma SIMPLE y servicios de interoperabilidad para digitalización de procesos administrativos y educativos, utilizando Python, Flask, SQLAlchemy, Angular y PrimeNG 22.',
+      'Además, administro infraestructura TI para la red de establecimientos educacionales, gestiono proyectos tecnológicos, brindo soporte técnico avanzado, integro sistemas y elaboro documentación técnica especializada para la operación y mejora continua de la organización.',
+    ],
+    etiquetas: ['Python', 'Flask', 'SQLAlchemy', 'Angular', 'PrimeNG 22', 'APIs REST', 'Infraestructura TI', 'Gestión de Proyectos'],
+  },
+  {
+    periodo: '2021 — 2024',
+    organizacion: 'Johnson Fruit',
+    cargo: 'Encargado del Área TI',
+    imagen: 'assets/img/JohnsonFruit.webp',
+    textoAlternativo: 'Johnson Fruit',
+    resumen: 'Automatización, trazabilidad e infraestructura industrial para una operación productiva y exportadora.',
+    detalles: [
+      'Responsable del área TI en empresa agrícola de producción y exportación frutícola, liderando la gestión tecnológica de sistemas de trazabilidad, bases de datos, redes, comunicaciones e infraestructura interna.',
+      'Desarrollé soluciones informáticas para la optimización de procesos productivos y administrativos, administré servidores Windows, ejecuté soporte técnico avanzado, mantenimiento de equipos y capacitación al personal. Complementariamente, participé como Auditor Interno BRC v8, contribuyendo al cumplimiento normativo, control de procesos y mejora continua operacional.',
+    ],
+    etiquetas: ['Trazabilidad', 'Bases de Datos', 'Servidores Windows', 'Redes', 'Auditor BRC v8', 'Soporte Técnico', 'Capacitación'],
+  },
+  {
+    periodo: '2019 — 2021',
+    organizacion: 'Municipalidad de Chimbarongo',
+    cargo: 'Prácticas Profesionales',
+    imagen: 'assets/img/MunicipalidadCH.webp',
+    textoAlternativo: 'Municipalidad de Chimbarongo',
+    resumen: 'Desarrollo de sistemas, redes y soporte tecnológico para la gestión institucional municipal.',
+    detalles: [
+      'Experiencia en Ingeniería Informática desarrollada en la Municipalidad de Chimbarongo durante mi formación profesional. Participé en análisis y programación de sistemas, soporte técnico a usuarios, instalación y mantención de redes, equipos y plataformas informáticas.',
+      'Desarrollé soluciones internas y mejoras funcionales en sistemas municipales, contribuyendo a la digitalización de procesos y la gestión tecnológica institucional.',
+    ],
+    etiquetas: ['Análisis de Sistemas', 'Programación', 'Redes', 'Soporte Técnico', 'Sistemas Municipales'],
+  },
+  {
+    periodo: '2016 — 2021',
+    organizacion: 'Formación técnica y profesional',
+    cargo: 'Informática, programación y análisis de sistemas',
+    imagen: 'assets/img/3964906.webp',
+    textoAlternativo: 'Formación en Ingeniería Informática',
+    resumen: 'Formación progresiva en soporte computacional, programación, análisis de sistemas e Ingeniería Informática.',
+    hitos: [
+      {
+        anio: '2016',
+        titulo: 'Administrativo Computacional Microsoft',
+        texto: 'Formación en herramientas computacionales y ofimáticas, con dominio en entorno Windows y Microsoft Office. Además, obtuve mención en Armado y Mantención de Computadoras, fortaleciendo competencias en soporte técnico, diagnóstico, mantenimiento preventivo y correctivo, y resolución de problemas de hardware.',
+      },
+      {
+        anio: '2017',
+        titulo: 'Técnico Superior en Programación',
+        texto: 'Formación técnica orientada al ciclo completo de desarrollo de software, incluyendo análisis de requerimientos, diseño, construcción, pruebas e implementación de soluciones informáticas. Esta formación me permitió adquirir competencias para desarrollar sistemas conforme a estándares de calidad técnica y enfocados en las necesidades reales de usuarios y organizaciones.',
+      },
+      {
+        anio: '2019',
+        titulo: 'Técnico en Análisis de Sistemas',
+        texto: 'Especialización en análisis, modelamiento, supervisión y mejora continua de sistemas informáticos. Desarrollé competencias en levantamiento de requerimientos, modelado de procesos de negocio, control de calidad de software, administración de proyectos informáticos y diseño de soluciones tecnológicas seguras, funcionales y adaptadas al contexto organizacional.',
+      },
+      {
+        anio: '2021',
+        titulo: 'Ingeniero de Ejecución en Informática',
+        texto: 'Formación profesional en desarrollo, evaluación e implementación de soluciones informáticas integrales, aplicando metodologías de análisis, diseño, pruebas, seguridad informática y gestión de proyectos tecnológicos. Esta formación me permitió fortalecer capacidades para diseñar sistemas seguros, administrar proyectos TI, evaluar soluciones tecnológicas y aplicar conocimientos en áreas como infraestructura, software e IoT.',
+      },
+    ],
+    etiquetas: ['Soporte Computacional', 'Programación', 'Análisis de Sistemas', 'Ingeniería Informática', 'Seguridad', 'IoT'],
+  },
+];
+---
+
+<section id="experiencia" class="about-section" aria-labelledby="experience-title">
+  <div class="container career-container">
+    <header class="career-heading section-intro text-center">
+      <span class="career-eyebrow section-kicker">TRAYECTORIA PROFESIONAL</span>
+      <h2 id="experience-title" class="text-uppercase section-heading">Experiencia</h2>
+      <p class="section-subheading section-lead">Experiencia y formación construidas desde la operación técnica hasta el desarrollo de soluciones institucionales.</p>
+    </header>
+
+    <div class="career-timeline">
+      {trayectoria.map((elemento, indice) => (
+        <article class="career-entry">
+          <div class="career-marker" aria-hidden="true">
+            <span>{String(indice + 1).padStart(2, '0')}</span>
+          </div>
+
+          <div class="career-card">
+            <div class="career-card-main">
+              <img src={elemento.imagen} width="76" height="76" loading="lazy" alt={elemento.textoAlternativo}>
+              <div class="career-card-copy">
+                <span class="career-period">{elemento.periodo}</span>
+                <h3>{elemento.organizacion}</h3>
+                <span class="career-role">{elemento.cargo}</span>
+                <p class="career-summary">{elemento.resumen}</p>
+              </div>
+            </div>
+
+            <details class="career-details">
+              <summary>
+                <span>Ver trayectoria completa</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </summary>
+              <div class="career-details-content">
+                {elemento.detalles?.map((parrafo) => <p>{parrafo}</p>)}
+                {elemento.hitos && (
+                  <div class="career-education-list">
+                    {elemento.hitos.map((hito) => (
+                      <div class="career-education-item">
+                        <span>{hito.anio}</span>
+                        <div>
+                          <h4>{hito.titulo}</h4>
+                          <p>{hito.texto}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <div class="career-tags">
+                  {elemento.etiquetas.map((etiqueta) => <span>{etiqueta}</span>)}
+                </div>
+              </div>
+            </details>
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>
