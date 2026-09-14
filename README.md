@@ -40,6 +40,8 @@ Portafolio web moderno, optimizado para rendimiento y SEO, que presenta experien
 - Documentación técnica y funcional como capacidad destacada
 - Stack tecnológico con herramientas dominadas
 - Información de contacto y redes sociales
+- Terminal interactiva para explorar el perfil
+- Política de privacidad independiente y aviso de privacidad persistente
 
 ### Portada y navegación
 
@@ -50,6 +52,20 @@ El diagrama incluye Angular, React, Astro y Next.js en la interfaz, y Flask, Nes
 `ProyectoDestacado.astro` abre la sección `#portfolio`. La trayectoria completa se conserva en `Experiencia.astro` (`#experiencia`) y `Acerca.astro` mantiene `#about`. Servicios, galería, certificaciones, modales y terminal interactiva siguen disponibles. El resumen para reclutadores se integró en el hero para evitar duplicaciones.
 
 La portada usa CSS y pequeños scripts compilados por Astro, sin dependencias de animación. Respeta `prefers-reduced-motion`, conserva contenido y cifras sin JavaScript y reutiliza el selector de tema con la clave `alex-theme`. El despliegue continúa siendo estático bajo `/Alex/` en GitHub Pages.
+
+### Componentes principales
+
+| Componente | Responsabilidad |
+|-----------|-----------------|
+| `Hero.astro` | Presentación, enlaces profesionales, CV y métricas principales. |
+| `Arquitectura.astro` | Diagrama interactivo de la arquitectura y tecnologías de las soluciones. |
+| `StatsBand.astro` | Banda de métricas animada dentro de la portada. |
+| `ProyectoDestacado.astro` | Caso principal: Libro de Clases Digital. |
+| `Portafolio.astro` y `Modales.astro` | Catálogo de proyectos y sus fichas detalladas. |
+| `Experiencia.astro`, `Impacto.astro` y `Certificaciones.astro` | Trayectoria, resultados profesionales y certificaciones. |
+| `TechStack.astro`, `Servicios.astro` y `Acerca.astro` | Tecnologías, capacidades y perfil profesional. |
+| `Galeria.astro`, `Contacto.astro` y `Terminal.astro` | Recursos visuales, canales de contacto y exploración interactiva. |
+| `MainLayout.astro` | Metadatos SEO, navegación, selector de tema, aviso de privacidad y elementos globales. |
 
 ---
 
@@ -72,7 +88,7 @@ La portada usa CSS y pequeños scripts compilados por Astro, sin dependencias de
 
 | Categoría | Tecnologías |
 |-----------|------------|
-| **Framework** | Astro 5.0 |
+| **Framework** | Astro 7.1.3 |
 | **Lenguaje** | TypeScript, HTML5, CSS3 |
 | **UI Framework** | Bootstrap 5 |
 | **Iconografía** | Font Awesome 5+ |
@@ -86,8 +102,8 @@ La portada usa CSS y pequeños scripts compilados por Astro, sin dependencias de
 
 Antes de comenzar, asegúrate de tener instalado:
 
-- **Node.js** (versión 18.x o superior)
-- **npm** (versión 9.x o superior)
+- **Node.js** (versión 22.12.0 o superior)
+- **npm** (versión 9.6.5 o superior)
 - **Git** (para clonar el repositorio)
 
 Para verificar las versiones instaladas:
@@ -100,7 +116,7 @@ git --version
 
 ---
 
-##Instalación
+## Instalación
 
 ### Opción 1: Usando el script de arranque (Recomendado para Linux/Mac)
 
@@ -185,19 +201,25 @@ Alex/
 ├── src/
 │   ├── components/          # Componentes Astro reutilizables
 │   │   ├── Acerca.astro
+│   │   ├── Arquitectura.astro
 │   │   ├── Certificaciones.astro
 │   │   ├── Contacto.astro
+│   │   ├── Experiencia.astro
 │   │   ├── Galeria.astro
 │   │   ├── Hero.astro
 │   │   ├── Impacto.astro
 │   │   ├── Modales.astro
 │   │   ├── Portafolio.astro
+│   │   ├── ProyectoDestacado.astro
 │   │   ├── Servicios.astro
-│   │   └── TechStack.astro
+│   │   ├── StatsBand.astro
+│   │   ├── TechStack.astro
+│   │   └── Terminal.astro
 │   ├── layouts/             # Layouts base
 │   │   └── MainLayout.astro
 │   └── pages/               # Páginas estáticas
-│       └── index.astro
+│       ├── index.astro
+│       └── privacidad.astro
 ├── public/                  # Archivos estáticos públicos
 │   ├── assets/
 │   │   ├── css/             # Estilos CSS
