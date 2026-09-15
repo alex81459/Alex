@@ -1,8 +1,8 @@
 ---
 const estadisticas = [
-  { objetivo: 69, valorVisible: '69', etiqueta: 'Establecimientos', contexto: 'Operación TI · SLEP Colchagua' },
-  { objetivo: 10000, valorVisible: '10.000', etiqueta: 'Gestiones digitalizadas', contexto: 'SIMPLE · registros 2025–2026' },
-  { objetivo: 7, valorVisible: '7', etiqueta: 'APIs / servicios', contexto: 'Integración institucional' },
+  { objetivo: 68, valorVisible: '68', etiqueta: 'Establecimientos', contexto: 'Operación TI · SLEP Colchagua', muestraMas: false },
+  { objetivo: 15000, valorVisible: '15.000', etiqueta: 'Gestiones digitalizadas', contexto: 'Trámites Online en Procesos Implementados · registros 2025–2026', muestraMas: true },
+  { objetivo: 12, valorVisible: '12', etiqueta: 'APIs / servicios', contexto: 'Integración institucional de bases de datos y sistemas', muestraMas: false },
 ];
 ---
 
@@ -10,7 +10,7 @@ const estadisticas = [
   {estadisticas.map((estadistica) => (
     <div class="hero-metric">
       <dt>{estadistica.etiqueta}</dt>
-      <dd><span class="hero-metric-number" data-target={estadistica.objetivo}>{estadistica.valorVisible}</span><span class="hero-metric-plus">+</span></dd>
+      <dd><span class="hero-metric-number" data-target={estadistica.objetivo}>{estadistica.valorVisible}</span>{estadistica.muestraMas && <span class="hero-metric-plus">+</span>}</dd>
       <dd class="hero-metric-context">{estadistica.contexto}</dd>
     </div>
   ))}
