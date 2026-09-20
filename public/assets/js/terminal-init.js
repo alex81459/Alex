@@ -25,6 +25,29 @@
     ['Nginx', 7],
   ];
 
+  var aliasComandos = {
+    'help': 'help',
+    'ayuda': 'help',
+    'whoami': 'whoami',
+    'quien soy': 'whoami',
+    'skills': 'skills',
+    'habilidades': 'skills',
+    'projects': 'projects',
+    'proyectos': 'projects',
+    'experience': 'experience',
+    'experiencia': 'experience',
+    'contact': 'contact',
+    'contacto': 'contact',
+    'cv': 'cv',
+    'curriculum': 'cv',
+    'clear': 'clear',
+    'limpiar': 'clear',
+  };
+
+  var nombresAlias = Object.keys(aliasComandos).sort(function (a, b) {
+    return b.length - a.length;
+  });
+
   function desplazarAlFinal() {
     salida.scrollTop = salida.scrollHeight;
   }
@@ -49,6 +72,32 @@
     return cadena.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
+  function normalizarComando(texto) {
+    return texto
+      .trim()
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, ' ');
+  }
+
+  function resolverComandos(texto) {
+    var pendiente = normalizarComando(texto);
+    var comandos = [];
+
+    while (pendiente) {
+      var alias = nombresAlias.find(function (nombre) {
+        return pendiente === nombre || pendiente.indexOf(nombre + ' ') === 0;
+      });
+
+      if (!alias) return null;
+      comandos.push(aliasComandos[alias]);
+      pendiente = pendiente.slice(alias.length).trim();
+    }
+
+    return comandos;
+  }
+
   function mostrarComando(textoOriginal) {
     escribirHtml('<span class="egg-prompt">' + INDICADOR_TERMINAL + '</span> <span class="egg-cmd">' + escaparHtml(textoOriginal) + '</span>');
   }
@@ -66,7 +115,7 @@
   function procesarComando(comando) {
     switch (comando) {
       case 'help':
-        escribir('Comandos disponibles:\n  whoami      · quién soy\n  skills      · habilidades\n  projects    · proyectos destacados\n  experience  · trayectoria\n  contact     · contacto\n  cv          · abrir curriculum\n  clear       · limpiar pantalla');
+        escribir('Comandos disponibles:\n  whoami / quién soy        · quién soy\n  skills / habilidades      · habilidades\n  projects / proyectos      · proyectos destacados\n  experience / experiencia  · trayectoria\n  contact / contacto        · contacto\n  cv / curriculum           · abrir curriculum\n  clear / limpiar           · limpiar pantalla');
         break;
       case 'whoami':
         escribir('Alex Salinas\nIngeniero de Software / TI');
@@ -96,12 +145,16 @@
   }
 
   function ejecutarComando(textoOriginal) {
-    var comando = textoOriginal.trim().toLowerCase();
+    var comandos = resolverComandos(textoOriginal);
     mostrarComando(textoOriginal.trim());
-    if (comando) {
+    if (comandos && comandos.length) {
       historial.push(textoOriginal.trim());
       indiceHistorial = historial.length;
-      procesarComando(comando);
+      comandos.forEach(procesarComando);
+    } else if (textoOriginal.trim()) {
+      historial.push(textoOriginal.trim());
+      indiceHistorial = historial.length;
+      procesarComando(normalizarComando(textoOriginal));
     }
     entrada.value = '';
     desplazarAlFinal();
@@ -122,6 +175,7 @@
   function cerrarTerminal() {
     panel.hidden = true;
     botonTerminal.setAttribute('aria-expanded', 'false');
+    botonTerminal.focus({ preventScroll: true });
   }
 
   botonTerminal.addEventListener('click', function () {
@@ -133,6 +187,7 @@
   });
 
   botonCerrar.addEventListener('click', cerrarTerminal);
+  window.addEventListener('terminal:open', abrirTerminal);
 
   entrada.addEventListener('keydown', function (evento) {
     if (evento.key === 'Enter') {

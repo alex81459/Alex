@@ -6,6 +6,8 @@ import Servicios from '../components/Servicios.astro';
 import Tecnologias from '../components/TechStack.astro';
 import Certificaciones from '../components/Certificaciones.astro';
 import Portafolio from '../components/Portafolio.astro';
+import ActualmenteConstruyendo from '../components/ActualmenteConstruyendo.astro';
+import PaletaComandos from '../components/PaletaComandos.astro';
 import Galeria from '../components/Galeria.astro';
 import Acerca from '../components/Acerca.astro';
 import Experiencia from '../components/Experiencia.astro';
@@ -17,9 +19,10 @@ const tituloPagina = 'Alex Salinas Ponce - Ingeniero de Software Full Stack';
 const descripcionPagina = 'Ingeniero de Software Full Stack especializado en plataformas digitales, APIs e infraestructura tecnológica (DevOps). Python, Angular, Flask y soluciones empresariales.';
 ---
 
-<DisenoPrincipal titulo={tituloPagina} descripcion={descripcionPagina}>
+<DisenoPrincipal titulo={tituloPagina} descripcion={descripcionPagina} mostrarComandos>
   <Portada />
   <Portafolio />
+  <ActualmenteConstruyendo />
   <Impacto />
   <Experiencia />
   <Tecnologias />
@@ -28,6 +31,7 @@ const descripcionPagina = 'Ingeniero de Software Full Stack especializado en pla
   <Servicios />
   <Galeria />
   <Contacto />
+  <PaletaComandos />
   <Modales />
   <Terminal />
 </DisenoPrincipal>

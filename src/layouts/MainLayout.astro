@@ -2,11 +2,13 @@
 interface Props {
   titulo?: string;
   descripcion?: string;
+  mostrarComandos?: boolean;
 }
 
 const {
   titulo = 'Alex Salinas Ponce - Ingeniero de Software Full Stack',
   descripcion = 'Ingeniero de Software Full Stack especializado en plataformas digitales, APIs e infraestructura tecnológica (DevOps). Python, Angular, Flask y soluciones empresariales.',
+  mostrarComandos = false,
 } = Astro.props;
 
 const rutaBase = import.meta.env.BASE_URL;
@@ -171,9 +173,12 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experiencia">Experiencia</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tech-stack">Tecnologías</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre mí</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto <span aria-hidden="true">↗︎</span></a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto</a></li>
           </ul>
         </div>
+        {mostrarComandos && <button id="command-palette-trigger" class="command-palette-trigger" type="button" aria-label="Abrir comandos rápidos" aria-controls="command-palette" aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>}
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar entre tema oscuro y claro" aria-pressed="false" title="Cambiar tema">
           <span class="theme-toggle-track">
             <i class="fa fa-sun-o theme-icon theme-icon-sun" aria-hidden="true"></i>
@@ -207,6 +212,9 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
       #mainNav .nav-link:hover, #mainNav .nav-link.active { color: var(--texto-principal) !important; background: var(--primario-suave); box-shadow: none; transform: none; }
       #mainNav .nav-link > span { color: var(--texto-secundario); }
       #mainNav .theme-toggle { margin-left: 0; min-height: 44px; }
+      #mainNav .command-palette-trigger { display: inline-flex; align-items: center; justify-content: center; gap: 6px; width: 48px; min-height: 44px; padding: 0; border: 1px solid var(--borde-destacado); border-radius: 8px; color: var(--texto-secundario); background: transparent; font-size: .75rem; }
+      #mainNav .command-palette-trigger:hover { color: var(--texto-principal); border-color: var(--primario); background: var(--primario-suave); }
+      #mainNav .command-palette-trigger kbd { padding: 0; border: 0; color: inherit; background: transparent; font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace; }
       #mainNav .theme-toggle-track { box-shadow: none; }
       #mainNav .theme-toggle-thumb { background: var(--primario-suave); box-shadow: none; border: 1px solid var(--borde-destacado); }
       #mainNav .navbar-toggler { border: 1px solid var(--borde-destacado); border-radius: 8px; background: transparent; margin: 0; width: 44px; height: 44px; padding: 0; box-shadow: none; }
@@ -214,9 +222,10 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
       @media (max-width: 991.98px) {
         #mainNav .container { flex-wrap: wrap; gap: 12px; }
         #mainNav .navbar-brand { order: 0; max-width: none; }
-        #mainNav .theme-toggle { order: 1; }
-        #mainNav .navbar-toggler { order: 2; }
-        #mainNav .navbar-collapse { order: 3; position: absolute; top: 79px; left: 0; right: 0; margin: 0; padding: 0; background: var(--fondo-navegacion-movil); border-bottom: 1px solid var(--borde-destacado); border-radius: 0; box-shadow: 0 15px 25px -20px var(--sombra-flotante); max-height: calc(100svh - 80px); overflow-y: auto; }
+        #mainNav .command-palette-trigger { order: 1; }
+        #mainNav .theme-toggle { order: 2; }
+        #mainNav .navbar-toggler { order: 3; }
+        #mainNav .navbar-collapse { order: 4; position: absolute; top: 79px; left: 0; right: 0; margin: 0; padding: 0; background: var(--fondo-navegacion-movil); border-bottom: 1px solid var(--borde-destacado); border-radius: 0; box-shadow: 0 15px 25px -20px var(--sombra-flotante); max-height: calc(100svh - 80px); overflow-y: auto; }
         #mainNav .navbar-nav { width: 100%; padding: 12px 22px; gap: 2px; margin: 0; background: transparent; box-shadow: none; }
         #mainNav .nav-link { padding-inline: 14px !important; }
       }

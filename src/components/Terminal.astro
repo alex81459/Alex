@@ -2,14 +2,14 @@
 const rutaBase = import.meta.env.BASE_URL;
 ---
 
-<button class="terminal-launcher" id="terminal-launcher" type="button" aria-label="Abrir terminal interactiva" aria-expanded="false">
+<button class="terminal-launcher" id="terminal-launcher" type="button" aria-label="Abrir terminal interactiva" aria-controls="terminal-easteregg" aria-expanded="false">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 </button>
 
-<div class="terminal-easteregg" id="terminal-easteregg" hidden aria-label="Terminal interactiva">
+<div class="terminal-easteregg" id="terminal-easteregg" hidden role="dialog" aria-labelledby="terminal-egg-title">
   <div class="terminal-egg-bar">
     <span class="terminal-egg-dots" aria-hidden="true"><span></span><span></span><span></span></span>
-    <span class="terminal-egg-title">alex@portfolio: ~</span>
+    <span class="terminal-egg-title" id="terminal-egg-title">alex@portfolio: ~</span>
     <button class="terminal-egg-close" id="terminal-egg-close" type="button" aria-label="Cerrar terminal"><i class="fa fa-times" aria-hidden="true"></i></button>
   </div>
   <div class="terminal-egg-output" id="terminal-egg-output" aria-live="polite"></div>
@@ -50,10 +50,6 @@ const rutaBase = import.meta.env.BASE_URL;
     background: var(--primario);
     color: var(--fondo-principal);
     transform: translateY(-2px);
-  }
-
-  .terminal-launcher:hover .fa {
-    color: var(--fondo-principal);
   }
 
   .terminal-launcher:hover .fa {

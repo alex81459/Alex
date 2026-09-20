@@ -1,0 +1,67 @@
+<section id="actualmente-construyendo" class="building-section" aria-labelledby="building-title">
+  <div class="container">
+    <article class="building-card">
+      <div class="building-copy">
+        <div class="building-meta">
+          <span class="building-eyebrow"><span aria-hidden="true">01 /</span> ACTUALMENTE CONSTRUYENDO</span>
+          <span class="building-status"><span aria-hidden="true"></span> EN DESARROLLO</span>
+        </div>
+        <h2 id="building-title">Sistema de Salidas Pedagógicas<span>.</span></h2>
+        <p>
+          Sistema para gestionar y supervisar las salidas pedagógicas de los establecimientos educacionales del Programa 02.
+          Está dirigido a las áreas de Directores, Gestión Territorial y Gabinete, acompañando las salidas de equipos directivos, docentes y estudiantes.
+        </p>
+        <div class="building-tags" aria-label="Ámbitos del proyecto">
+          <span><i class="fa fa-university" aria-hidden="true"></i> Programa 02</span>
+          <span><i class="fa fa-sitemap" aria-hidden="true"></i> Supervisión institucional</span>
+          <span><i class="fa fa-users" aria-hidden="true"></i> Directivos · docentes · estudiantes</span>
+          <span><i class="fa fa-code" aria-hidden="true"></i> Desarrollo activo</span>
+        </div>
+      </div>
+
+      <div class="building-preview" aria-label="Estado del proyecto: en desarrollo">
+        <div class="building-preview-bar">
+          <span><i class="fa fa-circle-o-notch" aria-hidden="true"></i> gestion / salidas-pedagogicas</span>
+          <span>v0.1</span>
+        </div>
+        <div class="building-preview-content">
+          <span class="building-preview-icon" aria-hidden="true"><i class="fa fa-map-marker"></i></span>
+          <span class="building-preview-label">PRÓXIMO CASO DE ESTUDIO</span>
+          <strong>Sistema en construcción</strong>
+          <small>Los detalles del proyecto estarán disponibles aquí.</small>
+        </div>
+        <div class="building-preview-progress" aria-hidden="true"><span></span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+  .building-section { padding: 18px 0 48px; color: var(--texto-principal); }
+  .building-card { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 40px; align-items: center; overflow: hidden; padding: 34px; border: 1px solid var(--borde-destacado); border-radius: 14px; background: linear-gradient(120deg, color-mix(in srgb, var(--fondo-tarjeta) 96%, var(--primario)), var(--fondo-tarjeta)); box-shadow: 0 24px 60px -42px var(--sombra-flotante); }
+  .building-card::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 84% 12%, color-mix(in srgb, var(--primario) 16%, transparent), transparent 30%); }
+  .building-copy, .building-preview { position: relative; z-index: 1; }
+  .building-meta { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 15px; }
+  .building-eyebrow, .building-status, .building-preview-label, .building-preview-bar { font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+  .building-eyebrow { color: var(--texto-secundario); font-weight: 600; }
+  .building-eyebrow > span { color: var(--primario); margin-right: 8px; }
+  .building-status { display: inline-flex; align-items: center; gap: 6px; color: var(--primario); white-space: nowrap; }
+  .building-status > span { width: 6px; height: 6px; border-radius: 50%; background: var(--primario); box-shadow: 0 0 0 4px var(--primario-suave); }
+  .building-copy h2 { margin: 0; color: var(--texto-principal); font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.12; }
+  .building-copy h2 > span { color: var(--primario); }
+  .building-copy p { max-width: 570px; margin: 16px 0 0; color: var(--texto-secundario); font-size: .9rem; line-height: 1.75; }
+  .building-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .building-tags span { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border: 1px solid var(--borde); border-radius: 6px; color: var(--texto-secundario); background: var(--fondo-tarjeta-alternativo); font-size: .68rem; }
+  .building-tags i { color: var(--primario); }
+  .building-preview { overflow: hidden; border: 1px solid var(--borde-destacado); border-radius: 10px; background: var(--fondo-principal); box-shadow: 0 20px 38px -28px var(--sombra-flotante); }
+  .building-preview-bar { display: flex; justify-content: space-between; gap: 10px; padding: 11px 13px; border-bottom: 1px solid var(--borde); color: var(--texto-secundario); font-size: .53rem; }
+  .building-preview-bar i { color: var(--primario); margin-right: 5px; }
+  .building-preview-content { display: flex; flex-direction: column; align-items: flex-start; min-height: 193px; padding: 25px; background: linear-gradient(135deg, var(--fondo-principal), var(--fondo-tarjeta-alternativo)); }
+  .building-preview-icon { display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: auto; border-radius: 9px; color: var(--primario); background: var(--primario-suave); font-size: 1rem; }
+  .building-preview-label { margin-top: 22px; color: var(--primario); font-size: .52rem; }
+  .building-preview-content strong { margin-top: 7px; color: var(--texto-principal); font-size: 1rem; font-weight: 600; }
+  .building-preview-content small { margin-top: 5px; color: var(--texto-secundario); font-size: .67rem; }
+  .building-preview-progress { height: 3px; background: var(--fondo-tarjeta-alternativo); }
+  .building-preview-progress > span { display: block; width: 38%; height: 100%; background: linear-gradient(90deg, var(--primario), color-mix(in srgb, var(--primario) 45%, transparent)); }
+  @media (max-width: 767px) { .building-section { padding: 8px 0 38px; } .building-card { grid-template-columns: 1fr; gap: 25px; padding: 23px; } .building-preview-content { min-height: 175px; } }
+</style>
