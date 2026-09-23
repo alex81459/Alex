@@ -38,7 +38,7 @@ const rutaBase = import.meta.env.BASE_URL;
     font-size: 1.05rem;
     cursor: pointer;
     backdrop-filter: blur(12px);
-    box-shadow: 0 18px 40px var(--sombra-flotante, rgba(0, 0, 0, 0.35));
+    box-shadow: var(--sombra-superficie);
     transition: var(--transicion);
   }
 
@@ -65,12 +65,12 @@ const rutaBase = import.meta.env.BASE_URL;
     height: min(460px, 62vh);
     display: flex;
     flex-direction: column;
-    border-radius: 12px;
+    border-radius: var(--radio-medio);
     border: 1px solid var(--borde-indicador, rgba(148, 163, 184, 0.18));
     background: #0b1220;
     color: #d7e6f2;
     font-family: 'Courier New', Consolas, Monaco, monospace;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--sombra-superficie);
     overflow: hidden;
     animation: eggIn 0.18s ease;
   }

@@ -6,6 +6,7 @@ import Servicios from '../components/Servicios.astro';
 import Tecnologias from '../components/TechStack.astro';
 import Certificaciones from '../components/Certificaciones.astro';
 import Portafolio from '../components/Portafolio.astro';
+import ProyectoDestacado from '../components/ProyectoDestacado.astro';
 import ActualmenteConstruyendo from '../components/ActualmenteConstruyendo.astro';
 import PaletaComandos from '../components/PaletaComandos.astro';
 import Galeria from '../components/Galeria.astro';
@@ -21,6 +22,11 @@ const descripcionPagina = 'Ingeniero de Software Full Stack especializado en pla
 
 <DisenoPrincipal titulo={tituloPagina} descripcion={descripcionPagina} mostrarComandos>
   <Portada />
+  <section id="caso-destacado" class="featured-project-section" aria-label="Caso de estudio destacado">
+    <div class="container">
+      <ProyectoDestacado />
+    </div>
+  </section>
   <Portafolio />
   <ActualmenteConstruyendo />
   <Impacto />
@@ -45,14 +51,26 @@ const descripcionPagina = 'Ingeniero de Software Full Stack especializado en pla
         if (!entrada.isIntersecting) return;
         observador.unobserve(entrada.target);
         if (!movimientoReducido.matches) entrada.target.animate(
-          [{ opacity: .5, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }],
-          { duration: 450, easing: 'ease-out' },
+          [{ opacity: .5, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }],
+          { duration: 200, easing: 'ease-out' },
         );
       });
     }, { threshold: .1 });
-    document.querySelectorAll('main > section > .container > .section-intro, .career-heading, .impacto-category-card').forEach((elemento) => observador.observe(elemento));
+    document.querySelectorAll('main > section > .container > .section-intro, .portfolio-item, .tech-domain-card, .service-primary-card, .cert-featured-card, .impacto-category-card, .career-card, .contact-card, .building-card, .featured-project-layout, .system-map-surface').forEach((elemento) => observador.observe(elemento));
     movimientoReducido.addEventListener('change', () => {
       if (movimientoReducido.matches) document.getAnimations().forEach((animacion) => animacion.cancel());
     });
   }
 </script>
+
+
+<style>
+  .featured-project-section {
+    padding: 72px 0 0;
+    background: var(--fondo-principal);
+  }
+
+  @media (max-width: 767px) {
+    .featured-project-section { padding-top: 42px; }
+  }
+</style>

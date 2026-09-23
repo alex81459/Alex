@@ -61,9 +61,9 @@
     padding: 28px;
     overflow: hidden;
     border: 1px solid var(--borde);
-    border-radius: 16px;
+    border-radius: var(--radio-superficie);
     background: linear-gradient(145deg, rgba(56, 189, 248, 0.06), transparent 42%), var(--fondo-tarjeta);
-    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+    box-shadow: var(--sombra-superficie);
     transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
@@ -97,7 +97,7 @@
     width: 54px;
     height: 54px;
     border: 1px solid rgba(56, 189, 248, 0.26);
-    border-radius: 14px;
+    border-radius: var(--radio-medio);
     background: var(--primario-suave);
     color: var(--primario);
     font-size: 1.35rem;
@@ -135,7 +135,7 @@
 .tech-experience-item {
     padding: 15px 16px;
     border: 1px solid rgba(56, 189, 248, 0.1);
-    border-radius: 10px;
+    border-radius: var(--radio-medio);
     background: rgba(7, 17, 31, 0.42);
     transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
@@ -188,7 +188,7 @@
     padding: 18px 22px;
     border: 1px solid rgba(56, 189, 248, 0.18);
     border-left: 4px solid var(--primario);
-    border-radius: 10px;
+    border-radius: var(--radio-medio);
     background: var(--primario-suave);
 }
 

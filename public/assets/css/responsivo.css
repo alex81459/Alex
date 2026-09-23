@@ -333,7 +333,7 @@
     }
     
     .portfolio-modal .modal-content {
-        border-radius: 10px !important;
+        border-radius: var(--radio-medio) !important;
         overflow: hidden !important;
     }
     
@@ -352,14 +352,14 @@
         height: auto !important;
         min-height: 200px !important;
         aspect-ratio: 16/9 !important;
-        border-radius: 8px !important;
+        border-radius: var(--radio-control) !important;
         margin: 15px 0 !important;
     }
     
     .portfolio-modal img {
         max-width: 100% !important;
         height: auto !important;
-        border-radius: 8px !important;
+        border-radius: var(--radio-control) !important;
         margin: 10px 0 !important;
         display: block !important;
         margin-left: auto !important;

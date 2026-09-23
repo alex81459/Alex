@@ -180,7 +180,7 @@ main > section:focus, #main-content:focus { outline: none; }
     padding: 14px;
     background: var(--primario-suave);
     border: 1px solid rgba(56, 189, 248, 0.12);
-    border-radius: 8px;
+    border-radius: var(--radio-control);
 }
 
 .project-contribution-card h5 {
@@ -323,7 +323,7 @@ main > section:focus, #main-content:focus { outline: none; }
     padding: 10px 12px;
     background: var(--primario-suave);
     border: 1px solid rgba(56, 189, 248, 0.1);
-    border-radius: 8px;
+    border-radius: var(--radio-control);
     font-size: 0.88rem;
     line-height: 1.45;
     color: var(--texto-secundario);
@@ -444,7 +444,7 @@ main > section:focus, #main-content:focus { outline: none; }
     text-align: right !important;
     background: rgba(20, 39, 58, 0.88);
     border: 1px solid rgba(32, 148, 255, 0.28);
-    border-radius: 10px;
+    border-radius: var(--radio-medio);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
     position: relative;
 }
@@ -548,7 +548,7 @@ main > section:focus, #main-content:focus { outline: none; }
     margin: 56px 0 0;
     background: rgba(20, 39, 58, 0.86) !important;
     border: 1px solid rgba(32, 148, 255, 0.28);
-    border-radius: 10px;
+    border-radius: var(--radio-medio);
 }
 
 @media (max-width: 767.98px) {
@@ -752,7 +752,7 @@ html[data-theme='light'] .portfolio-link:focus .portfolio-hover {
     color: var(--texto-principal);
     background: var(--fondo-indicador);
     border: 1px solid var(--borde-indicador);
-    border-radius: 16px;
+    border-radius: var(--radio-superficie);
     box-shadow: 0 18px 40px var(--sombra-flotante);
     backdrop-filter: blur(14px);
 }
@@ -768,7 +768,7 @@ html[data-theme='light'] .portfolio-link:focus .portfolio-hover {
     font-size: 1.2rem;
     background: linear-gradient(145deg, rgba(32, 148, 255, 0.18), rgba(0, 212, 255, 0.08));
     border: 1px solid rgba(32, 148, 255, 0.35);
-    border-radius: 12px;
+    border-radius: var(--radio-medio);
 }
 
 #privacy-notice .privacy-notice-body {
@@ -846,14 +846,14 @@ html[data-theme='light'] #privacy-notice .privacy-notice-btn {
         padding: 12px;
         overflow-y: auto;
         overscroll-behavior: contain;
-        border-radius: 14px;
+        border-radius: var(--radio-medio);
     }
 
     #privacy-notice .privacy-notice-icon {
         width: 36px;
         height: 36px;
         font-size: 1rem;
-        border-radius: 10px;
+        border-radius: var(--radio-medio);
     }
 
     #privacy-notice .privacy-notice-body {
@@ -881,4 +881,98 @@ html[data-theme='light'] #privacy-notice .privacy-notice-btn {
         padding: 8px 16px;
         font-size: 0.82rem;
     }
+}
+
+
+/* Microinteracciones compartidas: breves, discretas y sin animación continua. */
+.portfolio-item,
+.tech-domain-card,
+.service-primary-card,
+.cert-featured-card,
+.impacto-category-card,
+.career-card,
+.contact-card,
+.building-card,
+.featured-project-layout,
+.system-map-surface,
+.modal-content,
+.terminal-easteregg,
+.command-palette-panel {
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .portfolio-item:hover,
+    .tech-domain-card:hover,
+    .service-primary-card:hover,
+    .cert-featured-card:hover,
+    .impacto-category-card:hover,
+    .career-card:hover,
+    .contact-card:hover,
+    .building-card:hover,
+    .featured-project-layout:hover,
+    .system-map-surface:hover {
+        transform: translateY(-3px);
+        border-color: color-mix(in srgb, var(--primario) 42%, var(--borde));
+        box-shadow: 0 16px 36px color-mix(in srgb, var(--texto-principal) 16%, transparent);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-item,
+    .tech-domain-card,
+    .service-primary-card,
+    .cert-featured-card,
+    .impacto-category-card,
+    .career-card,
+    .contact-card,
+    .building-card,
+    .featured-project-layout,
+    .system-map-surface,
+    .modal-content,
+    .terminal-easteregg,
+    .command-palette-panel {
+        transition: none;
+    }
+}
+
+
+/* Tipografía: lectura fluida y jerarquía compacta. */
+body,
+button,
+input,
+textarea,
+select {
+    font-family: var(--fuente-lectura);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-heading,
+.hero-identity,
+.navbar-brand-name {
+    font-family: var(--fuente-titulos);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-heading {
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+}
+
+p,
+li,
+.section-subheading,
+.section-lead,
+.project-contribution-summary {
+    line-height: 1.7;
 }

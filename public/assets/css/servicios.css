@@ -108,9 +108,9 @@
     padding: 28px;
     overflow: hidden;
     border: 1px solid var(--borde);
-    border-radius: 16px;
+    border-radius: var(--radio-superficie);
     background: linear-gradient(145deg, rgba(56, 189, 248, 0.055), transparent 48%), var(--fondo-tarjeta);
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--sombra-superficie);
     transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
@@ -146,7 +146,7 @@
     width: 52px;
     height: 52px;
     border: 1px solid rgba(56, 189, 248, 0.25);
-    border-radius: 13px;
+    border-radius: var(--radio-medio);
     background: var(--primario-suave);
     color: var(--primario);
     font-size: 1.3rem;
@@ -212,7 +212,7 @@
 
 .service-capability-card {
     border: 1px solid var(--borde);
-    border-radius: 12px;
+    border-radius: var(--radio-medio);
     background: rgba(16, 30, 49, 0.72);
     transition: border-color 0.25s ease, background 0.25s ease;
 }
@@ -241,7 +241,7 @@
 }
 
 .service-capability-card summary:focus-visible {
-    border-radius: 12px;
+    border-radius: var(--radio-medio);
     outline: 2px solid var(--primario);
     outline-offset: 3px;
 }
@@ -249,7 +249,7 @@
 .service-capability-icon {
     width: 42px;
     height: 42px;
-    border-radius: 10px;
+    border-radius: var(--radio-medio);
     font-size: 1rem;
 }
 

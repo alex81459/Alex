@@ -264,9 +264,9 @@ html[data-theme='light'] .carousel {
 .career-card {
     overflow: hidden;
     border: 1px solid var(--borde);
-    border-radius: 15px;
+    border-radius: var(--radio-superficie);
     background: linear-gradient(145deg, rgba(56, 189, 248, 0.045), transparent 42%), var(--fondo-tarjeta);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+    box-shadow: var(--sombra-superficie);
     transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
 }
 
@@ -290,7 +290,7 @@ html[data-theme='light'] .carousel {
     padding: 3px;
     object-fit: cover;
     border: 1px solid rgba(56, 189, 248, 0.32);
-    border-radius: 13px;
+    border-radius: var(--radio-medio);
     background: #ffffff;
 }
 
@@ -384,7 +384,7 @@ html[data-theme='light'] .carousel {
     gap: 14px;
     padding: 15px;
     border: 1px solid rgba(56, 189, 248, 0.1);
-    border-radius: 9px;
+    border-radius: var(--radio-medio);
     background: rgba(7, 17, 31, 0.38);
 }
 
@@ -435,7 +435,7 @@ html[data-theme='light'] .carousel {
     margin: 38px 0 0 auto;
     padding: 24px 28px;
     border: 1px solid var(--borde);
-    border-radius: 13px;
+    border-radius: var(--radio-medio);
     background: var(--primario-suave);
 }
 
@@ -467,7 +467,7 @@ html[data-theme='light'] .carousel {
     gap: 8px;
     min-height: 44px;
     padding: 0 18px;
-    border-radius: 10px;
+    border-radius: var(--radio-medio);
     background: var(--primario);
     color: var(--fondo-principal);
     font-size: 0.76rem;

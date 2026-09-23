@@ -76,7 +76,7 @@
     max-height: 340px;
     object-fit: contain;
     background: rgba(7, 17, 31, 0.16);
-    border-radius: 12px;
+    border-radius: var(--radio-medio);
 }
 
 html[data-theme='light'] .portfolio-modal .project-detail-block img {
@@ -168,7 +168,7 @@ html[data-theme='light'] .project-impact-block li {
 .btn-modal-close {
     background: var(--primario);
     border: none;
-    border-radius: 25px;
+    border-radius: var(--radio-control);
     padding: 12px 30px;
     color: var(--fondo-principal);
     font-weight: 600;
@@ -203,7 +203,7 @@ html[data-theme='light'] .project-impact-block li {
 }
 .cv-download img {
     transition: var(--transicion);
-    border-radius: 15px;
+    border-radius: var(--radio-superficie);
     padding: 15px;
     background: var(--primario);
 }
@@ -224,7 +224,7 @@ html[data-theme='light'] .project-impact-block li {
 .case-cell {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--borde);
-    border-radius: 10px;
+    border-radius: var(--radio-medio);
     padding: 14px 16px;
     text-align: left;
 }
@@ -293,7 +293,7 @@ html[data-theme='light'] .project-impact-block li {
     background: rgba(99, 102, 241, 0.12);
     border: 1px solid rgba(99, 102, 241, 0.32);
     color: #c7d2fe;
-    border-radius: 10px;
+    border-radius: var(--radio-medio);
     padding: 6px 13px 6px 7px;
     font-size: 0.78rem;
     font-weight: 600;
@@ -306,7 +306,7 @@ html[data-theme='light'] .project-impact-block li {
     width: 26px;
     height: 26px;
     flex: 0 0 auto;
-    border-radius: 8px;
+    border-radius: var(--radio-control);
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--color-arquitectura, var(--primario));
@@ -369,7 +369,7 @@ html[data-theme='light'] .project-impact-block li {
 .decision-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--borde);
-    border-radius: 10px;
+    border-radius: var(--radio-medio);
     padding: 12px 14px;
 }
 .decision-question {

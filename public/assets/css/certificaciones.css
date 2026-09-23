@@ -64,9 +64,9 @@
     padding: 22px;
     overflow: hidden;
     border: 1px solid var(--borde);
-    border-radius: 14px;
+    border-radius: var(--radio-medio);
     background: linear-gradient(145deg, rgba(139, 92, 246, 0.08), transparent 48%), var(--fondo-tarjeta);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--sombra-superficie);
     transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
 }
 
@@ -93,7 +93,7 @@
     height: 42px;
     margin-bottom: 17px;
     border: 1px solid rgba(139, 92, 246, 0.28);
-    border-radius: 11px;
+    border-radius: var(--radio-medio);
     background: rgba(139, 92, 246, 0.1);
     color: var(--secundario);
     font-size: 1.05rem;
@@ -191,9 +191,9 @@
     margin-top: 34px;
     padding: 28px;
     border: 1px solid var(--borde);
-    border-radius: 16px;
+    border-radius: var(--radio-superficie);
     background: rgba(16, 30, 49, 0.72);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+    box-shadow: var(--sombra-superficie);
 }
 
 .cert-catalog-header {
@@ -261,7 +261,7 @@
     min-height: 84px;
     padding: 14px;
     border: 1px solid rgba(56, 189, 248, 0.1);
-    border-radius: 9px;
+    border-radius: var(--radio-medio);
     background: rgba(7, 17, 31, 0.42);
 }
 
@@ -308,7 +308,7 @@ html[data-theme='light'] .cert-catalog-item {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 30px;
     border: 1px solid var(--borde);
-    border-radius: 12px;
+    border-radius: var(--radio-medio);
     background: var(--primario-suave);
 }
 
