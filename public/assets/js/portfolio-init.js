@@ -5,15 +5,13 @@
   var actualizacionPendiente = false;
   var posicionesSecciones = [];
   var secciones = [
-    { selector: '#portfolio', etiqueta: 'Proyectos' },
-    { selector: '#impacto', etiqueta: 'Impacto' },
-    { selector: '#experiencia', etiqueta: 'Experiencia' },
-    { selector: '#tech-stack', etiqueta: 'Tecnologías' },
-    { selector: '#certifications', etiqueta: 'Certificados' },
-    { selector: '#about', etiqueta: 'Sobre mí' },
-    { selector: '#services', etiqueta: 'Servicios' },
-    { selector: '#gallery', etiqueta: 'Galería' },
-    { selector: '#contact', etiqueta: 'Contacto' }
+    { selector: "#page-top", etiqueta: "Inicio" },
+    { selector: "#portfolio", etiqueta: "Proyectos" },
+    { selector: "#impacto", etiqueta: "Impacto" },
+    { selector: "#experiencia", etiqueta: "Experiencia" },
+    { selector: "#tech-stack", etiqueta: "Stack" },
+    { selector: "#certifications", etiqueta: "Formación" },
+    { selector: "#contact", etiqueta: "Contacto" }
   ];
 
   function seleccionarElemento(selector, raiz) {
@@ -94,21 +92,32 @@
   }
 
   function actualizarProgresoDesplazamiento(posicionDesplazamiento) {
-    var indicadorSeccion = seleccionarElemento('#section-indicator');
-    var valorSeccion = seleccionarElemento('#section-indicator-value');
-    var etiquetaSeccion = seleccionarElemento('.section-indicator-label');
+    var indicadorSeccion = seleccionarElemento("#section-indicator");
+    var valorSeccion = seleccionarElemento("#section-indicator-value");
+    var etiquetaSeccion = seleccionarElemento(".section-indicator-label");
     var documento = document.documentElement;
     var desplazamientoMaximo = Math.max(documento.scrollHeight - window.innerHeight, 1);
     var progreso = Math.min(Math.max(posicionDesplazamiento / desplazamientoMaximo, 0), 1);
     var seccionActual = obtenerSeccionActual(posicionDesplazamiento);
+    var porcentajeProgreso = Math.round(progreso * 100) + "%";
 
-    if (etiquetaSeccion) {
-      etiquetaSeccion.textContent = seccionActual;
-    }
+    if (indicadorSeccion) indicadorSeccion.setAttribute("data-seccion", seccionActual);
+    if (etiquetaSeccion) etiquetaSeccion.textContent = seccionActual;
+    if (valorSeccion) valorSeccion.textContent = porcentajeProgreso;
 
-    if (valorSeccion) {
-      valorSeccion.textContent = Math.round(progreso * 100) + '%';
-    }
+    var barraProgreso = seleccionarElemento("#nav-progress-bar");
+    if (barraProgreso) barraProgreso.style.width = porcentajeProgreso;
+    actualizarNavegacionActiva(seccionActual);
+  }
+
+  function actualizarNavegacionActiva(seccionActual) {
+    seleccionarElementos('#mainNav .nav-link[data-seccion], .minimapa-enlace[data-seccion]').forEach(function (enlace) {
+      var estaActiva = enlace.dataset.seccion === seccionActual;
+      enlace.classList.toggle('active', estaActiva);
+      enlace.classList.toggle('activa', estaActiva);
+      if (estaActiva) enlace.setAttribute('aria-current', 'page');
+      else enlace.removeAttribute('aria-current');
+    });
   }
 
   function obtenerSeccionActual(posicionDesplazamiento) {
@@ -159,6 +168,34 @@
     });
   }
 
+  function configurarCursorContextual() {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+    var cursorContextual = document.createElement('span');
+    cursorContextual.className = 'cursor-contextual';
+    cursorContextual.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(cursorContextual);
+    var elementoContextualActual = null;
+
+    document.addEventListener('pointerover', function (evento) {
+      var elementoContextual = evento.target.closest('[data-cursor-contexto]');
+      if (!elementoContextual) return;
+      elementoContextualActual = elementoContextual;
+      cursorContextual.textContent = elementoContextual.dataset.cursorContexto || '';
+      cursorContextual.classList.add('visible');
+    });
+
+    document.addEventListener('pointermove', function (evento) {
+      if (!elementoContextualActual) return;
+      cursorContextual.style.transform = 'translate(' + (evento.clientX + 14) + 'px, ' + (evento.clientY + 14) + 'px)';
+    }, { passive: true });
+
+    document.addEventListener('pointerout', function (evento) {
+      if (!elementoContextualActual || elementoContextualActual.contains(evento.relatedTarget)) return;
+      elementoContextualActual = null;
+      cursorContextual.classList.remove('visible');
+    });
+  }
+
   function configurarVistasPreviasYoutube() {
     document.addEventListener('click', function (evento) {
       var vistaPrevia = evento.target.closest('.youtube-facade');
@@ -205,6 +242,7 @@
     ultimaPosicionDesplazamiento = window.scrollY;
     gestionarDesplazamiento();
     configurarFiltrosPortafolio();
+    configurarCursorContextual();
     configurarVistasPreviasYoutube();
     configurarSelectorTema();
     configurarEventosDesplazamiento();

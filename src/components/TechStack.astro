@@ -45,6 +45,16 @@ const ecosistema = [
     ],
   },
 ];
+function obtenerIconoTecnologia(nombre: string) {
+  const iconos: Record<string, string> = {
+    'Angular + PrimeNG 22': 'fab fa-angular', TypeScript: 'fa fa-code', 'Componentes UI y tablas': 'fa fa-th-large', 'React y ecosistema UI': 'fab fa-react',
+    'Python / Flask': 'fab fa-python', 'Node.js / NestJS': 'fab fa-node-js', 'C# / .NET': 'fa fa-code', 'APIs y mensajería': 'fa fa-exchange',
+    MySQL: 'fa fa-database', 'SQL Server': 'fa fa-database', SQLAlchemy: 'fa fa-sitemap', 'Reportes e integraciones': 'fa fa-bar-chart',
+    Docker: 'fab fa-docker', Nginx: 'fa fa-server', Linux: 'fab fa-linux', 'Operación y despliegue': 'fa fa-cogs',
+  };
+  return iconos[nombre] ?? 'fa fa-code';
+}
+
 ---
 
 <section id="tech-stack" class="tech-stack-section">
@@ -57,7 +67,7 @@ const ecosistema = [
 
     <div class="tech-ecosystem-grid">
       {ecosistema.map((grupo, indice) => (
-        <article class="tech-domain-card">
+        <article class="tech-domain-card" data-tech-domain>
           <header class="tech-domain-header">
             <div class="tech-domain-icon" aria-hidden="true"><i class={`fa ${grupo.icono}`}></i></div>
             <div>
@@ -69,15 +79,22 @@ const ecosistema = [
 
           <div class="tech-experience-list">
             {grupo.tecnologias.map((tecnologia) => (
-              <div class="tech-experience-item">
+              <div class="tech-experience-item" data-tech-item data-nombre={tecnologia.nombre} data-experiencia={tecnologia.experiencia} data-proyectos={tecnologia.proyectos} tabindex="0" role="button" aria-pressed="false">
                 <div class="tech-experience-title">
-                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  <span class="tech-experience-logo" aria-hidden="true"><i class={obtenerIconoTecnologia(tecnologia.nombre)}></i></span>
                   <h4>{tecnologia.nombre}</h4>
                 </div>
                 <span class="tech-experience-meta">{tecnologia.experiencia}</span>
                 <p>{tecnologia.proyectos}</p>
               </div>
             ))}
+          </div>
+          <div class="tech-context" aria-live="polite">
+            <span class="tech-context-label">TECNOLOGÍA SELECCIONADA</span>
+            <strong data-tech-context-name>{grupo.tecnologias[0].nombre}</strong>
+            <span data-tech-context-experience>{grupo.tecnologias[0].experiencia}</span>
+            <p>Utilizado en:</p>
+            <ul data-tech-context-projects>{grupo.tecnologias[0].proyectos.split(', ').map((proyecto) => <li>{proyecto}</li>)}</ul>
           </div>
         </article>
       ))}
@@ -89,3 +106,45 @@ const ecosistema = [
     </div>
   </div>
 </section>
+<script>
+  const dominiosTecnologicos = [...document.querySelectorAll<HTMLElement>('[data-tech-domain]')];
+  function actualizarContextoTecnologia(elemento: HTMLElement) {
+    const dominio = elemento.closest<HTMLElement>('[data-tech-domain]');
+    if (!dominio) return;
+    const elementos = [...dominio.querySelectorAll<HTMLElement>('[data-tech-item]')];
+    elementos.forEach((tecnologia) => tecnologia.setAttribute('aria-pressed', String(tecnologia === elemento)));
+    const nombre = dominio.querySelector<HTMLElement>('[data-tech-context-name]');
+    const experiencia = dominio.querySelector<HTMLElement>('[data-tech-context-experience]');
+    const proyectos = dominio.querySelector<HTMLUListElement>('[data-tech-context-projects]');
+    if (nombre) nombre.textContent = elemento.dataset.nombre ?? '';
+    if (experiencia) experiencia.textContent = elemento.dataset.experiencia ?? '';
+    if (proyectos) {
+      proyectos.replaceChildren(...(elemento.dataset.proyectos ?? '').split(', ').map((proyecto) => { const elementoLista = document.createElement('li'); elementoLista.textContent = proyecto; return elementoLista; }));
+    }
+  }
+  dominiosTecnologicos.forEach((dominio) => {
+    const tecnologias = [...dominio.querySelectorAll<HTMLElement>('[data-tech-item]')];
+    tecnologias.forEach((tecnologia) => {
+      tecnologia.addEventListener('pointerenter', () => actualizarContextoTecnologia(tecnologia));
+      tecnologia.addEventListener('focus', () => actualizarContextoTecnologia(tecnologia));
+      tecnologia.addEventListener('click', () => actualizarContextoTecnologia(tecnologia));
+      tecnologia.addEventListener('keydown', (evento) => { if (evento.key === 'Enter' || evento.key === ' ') { evento.preventDefault(); actualizarContextoTecnologia(tecnologia); } });
+    });
+  });
+</script>
+
+<style>
+  .tech-experience-item { width: 100%; text-align: left; color: inherit; cursor: pointer; }
+  .tech-experience-item[aria-pressed='true'] { border-color: color-mix(in srgb, var(--primario) 55%, transparent); background: var(--primario-suave); }
+  .tech-experience-logo { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 7px; color: var(--primario); background: color-mix(in srgb, var(--primario) 12%, transparent); transition: transform .22s ease, color .22s ease, background .22s ease; }
+  .tech-experience-logo i { font-size: .82rem; }
+  .tech-experience-item:hover .tech-experience-logo, .tech-experience-item[aria-pressed='true'] .tech-experience-logo { color: var(--texto-principal); background: var(--primario); transform: rotate(-6deg) scale(1.08); }
+  .tech-experience-title h4 { margin: 0; }
+  .tech-context { margin-top: 12px; padding: 13px 15px; border: 1px solid color-mix(in srgb, var(--primario) 25%, transparent); border-radius: var(--radio-medio); background: color-mix(in srgb, var(--primario-suave) 38%, transparent); }
+  .tech-context-label { display: block; color: var(--texto-secundario); font: .53rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .08em; }
+  .tech-context strong { display: block; margin-top: 5px; color: var(--texto-principal); font-size: .87rem; }
+  .tech-context > span:not(.tech-context-label) { display: block; margin-top: 3px; color: var(--primario); font-size: .66rem; font-weight: 700; }
+  .tech-context p { margin: 10px 0 3px; color: var(--texto-secundario); font-size: .68rem; }
+  .tech-context ul { margin: 0; padding-left: 17px; color: var(--texto-principal); font-size: .7rem; line-height: 1.55; }
+  @media (prefers-reduced-motion: reduce) { .tech-experience-logo { transition: none; } .tech-experience-item:hover .tech-experience-logo, .tech-experience-item[aria-pressed='true'] .tech-experience-logo { transform: none; } }
+</style>

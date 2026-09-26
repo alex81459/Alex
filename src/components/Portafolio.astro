@@ -5,6 +5,14 @@
                     <span class="section-kicker">PROYECTOS Y SOLUCIONES</span>
                     <h2 class="text-uppercase section-heading">Más sistemas. Más soluciones reales.</h2>
                     <p class="section-lead">Soluciones reales desarrolladas para instituciones, empresas y operaciones productivas. Haz clic en cada proyecto para ver más detalles.</p>
+                    <div class="portfolio-filtros" role="group" aria-label="Filtrar proyectos">
+                        <button type="button" class="filter-btn boton-filtro active" data-filter="*" aria-pressed="true">Todos</button>
+                        <button type="button" class="filter-btn boton-filtro" data-filter=".system" aria-pressed="false">Sistemas</button>
+                        <button type="button" class="filter-btn boton-filtro" data-filter="[data-categorias~=&quot;automatizacion&quot;]" aria-pressed="false">Automatización</button>
+                        <button type="button" class="filter-btn boton-filtro" data-filter=".infrastructure" aria-pressed="false">Infraestructura</button>
+                        <button type="button" class="filter-btn boton-filtro" data-filter="[data-categorias~=&quot;datos&quot;]" aria-pressed="false">Datos</button>
+                        <button type="button" class="filter-btn boton-filtro" data-filter=".web-dev" aria-pressed="false">Web</button>
+                    </div>
                 </div>
             </div>
 
@@ -23,9 +31,12 @@
                         <img class="img-fluid portfolio-main-shot" width="400" height="300" loading="lazy" src="assets/img/concejo/concejos-escolares-1.webp" alt="Portal de Consejos Escolares - Vista principal de la plataforma institucional">
                         <img class="portfolio-secondary-shot" width="210" height="150" loading="lazy" src="assets/img/concejo/concejos-escolares-2.webp" alt="Vista complementaria del Portal de Consejos Escolares">
                     </a>
-                    <div class="portfolio-caption">
+                    <div class="portfolio-caption portfolio-caption-rich">
                         <h4>Portal de Consejos Escolares</h4>
-                        <p class="text-muted">Gestión de sesiones, actas, acuerdos y seguimiento territorial con Next.js, NestJS y Prisma.</p>
+                        <p class="portfolio-tecnologias">Next.js · NestJS · Prisma · MySQL</p>
+                        <p class="portfolio-estado"><span aria-hidden="true"></span>Producción</p>
+                        <p class="text-muted">Gestión de sesiones, actas, acuerdos y seguimiento territorial.</p>
+                        <a class="portfolio-caso" href="#portfolioModal13" data-bs-toggle="modal">Ver caso técnico <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-xl-4 portfolio-item system portfolio-featured">
@@ -184,4 +195,181 @@
           </div>
         </div>
     </section>
+    <div class="drawer-proyecto-capa" data-drawer-capa hidden>
+      <aside class="drawer-proyecto" data-drawer-proyecto role="dialog" aria-modal="true" aria-labelledby="drawer-proyecto-titulo" tabindex="-1">
+        <div class="drawer-proyecto-cabecera"><span>PROYECTO</span><button type="button" class="drawer-proyecto-cerrar" data-drawer-cerrar aria-label="Cerrar panel de proyecto"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+        <h2 id="drawer-proyecto-titulo" data-drawer-titulo></h2>
+        <section class="drawer-proyecto-capturas"><h3>Capturas</h3><img class="drawer-proyecto-imagen" data-drawer-imagen alt="" /></section>
+        <div class="drawer-proyecto-contenido">
+          <section><h3>Arquitectura</h3><p data-drawer-arquitectura></p></section>
+          <section><h3>Stack</h3><p data-drawer-tecnologias></p></section>
+          <section><h3>Resultados</h3><p data-drawer-resumen></p></section>
+        </div>
+        <a class="drawer-proyecto-caso" data-drawer-caso data-bs-toggle="modal">Ver caso técnico completo <span aria-hidden="true">→</span></a>
+      </aside>
+    </div>
     
+<script>
+  const seccionPortafolio = document.querySelector<HTMLElement>('#portfolio');
+  if (seccionPortafolio) {
+    const categoriasPorProyecto: Record<string, string> = {
+      '#portfolioModal13': 'sistemas datos', '#portfolioModal10': 'sistemas datos web', '#portfolioModal7': 'sistemas',
+      '#portfolioModal11': 'automatizacion datos', '#portfolioModal12': 'automatizacion infraestructura', '#portfolioModal5': 'infraestructura datos',
+      '#portfolioModal8': 'web', '#portfolioModal6': 'web', '#portfolioModal4': 'sistemas datos',
+      '#portfolioModal3': 'web datos', '#portfolioModal2': 'web sistemas', '#portfolioModal1': 'sistemas',
+    };
+    const tarjetasPortafolio = [...seccionPortafolio.querySelectorAll<HTMLElement>('.portfolio-item')];
+    const botonesFiltro = [...seccionPortafolio.querySelectorAll<HTMLButtonElement>('.boton-filtro')];
+    const contenedoresPortafolio = [...seccionPortafolio.querySelectorAll<HTMLElement>('.portfolio-container')];
+    const detallesPorProyecto: Record<string, { tecnologias: string; estado: string; resumen: string }> = {
+      '#portfolioModal10': { tecnologias: 'Python · Flask · SQLAlchemy · MySQL', estado: 'Producción', resumen: 'Trámites digitales con ClaveÚnica, aprobaciones y trazabilidad.' },
+      '#portfolioModal7': { tecnologias: 'Angular · Flask · MySQL · Docker', estado: 'Implementado', resumen: 'Gestión colaborativa de tareas, equipos y prioridades.' },
+      '#portfolioModal11': { tecnologias: 'C# · Python · MySQL · SQL Server', estado: 'Producción', resumen: 'Trazabilidad documental para procesos de exportación.' },
+      '#portfolioModal12': { tecnologias: 'Raspberry Pi · PLC · LAN industrial', estado: 'Implementado', resumen: 'Automatización de etiquetado e impresión industrial.' },
+      '#portfolioModal5': { tecnologias: 'Python · APIs · Alertas', estado: 'Operativo', resumen: 'Supervisión de servicios y alertas en tiempo real.' },
+      '#portfolioModal8': { tecnologias: 'WordPress · PHP · CSS', estado: 'Publicado', resumen: 'Sitio corporativo para presencia digital y contacto comercial.' },
+      '#portfolioModal6': { tecnologias: 'HTML · CSS · JavaScript', estado: 'Publicado', resumen: 'Utilidades web para tareas técnicas frecuentes.' },
+      '#portfolioModal4': { tecnologias: 'C# · Blowfish · Esteganografía LSB', estado: 'Caso técnico', resumen: 'Protección y ocultamiento de información en imágenes.' },
+      '#portfolioModal3': { tecnologias: 'Aplicación web · Catálogo · Búsqueda', estado: 'Caso técnico', resumen: 'Búsqueda y administración de productos asociados.' },
+      '#portfolioModal2': { tecnologias: 'Aplicación de escritorio · Gestión', estado: 'Implementado', resumen: 'Administración financiera y organizacional de un club.' },
+      '#portfolioModal1': { tecnologias: 'Aplicación de escritorio · Coordinación', estado: 'Implementado', resumen: 'Registro, coordinación y despacho de emergencias.' },
+    };
+    tarjetasPortafolio.forEach((tarjeta) => {
+      const enlace = tarjeta.querySelector<HTMLAnchorElement>('.portfolio-link');
+      tarjeta.dataset.categorias = categoriasPorProyecto[enlace?.getAttribute('href') ?? ''] ?? 'sistemas';
+      tarjeta.dataset.cursorContexto = 'Ver caso →';
+      const detalle = detallesPorProyecto[enlace?.getAttribute('href') ?? ''];
+      const pie = tarjeta.querySelector<HTMLElement>('.portfolio-caption');
+      if (detalle && pie && !pie.querySelector('.portfolio-tecnologias')) {
+        pie.classList.add('portfolio-caption-rich');
+        const descripcion = pie.querySelector('.text-muted');
+        const tecnologias = document.createElement('p');
+        tecnologias.className = 'portfolio-tecnologias';
+        tecnologias.textContent = detalle.tecnologias;
+        const estado = document.createElement('p');
+        estado.className = 'portfolio-estado';
+        estado.innerHTML = '<span aria-hidden="true"></span>';
+        estado.append(detalle.estado);
+        const resumen = document.createElement('p');
+        resumen.className = 'text-muted';
+        resumen.textContent = detalle.resumen;
+        const caso = document.createElement('a');
+        caso.className = 'portfolio-caso';
+        caso.href = enlace?.getAttribute('href') ?? '#portfolio';
+        caso.dataset.bsToggle = 'modal';
+        caso.innerHTML = 'Ver caso técnico <span aria-hidden="true">→</span>';
+        descripcion?.replaceWith(resumen);
+        pie.insertBefore(tecnologias, resumen);
+        pie.insertBefore(estado, resumen);
+        pie.append(caso);
+      }
+    });
+    const arquitecturasPorProyecto: Record<string, string> = {
+      '#portfolioModal8': 'WordPress · contenidos corporativos · contacto comercial',
+      '#portfolioModal6': 'Interfaz web · utilidades de navegador · procesamiento local',
+      '#portfolioModal4': 'Aplicación de escritorio · cifrado simétrico · procesamiento de imágenes',
+      '#portfolioModal3': 'Catálogo · búsqueda · gestión de productos asociados',
+      '#portfolioModal2': 'Aplicación de escritorio · operación administrativa · gestión financiera',
+      '#portfolioModal1': 'Registro de emergencias · coordinación · despacho operativo',
+    };
+    const capaDrawer = document.querySelector<HTMLElement>('[data-drawer-capa]');
+    const drawerProyecto = document.querySelector<HTMLElement>('[data-drawer-proyecto]');
+    const botonCerrarDrawer = document.querySelector<HTMLButtonElement>('[data-drawer-cerrar]');
+    let desencadenadorDrawer: HTMLElement | null = null;
+    function cerrarDrawerProyecto() {
+      if (!capaDrawer) return;
+      capaDrawer.classList.remove('abierto');
+      window.setTimeout(() => { capaDrawer.hidden = true; }, 220);
+      document.body.classList.remove('drawer-proyecto-abierto');
+      desencadenadorDrawer?.focus();
+    }
+    function abrirDrawerProyecto(tarjeta: HTMLElement) {
+      const enlace = tarjeta.querySelector<HTMLAnchorElement>('.portfolio-link');
+      const identificador = enlace?.getAttribute('href') ?? '';
+      const detalle = detallesPorProyecto[identificador];
+      const titulo = tarjeta.querySelector('h4')?.textContent ?? 'Proyecto';
+      const imagen = tarjeta.querySelector<HTMLImageElement>('img');
+      if (!capaDrawer || !drawerProyecto || !detalle) return;
+      const destino = (selector: string) => drawerProyecto.querySelector<HTMLElement>(selector);
+      const tituloDrawer = destino('[data-drawer-titulo]');
+      const tecnologiasDrawer = destino('[data-drawer-tecnologias]');
+      const arquitecturaDrawer = destino('[data-drawer-arquitectura]');
+      const resumenDrawer = destino('[data-drawer-resumen]');
+      const imagenDrawer = destino('[data-drawer-imagen]') as HTMLImageElement | null;
+      const casoDrawer = destino('[data-drawer-caso]') as HTMLAnchorElement | null;
+      if (tituloDrawer) tituloDrawer.textContent = titulo;
+      if (tecnologiasDrawer) tecnologiasDrawer.textContent = detalle.tecnologias;
+      if (arquitecturaDrawer) arquitecturaDrawer.textContent = arquitecturasPorProyecto[identificador] ?? 'Interfaz · lógica de negocio · datos';
+      if (resumenDrawer) resumenDrawer.textContent = detalle.resumen;
+      if (imagenDrawer && imagen) { imagenDrawer.src = imagen.currentSrc || imagen.src; imagenDrawer.alt = imagen.alt; }
+      if (casoDrawer) casoDrawer.href = identificador;
+      desencadenadorDrawer = tarjeta;
+      capaDrawer.hidden = false;
+      requestAnimationFrame(() => capaDrawer.classList.add('abierto'));
+      document.body.classList.add('drawer-proyecto-abierto');
+      drawerProyecto.focus();
+    }
+    tarjetasPortafolio.filter((tarjeta) => !tarjeta.classList.contains('portfolio-featured')).forEach((tarjeta) => {
+      tarjeta.querySelector('.portfolio-link')?.addEventListener('click', (evento) => { evento.preventDefault(); evento.stopPropagation(); abrirDrawerProyecto(tarjeta); });
+    });
+    botonCerrarDrawer?.addEventListener('click', cerrarDrawerProyecto);
+    capaDrawer?.addEventListener('click', (evento) => { if (evento.target === capaDrawer) cerrarDrawerProyecto(); });
+    document.addEventListener('keydown', (evento) => { if (evento.key === 'Escape' && capaDrawer?.classList.contains('abierto')) cerrarDrawerProyecto(); });
+    drawerProyecto?.querySelector<HTMLAnchorElement>('[data-drawer-caso]')?.addEventListener('click', () => window.setTimeout(cerrarDrawerProyecto));
+
+    function actualizarGruposPortafolio() {
+      contenedoresPortafolio.forEach((contenedor) => {
+        const hayTarjetasVisibles = [...contenedor.querySelectorAll<HTMLElement>('.portfolio-item')].some((tarjeta) => !tarjeta.classList.contains('filtered-out'));
+        contenedor.previousElementSibling?.toggleAttribute('hidden', !hayTarjetasVisibles);
+        contenedor.toggleAttribute('hidden', !hayTarjetasVisibles);
+      });
+    }
+    botonesFiltro.forEach((boton) => boton.addEventListener('click', () => {
+      botonesFiltro.forEach((elemento) => elemento.setAttribute('aria-pressed', String(elemento === boton)));
+      requestAnimationFrame(() => {
+        tarjetasPortafolio.filter((tarjeta) => !tarjeta.classList.contains('filtered-out')).forEach((tarjeta, indice) => {
+          tarjeta.style.setProperty('--retardo-filtro', `${indice * 45}ms`);
+          tarjeta.classList.remove('tarjeta-filtrada-entrada');
+          void tarjeta.offsetWidth;
+          tarjeta.classList.add('tarjeta-filtrada-entrada');
+        });
+        actualizarGruposPortafolio();
+      });
+    }));
+  }
+</script>
+
+<style>
+  :global(body.drawer-proyecto-abierto) { overflow: hidden; }
+  .drawer-proyecto-capa { position: fixed; inset: 0; z-index: 1300; display: flex; justify-content: flex-end; background: rgb(3 10 18 / .52); opacity: 0; transition: opacity .22s ease; }
+  .drawer-proyecto-capa.abierto { opacity: 1; }
+  .drawer-proyecto-capa[hidden] { display: none; }
+  .drawer-proyecto { width: min(460px, 100%); min-height: 100%; padding: 22px; overflow-y: auto; color: var(--texto-principal); background: var(--fondo-tarjeta); border-left: 1px solid var(--borde-destacado); box-shadow: -24px 0 60px var(--sombra-flotante); transform: translateX(100%); transition: transform .22s ease; outline: none; }
+  .drawer-proyecto-capa.abierto .drawer-proyecto { transform: none; }
+  .drawer-proyecto-cabecera { display: flex; align-items: center; justify-content: space-between; color: var(--primario); font: .6rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .11em; }
+  .drawer-proyecto-cerrar { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--borde-destacado); border-radius: 50%; color: var(--texto-secundario); background: transparent; }
+  .drawer-proyecto-cerrar:hover { color: var(--texto-principal); border-color: var(--primario); }
+  .drawer-proyecto h2 { margin: 18px 0 16px; font-size: 1.45rem; letter-spacing: -.035em; }
+  .drawer-proyecto-capturas { margin: 0; }
+  .drawer-proyecto-capturas h3 { margin: 0 0 8px; color: var(--texto-secundario); font: .56rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .08em; text-transform: uppercase; }
+  .drawer-proyecto-imagen { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--borde); border-radius: var(--radio-medio); }
+  .drawer-proyecto-contenido { display: grid; gap: 15px; margin-top: 20px; }
+  .drawer-proyecto-contenido section { padding-left: 12px; border-left: 2px solid var(--primario); }
+  .drawer-proyecto-contenido h3 { margin: 0 0 5px; color: var(--texto-secundario); font: .56rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .08em; text-transform: uppercase; }
+  .drawer-proyecto-contenido p { margin: 0; color: var(--texto-principal); font-size: .82rem; line-height: 1.55; }
+  .drawer-proyecto-caso { display: inline-flex; gap: 8px; margin-top: 24px; color: var(--primario); font-size: .8rem; font-weight: 700; text-decoration: none; }
+  .drawer-proyecto-caso:hover { text-decoration: underline; text-underline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) { .drawer-proyecto-capa, .drawer-proyecto { transition: none; } }
+  .portfolio-filtros { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+  .boton-filtro { margin: 0; min-height: 36px; padding: 7px 14px; font-size: .72rem; }
+  .boton-filtro[aria-pressed='true'] { background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%); color: #fff; }
+  .portfolio-tecnologias { margin: 0; color: var(--primario) !important; font-size: .75rem; font-weight: 700; line-height: 1.5; }
+  .portfolio-estado { display: inline-flex; align-items: center; gap: 6px; margin: 0; color: var(--texto-secundario) !important; font-size: .7rem; }
+  .portfolio-estado > span { width: 6px; height: 6px; border-radius: 50%; background: var(--acento-portada, #82d3f7); box-shadow: 0 0 7px var(--acento-portada, #82d3f7); }
+  .portfolio-caso { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 3px; color: var(--primario); font-size: .76rem; font-weight: 700; text-decoration: none; }
+  .portfolio-caso:hover { color: var(--secundario); text-decoration: underline; text-underline-offset: 4px; }
+  .tarjeta-filtrada-entrada { animation: entrada-filtro .34s var(--retardo-filtro, 0ms) both; }
+  @keyframes entrada-filtro { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+  @media (max-width: 575px) { .portfolio-filtros { justify-content: flex-start; } .boton-filtro { flex: 1 0 auto; } }
+  @media (prefers-reduced-motion: reduce) { .tarjeta-filtrada-entrada { animation: none; } }
+</style>

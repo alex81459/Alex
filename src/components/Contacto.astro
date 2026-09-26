@@ -5,20 +5,25 @@
                 <div class="contact-cta-shell">
                     <div class="text-center contact-title section-intro">
                         <span class="section-kicker">CONTACTO</span>
-                        <h2 class="text-uppercase section-heading">Contacto</h2>
-                        <p class="section-lead">Elige el motivo y escríbeme por el canal más directo.</p>
-                        <p class="contact-intro">Dos vías claras según lo que necesites: sumarme a tu equipo o avanzar con un proyecto. Priorizo contacto por correo y doy seguimiento profesional por LinkedIn.</p>
-                        <p class="contact-privacy-note">Los datos que me envíes por correo o redes se usarán únicamente para responder tu consulta. Consulta la <a href="https://alex81459.github.io/Alex/privacidad/">Política de Privacidad</a>.</p>
+                        <h2 class="section-heading">Construyamos algo útil.</h2>
+                        <p class="section-lead">¿Buscas incorporar un desarrollador a tu equipo o necesitas llevar un proyecto a producción?</p>
+                        <p class="contact-intro">Trabajo en desarrollo de software, integración de sistemas, infraestructura y automatización.</p>
+                        <div class="contact-disponibilidad"><span aria-hidden="true"></span><strong>DISPONIBLE PARA NUEVAS OPORTUNIDADES</strong><small>Remoto · Híbrido · Chile</small></div>
+                        <div class="contact-acciones">
+                          <a class="contact-accion-principal" href="mailto:alex81459@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i>Escribirme por correo</a>
+                          <a class="contact-accion-secundaria" href="https://www.linkedin.com/in/alex-salinas-ponce-5276691a3" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+                        </div>
                     </div>
 
                     <div class="row justify-content-center g-4 contact-options-grid">
                         <div class="col-lg-5 col-md-6 col-12">
                             <div class="contact-card contact-option-card">
                                 <div class="contact-option-head">
-                                    <span class="contact-option-icon"><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                                    <h3 class="contact-option-title">Oportunidades profesionales</h3>
+                                    <span class="contact-option-index">01</span>
+                                    <h3 class="contact-option-title">OPORTUNIDADES PROFESIONALES</h3>
                                 </div>
-                                <p class="contact-option-desc">Para reclutamiento, ofertas de empleo y roles estables o de tiempo completo.</p>
+                                <p class="contact-option-tags">Full Stack · Backend · Infraestructura<br />DevOps · Integraciones</p>
+                                <p class="contact-option-desc">Para equipos que buscan incorporar capacidad técnica estable.</p>
                                 <div class="contact-option-links">
                                     <a class="contact-channel" href="https://www.linkedin.com/in/alex-salinas-ponce-5276691a3" target="_blank" rel="noopener" aria-label="LinkedIn: Alex Salinas Ponce">
                                         <i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
@@ -33,10 +38,11 @@
                         <div class="col-lg-5 col-md-6 col-12">
                             <div class="contact-card contact-option-card">
                                 <div class="contact-option-head">
-                                    <span class="contact-option-icon"><i class="fa fa-rocket" aria-hidden="true"></i></span>
-                                    <h3 class="contact-option-title">Proyectos / colaboración</h3>
+                                    <span class="contact-option-index">02</span>
+                                    <h3 class="contact-option-title">PROYECTOS / COLABORACIÓN</h3>
                                 </div>
-                                <p class="contact-option-desc">Para desarrollo de software, consultoría TI e integraciones puntuales.</p>
+                                <p class="contact-option-tags">Software · APIs · Automatización<br />Arquitectura · Infraestructura</p>
+                                <p class="contact-option-desc">Para proyectos, consultoría e integraciones puntuales.</p>
                                 <div class="contact-option-links">
                                     <a class="contact-channel" href="mailto:alex81459@gmail.com" target="_blank" rel="noopener" aria-label="Correo electrónico: alex81459@gmail.com">
                                         <i class="fas fa-envelope" aria-hidden="true"></i><span>Correo</span>
@@ -51,6 +57,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="contact-about">
+                        <div class="contact-about-identidad">
+                            <img src="assets/img/frontalv2-circular.webp" width="400" height="400" loading="lazy" decoding="async" alt="Alex Salinas Ponce, Ingeniero Informático">
+                            <div>
+                                <strong>Alex Salinas Ponce</strong>
+                                <small>Ingeniero Informático · Chile</small>
+                            </div>
+                        </div>
+                        <div class="contact-about-copy">
+                            <span class="contact-about-kicker">SOBRE MÍ</span>
+                            <h3>La tecnología tiene sentido cuando resuelve algo real.</h3>
+                            <p>Mi trabajo conecta el desarrollo de software con las personas y los procesos que lo necesitan. Participo desde el levantamiento de requerimientos y la arquitectura hasta el despliegue, la documentación y la mantención de cada solución.</p>
+                            <p>He trabajado en educación pública, gestión municipal y producción industrial. Esa experiencia me permite entender tanto una plataforma digital como la infraestructura y la operación que la sostienen.</p>
+                            <a class="contact-about-link js-scroll-trigger" href="#services">Cómo puedo aportar a tu equipo <span aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+                    <p class="contact-privacy-note">Los datos que compartas se usarán únicamente para responder tu consulta. Consulta la <a href="https://alex81459.github.io/Alex/privacidad/">Política de Privacidad</a>.</p>
                 </div>
             </div>
         </div>
@@ -76,6 +99,32 @@
             text-decoration: underline;
         }
 
+        .contact-about { display: grid; grid-template-columns: 148px minmax(0, 1fr); align-items: center; gap: 30px; max-width: 880px; margin: 34px auto 0; padding: 24px; border: 1px solid var(--borde); border-radius: var(--radio-superficie); background: linear-gradient(135deg, color-mix(in srgb, var(--fondo-tarjeta-alternativo) 88%, transparent), color-mix(in srgb, var(--primario) 5%, transparent)); box-shadow: 0 14px 36px rgba(0, 0, 0, .12); text-align: left; }
+        .contact-about-identidad { display: flex; flex-direction: column; align-items: center; gap: 11px; min-width: 0; text-align: center; }
+        .contact-about-identidad img { display: block; width: 108px !important; height: 108px !important; max-width: 108px !important; aspect-ratio: 1; flex: 0 0 108px; object-fit: cover; border: 2px solid var(--borde-destacado); border-radius: 50%; box-shadow: 0 0 0 5px color-mix(in srgb, var(--primario) 9%, transparent); }
+        .contact-about-identidad strong { display: block; color: var(--texto-principal); font-size: .78rem; line-height: 1.35; }
+        .contact-about-identidad small { display: block; margin-top: 3px; color: var(--texto-secundario); font-size: .65rem; line-height: 1.4; }
+        .contact-about-kicker { color: var(--primario); font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+        .contact-about-copy h3 { margin: 7px 0 9px; color: var(--texto-principal); font-size: clamp(1.05rem, 1.7vw, 1.35rem); line-height: 1.25; }
+        .contact-about-copy p { margin: 0 0 8px; color: var(--texto-secundario); font-size: .82rem; line-height: 1.6; }
+        .contact-about-link { display: inline-flex; gap: 9px; margin-top: 4px; color: var(--primario); font-size: .76rem; font-weight: 700; text-decoration: none; }
+        .contact-about-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+        .contact-title { max-width: 760px; margin-inline: auto; }
+        .contact-title .section-heading { margin-bottom: 13px; text-transform: none; }
+        .contact-intro { margin: 0 auto; max-width: 650px; color: var(--texto-secundario); font-size: .92rem; line-height: 1.65; }
+        .contact-disponibilidad { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 7px 10px; margin-top: 22px; color: var(--texto-secundario); font: .62rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .055em; }
+        .contact-disponibilidad > span { width: 7px; height: 7px; border-radius: 50%; background: var(--exito, #85cbb4); box-shadow: 0 0 9px var(--exito, #85cbb4); animation: pulso-disponibilidad 2.2s ease-in-out infinite; }
+        .contact-disponibilidad strong { color: var(--texto-principal); font-weight: 600; }
+        .contact-disponibilidad small { color: var(--texto-secundario); font: inherit; }
+        .contact-acciones { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .contact-accion-principal, .contact-accion-secundaria { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 10px 16px; border-radius: var(--radio-control); font-size: .8rem; font-weight: 700; text-decoration: none; }
+        .contact-accion-principal { color: #07111f; background: var(--primario); }
+        .contact-accion-principal:hover { color: #07111f; filter: brightness(1.08); }
+        .contact-accion-secundaria { color: var(--texto-principal); border: 1px solid var(--borde-destacado); }
+        .contact-accion-secundaria:hover { color: var(--primario); border-color: var(--primario); }
+        .contact-option-index { color: var(--primario); font: .62rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+        .contact-option-tags { margin: -2px 0 0; color: var(--primario); font-size: .76rem; font-weight: 700; line-height: 1.65; }
+        @keyframes pulso-disponibilidad { 50% { opacity: .45; transform: scale(.72); } }
         .contact-cta-shell {
             padding: 18px 0 8px;
         }
@@ -402,6 +451,8 @@
                 flex-direction: column;
             }
         }
+        @media (max-width: 767px) { .contact-about { grid-template-columns: 1fr; gap: 20px; padding: 20px; } .contact-about-identidad { flex-direction: row; justify-content: flex-start; text-align: left; } .contact-about-identidad img { width: 70px !important; height: 70px !important; max-width: 70px !important; flex-basis: 70px; } .contact-about-copy h3 { font-size: 1rem; } }
+        @media (prefers-reduced-motion: reduce) { .contact-disponibilidad > span { animation: none; } }
     </style>
     <footer class="site-footer">
         <div class="container">

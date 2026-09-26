@@ -158,7 +158,18 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
       </button>
     </div>
 
+    <nav class="minimapa-secciones" aria-label="Mapa de secciones">
+      <a class="minimapa-enlace" data-seccion="Inicio" href="#page-top"><span aria-hidden="true"></span>Inicio</a>
+      <a class="minimapa-enlace" data-seccion="Proyectos" href="#portfolio"><span aria-hidden="true"></span>Proyectos</a>
+      <a class="minimapa-enlace" data-seccion="Impacto" href="#impacto"><span aria-hidden="true"></span>Impacto</a>
+      <a class="minimapa-enlace" data-seccion="Experiencia" href="#experiencia"><span aria-hidden="true"></span>Experiencia</a>
+      <a class="minimapa-enlace" data-seccion="Stack" href="#tech-stack"><span aria-hidden="true"></span>Stack</a>
+      <a class="minimapa-enlace" data-seccion="Formación" href="#certifications"><span aria-hidden="true"></span>Formación</a>
+      <a class="minimapa-enlace" data-seccion="Contacto" href="#contact"><span aria-hidden="true"></span>Contacto</a>
+    </nav>
+
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" aria-label="Navegación principal">
+      <div class="nav-progress" aria-hidden="true"><span id="nav-progress-bar"></span></div>
       <div class="container">
         <a class="navbar-brand" href="#page-top" aria-label="Alex Salinas Ponce, inicio">
           <span class="navbar-brand-mark" aria-hidden="true">&lt;<span>/&gt;</span></span>
@@ -169,11 +180,13 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="nav navbar-nav flex-lg-row ms-auto">
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Proyectos</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experiencia">Experiencia</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#tech-stack">Tecnologías</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre mí</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-seccion="Inicio" href="#page-top">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-seccion="Proyectos" href="#portfolio">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-seccion="Impacto" href="#impacto">Impacto</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-seccion="Experiencia" href="#experiencia">Experiencia</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-seccion="Stack" href="#tech-stack">Stack</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-seccion="Formación" href="#certifications">Formación</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-seccion="Contacto" href="#contact">Contacto</a></li>
           </ul>
         </div>
         {mostrarComandos && <button id="command-palette-trigger" class="command-palette-trigger" type="button" aria-label="Abrir comandos rápidos" aria-controls="command-palette" aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K">
@@ -197,7 +210,18 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
     <script is:inline src={`${rutaBase}assets/js/bootstrap5-init.js`}></script>
     <script is:inline src={`${rutaBase}assets/js/portfolio-init.js`}></script>
     <style>
+      :global(.cursor-contextual) { position: fixed; top: 0; left: 0; z-index: 1200; padding: 6px 9px; border: 1px solid color-mix(in srgb, var(--primario) 55%, transparent); border-radius: 999px; color: var(--texto-principal); background: color-mix(in srgb, var(--fondo-tarjeta) 92%, var(--fondo-principal)); box-shadow: 0 8px 24px var(--sombra-flotante); font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .035em; opacity: 0; pointer-events: none; transition: opacity .14s ease; }
+      :global(.cursor-contextual.visible) { opacity: 1; }
+      .minimapa-secciones { position: fixed; top: 50%; right: 18px; z-index: 1050; display: grid; gap: 0; padding: 8px 0; transform: translateY(-50%); }
+      .minimapa-enlace { position: relative; display: flex; align-items: center; width: max-content; min-height: 24px; padding: 3px 0 3px 16px; color: var(--texto-tenue); font: .55rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .04em; text-decoration: none; transition: color .2s, transform .2s; }
+      .minimapa-enlace > span { position: absolute; left: 0; top: 50%; width: 7px; height: 7px; border: 1px solid var(--texto-secundario); border-radius: 50%; background: var(--fondo-principal); transform: translateY(-50%); transition: background .2s, border-color .2s, box-shadow .2s; }
+      .minimapa-enlace:not(:last-child)::after { content: ''; position: absolute; left: 3px; top: calc(50% + 4px); width: 1px; height: 17px; background: var(--borde-destacado); }
+      .minimapa-enlace:hover, .minimapa-enlace.activa { color: var(--texto-principal); transform: translateX(-3px); }
+      .minimapa-enlace.activa > span { border-color: var(--primario); background: var(--primario); box-shadow: 0 0 9px var(--primario); }
       #mainNav { height: 80px; padding: 0; box-shadow: none; border-bottom: 1px solid var(--borde); background: var(--fondo-navegacion) !important; }
+      #arquitectura, #portfolio, #impacto, #experiencia, #tech-stack, #certifications, #contact { scroll-margin-top: 96px; }
+      #mainNav .nav-progress { position: absolute; top: 0; left: 0; right: 0; height: 3px; overflow: hidden; background: color-mix(in srgb, var(--borde-destacado) 65%, transparent); }
+      #mainNav .nav-progress > span { display: block; width: var(--avance-navegacion, 0%); height: 100%; background: linear-gradient(90deg, var(--primario), var(--secundario)); box-shadow: 0 0 12px var(--primario); transition: width .12s linear; }
       #mainNav .container { max-width: 1280px; padding-inline: 22px; gap: 20px; }
       #mainNav .navbar-brand { display: inline-flex; align-items: center; gap: 14px; color: var(--texto-principal) !important; margin: 0 auto 0 0; padding: 0; font-size: .85rem; letter-spacing: 0; text-shadow: none; }
       #mainNav .navbar-brand:hover { transform: none; }
@@ -219,6 +243,7 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
       #mainNav .theme-toggle-thumb { background: var(--primario-suave); box-shadow: none; border: 1px solid var(--borde-destacado); }
       #mainNav .navbar-toggler { border: 1px solid var(--borde-destacado); border-radius: 8px; background: transparent; margin: 0; width: 44px; height: 44px; padding: 0; box-shadow: none; }
       #mainNav .navbar-toggler .fa-bars { color: var(--texto-principal); font-size: 1rem; }
+      @media (max-width: 1199px) { .minimapa-secciones { display: none; } }
       @media (max-width: 991.98px) {
         #mainNav .container { flex-wrap: wrap; gap: 12px; }
         #mainNav .navbar-brand { order: 0; max-width: none; }
