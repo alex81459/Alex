@@ -1,67 +1,113 @@
-<section id="actualmente-construyendo" class="building-section" aria-labelledby="building-title">
+---
+const capacidadesPrincipales = [
+  { icono: 'fa fa-route', titulo: 'Flujo trazable', descripcion: 'Borrador, revisión, observación, aprobación, rechazo y cancelación con historial inmutable.' },
+  { icono: 'fa fa-shield', titulo: 'Acceso institucional', descripcion: 'Google OAuth 2.0, roles locales y autorización por establecimiento.' },
+  { icono: 'fa fa-folder-open', titulo: 'Documentos seguros', descripcion: 'Carga, auditoría y descarga protegida de archivos institucionales en Google Drive.' },
+];
+
+const tecnologiasProyecto = ['Next.js', 'Prisma · MySQL', 'Mapbox', 'Google Drive', 'SMTP institucional', 'Docker'];
+---
+
+<section id="actualmente-construyendo" class="seccion-construccion" aria-labelledby="titulo-construccion">
   <div class="container">
-    <article class="building-card">
-      <div class="building-copy">
-        <div class="building-meta">
-          <span class="building-eyebrow"><span aria-hidden="true">01 /</span> ACTUALMENTE CONSTRUYENDO</span>
-          <span class="building-status"><span aria-hidden="true"></span> EN DESARROLLO</span>
+    <article class="tarjeta-construccion">
+      <div class="contenido-construccion">
+        <div class="encabezado-construccion">
+          <span class="ceja-construccion"><span aria-hidden="true">01 /</span> ACTUALMENTE CONSTRUYENDO</span>
+          <span class="estado-construccion"><span aria-hidden="true"></span> DESARROLLO ACTIVO</span>
         </div>
-        <h2 id="building-title">Sistema de Salidas Pedagógicas<span>.</span></h2>
-        <p>
-          Sistema para gestionar y supervisar las salidas pedagógicas de los establecimientos educacionales del Programa 02.
-          Está dirigido a las áreas de Directores, Gestión Territorial y Gabinete, acompañando las salidas de equipos directivos, docentes y estudiantes.
+
+        <h2 id="titulo-construccion">Sistema de Salidas Pedagógicas<span>.</span></h2>
+        <p class="resumen-construccion">
+          Plataforma institucional para planificar, autorizar y supervisar las salidas pedagógicas de los establecimientos del SLEP Colchagua. Centraliza un proceso que antes dependía de llamadas, correos, documentos, información dispersa y seguimiento manual.
         </p>
-        <div class="building-tags" aria-label="Ámbitos del proyecto">
-          <span><i class="fa fa-university" aria-hidden="true"></i> Programa 02</span>
-          <span><i class="fa fa-sitemap" aria-hidden="true"></i> Supervisión institucional</span>
-          <span><i class="fa fa-users" aria-hidden="true"></i> Directivos · docentes · estudiantes</span>
-          <span><i class="fa fa-code" aria-hidden="true"></i> Desarrollo activo</span>
+
+        <ul class="capacidades-construccion" aria-label="Capacidades principales del sistema">
+          {capacidadesPrincipales.map((capacidad) => (
+            <li>
+              <span class="icono-capacidad" aria-hidden="true"><i class={capacidad.icono}></i></span>
+              <span><strong>{capacidad.titulo}</strong><small>{capacidad.descripcion}</small></span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="tecnologias-construccion" aria-label="Tecnologías e integraciones">
+          {tecnologiasProyecto.map((tecnologia) => <span>{tecnologia}</span>)}
         </div>
       </div>
 
-      <div class="building-preview" aria-label="Estado del proyecto: en desarrollo">
-        <div class="building-preview-bar">
-          <span><i class="fa fa-circle-o-notch" aria-hidden="true"></i> gestion / salidas-pedagogicas</span>
-          <span>v0.1</span>
+      <aside class="vista-construccion" aria-label="Arquitectura operativa del sistema">
+        <div class="barra-vista">
+          <span><i class="fa fa-circle-o-notch" aria-hidden="true"></i> salidas-pedagogicas</span>
+          <span>EN CONSTRUCCIÓN</span>
         </div>
-        <div class="building-preview-content">
-          <span class="building-preview-icon" aria-hidden="true"><i class="fa fa-map-marker"></i></span>
-          <span class="building-preview-label">PRÓXIMO CASO DE ESTUDIO</span>
-          <strong>Sistema en construcción</strong>
-          <small>Los detalles del proyecto estarán disponibles aquí.</small>
+
+        <div class="panel-vista">
+          <div class="encabezado-panel">
+            <span class="icono-panel" aria-hidden="true"><i class="fa fa-map-marker"></i></span>
+            <div>
+              <span class="etiqueta-panel">OPERACIÓN INSTITUCIONAL</span>
+              <strong>Una salida, control de punta a punta</strong>
+            </div>
+          </div>
+
+          <ol class="flujo-salidas">
+            <li class="completado"><span aria-hidden="true"><i class="fa fa-check"></i></span><div><strong>Solicitud y borrador</strong><small>Recuperación local y persistencia en MySQL</small></div></li>
+            <li class="activo"><span aria-hidden="true"><i class="fa fa-search"></i></span><div><strong>Revisión administrativa</strong><small>Estados validados, responsables y observaciones</small></div></li>
+            <li><span aria-hidden="true"><i class="fa fa-bell"></i></span><div><strong>Resolución y seguimiento</strong><small>Notificaciones, documentos y auditoría</small></div></li>
+          </ol>
         </div>
-        <div class="building-preview-progress" aria-hidden="true"><span></span></div>
-      </div>
+
+        <div class="pie-vista">
+          <span><i class="fa fa-database" aria-hidden="true"></i> Datos y permisos locales</span>
+          <span><i class="fa fa-history" aria-hidden="true"></i> Trazabilidad</span>
+        </div>
+      </aside>
     </article>
   </div>
 </section>
 
 <style>
-  .building-section { padding: 18px 0 48px; color: var(--texto-principal); }
-  .building-card { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 40px; align-items: center; overflow: hidden; padding: 34px; border: 1px solid var(--borde-destacado); border-radius: var(--radio-superficie); background: linear-gradient(120deg, color-mix(in srgb, var(--fondo-tarjeta) 96%, var(--primario)), var(--fondo-tarjeta)); box-shadow: var(--sombra-superficie); }
-  .building-card::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 84% 12%, color-mix(in srgb, var(--primario) 16%, transparent), transparent 30%); }
-  .building-copy, .building-preview { position: relative; z-index: 1; }
-  .building-meta { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 15px; }
-  .building-eyebrow, .building-status, .building-preview-label, .building-preview-bar { font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
-  .building-eyebrow { color: var(--texto-secundario); font-weight: 600; }
-  .building-eyebrow > span { color: var(--primario); margin-right: 8px; }
-  .building-status { display: inline-flex; align-items: center; gap: 6px; color: var(--primario); white-space: nowrap; }
-  .building-status > span { width: 6px; height: 6px; border-radius: 50%; background: var(--primario); box-shadow: 0 0 0 4px var(--primario-suave); }
-  .building-copy h2 { margin: 0; color: var(--texto-principal); font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.12; }
-  .building-copy h2 > span { color: var(--primario); }
-  .building-copy p { max-width: 570px; margin: 16px 0 0; color: var(--texto-secundario); font-size: .9rem; line-height: 1.75; }
-  .building-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-  .building-tags span { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border: 1px solid var(--borde); border-radius: var(--radio-control); color: var(--texto-secundario); background: var(--fondo-tarjeta-alternativo); font-size: .68rem; }
-  .building-tags i { color: var(--primario); }
-  .building-preview { overflow: hidden; border: 1px solid var(--borde-destacado); border-radius: var(--radio-medio); background: var(--fondo-principal); box-shadow: var(--sombra-superficie); }
-  .building-preview-bar { display: flex; justify-content: space-between; gap: 10px; padding: 11px 13px; border-bottom: 1px solid var(--borde); color: var(--texto-secundario); font-size: .53rem; }
-  .building-preview-bar i { color: var(--primario); margin-right: 5px; }
-  .building-preview-content { display: flex; flex-direction: column; align-items: flex-start; min-height: 193px; padding: 25px; background: linear-gradient(135deg, var(--fondo-principal), var(--fondo-tarjeta-alternativo)); }
-  .building-preview-icon { display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: auto; border-radius: var(--radio-medio); color: var(--primario); background: var(--primario-suave); font-size: 1rem; }
-  .building-preview-label { margin-top: 22px; color: var(--primario); font-size: .52rem; }
-  .building-preview-content strong { margin-top: 7px; color: var(--texto-principal); font-size: 1rem; font-weight: 600; }
-  .building-preview-content small { margin-top: 5px; color: var(--texto-secundario); font-size: .67rem; }
-  .building-preview-progress { height: 3px; background: var(--fondo-tarjeta-alternativo); }
-  .building-preview-progress > span { display: block; width: 38%; height: 100%; background: linear-gradient(90deg, var(--primario), color-mix(in srgb, var(--primario) 45%, transparent)); }
-  @media (max-width: 767px) { .building-section { padding: 8px 0 38px; } .building-card { grid-template-columns: 1fr; gap: 25px; padding: 23px; } .building-preview-content { min-height: 175px; } }
+  .seccion-construccion { padding: 18px 0 48px; color: var(--texto-principal); }
+  .tarjeta-construccion { position: relative; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(310px, .88fr); gap: clamp(28px, 4vw, 52px); overflow: hidden; padding: clamp(24px, 4vw, 40px); border: 1px solid var(--borde-destacado); border-radius: var(--radio-superficie); background: linear-gradient(120deg, color-mix(in srgb, var(--fondo-tarjeta) 94%, var(--primario)), var(--fondo-tarjeta)); box-shadow: var(--sombra-superficie); }
+  .tarjeta-construccion::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 87% 8%, color-mix(in srgb, var(--primario) 17%, transparent), transparent 29%); }
+  .contenido-construccion, .vista-construccion { position: relative; z-index: 1; }
+  .encabezado-construccion { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 15px; }
+  .ceja-construccion, .estado-construccion, .etiqueta-panel, .barra-vista { font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+  .ceja-construccion { color: var(--texto-secundario); font-weight: 600; }
+  .ceja-construccion > span { margin-right: 8px; color: var(--primario); }
+  .estado-construccion { display: inline-flex; align-items: center; gap: 6px; color: var(--primario); white-space: nowrap; }
+  .estado-construccion > span { width: 6px; height: 6px; border-radius: 50%; background: var(--primario); box-shadow: 0 0 0 4px var(--primario-suave); }
+  .contenido-construccion h2 { margin: 0; color: var(--texto-principal); font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.12; }
+  .contenido-construccion h2 > span { color: var(--primario); }
+  .resumen-construccion { max-width: 620px; margin: 16px 0 0; color: var(--texto-secundario); font-size: .9rem; line-height: 1.75; }
+  .capacidades-construccion { display: grid; gap: 11px; margin: 23px 0 0; padding: 0; list-style: none; }
+  .capacidades-construccion li { display: flex; align-items: flex-start; gap: 11px; }
+  .icono-capacidad { display: grid; flex: 0 0 auto; place-items: center; width: 27px; height: 27px; margin-top: 1px; border-radius: var(--radio-control); color: var(--primario); background: var(--primario-suave); font-size: .72rem; }
+  .capacidades-construccion li > span:last-child { display: grid; gap: 2px; }
+  .capacidades-construccion strong { color: var(--texto-principal); font-size: .78rem; font-weight: 600; }
+  .capacidades-construccion small { color: var(--texto-secundario); font-size: .7rem; line-height: 1.45; }
+  .tecnologias-construccion { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
+  .tecnologias-construccion span { padding: 5px 8px; border: 1px solid var(--borde); border-radius: var(--radio-control); color: var(--texto-secundario); background: var(--fondo-tarjeta-alternativo); font: .61rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+  .vista-construccion { align-self: stretch; overflow: hidden; border: 1px solid var(--borde-destacado); border-radius: var(--radio-medio); background: var(--fondo-principal); box-shadow: var(--sombra-superficie); }
+  .barra-vista, .pie-vista { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 13px; color: var(--texto-secundario); font-size: .52rem; }
+  .barra-vista { border-bottom: 1px solid var(--borde); }
+  .barra-vista i, .pie-vista i { margin-right: 5px; color: var(--primario); }
+  .panel-vista { padding: 20px; background: linear-gradient(135deg, var(--fondo-principal), var(--fondo-tarjeta-alternativo)); }
+  .encabezado-panel { display: flex; align-items: center; gap: 11px; padding-bottom: 16px; border-bottom: 1px solid var(--borde); }
+  .icono-panel { display: grid; place-items: center; width: 34px; height: 34px; border-radius: var(--radio-medio); color: var(--primario); background: var(--primario-suave); font-size: .9rem; }
+  .encabezado-panel > div { display: grid; gap: 3px; }
+  .etiqueta-panel { color: var(--primario); font-size: .49rem; }
+  .encabezado-panel strong { color: var(--texto-principal); font-size: .79rem; font-weight: 600; }
+  .flujo-salidas { display: grid; gap: 15px; margin: 17px 0 0; padding: 0; list-style: none; }
+  .flujo-salidas li { position: relative; display: flex; gap: 11px; }
+  .flujo-salidas li:not(:last-child)::after { position: absolute; top: 25px; bottom: -14px; left: 10px; width: 1px; content: ''; background: var(--borde); }
+  .flujo-salidas li > span { display: grid; z-index: 1; flex: 0 0 auto; place-items: center; width: 21px; height: 21px; border: 1px solid var(--borde-destacado); border-radius: 50%; color: var(--texto-secundario); background: var(--fondo-principal); font-size: .53rem; }
+  .flujo-salidas li.completado > span, .flujo-salidas li.activo > span { border-color: var(--primario); color: var(--primario); background: var(--primario-suave); }
+  .flujo-salidas li > div { display: grid; gap: 2px; padding-top: 1px; }
+  .flujo-salidas strong { color: var(--texto-principal); font-size: .72rem; font-weight: 600; }
+  .flujo-salidas small { color: var(--texto-secundario); font-size: .62rem; line-height: 1.35; }
+  .pie-vista { margin-top: auto; border-top: 1px solid var(--borde); font-size: .5rem; }
+  @media (max-width: 767px) { .seccion-construccion { padding: 8px 0 38px; } .tarjeta-construccion { grid-template-columns: 1fr; } .vista-construccion { min-height: auto; } }
+  @media (max-width: 420px) { .encabezado-construccion { align-items: flex-start; flex-direction: column; } .pie-vista { align-items: flex-start; flex-direction: column; } }
 </style>
