@@ -39,9 +39,10 @@ const ecosistema = [
     descripcion: 'Despliegue, observabilidad y continuidad de plataformas en producción.',
     tecnologias: [
       { nombre: 'Docker', experiencia: 'Uso principal · Producción', proyectos: 'Contenedores de aplicaciones, APIs y servicios institucionales' },
+      { nombre: 'Kubernetes', experiencia: 'Experiencia aplicada · Laboratorio y despliegues controlados', proyectos: 'Orquestación de contenedores en entornos de práctica y validación' },
       { nombre: 'Nginx', experiencia: 'Uso principal · Producción', proyectos: 'Proxy inverso, publicación segura y entrega de aplicaciones' },
       { nombre: 'Linux', experiencia: 'Administración · Producción', proyectos: 'Servidores, Bash, monitoreo y continuidad operativa' },
-      { nombre: 'Operación y despliegue', experiencia: 'Experiencia aplicada', proyectos: 'GitHub Actions, Kubernetes, Sentry, Windows Server, redes y conectividad' },
+      { nombre: 'Operación y despliegue', experiencia: 'Experiencia aplicada', proyectos: 'GitHub Actions, Sentry, Windows Server, redes y conectividad' },
     ],
   },
 ];
@@ -50,7 +51,7 @@ function obtenerIconoTecnologia(nombre: string) {
     'Angular + PrimeNG 22': 'fab fa-angular', TypeScript: 'fa fa-code', 'Componentes UI y tablas': 'fa fa-th-large', 'React y ecosistema UI': 'fab fa-react',
     'Python / Flask': 'fab fa-python', 'Node.js / NestJS': 'fab fa-node-js', 'C# / .NET': 'fa fa-code', 'APIs y mensajería': 'fa fa-exchange',
     MySQL: 'fa fa-database', 'SQL Server': 'fa fa-database', SQLAlchemy: 'fa fa-sitemap', 'Reportes e integraciones': 'fa fa-bar-chart',
-    Docker: 'fab fa-docker', Nginx: 'fa fa-server', Linux: 'fab fa-linux', 'Operación y despliegue': 'fa fa-cogs',
+    Docker: 'fab fa-docker', Kubernetes: 'fa fa-cubes', Nginx: 'fa fa-server', Linux: 'fab fa-linux', 'Operación y despliegue': 'fa fa-cogs',
   };
   return iconos[nombre] ?? 'fa fa-code';
 }

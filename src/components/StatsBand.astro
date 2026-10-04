@@ -10,7 +10,7 @@ const estadisticas = [
   {estadisticas.map((estadistica) => (
     <div class="hero-metric">
       <dt>{estadistica.etiqueta}</dt>
-      <dd><span class="hero-metric-number" data-target={estadistica.objetivo}>0</span>{estadistica.muestraMas && <span class="hero-metric-plus" data-sufijo hidden>+</span>}</dd>
+      <dd><span class="hero-metric-number" data-objetivo={estadistica.objetivo}>{estadistica.valorVisible}</span>{estadistica.muestraMas && <span class="hero-metric-plus" data-sufijo>+</span>}</dd>
       <dd class="hero-metric-context">{estadistica.contexto}</dd>
     </div>
   ))}
@@ -19,22 +19,24 @@ const estadisticas = [
 <script>
   const metricas = document.querySelector<HTMLElement>('.hero-metrics');
   const movimientoReducido = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const numeros = [...metricas?.querySelectorAll<HTMLElement>('[data-target]') ?? []];
+  const numeros = [...metricas?.querySelectorAll<HTMLElement>('[data-objetivo]') ?? []];
   const sufijos = [...metricas?.querySelectorAll<HTMLElement>('[data-sufijo]') ?? []];
   const formateador = new Intl.NumberFormat('es-CL');
   function mostrarValoresFinales() {
-    numeros.forEach((numero) => { numero.textContent = formateador.format(Number(numero.dataset.target)); });
+    numeros.forEach((numero) => { numero.textContent = formateador.format(Number(numero.dataset.objetivo)); });
     sufijos.forEach((sufijo) => { sufijo.hidden = false; });
   }
   if (metricas && !movimientoReducido.matches && 'IntersectionObserver' in window) {
     const observador = new IntersectionObserver((entradas) => {
       if (!entradas.some((entrada) => entrada.isIntersecting)) return;
       observador.disconnect();
+      numeros.forEach((numero) => { numero.textContent = '0'; });
+      sufijos.forEach((sufijo) => { sufijo.hidden = true; });
       const inicio = performance.now();
       function animarContadores(ahora: number) {
         const progreso = movimientoReducido.matches ? 1 : Math.min((ahora - inicio) / 1000, 1);
         numeros.forEach((numero) => {
-          numero.textContent = formateador.format(Math.round(Number(numero.dataset.target) * (1 - (1 - progreso) ** 3)));
+          numero.textContent = formateador.format(Math.round(Number(numero.dataset.objetivo) * (1 - (1 - progreso) ** 3)));
         });
         if (progreso < 1) requestAnimationFrame(animarContadores);
         else sufijos.forEach((sufijo) => { sufijo.hidden = false; });

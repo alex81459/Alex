@@ -53,6 +53,8 @@ El diagrama incluye Angular, React, Astro y Next.js en la interfaz, y Flask, Nes
 
 La portada usa CSS y pequeños scripts compilados por Astro, sin dependencias de animación. Respeta `prefers-reduced-motion`, conserva contenido y cifras sin JavaScript y reutiliza el selector de tema con la clave `alex-theme`. El despliegue continúa siendo estático bajo `/Alex/` en GitHub Pages.
 
+El sitemap y `robots.txt` se generan durante cada build. El primero usa `@astrojs/sitemap` y publica un `lastmod` actualizado; el segundo enlaza automáticamente al índice generado.
+
 ### Componentes principales
 
 | Componente | Responsabilidad |
@@ -219,15 +221,15 @@ Alex/
 │   │   └── MainLayout.astro
 │   └── pages/               # Páginas estáticas
 │       ├── index.astro
-│       └── privacidad.astro
+│       ├── privacidad.astro
+│       └── robots.txt.ts
 ├── public/                  # Archivos estáticos públicos
 │   ├── assets/
 │   │   ├── css/             # Estilos CSS
 │   │   ├── fonts/           # Fuentes Font Awesome
 │   │   ├── img/             # Imágenes y PDFs
 │   │   └── js/              # Scripts
-│   ├── robots.txt
-│   └── sitemap.xml
+│   └── favicon.png
 ├── dist/                    # Build de producción (generado)
 ├── node_modules/            # Dependencias npm (generado)
 ├── astro.config.mjs         # Configuración de Astro
