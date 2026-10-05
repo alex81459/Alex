@@ -20,32 +20,30 @@ const estadisticas = [
   const metricas = document.querySelector<HTMLElement>('.hero-metrics');
   const movimientoReducido = window.matchMedia('(prefers-reduced-motion: reduce)');
   const numeros = [...metricas?.querySelectorAll<HTMLElement>('[data-objetivo]') ?? []];
-  const sufijos = [...metricas?.querySelectorAll<HTMLElement>('[data-sufijo]') ?? []];
   const formateador = new Intl.NumberFormat('es-CL');
-  function mostrarValoresFinales() {
-    numeros.forEach((numero) => { numero.textContent = formateador.format(Number(numero.dataset.objetivo)); });
-    sufijos.forEach((sufijo) => { sufijo.hidden = false; });
-  }
   if (metricas && !movimientoReducido.matches && 'IntersectionObserver' in window) {
     const observador = new IntersectionObserver((entradas) => {
       if (!entradas.some((entrada) => entrada.isIntersecting)) return;
       observador.disconnect();
-      numeros.forEach((numero) => { numero.textContent = '0'; });
-      sufijos.forEach((sufijo) => { sufijo.hidden = true; });
+      numeros.forEach((numero) => {
+        numero.dataset.valorAnimado = '0';
+        numero.dataset.animando = 'true';
+      });
       const inicio = performance.now();
       function animarContadores(ahora: number) {
         const progreso = movimientoReducido.matches ? 1 : Math.min((ahora - inicio) / 1000, 1);
         numeros.forEach((numero) => {
-          numero.textContent = formateador.format(Math.round(Number(numero.dataset.objetivo) * (1 - (1 - progreso) ** 3)));
+          numero.dataset.valorAnimado = formateador.format(Math.round(Number(numero.dataset.objetivo) * (1 - (1 - progreso) ** 3)));
         });
         if (progreso < 1) requestAnimationFrame(animarContadores);
-        else sufijos.forEach((sufijo) => { sufijo.hidden = false; });
+        else numeros.forEach((numero) => {
+          delete numero.dataset.valorAnimado;
+          delete numero.dataset.animando;
+        });
       }
       requestAnimationFrame(animarContadores);
     }, { threshold: .5 });
     observador.observe(metricas);
-  } else if (metricas) {
-    mostrarValoresFinales();
   }
 </script>
 
@@ -55,6 +53,8 @@ const estadisticas = [
   .hero-metric + .hero-metric { border-left: 1px solid var(--borde); padding-left: 17px; }
   dt { font-size: .59rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--texto-secundario); }
   dd { order: -1; margin: 0 0 8px; color: var(--texto-principal); font-size: clamp(1.9rem, 2.6vw, 2.5rem); font-weight: 600; line-height: 1; letter-spacing: -.055em; font-variant-numeric: tabular-nums; }
+  .hero-metric-number[data-animando] { color: transparent; position: relative; }
+  .hero-metric-number[data-animando]::after { content: attr(data-valor-animado); color: var(--texto-principal); inset: 0; position: absolute; }
   .hero-metric-plus { font-weight: 400; color: var(--acento-portada); margin-left: 2px; }
   .hero-metric-context { order: 1; margin: 7px 0 0; color: var(--texto-secundario); font-size: .6rem; font-weight: 400; letter-spacing: 0; line-height: 1.6; }
   @media (max-width: 991px) { .hero-metrics { gap: 10px; } .hero-metric + .hero-metric { padding-left: 10px; } dd { font-size: 1.85rem; } dt { font-size: .53rem; letter-spacing: .025em; } }
