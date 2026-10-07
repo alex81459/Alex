@@ -99,19 +99,19 @@
 .portfolio-group-label .fa {
     color: inherit;
 }
-.portfolio-featured {
+.portfolio-item {
     border: 1px solid rgba(56, 189, 248, 0.18);
     border-radius: var(--radio-borde);
 }
-.portfolio-featured img {
+.portfolio-item img {
     height: 300px;
 }
-.portfolio-featured .portfolio-caption {
+.portfolio-item .portfolio-caption {
     border-top: 2px solid rgba(56, 189, 248, 0.22);
 }
 
 /* Capturas destacadas presentadas como productos reales */
-.portfolio-featured .portfolio-link {
+.portfolio-item .portfolio-link {
     position: relative;
     min-height: 390px;
     padding: 54px 24px 42px;
@@ -124,7 +124,7 @@
     border-radius: var(--radio-borde) var(--radio-borde) 0 0;
 }
 
-.portfolio-featured .portfolio-link::before {
+.portfolio-item .portfolio-link::before {
     content: '';
     position: absolute;
     z-index: 1;
@@ -140,8 +140,8 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.portfolio-featured .portfolio-link > img,
-.portfolio-featured .portfolio-link > img.img-fluid {
+.portfolio-item .portfolio-link > img,
+.portfolio-item .portfolio-link > img.img-fluid {
     position: relative;
     z-index: 2;
     width: 100%;
@@ -153,7 +153,7 @@
     box-shadow: 0 20px 46px rgba(0, 0, 0, 0.42);
 }
 
-.portfolio-featured .portfolio-link > img.portfolio-secondary-shot {
+.portfolio-item .portfolio-link > img.portfolio-secondary-shot {
     position: absolute;
     z-index: 3;
     right: 12px;
@@ -169,14 +169,14 @@
     box-shadow: 0 18px 38px rgba(0, 0, 0, 0.58);
 }
 
-html[data-theme='light'] .portfolio-featured .portfolio-link {
+html[data-theme='light'] .portfolio-item .portfolio-link {
     background:
         radial-gradient(circle at 16% 18%, rgba(20, 142, 234, 0.18), transparent 36%),
         radial-gradient(circle at 84% 78%, rgba(57, 194, 221, 0.16), transparent 38%),
         linear-gradient(145deg, #f7fbff, #eaf3fb);
 }
 
-html[data-theme='light'] .portfolio-featured .portfolio-link::before {
+html[data-theme='light'] .portfolio-item .portfolio-link::before {
     background:
         radial-gradient(circle at 18px 19px, #ff5f57 0 4px, transparent 4.5px),
         radial-gradient(circle at 34px 19px, #ffbd2e 0 4px, transparent 4.5px),
@@ -185,31 +185,31 @@ html[data-theme='light'] .portfolio-featured .portfolio-link::before {
     border-bottom: 1px solid rgba(20, 142, 234, 0.08);
 }
 
-html[data-theme='light'] .portfolio-featured .portfolio-link > img.portfolio-secondary-shot {
+html[data-theme='light'] .portfolio-item .portfolio-link > img.portfolio-secondary-shot {
     background: rgba(255, 255, 255, 0.94);
     box-shadow: 0 18px 38px rgba(15, 23, 42, 0.18);
 }
 
-.portfolio-featured:hover .portfolio-main-shot {
+.portfolio-item:hover .portfolio-main-shot {
     transform: scale(1.015);
 }
 
-.portfolio-featured:hover .portfolio-secondary-shot {
+.portfolio-item:hover .portfolio-secondary-shot {
     transform: translateY(-4px);
 }
 
 @media (max-width: 767.98px) {
-    .portfolio-featured .portfolio-link {
+    .portfolio-item .portfolio-link {
         min-height: 345px;
         padding: 50px 15px 34px;
     }
 
-    .portfolio-featured .portfolio-link > img,
-    .portfolio-featured .portfolio-link > img.img-fluid {
+    .portfolio-item .portfolio-link > img,
+    .portfolio-item .portfolio-link > img.img-fluid {
         height: 260px;
     }
 
-    .portfolio-featured .portfolio-link > img.portfolio-secondary-shot {
+    .portfolio-item .portfolio-link > img.portfolio-secondary-shot {
         right: 7px;
         bottom: 8px;
         width: 47%;
@@ -218,17 +218,17 @@ html[data-theme='light'] .portfolio-featured .portfolio-link > img.portfolio-sec
 }
 
 @media (max-width: 575.98px) {
-    .portfolio-featured .portfolio-link {
+    .portfolio-item .portfolio-link {
         min-height: 305px;
         padding: 48px 12px 30px;
     }
 
-    .portfolio-featured .portfolio-link > img,
-    .portfolio-featured .portfolio-link > img.img-fluid {
+    .portfolio-item .portfolio-link > img,
+    .portfolio-item .portfolio-link > img.img-fluid {
         height: 225px;
     }
 
-    .portfolio-featured .portfolio-link > img.portfolio-secondary-shot {
+    .portfolio-item .portfolio-link > img.portfolio-secondary-shot {
         width: 46%;
         height: 108px;
     }

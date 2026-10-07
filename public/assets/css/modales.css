@@ -312,6 +312,11 @@ html[data-theme='light'] .project-impact-block li {
     color: var(--color-arquitectura, var(--primario));
     font-size: 0.82rem;
 }
+.simbolo-prisma {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
 .arch-arrow {
     color: var(--texto-secundario);
     font-size: 0.8rem;
