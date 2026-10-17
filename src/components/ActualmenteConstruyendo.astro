@@ -1,113 +1,106 @@
 ---
-const capacidadesPrincipales = [
-  { icono: 'fa fa-route', titulo: 'Flujo trazable', descripcion: 'Borrador, revisión, observación, aprobación, rechazo y cancelación con historial inmutable.' },
-  { icono: 'fa fa-shield', titulo: 'Acceso institucional', descripcion: 'Google OAuth 2.0, roles locales y autorización por establecimiento.' },
-  { icono: 'fa fa-folder-open', titulo: 'Documentos seguros', descripcion: 'Carga, auditoría y descarga protegida de archivos institucionales en Google Drive.' },
+const modulosGestion = [
+  {
+    numero: '01',
+    icono: 'fa fa-search',
+    titulo: 'Identificación y evaluación',
+    descripcion: 'MIPER, inspecciones, peligros, riesgos y hallazgos por establecimiento.',
+  },
+  {
+    numero: '02',
+    icono: 'fa fa-tasks',
+    titulo: 'Planificación y ejecución',
+    descripcion: 'Programas preventivos, responsables, medidas de control, acciones correctivas y plazos.',
+  },
+  {
+    numero: '03',
+    icono: 'fa fa-line-chart',
+    titulo: 'Seguimiento y mejora continua',
+    descripcion: 'Evidencias, validación técnica, evaluación de eficacia, documentación, indicadores y auditoría.',
+  },
 ];
 
-const tecnologiasProyecto = ['Next.js', 'Prisma · MySQL', 'Mapbox', 'Google Drive', 'SMTP institucional', 'Docker'];
+const capacidadesProyecto = ['Gestión preventiva', 'Control territorial', 'Auditoría', 'Trazabilidad'];
+const tecnologiasProyecto = ['NestJS', 'React', 'Prisma', 'MySQL', 'Google Drive', 'PDFKit', 'Docker', 'Nginx'];
 ---
 
 <section id="actualmente-construyendo" class="seccion-construccion" aria-labelledby="titulo-construccion">
   <div class="container">
     <article class="tarjeta-construccion">
-      <div class="contenido-construccion">
-        <div class="encabezado-construccion">
-          <span class="ceja-construccion"><span aria-hidden="true">01 /</span> ACTUALMENTE CONSTRUYENDO</span>
-          <span class="estado-construccion"><span aria-hidden="true"></span> DESARROLLO ACTIVO</span>
+      <header class="encabezado-construccion">
+        <div class="identidad-proyecto">
+          <span class="icono-proyecto" aria-hidden="true"><i class="fa fa-shield"></i></span>
+          <div>
+            <p class="nombre-proyecto">SIGSST</p>
+            <p class="subtitulo-proyecto">Sistema de Gestión de Seguridad y Salud en el Trabajo</p>
+          </div>
         </div>
+        <span class="estado-proyecto"><span aria-hidden="true"></span> EN DESARROLLO</span>
+      </header>
 
-        <h2 id="titulo-construccion">Sistema de Salidas Pedagógicas<span>.</span></h2>
-        <p class="resumen-construccion">
-          Plataforma institucional para planificar, autorizar y supervisar las salidas pedagógicas de los establecimientos del SLEP Colchagua. Centraliza un proceso que antes dependía de llamadas, correos, documentos, información dispersa y seguimiento manual.
-        </p>
-
-        <ul class="capacidades-construccion" aria-label="Capacidades principales del sistema">
-          {capacidadesPrincipales.map((capacidad) => (
-            <li>
-              <span class="icono-capacidad" aria-hidden="true"><i class={capacidad.icono}></i></span>
-              <span><strong>{capacidad.titulo}</strong><small>{capacidad.descripcion}</small></span>
-            </li>
-          ))}
-        </ul>
-
-        <div class="tecnologias-construccion" aria-label="Tecnologías e integraciones">
-          {tecnologiasProyecto.map((tecnologia) => <span>{tecnologia}</span>)}
-        </div>
+      <div class="propuesta-valor">
+        <p class="ceja-construccion">GESTIÓN PREVENTIVA INSTITUCIONAL</p>
+        <h2 id="titulo-construccion">Del riesgo detectado al control y cierre verificable<span>.</span></h2>
+        <p>Plataforma institucional para gestionar la prevención de riesgos laborales, centralizando inspecciones, evaluaciones, medidas correctivas y seguimiento por establecimiento.</p>
       </div>
 
-      <aside class="vista-construccion" aria-label="Arquitectura operativa del sistema">
-        <div class="barra-vista">
-          <span><i class="fa fa-circle-o-notch" aria-hidden="true"></i> salidas-pedagogicas</span>
-          <span>EN CONSTRUCCIÓN</span>
-        </div>
-
-        <div class="panel-vista">
-          <div class="encabezado-panel">
-            <span class="icono-panel" aria-hidden="true"><i class="fa fa-map-marker"></i></span>
-            <div>
-              <span class="etiqueta-panel">OPERACIÓN INSTITUCIONAL</span>
-              <strong>Una salida, control de punta a punta</strong>
+      <div class="modulos-gestion" aria-label="Módulos principales del SIGSST">
+        {modulosGestion.map((modulo) => (
+          <section class="modulo-gestion">
+            <div class="cabecera-modulo">
+              <span class="numero-modulo" aria-hidden="true">{modulo.numero}</span>
+              <span class="icono-modulo" aria-hidden="true"><i class={modulo.icono}></i></span>
             </div>
-          </div>
+            <h3>{modulo.titulo}</h3>
+            <p>{modulo.descripcion}</p>
+          </section>
+        ))}
+      </div>
 
-          <ol class="flujo-salidas">
-            <li class="completado"><span aria-hidden="true"><i class="fa fa-check"></i></span><div><strong>Solicitud y borrador</strong><small>Recuperación local y persistencia en MySQL</small></div></li>
-            <li class="activo"><span aria-hidden="true"><i class="fa fa-search"></i></span><div><strong>Revisión administrativa</strong><small>Estados validados, responsables y observaciones</small></div></li>
-            <li><span aria-hidden="true"><i class="fa fa-bell"></i></span><div><strong>Resolución y seguimiento</strong><small>Notificaciones, documentos y auditoría</small></div></li>
-          </ol>
+      <footer class="pie-construccion">
+        <div class="capacidades-proyecto" aria-label="Capacidades de la plataforma">
+          {capacidadesProyecto.map((capacidad) => <span>{capacidad}</span>)}
         </div>
-
-        <div class="pie-vista">
-          <span><i class="fa fa-database" aria-hidden="true"></i> Datos y permisos locales</span>
-          <span><i class="fa fa-history" aria-hidden="true"></i> Trazabilidad</span>
+        <div class="tecnologias-construccion" aria-label="Tecnologías del proyecto">
+          {tecnologiasProyecto.map((tecnologia) => <span>{tecnologia}</span>)}
         </div>
-      </aside>
+      </footer>
     </article>
   </div>
 </section>
 
 <style>
   .seccion-construccion { padding: 18px 0 48px; color: var(--texto-principal); }
-  .tarjeta-construccion { position: relative; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(310px, .88fr); gap: clamp(28px, 4vw, 52px); overflow: hidden; padding: clamp(24px, 4vw, 40px); border: 1px solid var(--borde-destacado); border-radius: var(--radio-superficie); background: linear-gradient(120deg, color-mix(in srgb, var(--fondo-tarjeta) 94%, var(--primario)), var(--fondo-tarjeta)); box-shadow: var(--sombra-superficie); }
-  .tarjeta-construccion::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 87% 8%, color-mix(in srgb, var(--primario) 17%, transparent), transparent 29%); }
-  .contenido-construccion, .vista-construccion { position: relative; z-index: 1; }
-  .encabezado-construccion { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 15px; }
-  .ceja-construccion, .estado-construccion, .etiqueta-panel, .barra-vista { font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
-  .ceja-construccion { color: var(--texto-secundario); font-weight: 600; }
-  .ceja-construccion > span { margin-right: 8px; color: var(--primario); }
-  .estado-construccion { display: inline-flex; align-items: center; gap: 6px; color: var(--primario); white-space: nowrap; }
-  .estado-construccion > span { width: 6px; height: 6px; border-radius: 50%; background: var(--primario); box-shadow: 0 0 0 4px var(--primario-suave); }
-  .contenido-construccion h2 { margin: 0; color: var(--texto-principal); font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.12; }
-  .contenido-construccion h2 > span { color: var(--primario); }
-  .resumen-construccion { max-width: 620px; margin: 16px 0 0; color: var(--texto-secundario); font-size: .9rem; line-height: 1.75; }
-  .capacidades-construccion { display: grid; gap: 11px; margin: 23px 0 0; padding: 0; list-style: none; }
-  .capacidades-construccion li { display: flex; align-items: flex-start; gap: 11px; }
-  .icono-capacidad { display: grid; flex: 0 0 auto; place-items: center; width: 27px; height: 27px; margin-top: 1px; border-radius: var(--radio-control); color: var(--primario); background: var(--primario-suave); font-size: .72rem; }
-  .capacidades-construccion li > span:last-child { display: grid; gap: 2px; }
-  .capacidades-construccion strong { color: var(--texto-principal); font-size: .78rem; font-weight: 600; }
-  .capacidades-construccion small { color: var(--texto-secundario); font-size: .7rem; line-height: 1.45; }
-  .tecnologias-construccion { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
-  .tecnologias-construccion span { padding: 5px 8px; border: 1px solid var(--borde); border-radius: var(--radio-control); color: var(--texto-secundario); background: var(--fondo-tarjeta-alternativo); font: .61rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-  .vista-construccion { align-self: stretch; overflow: hidden; border: 1px solid var(--borde-destacado); border-radius: var(--radio-medio); background: var(--fondo-principal); box-shadow: var(--sombra-superficie); }
-  .barra-vista, .pie-vista { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 13px; color: var(--texto-secundario); font-size: .52rem; }
-  .barra-vista { border-bottom: 1px solid var(--borde); }
-  .barra-vista i, .pie-vista i { margin-right: 5px; color: var(--primario); }
-  .panel-vista { padding: 20px; background: linear-gradient(135deg, var(--fondo-principal), var(--fondo-tarjeta-alternativo)); }
-  .encabezado-panel { display: flex; align-items: center; gap: 11px; padding-bottom: 16px; border-bottom: 1px solid var(--borde); }
-  .icono-panel { display: grid; place-items: center; width: 34px; height: 34px; border-radius: var(--radio-medio); color: var(--primario); background: var(--primario-suave); font-size: .9rem; }
-  .encabezado-panel > div { display: grid; gap: 3px; }
-  .etiqueta-panel { color: var(--primario); font-size: .49rem; }
-  .encabezado-panel strong { color: var(--texto-principal); font-size: .79rem; font-weight: 600; }
-  .flujo-salidas { display: grid; gap: 15px; margin: 17px 0 0; padding: 0; list-style: none; }
-  .flujo-salidas li { position: relative; display: flex; gap: 11px; }
-  .flujo-salidas li:not(:last-child)::after { position: absolute; top: 25px; bottom: -14px; left: 10px; width: 1px; content: ''; background: var(--borde); }
-  .flujo-salidas li > span { display: grid; z-index: 1; flex: 0 0 auto; place-items: center; width: 21px; height: 21px; border: 1px solid var(--borde-destacado); border-radius: 50%; color: var(--texto-secundario); background: var(--fondo-principal); font-size: .53rem; }
-  .flujo-salidas li.completado > span, .flujo-salidas li.activo > span { border-color: var(--primario); color: var(--primario); background: var(--primario-suave); }
-  .flujo-salidas li > div { display: grid; gap: 2px; padding-top: 1px; }
-  .flujo-salidas strong { color: var(--texto-principal); font-size: .72rem; font-weight: 600; }
-  .flujo-salidas small { color: var(--texto-secundario); font-size: .62rem; line-height: 1.35; }
-  .pie-vista { margin-top: auto; border-top: 1px solid var(--borde); font-size: .5rem; }
-  @media (max-width: 767px) { .seccion-construccion { padding: 8px 0 38px; } .tarjeta-construccion { grid-template-columns: 1fr; } .vista-construccion { min-height: auto; } }
-  @media (max-width: 420px) { .encabezado-construccion { align-items: flex-start; flex-direction: column; } .pie-vista { align-items: flex-start; flex-direction: column; } }
+  .tarjeta-construccion { overflow: hidden; padding: clamp(24px, 4vw, 36px); border: 1px solid #253449; border-radius: 16px; background: #0b1422; box-shadow: var(--sombra-superficie); transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+  .tarjeta-construccion:hover { border-color: color-mix(in srgb, #38bdf8 58%, #253449); box-shadow: 0 18px 42px color-mix(in srgb, #020617 55%, transparent); transform: translateY(-3px); }
+  .encabezado-construccion { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-bottom: 21px; border-bottom: 1px solid #253449; }
+  .identidad-proyecto { display: flex; align-items: center; min-width: 0; gap: 12px; }
+  .icono-proyecto, .icono-modulo { display: grid; place-items: center; flex: 0 0 auto; color: #38bdf8; background: rgb(56 189 248 / 12%); }
+  .icono-proyecto { width: 42px; height: 42px; border-radius: 12px; font-size: 1rem; }
+  .nombre-proyecto, .subtitulo-proyecto, .propuesta-valor p, .modulo-gestion p { margin: 0; }
+  .nombre-proyecto { color: #f1f5f9; font-size: clamp(1.38rem, 2vw, 1.5rem); font-weight: 700; line-height: 1; letter-spacing: -.03em; }
+  .subtitulo-proyecto { margin-top: 5px; color: #94a3b8; font-size: .7rem; line-height: 1.35; }
+  .estado-proyecto { display: inline-flex; align-items: center; flex: 0 0 auto; gap: 7px; padding: 6px 9px; border: 1px solid rgb(251 191 36 / 32%); border-radius: 999px; color: #fbbf24; background: rgb(251 191 36 / 8%); font: .59rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .08em; white-space: nowrap; }
+  .estado-proyecto > span { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .propuesta-valor { max-width: 780px; margin-top: 26px; }
+  .ceja-construccion { margin-bottom: 9px !important; color: #38bdf8; font: .6rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+  .propuesta-valor h2 { max-width: 720px; margin: 0; color: #f1f5f9; font-size: clamp(1.22rem, 2.25vw, 1.55rem); font-weight: 650; line-height: 1.25; letter-spacing: -.025em; }
+  .propuesta-valor h2 > span { color: #38bdf8; }
+  .propuesta-valor > p:last-child { max-width: 690px; margin-top: 11px; color: #94a3b8; font-size: .83rem; line-height: 1.65; }
+  .modulos-gestion { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
+  .modulo-gestion { min-width: 0; padding: 17px; border: 1px solid #253449; border-radius: 14px; background: #101e30; transition: border-color .2s ease, background .2s ease; }
+  .modulo-gestion:hover { border-color: rgb(56 189 248 / 52%); background: color-mix(in srgb, #101e30 87%, #38bdf8); }
+  .cabecera-modulo { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .numero-modulo { color: #94a3b8; font: .62rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .08em; }
+  .icono-modulo { width: 31px; height: 31px; border-radius: 9px; font-size: .78rem; }
+  .modulo-gestion h3 { margin: 15px 0 7px; color: #f1f5f9; font-size: .86rem; font-weight: 600; line-height: 1.35; }
+  .modulo-gestion p { color: #94a3b8; font-size: .72rem; line-height: 1.58; }
+  .pie-construccion { display: grid; gap: 14px; margin-top: 24px; padding-top: 19px; border-top: 1px solid #253449; }
+  .capacidades-proyecto, .tecnologias-construccion { display: flex; flex-wrap: wrap; gap: 7px; }
+  .capacidades-proyecto span, .tecnologias-construccion span { padding: 5px 8px; border-radius: 6px; font: .61rem ui-monospace, SFMono-Regular, Consolas, monospace; line-height: 1; }
+  .capacidades-proyecto span { border: 1px solid rgb(56 189 248 / 27%); color: #7dd3fc; background: rgb(56 189 248 / 8%); }
+  .tecnologias-construccion span { border: 1px solid #253449; color: #94a3b8; background: rgb(15 23 42 / 55%); }
+  @media (max-width: 767px) { .seccion-construccion { padding: 8px 0 38px; } .tarjeta-construccion { padding: 24px; } .modulos-gestion { grid-template-columns: 1fr; } }
+  @media (max-width: 440px) { .encabezado-construccion { align-items: flex-start; flex-direction: column; } .estado-proyecto { margin-left: 54px; } .subtitulo-proyecto { max-width: 220px; } }
+  @media (prefers-reduced-motion: reduce) { .tarjeta-construccion, .modulo-gestion { transition: none; } .tarjeta-construccion:hover { transform: none; } }
 </style>
