@@ -19,8 +19,8 @@ const descripcionPagina = 'Política de Privacidad del portafolio personal de Al
 
       <article class="privacy-content">
         <h2>1. Objeto y alcance</h2>
-        <p>Esta Política de Privacidad describe cómo se tratan los datos personales de quienes visitan este sitio web (portafolio personal), conforme a la <strong>Ley N.º 19.628 sobre Protección de la Vida Privada</strong>, actualmente vigente en Chile. La política está preparada considerando las modificaciones introducidas por la Ley N.º 21.719, que entrarán en vigencia el 1 de diciembre de 2026.</p>
-        <p>Este sitio es de carácter estático e informativo. <strong>No recopila datos personales mediante formularios, registros de usuario ni sistemas de seguimiento publicitario.</strong></p>
+        <p>Esta política se rige por la <strong>Ley N.º 19.628 sobre Protección de la Vida Privada</strong> y considera las modificaciones introducidas por la Ley N.º 21.719. A la fecha de esta actualización, la entrada en vigencia legal de esa reforma está fijada para el 1 de diciembre de 2026; el proyecto de postergación, Boletín N.º 18.623-07, continúa en tramitación y no modifica aún el régimen vigente.</p>
+        <p>Este portafolio es de carácter estático e informativo. <strong>No dispone de formularios de registro, cuentas de usuario ni herramientas propias de seguimiento publicitario.</strong> Sin embargo, los proveedores tecnológicos necesarios para su funcionamiento pueden tratar determinados datos técnicos, como la dirección IP, al prestar sus servicios.</p>
 
         <h2>2. Responsable del tratamiento</h2>
         <ul>
@@ -33,37 +33,75 @@ const descripcionPagina = 'Política de Privacidad del portafolio personal de Al
         <p>Durante la navegación pueden tratarse las siguientes categorías de datos:</p>
         <ul>
           <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, páginas visitadas y datos técnicos recogidos automáticamente por el servicio de alojamiento (GitHub Pages) por motivos técnicos y de seguridad.</li>
-          <li><strong>Preferencia de tema:</strong> la elección de tema claro/oscuro se guarda localmente en tu dispositivo mediante <em>localStorage</em>. No se transmite a ningún servidor.</li>
-          <li><strong>Datos de contacto:</strong> nombre y correo electrónico que decidas compartir voluntariamente al escribirme por correo, con el único fin de responder tu consulta.</li>
-          <li><strong>Datos transmitidos a proveedores externos:</strong> al cargar la página se solicitan recursos a servicios de terceros (Google Fonts y jsDelivr para Bootstrap), lo que implica que tu dirección IP puede ser visible para esos proveedores.</li>
+          <li><strong>Preferencias locales:</strong> <code>alex-theme</code> guarda la elección de tema claro u oscuro y <code>alex-privacy-notice</code> registra el cierre del aviso de privacidad. Ambos valores se almacenan mediante <em>localStorage</em> en tu dispositivo y no se transmiten al servidor del sitio.</li>
+          <li><strong>Datos de contacto:</strong> nombre, correo electrónico y el contenido que decidas compartir voluntariamente al escribirme por correo u otros canales de contacto, para las finalidades profesionales descritas en esta política.</li>
+          <li><strong>Datos transmitidos a proveedores externos:</strong> al cargar la página se solicitan recursos a jsDelivr para Bootstrap, por lo que tu dirección IP puede ser visible para ese proveedor. Las miniaturas de demostraciones alojadas en <em>img.youtube.com</em> usan carga diferida, pero el navegador puede solicitarlas antes de que actives un video; cuando ello ocurre, YouTube puede recibir tu dirección IP.</li>
         </ul>
 
-        <h2>4. Finalidades del tratamiento</h2>
+        <h2>4. Almacenamiento local y cookies</h2>
+        <p>Este sitio utiliza mecanismos de almacenamiento local del navegador para recordar la preferencia de apariencia (<code>alex-theme</code>) y el cierre del aviso informativo de privacidad (<code>alex-privacy-notice</code>).</p>
+        <p>Estos valores no identifican directamente al visitante ni se transmiten deliberadamente a servidores administrados por el responsable.</p>
+        <p>El sitio no incorpora herramientas propias de análisis publicitario ni cookies de seguimiento. Los servicios externos podrían efectuar tratamientos técnicos conforme a sus respectivas políticas.</p>
+        <p>El visitante puede eliminar los datos almacenados localmente desde la configuración de su navegador.</p>
+
+        <h2>5. Finalidades del tratamiento</h2>
         <ul>
           <li><strong>Funcionamiento técnico y seguridad del sitio.</strong></li>
-          <li><strong>Responder consultas recibidas por correo.</strong></li>
-          <li><strong>Recordar la preferencia de tema</strong> mediante almacenamiento local en tu dispositivo.</li>
+          <li><strong>Contacto profesional:</strong> los datos compartidos voluntariamente mediante correo electrónico u otros canales de contacto podrán utilizarse para atender consultas, evaluar oportunidades laborales, responder propuestas de colaboración y gestionar comunicaciones relacionadas con servicios profesionales. No se utilizarán para enviar publicidad no solicitada ni se comercializarán con terceros.</li>
+          <li><strong>Recordar la preferencia de tema y el cierre del aviso de privacidad</strong> mediante almacenamiento local en tu dispositivo.</li>
           <li><strong>Mejora visual y de rendimiento mediante recursos de terceros</strong>, minimizados a lo indispensable y debidamente informados.</li>
         </ul>
 
-        <h2>5. Destinatarios y transferencias internacionales</h2>
+        <h2>6. Bases de licitud del tratamiento</h2>
+        <p>A la fecha de esta actualización, la entrada en vigencia legal de las modificaciones introducidas por la Ley N.º 21.719 está fijada para el 1 de diciembre de 2026. El Boletín N.º 18.623-07 propone una postergación, pero continúa en tramitación y no modifica aún ese calendario. Las siguientes bases distinguen los datos que se gestionan directamente de los tratamientos propios de proveedores independientes.</p>
+        <div class="privacy-table-wrap" role="region" aria-label="Bases de licitud y alcance de los tratamientos" tabindex="0">
+          <table class="privacy-table">
+            <thead>
+              <tr>
+                <th scope="col">Tratamiento</th>
+                <th scope="col">Base de licitud aplicada y alcance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Correos y propuestas enviados voluntariamente</td>
+                <td><strong>Consentimiento</strong> expresado al compartir los datos para recibir respuesta. Cuando una persona solicita evaluar una oportunidad laboral, colaboración o servicio, también pueden aplicarse las actuaciones precontractuales solicitadas por ella.</td>
+              </tr>
+              <tr>
+                <td>Funcionamiento técnico y seguridad</td>
+                <td><strong>Interés legítimo</strong> en mantener la disponibilidad, seguridad y correcto funcionamiento del portafolio. GitHub Pages administra sus propios registros técnicos conforme a sus políticas y actúa respecto de ellos bajo su propio rol.</td>
+              </tr>
+              <tr>
+                <td>Preferencias locales en <em>localStorage</em> (<code>alex-theme</code> y <code>alex-privacy-notice</code>)</td>
+                <td><strong>Interés legítimo</strong> en ofrecer funciones solicitadas y mínimas de apariencia y aviso informativo. Estos valores permanecen en el navegador y no se transmiten al servidor del sitio.</td>
+              </tr>
+              <tr>
+                <td>Recursos externos de jsDelivr y YouTube</td>
+                <td><strong>Interés legítimo</strong> en entregar recursos necesarios y demostraciones audiovisuales, limitado a lo necesario y proporcional. jsDelivr y YouTube tratan los datos técnicos que reciben conforme a sus propias políticas y bajo su propio rol.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Estas bases se aplican con criterios de licitud, finalidad, minimización y proporcionalidad. Puedes consultar el texto de la <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener noreferrer">Ley N.º 21.719 en la Biblioteca del Congreso Nacional</a>.</p>
+
+        <h2>7. Destinatarios y transferencias internacionales</h2>
         <p>Para el funcionamiento del sitio intervienen los siguientes proveedores:</p>
         <ul>
           <li><strong>GitHub Pages (GitHub, Inc. / Microsoft):</strong> alojamiento del sitio y registros técnicos del servidor.</li>
-          <li><strong>Google LLC:</strong> servicio de fuentes tipográficas (Google Fonts).</li>
           <li><strong>jsDelivr:</strong> red de distribución de contenido (CDN) para Bootstrap.</li>
+          <li><strong>YouTube (Google LLC):</strong> miniaturas de demostraciones servidas desde <em>img.youtube.com</em> mediante carga diferida. El reproductor solo se inserta cuando activas una demostración y utiliza el dominio <em>youtube-nocookie.com</em>, correspondiente al modo de privacidad mejorada de YouTube.</li>
           <li><strong>Proveedor de correo electrónico (Gmail/Google):</strong> cuando envías un correo a la dirección indicada.</li>
         </ul>
         <p>Algunos de estos proveedores pueden estar ubicados fuera de Chile, por lo que la carga de sus recursos puede implicar una <strong>transferencia internacional de datos</strong>, como tu dirección IP. Si haces clic en enlaces a LinkedIn, GitHub o Telegram, abandonarás este sitio y el tratamiento de tus datos se regirá por las políticas de privacidad de esas plataformas.</p>
 
-        <h2>6. Plazos de conservación</h2>
+        <h2>8. Plazos de conservación</h2>
         <ul>
-          <li><strong>Registros del servidor:</strong> se conservan según los plazos establecidos por GitHub Pages, habitualmente por un período limitado con fines de seguridad y funcionamiento.</li>
-          <li><strong>Preferencia de tema:</strong> permanece en tu navegador hasta que la elimines desde la configuración de tu dispositivo.</li>
-          <li><strong>Correos recibidos:</strong> se conservan únicamente el tiempo necesario para atender y cerrar tu consulta.</li>
+          <li><strong>Registros del servidor:</strong> GitHub Pages determina sus plazos de conservación conforme a sus propias políticas y operaciones.</li>
+          <li><strong>Preferencias locales:</strong> <code>alex-theme</code> y <code>alex-privacy-notice</code> permanecen en tu navegador hasta que las elimines desde la configuración de tu dispositivo.</li>
+          <li><strong>Correos recibidos:</strong> los mensajes ordinarios se eliminan transcurridos 12 meses desde la última comunicación, salvo que sea necesario conservarlos por una obligación legal, una relación profesional vigente o para la formulación, el ejercicio o la defensa de derechos.</li>
         </ul>
 
-        <h2>7. Derechos del titular de los datos</h2>
+        <h2>9. Derechos del titular de los datos</h2>
         <p>De acuerdo con la Ley N.º 19.628 actualmente vigente, como titular de datos personales puedes ejercer los siguientes derechos:</p>
         <ul>
           <li><strong>Información o acceso:</strong> solicitar información sobre los datos relativos a tu persona que se encuentren almacenados.</li>
@@ -71,15 +109,28 @@ const descripcionPagina = 'Política de Privacidad del portafolio personal de Al
           <li><strong>Cancelación o eliminación:</strong> solicitar la eliminación de datos cuando su almacenamiento carezca de fundamento legal o estén caducos.</li>
           <li><strong>Bloqueo:</strong> solicitar la suspensión temporal de tratamiento en los casos que correspondan.</li>
         </ul>
-        <p>Para ejercerlos, escríbeme a <a href="mailto:alex81459@gmail.com">alex81459@gmail.com</a> indicando el derecho que deseas ejercer. Si consideras que tu solicitud no ha sido atendida conforme a la normativa vigente, podrás ejercer las acciones que correspondan.</p>
+        <h3>Régimen vigente</h3>
+        <p>Conforme al artículo 16 de la Ley N.º 19.628 actualmente vigente, si no existe pronunciamiento sobre una solicitud dentro de dos días hábiles, o si esta se deniega en los casos previstos por la ley, la persona titular puede recurrir al juez de letras en lo civil del domicilio del responsable para solicitar amparo de sus derechos.</p>
+        <h3>Derechos aplicables con la reforma</h3>
+        <p>Cuando resulten aplicables las modificaciones introducidas por la Ley N.º 21.719, las personas titulares contarán, en los casos establecidos por esa norma, con derechos de acceso, rectificación, supresión, oposición, portabilidad y bloqueo temporal.</p>
 
-        <h2>8. Seguridad de la información</h2>
+        <h3>Procedimiento para ejercer derechos</h3>
+        <ul>
+          <li><strong>Solicitud:</strong> escribe a <a href="mailto:alex81459@gmail.com">alex81459@gmail.com</a>, identifica razonablemente tu identidad, el derecho que deseas ejercer, los datos o tratamiento involucrados y una dirección de correo para recibir la respuesta.</li>
+          <li><strong>Alcance y proveedores:</strong> se gestionarán los datos que este portafolio controla, principalmente los mensajes de correo recibidos. Cuando un proveedor trate datos por cuenta del responsable, se atenderá la solicitud conforme al rol aplicable y a los acuerdos vigentes. Cuando GitHub Pages, Google/YouTube u otro servicio actúe como responsable independiente de sus propios registros o servicios, la solicitud deberá dirigirse también o directamente a ese proveedor conforme a sus políticas.</li>
+          <li><strong>Respuesta:</strong> se acusará recibo de la solicitud y se entregará una respuesta escrita y fundada. Cuando sea aplicable el procedimiento de la Ley N.º 21.719, el plazo general será de 30 días corridos desde el ingreso, prorrogable una sola vez por hasta otros 30 días corridos.</li>
+          <li><strong>Bloqueo temporal:</strong> al solicitar rectificación, supresión u oposición, podrás pedir el bloqueo temporal fundado. Cuando sea aplicable la Ley N.º 21.719, este requerimiento tendrá el procedimiento especial previsto por la norma, con respuesta dentro de dos días hábiles.</li>
+          <li><strong>Reclamo:</strong> cuando entre en vigencia el procedimiento de la Ley N.º 21.719, podrás reclamar ante la Agencia de Protección de Datos Personales en los casos que correspondan. Una denegación total o parcial deberá informar la vía de reclamación disponible.</li>
+        </ul>
+        <p>Las condiciones y plazos indicados para la Ley N.º 21.719 se aplicarán conforme al calendario legal vigente y a las normas que correspondan. Puedes consultar el texto legal en la <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener noreferrer">Biblioteca del Congreso Nacional</a>.</p>
+
+        <h2>10. Seguridad de la información</h2>
         <p>Se aplican medidas razonables de seguridad: conexión cifrada mediante HTTPS, minimización de datos (no se almacenan datos personales en servidores propios) y uso limitado de servicios de terceros. Recuerda que ningún sistema es infalible, por lo que no podemos garantizar una seguridad absoluta.</p>
 
-        <h2>9. Menores de edad</h2>
+        <h2>11. Menores de edad</h2>
         <p>Este sitio no está dirigido a menores de edad ni recopila deliberadamente datos de ellos.</p>
 
-        <h2>10. Cambios a esta política</h2>
+        <h2>12. Cambios a esta política</h2>
         <p>Esta política puede actualizarse para reflejar cambios legales o del sitio. La fecha de última actualización figura al inicio de esta página.</p>
 
         <p class="privacy-page-actions">
@@ -154,6 +205,13 @@ const descripcionPagina = 'Política de Privacidad del portafolio personal de Al
       margin-top: 0;
     }
 
+    .privacy-content h3 {
+      margin: 26px 0 12px;
+      color: var(--texto-principal);
+      font-size: 1.04rem;
+      font-weight: 800;
+    }
+
     .privacy-content p,
     .privacy-content li {
       font-size: 0.98rem;
@@ -172,6 +230,42 @@ const descripcionPagina = 'Política de Privacidad del portafolio personal de Al
     .privacy-content a {
       color: #8feaff;
       font-weight: 700;
+    }
+
+    .privacy-table-wrap {
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+    }
+
+    .privacy-table {
+      width: 100%;
+      min-width: 580px;
+      border-collapse: collapse;
+    }
+
+    .privacy-table th,
+    .privacy-table td {
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--borde);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .privacy-table th {
+      color: var(--texto-principal);
+      background: color-mix(in srgb, var(--fondo-principal) 45%, transparent);
+      font-size: .82rem;
+    }
+
+    .privacy-table td {
+      font-size: .9rem;
+      line-height: 1.6;
+    }
+
+    .privacy-table tr:last-child td {
+      border-bottom: 0;
     }
 
     .privacy-page-actions {
@@ -223,6 +317,11 @@ const descripcionPagina = 'Política de Privacidad del portafolio personal de Al
       .privacy-content li {
         font-size: 0.92rem;
         line-height: 1.68;
+      }
+
+      .privacy-table th,
+      .privacy-table td {
+        padding: 11px 13px;
       }
     }
   </style>

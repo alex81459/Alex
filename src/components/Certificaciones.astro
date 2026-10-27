@@ -81,13 +81,16 @@ const certificaciones = [
   { categoria: 'hardware', institucion: 'Udemy', titulo: 'Raspberry Pi 4 IoT' },
   { categoria: 'gestion', institucion: 'Capacired', titulo: 'Auditor Interno BRC V8' },
   { categoria: 'gestion', institucion: 'CEA', titulo: 'Administración del Estado' },
-  { categoria: 'gestion', institucion: 'Experiencia profesional', titulo: 'Servicios Públicos y Privados' },
   { categoria: 'gestion', institucion: 'Estado de Chile', titulo: 'Integridad Pública' },
   { categoria: 'gestion', institucion: 'Formación profesional', titulo: 'Curso Fiscal Instructor y Actuario de la Administración Pública' },
   { categoria: 'productividad', institucion: 'Factor Clave', titulo: 'Excel Nivel Avanzado' },
   { categoria: 'productividad', institucion: 'Udemy', titulo: 'Excel de Principiante a Avanzado' },
   { categoria: 'productividad', institucion: 'Lego Education Academy', titulo: 'SPIKE' },
 ];
+
+const proveedoresCredenciales = new Set(['Cisco', 'Google', 'Capacired', 'Sence', 'Gobierno Digital', 'CEA', 'Estado de Chile', 'Factor Clave']);
+const credencialesProfesionales = certificaciones.filter((certificacion) => proveedoresCredenciales.has(certificacion.institucion));
+const cursosFormacion = certificaciones.filter((certificacion) => !proveedoresCredenciales.has(certificacion.institucion));
 ---
 
 <section id="certifications" class="certifications-section">
@@ -95,7 +98,7 @@ const certificaciones = [
     <header class="cert-heading text-center">
       <span class="cert-eyebrow">FORMACIÓN CONTINUA</span>
       <h2 class="text-uppercase section-heading text-gradient">Certificaciones y Cursos</h2>
-      <p class="section-subheading">Seis credenciales especialmente relevantes por su aplicación directa en sistemas en producción, seguridad, operación e interoperabilidad.</p>
+      <p class="section-subheading">Credenciales profesionales y cursos de formación continua con aplicación directa en sistemas, seguridad, operación e interoperabilidad.</p>
     </header>
 
     <div class="cert-featured-grid" aria-label="Certificaciones destacadas">
@@ -125,7 +128,7 @@ const certificaciones = [
           <span class="cert-catalog-kicker">CATÁLOGO COMPLETO</span>
           <h3>Explora por área</h3>
         </div>
-        <span class="cert-catalog-count">{certificaciones.length} credenciales</span>
+        <span class="cert-catalog-count">{certificaciones.length} antecedentes de formación</span>
       </div>
 
       <div class="cert-filters" role="group" aria-label="Filtrar certificaciones por área">
@@ -136,17 +139,40 @@ const certificaciones = [
         ))}
       </div>
 
-      <div class="cert-catalog-grid" aria-live="polite">
-        {certificaciones.map((certificado) => (
-          <article class="cert-catalog-item" data-cert-category={certificado.categoria}>
-            <i class="fas fa-check-circle" aria-hidden="true"></i>
-            <div>
-              <span>{certificado.institucion}</span>
-              <h4>{certificado.titulo}</h4>
-            </div>
-          </article>
-        ))}
-      </div>
+      <section class="cert-catalog-group" data-cert-group>
+        <h4 class="cert-catalog-group-title">Credenciales y certificaciones profesionales</h4>
+        <div class="cert-catalog-grid" aria-label="Credenciales y certificaciones profesionales">
+          {credencialesProfesionales.map((certificado) => (
+            <article class="cert-catalog-item" data-cert-category={certificado.categoria}>
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <div>
+                <span>{certificado.institucion}</span>
+                <h5>{certificado.titulo}</h5>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="cert-catalog-group" data-cert-group>
+        <h4 class="cert-catalog-group-title">Cursos y formación complementaria</h4>
+        <div class="cert-catalog-grid" aria-label="Cursos y formación complementaria" aria-live="polite">
+          {cursosFormacion.map((certificado) => (
+            <article class="cert-catalog-item" data-cert-category={certificado.categoria}>
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <div>
+                <span>{certificado.institucion}</span>
+                <h5>{certificado.titulo}</h5>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="cert-experience-note" aria-label="Experiencia profesional">
+        <h4>Experiencia profesional</h4>
+        <p>La experiencia en servicios públicos y privados se presenta en la sección <a href="#experiencia">Experiencia</a>, no como certificación ni curso.</p>
+      </section>
     </div>
 
     <div class="cert-summary-strip" aria-label="Resumen de formación">
@@ -161,6 +187,7 @@ const certificaciones = [
   document.addEventListener('DOMContentLoaded', () => {
     const botones = document.querySelectorAll<HTMLButtonElement>('[data-cert-filter]');
     const elementos = document.querySelectorAll<HTMLElement>('[data-cert-category]');
+    const grupos = document.querySelectorAll<HTMLElement>('[data-cert-group]');
 
     botones.forEach((boton) => {
       boton.addEventListener('click', () => {
@@ -175,7 +202,21 @@ const certificaciones = [
         elementos.forEach((elemento) => {
           elemento.hidden = filtro !== 'all' && elemento.dataset.certCategory !== filtro;
         });
+        grupos.forEach((grupo) => {
+          grupo.hidden = ![...grupo.querySelectorAll<HTMLElement>('[data-cert-category]')].some((elemento) => !elemento.hidden);
+        });
       });
     });
   });
 </script>
+
+<style>
+  .cert-catalog-group + .cert-catalog-group { margin-top: 26px; }
+  .cert-catalog-group-title { margin: 0 0 12px; color: var(--texto-principal); font-size: .86rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+  .cert-catalog-item h5 { margin: 0; font: inherit; font-weight: 700; }
+  .cert-experience-note { margin-top: 26px; padding: 16px; border: 1px solid var(--borde); border-radius: 10px; background: color-mix(in srgb, var(--fondo-principal) 35%, transparent); }
+  .cert-experience-note h4, .cert-experience-note p { margin: 0; }
+  .cert-experience-note h4 { color: var(--texto-principal); font-size: .92rem; }
+  .cert-experience-note p { margin-top: 5px; color: var(--texto-secundario); font-size: .82rem; }
+  .cert-experience-note a { color: var(--primario); font-weight: 700; }
+</style>

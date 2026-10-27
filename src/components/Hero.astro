@@ -16,6 +16,7 @@ const rutaBase = import.meta.env.BASE_URL;
       <div class="hero-operational hero-enter" aria-label="Flujo técnico hacia producción">
         <div class="hero-flow"><span>FRONTEND</span><b aria-hidden="true">→</b><span>BACKEND</span><b aria-hidden="true">→</b><span>INFRAESTRUCTURA</span><b aria-hidden="true">→</b><span>PRODUCCIÓN</span></div>
         <ul class="hero-statuses" aria-label="Estados operacionales ilustrativos"><li><span aria-hidden="true"></span>ONLINE</li><li><span aria-hidden="true"></span>API 200</li><li><span aria-hidden="true"></span>DEPLOYED</li></ul>
+        <p class="hero-reference-note"><i class="fa fa-info-circle" aria-hidden="true"></i> Arquitectura de referencia · Estados ilustrativos</p>
       </div>
       <div class="hero-actions hero-enter">
         <a class="hero-action hero-action-primary js-scroll-trigger" href="#portfolio">Explorar proyectos <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
@@ -98,6 +99,8 @@ const rutaBase = import.meta.env.BASE_URL;
   .hero-statuses span { width: 5px; height: 5px; border-radius: 50%; background: var(--acento-portada); box-shadow: 0 0 7px var(--acento-portada); animation: hero-pulso 2.2s ease-in-out infinite; }
   .hero-statuses li:nth-child(2) span { animation-delay: -.7s; }
   .hero-statuses li:nth-child(3) span { animation-delay: -1.4s; }
+  .hero-reference-note { margin: 0; color: var(--texto-tenue); font-size: .58rem; line-height: 1.35; }
+  .hero-reference-note i { color: var(--acento-portada); }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
   .hero-action { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; gap: 14px; padding: 12px 20px; border: 1px solid transparent; border-radius: var(--radio-control); font-size: .84rem; font-weight: 700; text-decoration: none; transition: transform .2s, background .2s, border-color .2s; }
   .hero-action-primary { color: #07111f; background: #82d3f7; }

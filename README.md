@@ -23,11 +23,9 @@ Portafolio web moderno, optimizado para rendimiento y SEO, que presenta experien
 - **DevOps**: Automatización, CI/CD y despliegue en GitHub Pages
 
 ### Proyectos Destacados
-- **Libro de Clases Digital**: 7 establecimientos desplegados · 5 en operación activa, con expansión progresiva
-- **Trámites Online Institucional**: 13 trámites implementados y 10.000+ gestiones realizadas en Plataforma SIMPLE
-- **Sistema de Tareas y Proyectos**: Herramienta de gestión colaborativa
-- **Trazabilidad Documental**: Sistema de automatización industrial
-- **Evaluaciones Online**: Plataforma centralizada de evaluaciones
+- **Portal de Consejos Escolares**: Gestión de sesiones, actas, acuerdos y seguimiento territorial
+- **Trámites Online Institucional**: 13 trámites implementados y 15.000+ gestiones realizadas entre 2025 y 2026 en Plataforma SIMPLE
+- **Sistema de Salidas Pedagógicas**: Gestión, revisión y trazabilidad de salidas, rutas, documentos y aprobaciones institucionales
 
 ### Secciones Incluidas
 - Portada con arquitectura interactiva: Angular, REST, Flask/NestJS, datos, Docker, Nginx y producción

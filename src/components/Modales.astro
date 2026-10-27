@@ -83,6 +83,10 @@
                                 <div class="modal-body text-start">
                                     <h2 id="titulo-proyecto-14" class="project-modal-title">Sistema de Salidas Pedagógicas</h2>
                                     <p class="project-modal-subtitle">Plataforma institucional para la gestión integral, revisión, aprobación, seguimiento y trazabilidad de las salidas pedagógicas del SLEP Colchagua. Centraliza solicitudes, rutas, participantes, documentos, notificaciones, reportería, auditoría y control de acceso.</p>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-info-circle"></i> Estado del proyecto</div>
+                                        <p><strong>Desarrollo finalizado.</strong> El despliegue técnico está preparado con Docker y Nginx. Esta ficha no declara uso efectivo en producción; dicho estado se informará cuando exista operación institucional confirmada.</p>
+                                    </div>
                                     <div class="case-study">
                                         <div class="case-study-grid">
                                             <div class="case-cell case-problem">
@@ -1243,7 +1247,7 @@
                                                 <span class="arch-node"><span class="arch-node-icon" style="--color-arquitectura:#dd0031"><i class="fab fa-angular"></i></span>Angular + PrimeNG</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
                                                 <span class="arch-node"><span class="arch-node-icon" style="--color-arquitectura:#4584b6"><i class="fab fa-python"></i></span>API Flask</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
                                                 <span class="arch-node"><span class="arch-node-icon" style="--color-arquitectura:#43b8d4"><i class="fa fa-database"></i></span>MySQL</span><i class="fa fa-arrow-right arch-arrow" aria-hidden="true"></i>
-                                                <span class="arch-node"><span class="arch-node-icon" style="--color-arquitectura:#a78bfa"><i class="fa fa-envelope"></i></span>Servicios OTP / correo</span>
+                                                <span class="arch-node"><span class="arch-node-icon" style="--color-arquitectura:#a78bfa"><i class="fa fa-mobile"></i></span>OTP / aplicación y correo</span>
                                             </div>
                                             <div class="arch-stack">
                                                 <span class="arch-stack-label">Despliegue</span>
@@ -1381,25 +1385,25 @@
                                             <div class="project-module-item"><i class="fa fa-line-chart"></i><span>Portal Home UTP — estadísticas, seguimiento, operaciones y actividades</span></div>
                                             <div class="project-module-item"><i class="fa fa-id-card"></i><span>Gestión de Matrículas — registro y control de matrículas</span></div>
                                             <div class="project-module-item"><i class="fa fa-check-square"></i><span>Control de Asistencia — seguimiento y registro diario</span></div>
-                                            <div class="project-module-item"><i class="fa fa-certificate"></i><span>Cumplimiento Estándar CEDS — estándar de datos educacionales</span></div>
+                                            <div class="project-module-item"><i class="fa fa-certificate"></i><span>Diseño basado en CEDS de EE. UU. — preparado para aprobación del MINEDUC</span></div>
                                             <div class="project-module-item"><i class="fa fa-graduation-cap"></i><span>Marco de Enseñanza — objetivos de aprendizaje y planificación</span></div>
                                             <div class="project-module-item"><i class="fa fa-calculator"></i><span>Control Centralizado de Notas — por curso, período, mes y alumno</span></div>
                                             <div class="project-module-item"><i class="fa fa-upload"></i><span>Carga Masiva de Usuarios — docentes y apoderados desde CSV con validación</span></div>
                                             <div class="project-module-item"><i class="fa fa-camera"></i><span>Gestión de Imágenes — subida y cambios de fotos de estudiantes</span></div>
                                             <div class="project-module-item"><i class="fa fa-search"></i><span>Búsquedas Inteligentes — sistema contextual según rol</span></div>
                                             <div class="project-module-item"><i class="fa fa-book"></i><span>Leccionario y Objetivos Curriculares — borrador, versionado, aprobación UTP, firma OTP, notificaciones y auditoría</span></div>
-                                            <div class="project-module-item"><i class="fa fa-mobile"></i><span>Gestión de OTP — firma digital de contingencia, autenticación en dos pasos y administración de códigos</span></div>
+                                            <div class="project-module-item"><i class="fa fa-mobile"></i><span>Validación OTP — aplicación autenticadora, correo electrónico y administración de códigos</span></div>
                                         </div>
                                     </div>
                                     <div class="project-detail-block">
-                                        <div class="project-detail-label"><i class="fa fa-mobile-phone"></i> Gestión de OTP</div>
-                                        <p class="project-contribution-summary">Módulo de contingencia para firma digital de leccionarios y documentos críticos cuando el servicio oficial del MINEDUC no esté disponible. Permite configurar una app autenticadora como método alternativo de validación, firmar mediante código enviado al teléfono o correo electrónico, y reutilizar la firma en diferentes módulos del sistema.</p>
+                                        <div class="project-detail-label"><i class="fa fa-mobile-phone"></i> Validación OTP</div>
+                                        <p class="project-contribution-summary">Módulo implementado para validar la firma de leccionarios y documentos críticos mediante aplicación autenticadora y correo electrónico. Los códigos OTP y el resultado de cada validación quedan registrados y el servicio se reutiliza en distintos módulos del sistema.</p>
                                         <div class="project-contribution-grid">
                                             <div class="project-contribution-card">
                                                 <h5><i class="fa fa-shield"></i> Firma digital OTP</h5>
                                                 <ul>
-                                                    <li>Firma de leccionarios mediante código OTP enviado al teléfono o correo electrónico como método de contingencia ante indisponibilidad del servicio MINEDUC.</li>
-                                                    <li>App autenticadora configurable como segundo factor para firma digital de documentos oficiales.</li>
+                                                    <li>Firma de leccionarios mediante códigos OTP generados en una aplicación autenticadora o enviados por correo electrónico institucional.</li>
+                                                    <li>Aplicación autenticadora y correo electrónico implementados como canales de validación de documentos oficiales.</li>
                                                     <li>Validación criptográfica del código OTP con expiración programable por intento de firma.</li>
                                                 </ul>
                                             </div>
@@ -1420,10 +1424,10 @@
                                                 </ul>
                                             </div>
                                             <div class="project-contribution-card">
-                                                <h5><i class="fa fa-mobile"></i> Firma modular por celular o correo</h5>
+                                                <h5><i class="fa fa-mobile"></i> Canales de validación implementados</h5>
                                                 <ul>
-                                                    <li>Envío de código OTP por SMS al teléfono móvil registrado del docente o directivo para firma inmediata de leccionarios.</li>
-                                                    <li>Alternativa de recepción por correo electrónico institucional como canal secundario de contingencia.</li>
+                                                    <li>Validación mediante aplicación autenticadora para docentes y directivos.</li>
+                                                    <li>Recepción de códigos mediante correo electrónico institucional.</li>
                                                     <li>Flujo modular desacoplado: cada módulo crítico (leccionario, anotaciones, matrículas) invoca el servicio de firma OTP de forma independiente.</li>
                                                     <li>Notificación de confirmación post-firma con comprobante digital almacenado en el registro de auditoría.</li>
                                                 </ul>
@@ -1489,7 +1493,7 @@
                                     </div>
                                     <div class="project-detail-block project-impact-block">
                                         <div class="project-detail-label"><i class="fa fa-chart-line"></i> Impacto</div>
-                                        <p>Implementado para <strong>7 establecimientos desplegados · 5 actualmente en operación activa</strong> del SLEP Colchagua, con <strong>3 portales diferenciados</strong> (Docente, Director, UTP). Reemplazó el libro físico por una solución digital con respaldo automático y firma OTP, respaldada por la Circular N°30 del Ministerio de Educación y el Estándar REX N°3335/2020. Cumple con el <strong>estándar CEDS</strong> de interoperabilidad de datos educacionales.</p>
+                                        <p>Implementado para <strong>7 establecimientos desplegados · 5 actualmente en operación activa</strong> del SLEP Colchagua, con <strong>3 portales diferenciados</strong> (Docente, Director, UTP). Reemplazó el libro físico por una solución digital con respaldo automático y validación OTP mediante aplicación autenticadora y correo electrónico, respaldada por la Circular N°30 del Ministerio de Educación y el Estándar REX N°3335/2020. Su diseño se basa en el <strong>CEDS de EE. UU.</strong> y está preparado para su presentación y aprobación ante el MINEDUC.</p>
                                     </div>
                                     <div class="project-modal-actions">
                                         <a href="https://libro.slepcolchagua.cl/faqs" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm"><i class="fa fa-external-link"></i>&nbsp;Ver sitio web</a>
@@ -1983,7 +1987,7 @@
                                             <div class="decision-list">
                                                 <div class="decision-card">
                                                     <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué ClaveÚnica?</div>
-                                                    <p class="decision-answer">Autenticación oficial del Estado: validez legal y no repudio en trámites sensibles como evaluaciones y renuncias.</p>
+                                                    <p class="decision-answer">Autenticación oficial del Estado para verificar la identidad de funcionarios en trámites sensibles. Complementa la trazabilidad del proceso, sin sustituir por sí sola los mecanismos de firma electrónica que puedan exigir la normativa y el procedimiento aplicable.</p>
                                                 </div>
                                                 <div class="decision-card">
                                                     <div class="decision-question"><i class="fa fa-question-circle"></i>¿Por qué flujos jerárquicos?</div>
@@ -2046,9 +2050,8 @@
                                         </ul>
                                     </div>
                                     <div class="project-detail-block">
-                                        <div class="project-detail-label"><i class="fa fa-th-large"></i> Trámites online desarrollados</div>
+                                        <div class="project-detail-label"><i class="fa fa-th-large"></i> 13 trámites online implementados</div>
                                         <div class="project-module-grid">
-                                            <div class="project-module-item"><i class="fa fa-car"></i><span>Mejoras solicitadas en trámite de cometidos</span></div>
                                             <div class="project-module-item"><i class="fa fa-file-text"></i><span>Toma de Conocimiento y Entrega de RIOHS</span></div>
                                             <div class="project-module-item"><i class="fa fa-fire"></i><span>Solicitud de Vale de Convenio Gas para Bienestar</span></div>
                                             <div class="project-module-item"><i class="fa fa-truck"></i><span>Solicitud de vehículos y choferes institucionales</span></div>
@@ -2063,6 +2066,10 @@
                                             <div class="project-module-item"><i class="fa fa-sign-out"></i><span>Renuncia Laboral Online</span></div>
                                             <div class="project-module-item"><i class="fa fa-plus-circle"></i><span>Anotación de Mérito o Demérito de Funcionarios</span></div>
                                         </div>
+                                    </div>
+                                    <div class="project-detail-block">
+                                        <div class="project-detail-label"><i class="fa fa-refresh"></i> Mejora continua</div>
+                                        <p>Además de los 13 trámites implementados, se realizaron mejoras solicitadas sobre el trámite existente de cometidos. Esta intervención corresponde a mantención evolutiva y no se contabiliza como un trámite adicional.</p>
                                     </div>
                                     <div class="project-detail-block">
                                         <div class="project-detail-label"><i class="fa fa-star"></i> Evaluación funcionaria online</div>
@@ -2091,7 +2098,7 @@
                                     </div>
                                     <div class="project-detail-block">
                                         <div class="project-detail-label"><i class="fa fa-key"></i> Integración con ClaveÚnica</div>
-                                        <p>Todos los procesos fueron implementados con <strong>validación mediante ClaveÚnica</strong>, fortaleciendo la autenticación de los funcionarios, elevando la validez del proceso digital y reduciendo ambigüedad sobre identidad y responsabilidad por etapa. Esto permitió que la evaluación online y otros trámites avanzaran hacia un estándar más seguro, confiable y defendible institucionalmente.</p>
+                                        <p>Todos los procesos fueron implementados con <strong>validación mediante ClaveÚnica</strong>, fortaleciendo la autenticación de los funcionarios y reduciendo la ambigüedad sobre identidad y responsabilidad por etapa. Esto permitió que la evaluación online y otros trámites avanzaran hacia un estándar más seguro, confiable y trazable institucionalmente.</p>
                                     </div>
                                     <div class="project-detail-block">
                                         <div class="project-detail-label"><i class="fa fa-bullhorn"></i> Evidencia y reconocimiento</div>

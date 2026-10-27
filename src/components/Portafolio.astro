@@ -66,17 +66,17 @@
                     <div class="portfolio-caption portfolio-caption-rich">
                         <h4>Sistema de Salidas Pedagógicas</h4>
                         <p class="portfolio-tecnologias">Next.js · MySQL · Prisma · Mapbox · Docker</p>
-                        <p class="portfolio-estado"><span aria-hidden="true"></span>Implementado</p>
+                        <p class="portfolio-estado"><span aria-hidden="true"></span>Desarrollo finalizado</p>
                         <p class="text-muted">Gestión, revisión y trazabilidad de salidas pedagógicas, rutas, documentos y aprobaciones institucionales.</p>
                         <a class="portfolio-caso" href="#portfolioModal14" data-bs-toggle="modal">Ver caso técnico <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
             </div>
 
-            <!-- -- AUTOMATIZACIÓN INDUSTRIAL -- -->
+            <!-- -- APLICACIONES EMPRESARIALES -- -->
             <div class="row">
                 <div class="col-12">
-                    <h3 class="portfolio-group-label"><i class="fa fa-cogs me-2"></i>Automatización Industrial</h3>
+                    <h3 class="portfolio-group-label"><i class="fa fa-briefcase me-2"></i>Aplicaciones empresariales</h3>
                 </div>
             </div>
             <div class="row portfolio-container mb-5">
@@ -112,6 +112,15 @@
                         <a class="portfolio-caso" href="#portfolioModal11" data-bs-toggle="modal">Ver caso técnico <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
+            </div>
+
+            <!-- -- AUTOMATIZACIÓN INDUSTRIAL -- -->
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="portfolio-group-label"><i class="fa fa-cogs me-2"></i>Automatización industrial</h3>
+                </div>
+            </div>
+            <div class="row portfolio-container mb-5">
                 <div class="col-sm-6 col-md-6 portfolio-item system portfolio-featured">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal12">
                         <div class="portfolio-hover">
@@ -128,6 +137,15 @@
                         <a class="portfolio-caso" href="#portfolioModal12" data-bs-toggle="modal">Ver caso técnico <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
+            </div>
+
+            <!-- -- INFRAESTRUCTURA Y OBSERVABILIDAD -- -->
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="portfolio-group-label"><i class="fa fa-server me-2"></i>Infraestructura y observabilidad</h3>
+                </div>
+            </div>
+            <div class="row portfolio-container mb-5">
                 <div class="col-sm-6 col-md-6 portfolio-item infrastructure portfolio-featured">
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
                         <div class="portfolio-hover">
@@ -272,7 +290,7 @@
     const contenedoresPortafolio = [...seccionPortafolio.querySelectorAll<HTMLElement>('.portfolio-container')];
     const detallesPorProyecto: Record<string, { tecnologias: string; estado: string; resumen: string }> = {
       '#portfolioModal10': { tecnologias: 'Python · Flask · SQLAlchemy · MySQL', estado: 'Producción', resumen: 'Trámites digitales con ClaveÚnica, aprobaciones y trazabilidad.' },
-      '#portfolioModal14': { tecnologias: 'Next.js · MySQL · Prisma · Mapbox · Docker', estado: 'Implementado', resumen: 'Gestión, revisión y trazabilidad de salidas pedagógicas, rutas, documentos y aprobaciones institucionales.' },
+      '#portfolioModal14': { tecnologias: 'Next.js · MySQL · Prisma · Mapbox · Docker', estado: 'Desarrollo finalizado', resumen: 'Gestión, revisión y trazabilidad de salidas pedagógicas, rutas, documentos y aprobaciones institucionales.' },
       '#portfolioModal7': { tecnologias: 'Angular · Flask · MySQL · Docker', estado: 'Implementado', resumen: 'Gestión colaborativa de tareas, equipos y prioridades.' },
       '#portfolioModal11': { tecnologias: 'C# · Python · MySQL · SQL Server', estado: 'Producción', resumen: 'Trazabilidad documental para procesos de exportación.' },
       '#portfolioModal12': { tecnologias: 'Raspberry Pi · PLC · LAN industrial', estado: 'Implementado', resumen: 'Automatización de etiquetado e impresión industrial.' },

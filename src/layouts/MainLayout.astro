@@ -81,7 +81,6 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
       }
     })}></script>
 
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
     <link rel="preload" href={`${rutaBase}assets/css/fuentes-locales.css`} as="style" />
     <link rel="preload" href={`${rutaBase}assets/css/estilos-modificados.css`} as="style" />
@@ -116,7 +115,7 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
         <div class="privacy-notice-body">
           <p id="privacy-notice-title" class="privacy-notice-title">Privacidad y transparencia</p>
           <p class="privacy-notice-text">
-            Este sitio no utiliza cookies de rastreo ni recopila datos mediante formularios. Solo se guarda tu preferencia de tema en tu dispositivo y se cargan recursos de terceros (Google Fonts y Bootstrap CDN). Conoce los detalles en nuestra <a href={`${rutaBase}privacidad/`}>Política de Privacidad</a>.
+            Este sitio no utiliza cookies de rastreo ni recopila datos mediante formularios. Solo se guardan en tu dispositivo la preferencia de tema y el cierre de este aviso; Bootstrap se carga desde un CDN y las miniaturas de demostraciones se cargan de forma diferida desde YouTube. «Entendido» solo cierra este aviso y no autoriza la carga de recursos externos. Conoce los detalles en nuestra <a href={`${rutaBase}privacidad/`}>Política de Privacidad</a>.
           </p>
         </div>
         <div class="privacy-notice-actions">
@@ -132,12 +131,13 @@ const imagenPrevia = `${urlSitio}assets/img/preview.webp`;
         const clave = 'alex-privacy-notice';
         if (!aviso || !boton) return;
         try {
-          if (localStorage.getItem(clave) === 'accepted') return;
+          const avisoCerrado = localStorage.getItem(clave);
+          if (avisoCerrado === 'cerrado' || avisoCerrado === 'accepted') return;
         } catch {}
         aviso.classList.add('is-visible');
         boton.addEventListener('click', () => {
           aviso.classList.remove('is-visible');
-          try { localStorage.setItem(clave, 'accepted'); } catch {}
+          try { localStorage.setItem(clave, 'cerrado'); } catch {}
         });
       })();
     </script>

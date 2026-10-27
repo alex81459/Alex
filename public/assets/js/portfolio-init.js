@@ -205,7 +205,7 @@
       if (!identificador) return;
 
       var marcoVideo = document.createElement('iframe');
-      marcoVideo.src = 'https://www.youtube.com/embed/' + identificador + '?autoplay=1&rel=0&modestbranding=1';
+      marcoVideo.src = 'https://www.youtube-nocookie.com/embed/' + identificador + '?autoplay=1&rel=0&modestbranding=1';
       marcoVideo.frameBorder = '0';
       marcoVideo.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       marcoVideo.allowFullscreen = true;
